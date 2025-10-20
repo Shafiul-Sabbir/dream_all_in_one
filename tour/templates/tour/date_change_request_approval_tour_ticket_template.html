@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket {{ tour_booking.booking_id }}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px; /* reduced */
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #000000;
+            font-size: 11px; /* reduced from 13px */
+            line-height: 1.4; /* reduced */
+        }
+        .container {
+            max-width: 1000px; /* allow more width since landscape */
+            margin: 10px auto;
+            background-color: #ffffff;
+            padding: 20px; /* reduced from 40px */
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px; /* reduced */
+            padding-bottom: 10px;
+        }
+        .header-left {
+            flex: 0 0 90px; /* reduced width */
+            text-align: left;
+        }
+        .header-left img {
+            width: 80px; /* reduced */
+            height: 80px;
+        }
+        .header-left p {
+            font-size: 10px; /* reduced */
+            margin-top: 3px;
+            text-align: center;
+            margin-left: -8px;
+        }
+        .header-center {
+            flex: 1;
+            padding-left: 10px;
+        }
+        .header-center h1 {
+            font-size: 14px; /* reduced */
+            font-weight: bold;
+            margin: 0 0 2px 0;
+        }
+        .header-center .sub-id {
+            font-size: 12px;
+            color: #333;
+            margin: 0 0 6px 0;
+        }
+        .paid-badge {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2px 6px; /* smaller */
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .header-center p {
+            margin: 1px 0;
+            font-size: 11px;
+        }
+        .header-right {
+            flex: 0 0 160px; /* reduced */
+            text-align: right;
+        }
+        .header-right img {
+            width: 60px;
+            margin-bottom: 6px;
+        }
+        .header-right p {
+            margin: 1px 0;
+            font-size: 11px;
+        }
+        .header-right a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        hr.solid {
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 0;
+        }
+        hr.light {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 10px 0;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            padding-bottom: 3px;
+        }
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+        .product-info p {
+            margin: 0;
+            font-size: 11px;
+        }
+        .product-info .title {
+            font-weight: bold;
+        }
+        .product-info .start-time {
+            font-weight: bold;
+            margin-top: 6px;
+        }
+        .meeting-point {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            padding: 6px 10px; /* reduced */
+            margin-top: 10px;
+        }
+        .meeting-point p {
+            margin: 0;
+            font-size: 11px;
+        }
+        .invoice-table .row {
+            display: flex;
+            align-items: flex-start;
+        }
+        .invoice-table .header-row {
+            font-weight: bold;
+            padding-bottom: 5px;
+            font-size: 11px;
+        }
+        .invoice-table .item-row {
+            padding: 8px 0; /* reduced */
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 11px;
+        }
+        .invoice-table .col-product { flex: 1; }
+        .invoice-table .col-qty { width: 90px; text-align: center; }
+        .invoice-table .col-price { width: 80px; text-align: right; }
+        .invoice-table .col-subtotal { width: 80px; text-align: right; }
+        .total-row {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 0;
+        }
+        .total-row .label {
+            width: 80px;
+            text-align: right;
+        }
+        .total-row .value {
+            width: 80px;
+            text-align: right;
+            font-weight: bold;
+        }
+        .cancellation-policy ul {
+            padding-left: 15px;
+            margin: 0;
+            list-style-type: disc;
+            font-size: 11px;
+        }
+        .cancellation-policy li {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="header-left">
+                <img src="{{ tour_booking.qr_url }}" alt="QR code for ticket DZ-T101017445, a black and white square pattern.">
+                <p>{{ tour_booking.booking_id }}</p>
+            </div>
+            <div class="header-center">
+                <h1>Ticket: {{ tour_booking.booking_id }}</h1>
+                <p class="sub-id">{{ payment.invoice_id }}</p>
+                <span class="paid-badge">Paid in full</span>
+                <p style="font-weight: bold; margin-top: 15px;">{{ tour_booking.user.first_name }} {{ tour_booking.user.last_name }}</p>
+                <p>{{ tour_booking.user.email }}</p>
+                <p>{{ tour_booking.traveller.phone }}</p>
+            </div>
+            <div class="header-right">
+                <img src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6b57d815-7bad-4da4-7018-a62079a28600/public" alt="Dream Ziarah logo with a green dome over the word 'Dream' in script font and 'Ziarah' underneath.">
+                <p style="font-weight: bold;">Dream Ziarah</p>
+                <p>Reg# 40312855777</p>
+                <p>+39 3887748015</p>
+                <p><a href="mailto:dreamziarah@gmail.com">dreamziarah@gmail.com</a></p>
+                <p><a href="https://dreamziarah.com/">https://dreamziarah.com/</a></p>
+            </div>
+        </header>
+
+        <section>
+            <div class="table-header">
+                <span>Product</span>
+                <span>Quantity</span>
+            </div>
+            <hr class="solid">
+            <div class="product-details">
+                <div class="product-info">
+                    <p class="title">{{ tour_booking.tour.name }}</p>
+                    <p>{{ tour_booking.tour.name }}</p>
+                    <!-- <p class="start-time">Start time: Thu, July 10 2025 - 2:30 PM</p> -->
+                    {% if tour_booking.selected_time is not none %}
+                        <p class="start-time">Start time: {{ tour_booking.selected_date }} - {{ tour_booking.selected_time }}</p>
+                    {% else %}
+                        <p class="start-time">Start date: {{ tour_booking.selected_date }}</p>
+                    {% endif %}
+
+
+                </div>
+                
+                <div class="product-quantity">
+                    <p>Participants : {{ tour_booking.total_participants }}</p>
+                </div>
+            </div>
+            <div class="meeting-point">
+                <p class="title">Meeting points</p>
+                <p>{{ tour_booking.tour.meeting_point }}</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Invoice</h2>
+            <div class="invoice-table">
+                <div class="row header-row">
+                    <div class="col-product">Product</div>
+                    <div class="col-qty">Participants</div>
+                    <div class="col-price">Unit price</div>
+                    <div class="col-subtotal">Subtotal</div>
+                </div>
+                <hr class="solid">
+                <div class="row item-row">
+                    <div class="col-product">
+                        <p><span class="product-name">{{ tour_booking.tour.name }}</span></p>
+                        {% if tour_booking.selected_time is not none %}
+                            <p style="font-size: 13px; color: #555;">{{ tour_booking.selected_date }} - {{ tour_booking.selected_time }}</p>
+                        {% else %}
+                            <p style="font-size: 13px; color: #555;">{{ tour_booking.selected_date }}</p>
+                        {% endif %}
+
+                        
+                    </div>
+                    <div class="col-qty">{{tour_booking.total_participants}}</div>
+                    <div class="col-price">
+                        {% if tour_booking.price_by_passenger %}
+                            ${{ tour_booking.price_per_person }}
+                        {% elif tour_booking.price_by_vehicle %}
+                            ${{ tour_booking.group_price }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </div>
+                    <div class="col-subtotal" style="font-weight: bold;">
+                        ${{ tour_booking.total_price }}
+                    </div>
+                </div>
+                <div class="total-row">
+                    <div class="label">Total:</div>
+                    <div class="value">${{ tour_booking.total_price }}</div>
+                </div>
+                <hr class="solid" style="margin-top: -1px;">
+            </div>
+        </section>
+
+        <section style="margin-top: 30px;" class="cancellation-policy">
+            <h3 class="section-title" style="font-size: 14px; margin-top: 0; margin-bottom: 10px;">Cancellation policy</h3>
+            <ul>
+                <li>Cancellation fee of 100.0% is charged if cancelled 1 day(s) or less before the activity</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Cancelled for Unavoidable Reason</title>
+  </head>
+  <body style="font-family: 'Segoe UI', Arial, sans-serif; background-color:#f2f5f9; margin:0; padding:20px;">
+
+    <div style="max-width:620px; margin:0 auto; background:#ffffff; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); padding:30px 25px;">
+
+      <h2 style="color:#d93025; text-align:center;">❌ Booking Cancelled for Unavoidable Reason</h2>
+
+      <p style="color:#333; font-size:15px; margin-bottom:10px;">
+        Dear {{ tour_booking.user.first_name }} {{ tour_booking.user.last_name }},
+      </p>
+
+      <p style="color:#555; font-size:15px; line-height:1.7; margin-bottom:15px;">
+        We are sorry to inform you that your booking of tour 
+        <strong style="color:#1a73e8;">{{ tour_booking.tour.name }}</strong> 
+        which booking id is 
+        <strong>{{ tour_booking.booking_id }}</strong> 
+        has been <strong>cancelled for below mentioned reasons.</strong>
+      </p>
+
+      <div style="background:#fff3f3; padding:15px; border-radius:6px; margin:15px 0; border:1px solid #f1c0c0;">
+        <p style="margin:10px 0; font-size:14px; color:#d93025;">
+            <strong>Cancellation Reason:</strong> {{ tour_booking.cancellation_reason }}        </p>
+      </div>
+
+      <div style="background:#eef4ff; padding:15px; border-radius:8px; margin:20px 0; border:1px solid #dce7ff;">
+        <p style="margin:0; font-size:14px; color:#333;">
+          <strong>Ticket Number:</strong> {{ tour_booking.booking_id }}
+        </p>
+      </div>
+
+      <p style="color:#555; font-size:15px; line-height:1.7; margin-bottom:15px;">
+        You may use your account credentials to log in to your dashboard and view your other bookings at any time.
+      </p>
+
+      <p style="text-align:center; margin:25px 0;">
+        <a href="{{ traveller_dashboard_url }}" target="_blank" style="background:#1a73e8; color:#fff; text-decoration:none; padding:12px 24px; border-radius:6px; font-weight:bold; font-size:15px;">
+          🔗 Go to My Dashboard
+        </a>
+      </p>
+
+      <p style="color:#555; font-size:15px; line-height:1.7;">
+        We look forward to serving you and ensuring a wonderful travel experience for your further bookings.
+        If you have any questions, please don’t hesitate to contact us.
+      </p>
+
+      <p style="color:#333; font-size:14px; line-height:1.6; margin-top:25px;">
+        Best regards, <br />
+        <strong>Sales Department</strong> <br />
+        Dream Tourism SLRS
+      </p>
+
+      <div style="background:#f9fbff; padding:15px; border-radius:8px; margin-top:25px; font-size:14px; color:#333; line-height:1.6; border-top:2px solid #1a73e8;">
+        <p style="margin:5px 0; font-weight:bold; font-size:15px;">Dream Tourism SLRS</p>
+        <p style="margin:5px 0;">Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
+        <p style="margin:5px 0;">📧 Email: 
+          <a href="mailto:info@dreamtourism.it" style="color:#1a73e8; text-decoration:none;">info@dreamtourism.it</a>
+        </p>
+        <p style="margin:5px 0;">📞 Phone: 
+          <a href="tel:+390645259865" style="color:#1a73e8; text-decoration:none;">+39 06 4525 9865</a>
+        </p>
+        <p style="margin:5px 0;">🌐 Website: 
+          <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
+        </p>
+      </div>
+
+      <hr style="border:none; border-top:1px solid #eee; margin:25px 0;" />
+
+      <p style="color:#999; font-size:12px; text-align:center; line-height:1.5;">
+        This is an automated notification. Please do not reply directly to this email.
+      </p>
+    </div>
+  </body>
+</html>

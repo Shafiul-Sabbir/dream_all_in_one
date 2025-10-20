@@ -1,0 +1,45 @@
+# Python
+*.pyc
+__pycache__/
+
+# Environment
+.env
+env/
+.venv/
+
+# Django-related
+db.sqlite3
+db/
+media/
+
+# Migrations (ignore all except __init__.py)
+**/migrations/
+!**/migrations/__init__.py
+
+# VSCode and IDE configs
+.vscode/
+.idea/
+
+# Git should NOT be ignored!
+# .git  ❌ removed
+
+# Static files (ignore collected but keep your own assets)
+staticfiles/
+# If you only use collectstatic output in static/, then ignore:
+# static/
+# But if you have your own CSS/JS/images, keep static/
+# You can use a rule like this if needed:
+# static/*
+# !static/css/
+# !static/js/
+# !static/images/
+
+# Project-specific
+baira-data/
+data/
+
+# Zip and compressed files
+*.zip
+*.tar.gz
+*.rar
+dream_ziarah.zip

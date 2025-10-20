@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Invoice</title>
+    <style>
+        /* This is a comment and will be ignored. It's here to explain that while the instructions ask for inline CSS, a small style block can help with global settings like font-family without cluttering every single tag. All other styles will be inline. */
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 10px; background-color: #f8f9fa; color: #000000;">
+    <div style="max-width: 1000px; margin: 10px auto; padding: 20px; background-color: #ffffff;;">
+
+        <!-- Header Section -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 30px;">
+            <!-- Left Side: Customer Info -->
+            <div style="flex: 1;">
+                <h1 style="font-size: 22px; margin: 0 0 20px 0; font-weight: bold;">Customer invoice: {{ payment.invoice_id }}</h1>
+                <p style="margin: 0; font-size: 14px; font-weight: bold;">{{ tour_booking.user.first_name }} {{ tour_booking.user.last_name }}</p>
+                <p style="margin: 5px 0; font-size: 14px;">{{ tour_booking.user.email }}</p>
+                <p style="margin: 5px 0; font-size: 14px;">{{ tour_booking.traveller.phone }}</p>
+            </div>
+
+            <!-- Right Side: Company Info -->
+            <div style="flex: 1; text-align: right;">
+                <img src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6b57d815-7bad-4da4-7018-a62079a28600/public" alt="Dream Ziarah logo with a stylized mosque dome and crescent moon" style="width: 100px; height: auto; margin-bottom: 10px;">
+                <p style="margin: 0; font-size: 14px; font-weight: bold;">Dream Ziarah</p>
+                <p style="margin: 5px 0; font-size: 14px;">+39 3887748015</p>
+                <p style="margin: 5px 0; font-size: 14px;"><a href="mailto:dreamziarah@gmail.com" style="color: #0066cc; text-decoration: none;">dreamziarah@gmail.com</a></p>
+                <p style="margin: 5px 0 20px 0; font-size: 14px;"><a href="https://dreamziarah.com/" style="color: #0066cc; text-decoration: none;">https://dreamziarah.com/</a></p>
+                
+                <table style="width: 280px; border: 1px solid #000; border-collapse: collapse; font-size: 12px; margin-left: auto;">
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #000; padding: 5px 8px; background-color: #f2f2f2; font-weight: bold;">Booking channel</td>
+                            <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">Dream Ziarah</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000; padding: 5px 8px; background-color: #f2f2f2; font-weight: bold;">Created</td>
+                            <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">{{payment.created_at}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000; padding: 5px 8px; background-color: #f2f2f2; font-weight: bold;">Printed</td>
+                            <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">{{ now|date:"D, F d Y" }}, {{ now|time:"h:i A" }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Invoice Items Table -->
+        <div style="margin-top: 40px;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align: left; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Product</th>
+                        <th style="text-align: center; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Participants</th>
+                        <th style="text-align: right; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Unit price</th>
+                        <th style="text-align: right; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="font-size: 14px;">
+                        <td style="padding: 15px 0; border-bottom: 1px solid #000; vertical-align: top;">
+                            <div style="margin: 0;"><strong style="font-weight: bold;">{{ tour_booking.tour.name }}</strong></div>
+                            {% if tour_booking.selected_time is not none %}
+                                <div style="margin: 5px 0; color: #333;">{{ tour_booking.selected_date }} - {{ tour_booking.selected_time }}</div>
+                            {% else %}
+                                <div style="margin: 5px 0; color: #333;">{{ tour_booking.selected_date }}</div>
+                            {% endif %}
+
+                        </td>
+                        <td style="padding: 15px 0; border-bottom: 1px solid #000; text-align: center; vertical-align: top;">{{ tour_booking.total_participants }}</td>
+                        <td style="padding: 15px 0; border-bottom: 1px solid #000; text-align: right; vertical-align: top;">
+                            {% if tour_booking.price_by_passenger %}
+                                ${{ tour_booking.price_per_person }}
+                            {% elif tour_booking.price_by_vehicle %}
+                                ${{ tour_booking.group_price }}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+
+                        <td style="padding: 15px 0; border-bottom: 1px solid #000; text-align: right; vertical-align: top; font-weight: bold;">
+                            ${{ tour_booking.total_price }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Totals Section -->
+        <div style="margin-top: 20px; float: right; width: 250px;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                        <td style="text-align: right; padding: 8px; font-size: 18px;">Total:</td>
+                        <td style="text-align: right; padding: 8px; font-size: 22px; font-weight: bold;">${{ tour_booking.total_price }}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 8px; font-size: 18px;">Paid:</td>
+                        <td style="text-align: right; padding: 8px; font-size: 22px; font-weight: bold;">${{ tour_booking.total_price }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="clear: both;"></div>
+    </div>
+</body>
+</html>

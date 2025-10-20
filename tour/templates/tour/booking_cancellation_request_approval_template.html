@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Cancellation Request Approved</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; background-color:#f9f9f9; margin:0; padding:0;">
+    <div style="max-width:600px; margin:20px auto; background:#ffffff; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:20px;">
+      
+      <h2 style="color:#333; text-align:center;">✅ Booking Cancellation Request Approved</h2>
+      <p style="color:#555; font-size:15px;">
+        Dear {{ tour_booking.user.first_name }} {{ tour_booking.user.last_name }},
+      </p>
+
+      <p style="color:#555; font-size:15px; line-height:1.6;">
+        We are pleased to inform you that your request to cancel the booking of tour <strong>{{ tour_booking.tour.name }}</strong> which booking id is <strong>{{ tour_booking.booking_id }}</strong> has been <strong>approved</strong>.  
+      </p>
+
+      <div style="background:#f3f7ff; padding:15px; border-radius:6px; margin:15px 0;">
+        <p style="margin:5px 0; font-size:14px; color:#333;">
+          <strong>Ticket Number:</strong> {{ tour_booking.booking_id }}
+        </p>
+      </div>
+
+      <p style="color:#555; font-size:15px; line-height:1.6;">
+        You may use your account credentials to log in to your dashboard and view your other bookings at any time.
+      </p>
+
+      <p style="text-align:center; margin:25px 0;">
+        <a href="{{ traveller_dashboard_url }}" target="_blank" style="background:#1a73e8; color:#fff; text-decoration:none; padding:12px 24px; border-radius:6px; font-weight:bold; font-size:15px;">
+          🔗 Go to My Dashboard
+        </a>
+      </p>
+
+      <p style="color:#555; font-size:14px; line-height:1.6;">
+        We look forward to serving you and ensuring a wonderful travel experience for your further bookings.  
+        If you have any questions, please don’t hesitate to contact us.
+      </p>
+
+      <p style="color:#555; font-size:14px; line-height:1.6;">
+        Best regards, <br />
+        <strong>Sales Department</strong> <br />
+        Dream Tourism SLRS
+      </p>
+
+      <div style="background:#f9fbff; padding:15px; border-radius:8px; margin-top:25px; font-size:14px; color:#333; line-height:1.6; border-top:2px solid #1a73e8;">
+        <p style="margin:5px 0; font-weight:bold; font-size:15px;">Dream Tourism SLRS</p>
+        <p style="margin:5px 0;">Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
+        <p style="margin:5px 0;">📧 Email: 
+          <a href="mailto:info@dreamtourism.it" style="color:#1a73e8; text-decoration:none;">info@dreamtourism.it</a>
+        </p>
+        <p style="margin:5px 0;">📞 Phone: 
+          <a href="tel:+390645259865" style="color:#1a73e8; text-decoration:none;">+39 06 4525 9865</a>
+        </p>
+        <p style="margin:5px 0;">🌐 Website: 
+          <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
+        </p>
+      </div>
+
+      <hr style="border:none; border-top:1px solid #eee; margin:20px 0;" />
+
+      <p style="color:#999; font-size:12px; text-align:center;">
+        This is an automated notification. Please do not reply directly to this email.
+      </p>
+    </div>
+  </body>
+</html>

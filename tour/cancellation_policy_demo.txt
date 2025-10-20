@@ -1,0 +1,110 @@
+[
+    {
+        "id": 232967,
+        "title": "Non refundable",
+        "penaltyRules": [],
+        "tax": null,
+        "defaultPolicy": true,
+        "policyType": "NON_REFUNDABLE",
+        "simpleCutoffHours": null,
+        "policyTypeEnum": "NON_REFUNDABLE"
+    },
+    {
+        "id": 241734,
+        "title": "100% Charged / 0% Refund",
+        "penaltyRules": [
+            {
+                "id": 250712,
+                "cutoffHours": 24,
+                "charge": 100.0,
+                "chargeType": "percentage",
+                "percentage": 100.0
+            }
+        ],
+        "tax": null,
+        "defaultPolicy": false,
+        "policyType": "ADVANCED",
+        "simpleCutoffHours": null,
+        "policyTypeEnum": "ADVANCED"
+    },
+    {
+        "id": 241743,
+        "title": "50% Charged / 50% Refund",
+        "penaltyRules": [
+            {
+                "id": 250713,
+                "cutoffHours": 48,
+                "charge": 50.0,
+                "chargeType": "percentage",
+                "percentage": 50.0
+            }
+        ],
+        "tax": null,
+        "defaultPolicy": false,
+        "policyType": "ADVANCED",
+        "simpleCutoffHours": null,
+        "policyTypeEnum": "ADVANCED"
+    },
+    {
+        "id": 241744,
+        "title": "25% Charged / 75% Refund  |  15% Charged / 85% Refund",
+        "penaltyRules": [
+            {
+                "id": 250714,
+                "cutoffHours": 72,
+                "charge": 25.0,
+                "chargeType": "percentage",
+                "percentage": 25.0
+            },
+            {
+                "id": 250717,
+                "cutoffHours": 96,
+                "charge": 15.0,
+                "chargeType": "percentage",
+                "percentage": 15.0
+            }
+        ],
+        "tax": null,
+        "defaultPolicy": false,
+        "policyType": "ADVANCED",
+        "simpleCutoffHours": null,
+        "policyTypeEnum": "ADVANCED"
+    },
+    {
+        "id": 241745,
+        "title": "0% Charged / 100% Refund",
+        "penaltyRules": [],
+        "tax": null,
+        "defaultPolicy": false,
+        "policyType": "FULL_REFUND",
+        "simpleCutoffHours": null,
+        "policyTypeEnum": "FULL_REFUND"
+    },
+    {
+        "id": 241746,
+        "title": "Using ( Policy type = Simple ),To get a full refund the traveller must cancel their booking before 60 hours .",
+        "penaltyRules": [],
+        "tax": null,
+        "defaultPolicy": false,
+        "policyType": "SIMPLE",
+        "simpleCutoffHours": 55,
+        "policyTypeEnum": "SIMPLE"
+    }
+]
+
+
+simple = Bookings are fully refundable until specific number of hours before the event.
+
+advanced = {
+    Cancellation fees are calculated based on a list of penalty rules. Flexible, but complicated.
+        
+        Cancellation fee of 100.00% is charged if cancelled 1 days and 00 hours or less before the event
+        Cancellation fee of  25.00% is charged if cancelled 3 days and 00 hours or less before the event
+        Cancellation fee of  15.00% is charged if cancelled 4 days and 12 hours or less before the event
+}
+
+Fully refundable = Bookings are fully refundable up to the time of the event.
+
+Non refundable = Bookings are not refundable, all sales are final.
+
+
