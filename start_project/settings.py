@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'support.apps.SupportConfig',
     'tour.apps.TourConfig',
     'payments.apps.PaymentsConfig',
+    'scripts.apps.ScriptsConfig',
 ]	
 
 INSTALLED_APPS += ['sequences.apps.SequencesConfig']
@@ -185,8 +186,8 @@ CORS_ALLOWED_ORIGINS = [
 # CSRF_COOKIE_SECURE = not DEBUG
 
 AUTHENTICATION_BACKENDS = [
-    'authentication.backends.EmailOrPhoneBackend',
-    'django.contrib.auth.backends.ModelBackend',  # keep default as fallback
+    'authentication.backends.EmailOrUsernameBackend',  # your app name may differ
+    'django.contrib.auth.backends.ModelBackend', # keep default as fallback
 ]
 CORS_ALLOW_CREDENTIALS = True
 

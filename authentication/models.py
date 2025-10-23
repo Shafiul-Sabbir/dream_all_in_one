@@ -15,9 +15,27 @@ from PIL import Image
 from rest_framework.serializers import BaseSerializer
 
 
+class Company(models.Model):
+    name = models.CharField(max_length=255)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+    updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+    class Meta:
+        ordering = ('id',)
+
+    def __str__(self):
+        return self.name
+    
 
 
 class Permission(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -40,6 +58,9 @@ class Permission(models.Model):
 
 
 class Role(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
     permissions = models.ManyToManyField(Permission, blank=True)
 
@@ -64,6 +85,9 @@ class Role(models.Model):
 
 
 class Designation(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
     
     created_at = models.DateTimeField(auto_now_add=True)
@@ -86,6 +110,9 @@ class Designation(models.Model):
 
 
 class Country(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE) 
+
     name = models.CharField(max_length=255)
     capital_name = models.CharField(max_length=255, null=True, blank=True)
     country_code = models.CharField(max_length=255, null=True, blank=True)
@@ -112,6 +139,9 @@ class Country(models.Model):
 
 
 class City(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
     bn_name = models.CharField(max_length=50, null=True, blank=True)
 
@@ -143,6 +173,9 @@ class City(models.Model):
 
 
 class Thana(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
     bn_name = models.CharField(max_length=50, null=True, blank=True)
 
@@ -170,6 +203,9 @@ class Thana(models.Model):
 
 
 class Area(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
 
     short_desc = models.TextField(blank=True, null=True)
@@ -199,6 +235,9 @@ class Area(models.Model):
 
 
 class Branch(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
     
     short_desc = models.TextField(blank=True, null=True)
@@ -235,19 +274,28 @@ class Branch(models.Model):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, first_name, last_name, email, gender, password=None, primary_phone=None):
+    def create_user(self, first_name, last_name, email, gender, password=None, primary_phone=None, company_id=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
         """
         if not email:
             raise ValueError('Users must have an email address')
+        
+        if isinstance(company_id, int):
+            company_id = Company.objects.filter(id=company_id).first()
+
+        #checking if user with same email already exists using this company
+        existing_user = User.objects.filter(email=email, company_id=company_id).first()
+        if existing_user:
+            raise ValueError('User with this email already exists in this company')
 
         user = self.model(
             first_name= first_name,
             last_name = last_name,
             email=self.normalize_email(email),
-            gender = gender
+            gender = gender,
+            company_id = company_id,
         )
 
         user.set_password(password)
@@ -257,11 +305,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, first_name, last_name, email, gender, password=None, primary_phone=None):
+    def create_superuser(self, first_name, last_name, email, gender, password=None, primary_phone=None, company_id=None):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
+
         user = self.create_user(
             email= email,
             password=password,
@@ -269,6 +318,7 @@ class UserManager(BaseUserManager):
             last_name = last_name,
             gender = gender, 
             primary_phone = primary_phone,
+            company_id = company_id,
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -282,16 +332,19 @@ class User(AbstractBaseUser):
         MALE = 'male', _('Male')
         FEMALE = 'female', _('Female')
         OTHERS = 'others', _('Others')
+    
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100, null=True, blank=True, unique=True)
-    email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+    email = models.EmailField(verbose_name='email address', max_length=255)
 
     gender = models.CharField(max_length=6, choices=Gender.choices, default=Gender.MALE)
 
-    primary_phone = models.CharField(max_length=30, null=True, blank=True, unique=True)
-    secondary_phone = models.CharField(max_length=30, null=True, blank=True, unique=True)
+    primary_phone = models.CharField(max_length=30, null=True, blank=True)
+    secondary_phone = models.CharField(max_length=30, null=True, blank=True)
 
     user_type = models.CharField(max_length=255, null=True, blank=True)
 
@@ -324,7 +377,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'primary_phone']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'primary_phone', 'company_id']
 
     class Meta:
         ordering = ('first_name', '-created_at',)
@@ -389,6 +442,9 @@ class User(AbstractBaseUser):
 
 
 class Department(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -411,6 +467,9 @@ class Department(models.Model):
 
 
 class Employee(User):
+    # old_id = models.IntegerField(null=True, blank=True)
+    # company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     emp_id_no = models.CharField(max_length=100, null=True, blank=True)
@@ -444,6 +503,9 @@ class Employee(User):
 
 
 class Vendor(User):
+    # old_id = models.IntegerField(null=True, blank=True)
+    # company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     is_online = models.BooleanField(default=True)
     customer_credit_limit = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
@@ -471,6 +533,9 @@ class Vendor(User):
 
 
 class CustomerType(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=20)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -492,6 +557,9 @@ class CustomerType(models.Model):
 
 
 class Customer(User):
+    # old_id = models.IntegerField(null=True, blank=True)
+    # company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     is_online = models.BooleanField(default=True)
     cusotmer_type = models.ForeignKey(CustomerType, on_delete=models.SET_NULL, null=True, blank=True)
@@ -516,6 +584,9 @@ class Customer(User):
 
 
 class Qualification(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     employee_id = models.ForeignKey(Employee, on_delete=models.CASCADE)
     degree_name = models.CharField(max_length=64)
     passign_year = models.CharField(max_length=4)
@@ -569,6 +640,9 @@ class Qualification(models.Model):
 
 
 class LoginHistory(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.RESTRICT)
 
     ip_address = models.CharField(max_length=255, null=True, blank=True)

@@ -15,6 +15,11 @@ urlpatterns = [
 
     # path('silk/', include('silk.urls', namespace='silk')),
 
+    #Scripts module
+    path('authentication_scripts/', include('scripts.urls.authentication_scripts_urls')),
+    # path('site_settings_scripts/', include('scripts.urls.site_settings_scripts_urls')),
+    # path('cms_scripts/', include('scripts.urls.cms_scripts_urls')),
+
     # Authentication module
     path('user/', include('authentication.urls.user_urls')),
     path('employee/', include('authentication.urls.employee_urls')),
