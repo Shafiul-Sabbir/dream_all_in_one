@@ -1,4 +1,6 @@
+import os
 from random import randrange
+from time import process_time_ns
 from urllib import response
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import connection
@@ -15,15 +17,13 @@ from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
 
-from cms.models import CMSMenu, CMSMenuContentImage, CMSMenuContentImage,CMSMenuContent
-from cms.serializers import *
+from cms.models import CMSMenu, CMSMenuContent,CMSMenuContentImage, CMSMenuContentImage
+from cms.serializers import CMSMenuContentImageSerializer, CMSMenuContentImageListSerializer, CMSMenuContentImageMinimalSerializer,CMSMenuContentListSerializer
 
 from commons.pagination import Pagination
 from commons.enums import PermissionEnum
 
 import datetime
-
-
 
 
 # Create your views here.
@@ -123,79 +123,57 @@ def getAllContentImageByMenuId(request, menu_id):
 	request=CMSMenuContentImageSerializer,
 	responses=CMSMenuContentImageListSerializer
 )
-# @api_view(['GET'])
+@api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
-# def getAllContentImageListByMenuId(request, menu_id):
-#     with connection.cursor() as cursor:
-#         cursor.execute('''
-#             SELECT
-#                 head AS menu_item_name,
-#                 json_agg(
-#                     CASE
-#                         WHEN cloudflare_image IS NOT NULL THEN cloudflare_image
-#                         ELSE image
-#                     END
-#                 ) AS images
-#             FROM cms_cmsmenucontentimage
-#             WHERE cms_menu_id = %s
-#             GROUP BY head;
-#         ''', [menu_id])
-#         rows = cursor.fetchall()
 
-#     content_images = {}
-#     for row in rows:
-#         content_images[row[0]] = row[1]
-
-#     if content_images:
-#         return Response({'content_images': content_images}, status=status.HTTP_200_OK)
-#     else:
-#         return Response({'detail': "No content found."}, status=status.HTTP_204_NO_CONTENT)
-@api_view(['GET'])
 def getAllContentImageListByMenuId(request, menu_id):
-    try:
-        menu_obj = CMSMenu.objects.get(pk=menu_id)
-    except CMSMenu.DoesNotExist:
-        return Response({'detail': f"Menu id {menu_id} not found."}, status=status.HTTP_404_NOT_FOUND)
+    with connection.cursor() as cursor:
+        cursor.execute('''
+            SELECT
+                head AS menu_item_name,
+                json_agg(
+                    CASE
+                        WHEN cloudflare_image IS NOT NULL THEN cloudflare_image
+                        ELSE image
+                    END
+                ) AS images
+            FROM cms_cmsmenucontentimage
+            WHERE cms_menu_id = %s
+            GROUP BY head;
+        ''', [menu_id])
+        rows = cursor.fetchall()
 
-    # Menu-এর সাথে যুক্ত সব images আনলাম
-    content_images_qs = CMSMenuContentImage.objects.filter(cms_menu=menu_obj)
+    content_images = {}
+    for row in rows:
+        content_images[row[0]] = row[1]
 
-    if not content_images_qs.exists():
+    if content_images:
+        return Response({'content_images': content_images}, status=status.HTTP_200_OK)
+    else:
         return Response({'detail': "No content found."}, status=status.HTTP_204_NO_CONTENT)
 
-    # Group by head → প্রতিটি head এর নিচে multiple images list
-    grouped_data = {}
-    for img in content_images_qs:
-        image_url = img.cloudflare_image or (img.image.url if img.image else None)
-        if not image_url:
-            continue
 
-        if img.head not in grouped_data:
-            grouped_data[img.head] = []
-        grouped_data[img.head].append(image_url)
-
-    response = {
-        "menu_id": menu_obj.id,
-        "menu_name": getattr(menu_obj, "name", None),  # যদি CMSMenu model এ name থাকে
-        "content_images": grouped_data
-    }
-
-    return Response(response, status=status.HTTP_200_OK)
 
 @extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def getACMSMenuContentImage(request, pk):
-	try:
-		content_images = CMSMenuContentImage.objects.get(pk=pk)
-		serializer = CMSMenuContentImageSerializer(content_images)
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenuContentImage id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
-
-
+def getACMSMenuContentImageByContentTitle(request, image_name):
+    try:
+      
+        content_image = CMSMenuContentImage.objects.get(image_name=image_name)
+        
+      
+        serializer = CMSMenuContentImageSerializer(content_image)
+        
+       
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    except ObjectDoesNotExist:
+        
+        return Response({'detail': f"CMSMenuContentImage with image_name '{image_name}' does not exist"}, 
+                        status=status.HTTP_404_NOT_FOUND)
 
 
 @extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
@@ -330,14 +308,6 @@ def getContentImageListByMenuName(request, menu_name):
         return Response({'detail': f"No content images found for menu '{menu_name}'"}, status=status.HTTP_404_NOT_FOUND)
 	
 
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=CMSMenuContentImageSerializer,
-	responses=CMSMenuContentImageListSerializer
-)
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])

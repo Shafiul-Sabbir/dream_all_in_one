@@ -24,167 +24,190 @@ from commons.pagination import Pagination
 from commons.enums import PermissionEnum
 
 import datetime
-
-
+import os
+from django.db.models import Prefetch
 
 
 # Create your views here.
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=CMSMenuSerializer,
-	responses=CMSMenuListSerializer
+    request=CMSMenuSerializer,
+    responses=CMSMenuListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenu(request):
-	menus = CMSMenu.objects.all()
-	print('menus: ', menus)
+    menus = CMSMenu.objects.all()
+    print('menus: ', menus)
 
-	total_elements = menus.count()
+    total_elements = menus.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	menus = pagination.paginate_data(menus)
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    menus = pagination.paginate_data(menus)
 
-	serializer = CMSMenuListSerializer(menus, many=True)
+    serializer = CMSMenuListSerializer(menus, many=True)
 
-	response = {
-		'menus': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
+    response = {
+        'menus': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
 
-	return Response(response, status=status.HTTP_200_OK)
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=CMSMenuSerializer,
-	responses=CMSMenuListSerializer
+    request=CMSMenuSerializer,
+    responses=CMSMenuListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenuWithoutPagination(request):
-	menus = CMSMenu.objects.all()
-	print('menus: ', menus)
+    menus = CMSMenu.objects.all()
+    print('menus: ', menus)
 
-	serializer = CMSMenuMinimalSerializer(menus, many=True)
+    serializer = CMSMenuMinimalSerializer(menus, many=True)
 
-	response = {
-		'menus': serializer.data,
-	}
+    response = {
+        'menus': serializer.data,
+    }
 
-	return Response(response, status=status.HTTP_200_OK)
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=CMSMenuSerializer,
-	responses=CMSMenuListSerializer
+    request=CMSMenuSerializer,
+    responses=CMSMenuListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
+
 def getAllNestedCMSMenu(request):
-	response_list = list()
 
-	menus = CMSMenu.objects.filter(parent__isnull=True).order_by('position')
-	print('menus: ', menus)
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	serializer = CMSMenuNestedSerializer(menus, many=True)
+    # menus = CMSMenu.objects.filter(parent__isnull=True).order_by('position')
+    # print('menus: ', menus)
 
-	response = {
-		'menus': serializer.data,
-	}
+    children_qs = CMSMenu.objects.all().order_by('position')
+    menus = CMSMenu.objects.filter(parent__isnull=True).prefetch_related(
+        Prefetch('children', queryset=children_qs)
+    ).order_by('position')
 
-	return Response(response, status=status.HTTP_200_OK)
+    total_elements = menus.count()
+
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    menus = pagination.paginate_data(menus)
+
+    serializer = CMSMenuNestedSerializer(menus, many=True)
+
+
+
+
+    response = {
+        'menus': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements' : total_elements,
+    }
+
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=CMSMenuListSerializer,
-	responses=CMSMenuListSerializer
+    request=CMSMenuListSerializer,
+    responses=CMSMenuListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenuContentAndImageByMenuId(request, menu_id):
-	# menu_items = CMSMenuContent.objects.filter(cms_menu=cms_menu_id)
-	with connection.cursor() as cursor:
-		cursor.execute('''
-						select 
-							cms_menu_id AS cms_menu,
-							json_object_agg(name, value) AS data
-							from cms_cmsmenucontent where cms_menu_id=%s
-							group by cms_menu_id
-							order by cms_menu_id;
-						''', [menu_id])
-		content_row = cursor.fetchone()
-		print('content_row: ', content_row)
-		print('content_row type: ', type(content_row))
+    # menu_items = CMSMenuContent.objects.filter(cms_menu=cms_menu_id)
+    with connection.cursor() as cursor:
+        cursor.execute('''
+                        select 
+                            cms_menu_id AS cms_menu,
+                            json_object_agg(name, value) AS data
+                            from cms_cmsmenucontent where cms_menu_id=%s
+                            group by cms_menu_id
+                            order by cms_menu_id;
+                        ''', [menu_id])
+        content_row = cursor.fetchone()
+        print('content_row: ', content_row)
+        print('content_row type: ', type(content_row))
 
-	menu_contents = []
-	if type(content_row) == tuple:
-		menu_contents = content_row[1]
+    menu_contents = []
+    if type(content_row) == tuple:
+        menu_contents = content_row[1]
 
-	with connection.cursor() as cursor:
-		cursor.execute('''
-			select
-			json_object_agg(
-				head,
-				case
-				when array_length(image,1)=1 then to_json(image[1])
-				else to_json(image)
-				end)
-			from (
-			select head, array_agg(image) as image
-			from cms_cmsmenucontentimage where cms_menu_id=%s
-			group by head) as x;
-						''', [menu_id])
-		image_row = cursor.fetchall()
-		print('image_row: ', image_row)
-		print('image_row type: ', type(image_row))
+    with connection.cursor() as cursor:
+        cursor.execute('''
+            select
+            json_object_agg(
+                head,
+                case
+                when array_length(image,1)=1 then to_json(image[1])
+                else to_json(image)
+                end)
+            from (
+            select head, array_agg(image) as image
+            from cms_cmsmenucontentimage where cms_menu_id=%s
+            group by head) as x;
+                        ''', [menu_id])
+        image_row = cursor.fetchall()
+        print('image_row: ', image_row)
+        print('image_row type: ', type(image_row))
 
-	content_images = []
-	if type(image_row) == tuple:
-		content_images = image_row[0]
+    content_images = []
+    if type(image_row) == tuple:
+        content_images = image_row[0]
 
 
-	response = {
-	'menu_contents': menu_contents,
-	'content_images': content_images,
+    response = {
+    'menu_contents': menu_contents,
+    'content_images': content_images,
 
-	}
+    }
 
-	return Response(response, status=status.HTTP_200_OK)
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
@@ -194,12 +217,12 @@ def getAllCMSMenuContentAndImageByMenuId(request, menu_id):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getACMSMenu(request, pk):
-	try:
-		menu = CMSMenu.objects.get(pk=pk)
-		serializer = CMSMenuSerializer(menu)
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenu id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        menu = CMSMenu.objects.get(pk=pk)
+        serializer = CMSMenuSerializer(menu)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"CMSMenu id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -209,28 +232,28 @@ def getACMSMenu(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
 def createCMSMenu(request):
-	data = request.data
-	sender_id = request.user.id
-	print('data: ', data)
-	print('content_type: ', request.content_type)
-	
-	filtered_data = {}
+    data = request.data
+    sender_id = request.user.id
+    print('data: ', data)
+    print('content_type: ', request.content_type)
+    
+    filtered_data = {}
 
-	for key, value in data.items():
-		if value != '' and value != 0 and value != '0':
-			filtered_data[key] = value
+    for key, value in data.items():
+        if value != '' and value != 0 and value != '0':
+            filtered_data[key] = value
 
-	filtered_data['sender'] = sender_id
+    filtered_data['sender'] = sender_id
 
-	print('filtered_data: ', filtered_data)
+    print('filtered_data: ', filtered_data)
 
-	serializer = CMSMenuSerializer(data=filtered_data)
+    serializer = CMSMenuSerializer(data=filtered_data)
 
-	if serializer.is_valid():
-		serializer.save()
-		return Response(serializer.data)
-	else:
-		return Response(serializer.errors)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    else:
+        return Response(serializer.errors)
 
 
 
@@ -240,35 +263,35 @@ def createCMSMenu(request):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
 def updateCMSMenu(request, pk):
-	data = request.data
-	print('data :', data)
-	filtered_data = {}
+    data = request.data
+    print('data :', data)
+    filtered_data = {}
 
-	try:
-		menu_obj = CMSMenu.objects.get(pk=pk)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"Product id - {pk} doesn't exists"})
+    try:
+        menu_obj = CMSMenu.objects.get(pk=pk)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"Product id - {pk} doesn't exists"})
 
-	for key, value in data.items():
-		if value != '' and value != '0':
-			filtered_data[key] = value
+    for key, value in data.items():
+        if value != '' and value != '0':
+            filtered_data[key] = value
 
-	print('filtered_data: ', filtered_data)
-		
-	logo = filtered_data.get('logo', None)
-	favicon = filtered_data.get('favicon', None)
+    print('filtered_data: ', filtered_data)
+        
+    logo = filtered_data.get('logo', None)
+    favicon = filtered_data.get('favicon', None)
 
-	if logo is not None and type(logo) == str:
-		popped_logo = filtered_data.pop('logo')
-	if favicon is not None and type(favicon) == str:
-		popped_favicon = filtered_data.pop('favicon')
+    if logo is not None and type(logo) == str:
+        popped_logo = filtered_data.pop('logo')
+    if favicon is not None and type(favicon) == str:
+        popped_favicon = filtered_data.pop('favicon')
 
-	serializer = CMSMenuSerializer(menu_obj, data=filtered_data)
-	if serializer.is_valid():
-		serializer.save()
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	else:
-		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    serializer = CMSMenuSerializer(menu_obj, data=filtered_data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -278,11 +301,11 @@ def updateCMSMenu(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
 def deleteCMSMenu(request, pk):
-	try:
-		menu = CMSMenu.objects.get(pk=pk)
-		menu.delete()
-		return Response({'detail': f'CMSMenu id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenu id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        menu = CMSMenu.objects.get(pk=pk)
+        menu.delete()
+        return Response({'detail': f'CMSMenu id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"CMSMenu id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 

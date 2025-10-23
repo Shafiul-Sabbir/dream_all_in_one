@@ -1,0 +1,158 @@
+[
+  {
+    "model": "cms.cmsmenu",
+    "pk": 1,
+    "fields": {
+      "parent": null,
+      "name": "Home",
+      "position": 1,
+      "created_at": "2023-12-24T09:40:52.546Z",
+      "updated_at": "2025-01-21T07:05:20.309Z",
+      "created_by": 1,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 2,
+    "fields": {
+      "parent": null,
+      "name": "About Us",
+      "position": 300,
+      "created_at": "2023-12-24T09:41:23.277Z",
+      "updated_at": "2024-02-13T16:36:36.557Z",
+      "created_by": 1,
+      "updated_by": 2
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 4,
+    "fields": {
+      "parent": null,
+      "name": "Destinations",
+      "position": 2,
+      "created_at": "2023-12-24T09:41:56.470Z",
+      "updated_at": "2024-01-28T07:49:20.410Z",
+      "created_by": 1,
+      "updated_by": 2
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 5,
+    "fields": {
+      "parent": 4,
+      "name": "France",
+      "position": 13,
+      "created_at": "2023-12-24T09:44:42.799Z",
+      "updated_at": "2023-12-24T09:52:59.729Z",
+      "created_by": 1,
+      "updated_by": 1
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 6,
+    "fields": {
+      "parent": 4,
+      "name": "Belgium",
+      "position": 12,
+      "created_at": "2023-12-24T09:44:57.127Z",
+      "updated_at": "2023-12-24T09:52:50.648Z",
+      "created_by": 1,
+      "updated_by": 1
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 7,
+    "fields": {
+      "parent": 4,
+      "name": "Italy",
+      "position": 11,
+      "created_at": "2023-12-24T09:45:08.976Z",
+      "updated_at": "2023-12-24T09:52:38.908Z",
+      "created_by": 1,
+      "updated_by": 1
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 9,
+    "fields": {
+      "parent": 4,
+      "name": "Germany",
+      "position": 14,
+      "created_at": "2023-12-24T09:54:13.971Z",
+      "updated_at": "2023-12-24T09:54:13.974Z",
+      "created_by": 1,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 10,
+    "fields": {
+      "parent": 4,
+      "name": "Switzerland",
+      "position": 15,
+      "created_at": "2023-12-24T09:54:51.610Z",
+      "updated_at": "2023-12-24T09:54:51.613Z",
+      "created_by": 1,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 11,
+    "fields": {
+      "parent": 4,
+      "name": "Netherlands",
+      "position": 16,
+      "created_at": "2023-12-24T09:55:32.844Z",
+      "updated_at": "2023-12-24T09:55:32.847Z",
+      "created_by": 1,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 12,
+    "fields": {
+      "parent": null,
+      "name": "Tours",
+      "position": 100,
+      "created_at": "2023-12-25T10:00:37.173Z",
+      "updated_at": "2024-02-13T16:35:49.307Z",
+      "created_by": 1,
+      "updated_by": 2
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 13,
+    "fields": {
+      "parent": null,
+      "name": "Blogs",
+      "position": 301,
+      "created_at": "2024-04-24T09:00:55.186Z",
+      "updated_at": "2024-04-24T09:01:37.500Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenu",
+    "pk": 15,
+    "fields": {
+      "parent": null,
+      "name": "Things to do",
+      "position": 1000,
+      "created_at": "2025-03-17T08:30:34.059Z",
+      "updated_at": "2025-03-17T08:30:34.150Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  }
+]

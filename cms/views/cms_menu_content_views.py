@@ -1,3 +1,4 @@
+import os
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import connection
 from django.db.models import Q
@@ -21,8 +22,6 @@ from commons.enums import PermissionEnum
 import datetime
 
 
-
-
 # Create your views here.
 
 @extend_schema(
@@ -36,8 +35,17 @@ import datetime
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
+
 def getAllCMSMenuContent(request):
-	menu_items = CMSMenuContent.objects.all()
+	# menu_items = CMSMenuContent.objects.all() # response time 100ms for 43 queries
+
+	menu_items = CMSMenuContent.objects.select_related('created_by', 'updated_by', 'cms_menu').prefetch_related(
+        'cms_menu__cms_menu_content_images'  # reverse relation from CMSMenuContentImage
+    	) 
+	# response time 40ms for 14 queries
+
+	# menu_items = CMSMenuContent.objects.select_related('created_by', 'updated_by', 'cms_menu')
+	# response time 37 ms for 13 queries
 	total_elements = menu_items.count()
 
 	page = request.query_params.get('page')
@@ -52,15 +60,13 @@ def getAllCMSMenuContent(request):
 	serializer = CMSMenuContentListSerializer(menu_items, many=True)
 
 	response = {
+		'total_elements': total_elements,
 		'menu_items': serializer.data,
 		'page': pagination.page,
 		'size': pagination.size,
 		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
 	}
 	return Response(response, status=status.HTTP_200_OK)
-
-
 
 
 @extend_schema(
@@ -130,13 +136,14 @@ def getAllCMSMenuContentByCMSMenuId(request, menu_id):
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def getACMSMenuContent(request, pk):
+def getACMSMenuContent(request,pk):
+	
 	try:
 		menu_item = CMSMenuContent.objects.get(pk=pk)
 		serializer = CMSMenuContentSerializer(menu_item)
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenuContent id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+		return Response({'detail': f"CMSMenuContent name - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -181,8 +188,6 @@ def updateCMSMenuContent(request, pk):
 	
 
 
-
-
 @extend_schema(request=CMSMenuContentSerializer, responses=CMSMenuContentSerializer)
 @api_view(['DELETE'])
 # @permission_classes([IsAuthenticated])
@@ -202,10 +207,23 @@ def deleteCMSMenuContent(request, pk):
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def getCMSMenuContentByCMSMenyID(request, pk):
+
+def getCMSMenuContentByCMSMenuID(request, pk):
 	try:
-		main_menu = CMSMenu.objects.get(pk=pk)
-		menu_contents = CMSMenuContent.objects.filter(cms_menu=main_menu)
+		main_menu = CMSMenu.objects.get(pk=pk) 
+		# menu_contents = CMSMenuContent.objects.filter(cms_menu=main_menu) # response time 13ms for 2 queries
+		# menu_contents = CMSMenuContent.objects.filter(cms_menu=main_menu).select_related('created_by', 'updated_by', 'cms_menu').prefetch_related(
+        # 'cms_menu__cms_menu_content_images'  # reverse relation from CMSMenuContentImage
+    	# )
+		""" 
+		CMSMenuContentSerializer er moddhe 'get_cloudflare_image' method ta call kora nai, tai ai serializer tai 
+		amara use korbo, 'get_cloudflare_image' method er moddhe CMSMenuContentImage k niye kaj kora ase, 
+		tai amra amader query er vitor theke reverse relation er part tuku maane prefetch_related er part tuku 
+		baad dite pari. ete amader query o akta kom lagtese, response time o kisu komtese. large dataset e 
+		aitar optimization ta bujha jabe.  
+		 """
+		
+		menu_contents = CMSMenuContent.objects.filter(cms_menu=main_menu).select_related('created_by', 'updated_by', 'cms_menu')
 		serializer = CMSMenuContentSerializer(menu_contents, many=True)
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:
@@ -216,10 +234,10 @@ def getCMSMenuContentByCMSMenyID(request, pk):
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def get_menu_content_by_name(request,content_name,menu_name='Ziarah'):
+def get_menu_content_by_name(request,content_name,menu_name='Home'):
     try:
         menu = CMSMenu.objects.get(name=menu_name)
-        menu_content = CMSMenuContent.objects.filter(name=content_name, cms_menu=menu).first()
+        menu_content = CMSMenuContent.objects.filter(slug=content_name, cms_menu=menu).first()
 
         if menu_content:
             serializer = CMSMenuContentSerializer(menu_content)
@@ -231,4 +249,26 @@ def get_menu_content_by_name(request,content_name,menu_name='Ziarah'):
         return Response({'detail': f"CMSMenu with name '{menu_name}' does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
 
-
+@extend_schema(request=CMSMenuContentSerializer, responses=CMSMenuContentSerializer)
+@api_view(['GET'])
+def getCMSMenuContentByCMSMenuName(request, menu_name):
+    try:
+       
+        main_menu = CMSMenu.objects.get(name__icontains=menu_name)
+        
+   
+        menu_contents = CMSMenuContent.objects.filter(cms_menu=main_menu)
+        
+   
+        serializer = CMSMenuContentSerializer(menu_contents, many=True)
+        
+ 
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    except CMSMenu.DoesNotExist:
+       
+        return Response({'detail': f"CMSMenu with menu_name '{menu_name}' does not exist"}, status=status.HTTP_404_NOT_FOUND)
+    
+    except Exception as e:
+     
+        return Response({'detail': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

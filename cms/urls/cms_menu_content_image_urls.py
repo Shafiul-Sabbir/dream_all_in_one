@@ -10,10 +10,13 @@ urlpatterns = [
 	path('api/v1/cms_menu_content_image/without_pagination/all/', views.getAllContentImageWP),
 
 	path('api/v1/get_all_cms_menu_content_image_by_cms_menu_id/<int:menu_id>', views.getAllContentImageByMenuId),
-
+    
+	# have to optimize it , present response time is 1ms for 0 queries
 	path('api/v1/get_all_cms_menu_content_image_list_by_cms_menu_id/<int:menu_id>', views.getAllContentImageListByMenuId),
+	# There is nothing to change to notice a significant performance improvement. it has used direct sql query, 
+	# not any django ORM. so it is now in its optimal state.
 
-	path('api/v1/cms_menu_content_image/<int:pk>', views.getACMSMenuContentImage),
+	path('api/v1/cms_menu_content_image/<str:image_name>', views.getACMSMenuContentImageByContentTitle),
 
 	path('api/v1/cms_menu_content_image/create/', views.createCMSMenuContentImage),
 

@@ -1,16 +1,16 @@
-
 from django.urls import path
-
 from cms.views import cms_menu_views as views
-
 
 urlpatterns = [
 	path('api/v1/cms_menu/all/', views.getAllCMSMenu),
 
 	path('api/v1/cms_menu/without_pagination/all/', views.getAllCMSMenuWithoutPagination),
 
+	# have to optimize it, response time is 40ms and 15 queries.
 	path('api/v1/cms_menu/get_all_nested_cms_menu/', views.getAllNestedCMSMenu),
-
+	# after using prefetch_related on children, present response time is 22ms and 10 queries.
+    # used indexing on 'parent' field for optimizing responses from large datasets.
+    
 	path('api/v1/cms_menu/get_all_menu_content_and_image_by_cms_menu_id/<int:menu_id>', views.getAllCMSMenuContentAndImageByMenuId),
 
 	path('api/v1/cms_menu/<int:pk>', views.getACMSMenu),

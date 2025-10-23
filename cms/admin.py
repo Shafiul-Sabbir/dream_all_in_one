@@ -44,3 +44,34 @@ class ItineraryAdmin(admin.ModelAdmin):
 
 	list_display = [field.name for field in Itinerary._meta.fields]
 
+
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+
+	list_display = [field.name for field in Blog._meta.fields]
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+
+	list_display = [field.name for field in Tag._meta.fields]
+
+@admin.register(BlogComments)
+class BlogCommentsAdmin(admin.ModelAdmin):
+
+	list_display = [field.name for field in BlogComments._meta.fields]
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+
+	list_display = [field.name for field in Review._meta.fields]
+
+@admin.register(MetaData)
+class MetaDataAdmin(admin.ModelAdmin):
+
+	list_display = [field.name for field in MetaData._meta.fields]
+
+@admin.register(BlogCategory)
+class BlogCategoryAdmin(admin.ModelAdmin):
+
+	list_display = [field.name for field in BlogCategory._meta.fields]
+
