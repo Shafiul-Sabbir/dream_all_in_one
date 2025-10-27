@@ -41,12 +41,12 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 class AdminLoginView(APIView):
     def post(self, request):
-        username = request.data.get("username")
+        login_input = request.data.get("username")
         password = request.data.get("password")
 
         # Q object দিয়ে email OR primary_phone match
         user = User.objects.filter(
-            Q(email=username) | Q(primary_phone=username)
+            Q(email=login_input) | Q(username=login_input)
         ).first()
 
         if not user:
@@ -59,7 +59,7 @@ class AdminLoginView(APIView):
             return Response({"detail": "This user has no role."})
         
         # Authenticate with actual password check
-        user = authenticate(request, username=user.email, password=password)
+        user = authenticate(request, login_input=login_input, password=password)
         if not user:
             return Response({"detail": "You gave Invalid password for this Admin"}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -69,13 +69,13 @@ class AdminLoginView(APIView):
 
 class LoginView(APIView):
     def post(self, request):
-        username = request.data.get("username")
+        login_input = request.data.get("username")
         password = request.data.get("password")
 
-        print("username:", username)
+        print("username:", login_input)
         print("password:", password)
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, login_input=login_input, password=password)
         if user is None:
             return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 

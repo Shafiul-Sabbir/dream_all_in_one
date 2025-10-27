@@ -58,8 +58,8 @@ class Permission(models.Model):
 
 
 class Role(models.Model):
-    old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    old_id = models.IntegerField(null=True, blank=True) # Removed to avoid confusion with global roles
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE) # Removed to make roles global across companies    
 
     name = models.CharField(max_length=255)
     permissions = models.ManyToManyField(Permission, blank=True)
