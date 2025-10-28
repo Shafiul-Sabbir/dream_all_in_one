@@ -92,42 +92,43 @@ class CMSMenuContent(models.Model):
     def __str__(self):
         return self.name
 
-    # def save(self, *args, **kwargs):
-    #     if self.name:
-    #         if self.type == 'Tours':
-    #             # Replace special characters (except hyphens) with hyphens
-    #             clean_name = re.sub(r'[^\w\s-]', '-', self.name)
+    # comment the save method while entering the data by script.
+    def save(self, *args, **kwargs):
+        if self.name:
+            if self.type == 'Tours':
+                # Replace special characters (except hyphens) with hyphens
+                clean_name = re.sub(r'[^\w\s-]', '-', self.name)
 
-    #             # Replace spaces with hyphens
-    #             clean_name = re.sub(r'\s+', '-', clean_name)
+                # Replace spaces with hyphens
+                clean_name = re.sub(r'\s+', '-', clean_name)
 
-    #             # Convert to lowercase
-    #             clean_name = clean_name.lower()
+                # Convert to lowercase
+                clean_name = clean_name.lower()
 
-    #             # Replace multiple consecutive hyphens with a single hyphen
-    #             clean_name = re.sub(r'-{2,}', '-', clean_name)
+                # Replace multiple consecutive hyphens with a single hyphen
+                clean_name = re.sub(r'-{2,}', '-', clean_name)
 
-    #             # Strip leading and trailing hyphens
-    #             clean_name = clean_name.strip('-')
+                # Strip leading and trailing hyphens
+                clean_name = clean_name.strip('-')
 
-    #             slug = clean_name
-    #             counter = 1
+                slug = clean_name
+                counter = 1
 
-    #             # Ensure slug uniqueness
-    #             while CMSMenuContent.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-    #                 slug = f"{clean_name}-{counter}"
-    #                 counter += 1
+                # Ensure slug uniqueness
+                while CMSMenuContent.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+                    slug = f"{clean_name}-{counter}"
+                    counter += 1
 
-    #             self.slug = slug
+                self.slug = slug
 
-    #     # Handle updated_by and created_by fields
-    #     if not self.pk:  # If it's a new record
-    #         self.created_by = kwargs.pop('user', None)
-    #     else:
-    #         self.updated_by = kwargs.pop('user', None)
+        # Handle updated_by and created_by fields
+        if not self.pk:  # If it's a new record
+            self.created_by = kwargs.pop('user', None)
+        else:
+            self.updated_by = kwargs.pop('user', None)
 
-    #     # Call the parent class save method
-    #     super().save(*args, **kwargs)
+        # Call the parent class save method
+        super().save(*args, **kwargs)
 
 
 class CMSMenuContentImage(models.Model):
@@ -139,7 +140,7 @@ class CMSMenuContentImage(models.Model):
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -153,33 +154,33 @@ class CMSMenuContentImage(models.Model):
     def __str__(self):
         return self.head
         
-    def save(self, *args, **kwargs):
-        if self.image:
-            try:
-                self.cloudflare_image = self.upload_cloudflare()
-                print("Cloudflare image URL:", self.cloudflare_image)
-            except Exception as e:
-                print(f"Error uploading image to Cloudflare: {str(e)}")
-        super().save(*args, **kwargs)
-    def upload_cloudflare(self):
-        endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
-        headers = {
-            'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
-        }
-        files = {
-            'file': self.image.file
-        }
-        response = requests.post(endpoint, headers=headers, files=files)
-        response.raise_for_status()
-        json_data = response.json()
-        variants = json_data.get('result', {}).get('variants', [])
-        if variants:
-            cloudflare_image = variants[0]  # Use the first variant URL
-            print("Cloudflare image URL from response:", cloudflare_image)
-            return cloudflare_image
-        else:
-            print("No variants found in the Cloudflare response")
-            return None
+    # def save(self, *args, **kwargs):
+    #     if self.image:
+    #         try:
+    #             self.cloudflare_image = self.upload_cloudflare()
+    #             print("Cloudflare image URL:", self.cloudflare_image)
+    #         except Exception as e:
+    #             print(f"Error uploading image to Cloudflare: {str(e)}")
+    #     super().save(*args, **kwargs)
+    # def upload_cloudflare(self):
+    #     endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
+    #     headers = {
+    #         'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
+    #     }
+    #     files = {
+    #         'file': self.image.file
+    #     }
+    #     response = requests.post(endpoint, headers=headers, files=files)
+    #     response.raise_for_status()
+    #     json_data = response.json()
+    #     variants = json_data.get('result', {}).get('variants', [])
+    #     if variants:
+    #         cloudflare_image = variants[0]  # Use the first variant URL
+    #         print("Cloudflare image URL from response:", cloudflare_image)
+    #         return cloudflare_image
+    #     else:
+    #         print("No variants found in the Cloudflare response")
+    #         return None
  
 #add this
 class Itinerary(models.Model):
@@ -193,7 +194,7 @@ class Itinerary(models.Model):
     lat = models.FloatField(max_length=1000, null=True, blank=True)
     lng = models.FloatField(max_length=1000, null=True, blank=True)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
+    created_at = models.DateTimeField(null=True)
     updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -322,7 +323,7 @@ class BlogCategory(models.Model):
 
     name = models.CharField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
+    created_at = models.DateTimeField(null=True)
     updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -362,7 +363,7 @@ class Blog(models.Model):
     faq_content = models.TextField(null=True,blank=True)
     is_published = models.BooleanField(default=False)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
+    created_at = models.DateTimeField(null=True)
     updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -375,87 +376,87 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
-    def save(self, *args, **kwargs):
-        # Auto-generate slug from title, but now its commenting out for new requirements.
-        # if self.title:
-        #     # Replace special characters (except hyphens) with hyphens
-        #     clean_title = re.sub(r'[^\w\s-]', '-', self.title)
+    # def save(self, *args, **kwargs):
+    #     # Auto-generate slug from title, but now its commenting out for new requirements.
+    #     # if self.title:
+    #     #     # Replace special characters (except hyphens) with hyphens
+    #     #     clean_title = re.sub(r'[^\w\s-]', '-', self.title)
 
-        #     # Replace spaces with hyphens
-        #     clean_title = re.sub(r'\s+', '-', clean_title)
+    #     #     # Replace spaces with hyphens
+    #     #     clean_title = re.sub(r'\s+', '-', clean_title)
 
-        #     # Convert to lowercase
-        #     clean_title = clean_title.lower()
+    #     #     # Convert to lowercase
+    #     #     clean_title = clean_title.lower()
 
-        #     # Replace multiple consecutive hyphens with a single hyphen
-        #     clean_title = re.sub(r'-{2,}', '-', clean_title)
+    #     #     # Replace multiple consecutive hyphens with a single hyphen
+    #     #     clean_title = re.sub(r'-{2,}', '-', clean_title)
 
-        #     # Strip leading and trailing hyphens
-        #     clean_title = clean_title.strip('-')
+    #     #     # Strip leading and trailing hyphens
+    #     #     clean_title = clean_title.strip('-')
 
-        #     slug = clean_title
-        #     counter = 1
+    #     #     slug = clean_title
+    #     #     counter = 1
 
-        #     # Ensure slug uniqueness
-        #     while Blog.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-        #         slug = f"{clean_title}-{counter}"
-        #         counter += 1
+    #     #     # Ensure slug uniqueness
+    #     #     while Blog.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+    #     #         slug = f"{clean_title}-{counter}"
+    #     #         counter += 1
 
-        #     self.slug = slug
+    #     #     self.slug = slug
 
-        # Handle updated_by and created_by fields
-        if not self.pk:  # If it's a new record
-            self.created_by = kwargs.pop('user', None)
-        else:
-            self.updated_by = kwargs.pop('user', None)
+    #     # Handle updated_by and created_by fields
+    #     if not self.pk:  # If it's a new record
+    #         self.created_by = kwargs.pop('user', None)
+    #     else:
+    #         self.updated_by = kwargs.pop('user', None)
 
-        if self.image:
-            try:
-                self.cloudflare_image = self.upload_to_cloudflare(self.image)
-                print("Cloudflare image URL:", self.cloudflare_image)
-            except Exception as e:
-                print(f"Error uploading image to Cloudflare: {str(e)}")
+    #     if self.image:
+    #         try:
+    #             self.cloudflare_image = self.upload_to_cloudflare(self.image)
+    #             print("Cloudflare image URL:", self.cloudflare_image)
+    #         except Exception as e:
+    #             print(f"Error uploading image to Cloudflare: {str(e)}")
 
-        # Upload meta image to Cloudflare
-        if self.meta_image:
-            try:
-                self.meta_image_cloudflare = self.upload_to_cloudflare(self.meta_image)
-                print("Cloudflare meta image URL:", self.meta_image_cloudflare)
-            except Exception as e:
-                print(f"Error uploading meta image to Cloudflare: {str(e)}")
+    #     # Upload meta image to Cloudflare
+    #     if self.meta_image:
+    #         try:
+    #             self.meta_image_cloudflare = self.upload_to_cloudflare(self.meta_image)
+    #             print("Cloudflare meta image URL:", self.meta_image_cloudflare)
+    #         except Exception as e:
+    #             print(f"Error uploading meta image to Cloudflare: {str(e)}")
 
-        if self.fb_meta_image:
-            try:
-                self.fb_meta_image_cloudflare = self.upload_to_cloudflare(self.fb_meta_image)
-                print("Cloudflare fb_meta image URL:", self.fb_meta_image_cloudflare)
-            except Exception as e:
-                print(f"Error uploading fb_meta image to Cloudflare: {str(e)}")
+    #     if self.fb_meta_image:
+    #         try:
+    #             self.fb_meta_image_cloudflare = self.upload_to_cloudflare(self.fb_meta_image)
+    #             print("Cloudflare fb_meta image URL:", self.fb_meta_image_cloudflare)
+    #         except Exception as e:
+    #             print(f"Error uploading fb_meta image to Cloudflare: {str(e)}")
 
-        # Save the instance
-        super().save(*args, **kwargs)
+    #     # Save the instance
+    #     super().save(*args, **kwargs)
 
-    def upload_to_cloudflare(self, image_field):
-        """
-        Upload an image to Cloudflare and return the URL of the uploaded image.
-        """
-        endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
-        headers = {
-            'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
-        }
-        files = {
-            'file': image_field.file
-        }
-        response = requests.post(endpoint, headers=headers, files=files)
-        response.raise_for_status()
-        json_data = response.json()
-        variants = json_data.get('result', {}).get('variants', [])
-        if variants:
-            cloudflare_image_url = variants[0]  # Use the first variant URL
-            print("Cloudflare image URL from response:", cloudflare_image_url)
-            return cloudflare_image_url
-        else:
-            print("No variants found in the Cloudflare response")
-            return None
+    # def upload_to_cloudflare(self, image_field):
+    #     """
+    #     Upload an image to Cloudflare and return the URL of the uploaded image.
+    #     """
+    #     endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
+    #     headers = {
+    #         'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
+    #     }
+    #     files = {
+    #         'file': image_field.file
+    #     }
+    #     response = requests.post(endpoint, headers=headers, files=files)
+    #     response.raise_for_status()
+    #     json_data = response.json()
+    #     variants = json_data.get('result', {}).get('variants', [])
+    #     if variants:
+    #         cloudflare_image_url = variants[0]  # Use the first variant URL
+    #         print("Cloudflare image URL from response:", cloudflare_image_url)
+    #         return cloudflare_image_url
+    #     else:
+    #         print("No variants found in the Cloudflare response")
+    #         return None
 
 
 class BlogComments(models.Model):
@@ -468,7 +469,7 @@ class BlogComments(models.Model):
     comment_des = models.TextField()
     phn_num = models.CharField(blank=True, max_length=50, null=True)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -499,7 +500,7 @@ class Review(models.Model):
     publication = models.CharField(max_length=500, null=True, blank=True)
     url = models.URLField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
@@ -512,33 +513,33 @@ class Review(models.Model):
     def __str__(self):
         return self.title
         
-    def save(self, *args, **kwargs):
-        if self.image:
-            try:
-                self.cloudflare_image = self.upload_cloudflare()
-                print("Cloudflare image URL:", self.cloudflare_image)
-            except Exception as e:
-                print(f"Error uploading image to Cloudflare: {str(e)}")
-        super().save(*args, **kwargs)
-    def upload_cloudflare(self):
-        endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
-        headers = {
-            'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
-        }
-        files = {
-            'file': self.image.file
-        }
-        response = requests.post(endpoint, headers=headers, files=files)
-        response.raise_for_status()
-        json_data = response.json()
-        variants = json_data.get('result', {}).get('variants', [])
-        if variants:
-            cloudflare_image = variants[0]  # Use the first variant URL
-            print("Cloudflare image URL from response:", cloudflare_image)
-            return cloudflare_image
-        else:
-            print("No variants found in the Cloudflare response")
-            return None
+    # def save(self, *args, **kwargs):
+    #     if self.image:
+    #         try:
+    #             self.cloudflare_image = self.upload_cloudflare()
+    #             print("Cloudflare image URL:", self.cloudflare_image)
+    #         except Exception as e:
+    #             print(f"Error uploading image to Cloudflare: {str(e)}")
+    #     super().save(*args, **kwargs)
+    # def upload_cloudflare(self):
+    #     endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
+    #     headers = {
+    #         'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
+    #     }
+    #     files = {
+    #         'file': self.image.file
+    #     }
+    #     response = requests.post(endpoint, headers=headers, files=files)
+    #     response.raise_for_status()
+    #     json_data = response.json()
+    #     variants = json_data.get('result', {}).get('variants', [])
+    #     if variants:
+    #         cloudflare_image = variants[0]  # Use the first variant URL
+    #         print("Cloudflare image URL from response:", cloudflare_image)
+    #         return cloudflare_image
+    #     else:
+    #         print("No variants found in the Cloudflare response")
+    #         return None
 
 
 
@@ -552,7 +553,7 @@ class MetaData(models.Model):
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     slug = models.SlugField(max_length=500, unique=True, null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
+    created_at = models.DateTimeField(null=True)
     updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -565,46 +566,46 @@ class MetaData(models.Model):
     def __str__(self):
         return f"{self.meta_title}"
     
-    def save(self, *args, **kwargs):
-        # Auto-generate slug from meta_title
-        if self.meta_title:
-            # Replace special characters (except hyphens) with hyphens
-            clean_title = re.sub(r'[^\w\s-]', '-', self.meta_title)
+    # def save(self, *args, **kwargs):
+    #     # Auto-generate slug from meta_title
+    #     if self.meta_title:
+    #         # Replace special characters (except hyphens) with hyphens
+    #         clean_title = re.sub(r'[^\w\s-]', '-', self.meta_title)
 
-            # Replace spaces with hyphens
-            clean_title = re.sub(r'\s+', '-', clean_title)
+    #         # Replace spaces with hyphens
+    #         clean_title = re.sub(r'\s+', '-', clean_title)
 
-            # Convert to lowercase
-            clean_title = clean_title.lower()
+    #         # Convert to lowercase
+    #         clean_title = clean_title.lower()
 
-            # Replace multiple consecutive hyphens with a single hyphen
-            clean_title = re.sub(r'-{2,}', '-', clean_title)
+    #         # Replace multiple consecutive hyphens with a single hyphen
+    #         clean_title = re.sub(r'-{2,}', '-', clean_title)
 
-            # Strip leading and trailing hyphens
-            clean_title = clean_title.strip('-')
+    #         # Strip leading and trailing hyphens
+    #         clean_title = clean_title.strip('-')
 
-            slug = clean_title
-            counter = 1
+    #         slug = clean_title
+    #         counter = 1
 
-            # Ensure slug uniqueness
-            while MetaData.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-                slug = f"{clean_title}-{counter}"
-                counter += 1
+    #         # Ensure slug uniqueness
+    #         while MetaData.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+    #             slug = f"{clean_title}-{counter}"
+    #             counter += 1
 
-            self.slug = slug
+    #         self.slug = slug
 
-        # Handle updated_by and created_by fields
-        if not self.pk:  # If it's a new record
-            self.created_by = kwargs.pop('user', None)
-        else:
-            self.updated_by = kwargs.pop('user', None)
+    #     # Handle updated_by and created_by fields
+    #     if not self.pk:  # If it's a new record
+    #         self.created_by = kwargs.pop('user', None)
+    #     else:
+    #         self.updated_by = kwargs.pop('user', None)
 
-        # Call the parent class save method
-        super().save(*args, **kwargs)
+    #     # Call the parent class save method
+    #     super().save(*args, **kwargs)
 
-        # Signal to handle image upload (if any)
-        if self.image:
-            image_upload_signal.send(sender=self.__class__, instance=self)
+    #     # Signal to handle image upload (if any)
+    #     if self.image:
+    #         image_upload_signal.send(sender=self.__class__, instance=self)
 
 
 agent = None
