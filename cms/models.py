@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 import requests
 
-from authentication.models import Country
+from authentication.models import Country, Company
 from .signals import image_upload_signal,contact_created,subscription_created
 import re
 from django.utils.text import slugify
@@ -13,12 +13,15 @@ from django.core.files.base import ContentFile
 # Create your models here.
 
 class CMSMenu(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     parent = models.ForeignKey('self', on_delete=models.PROTECT, related_name='children', null=True, blank=True)
     name = models.CharField(max_length=255)
-    position = models.IntegerField(unique=True, null=True, blank=True)
+    position = models.IntegerField(null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -38,8 +41,11 @@ class CMSMenu(models.Model):
 
 
 class CMSMenuContent(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cms_menu = models.ForeignKey(CMSMenu, on_delete=models.PROTECT, related_name='cms_menu_contents', db_index=True)
-    name = models.CharField(max_length=1000,unique=False,null=True,blank=True)
+    name = models.CharField(max_length=1000,null=True,blank=True)
     position = models.IntegerField(null=True, blank=True)
     order = models.IntegerField(null=True, blank=True)
     value = models.TextField(null=True,blank=True)
@@ -58,7 +64,7 @@ class CMSMenuContent(models.Model):
     trip_url = models.CharField(max_length=10000, null=True, blank=True)
     price = models.CharField(max_length=100, null=True, blank=True)
     category = models.CharField(max_length=200, null=True, blank=True)
-    slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    slug = models.SlugField(max_length=255, null=True, blank=True)
     type = models.CharField(max_length=100, null=True, blank=True)
     published = models.BooleanField(default=False,null=True, blank=True)
     is_bokun_url = models.BooleanField(default=True,null=True, blank=True)
@@ -69,8 +75,8 @@ class CMSMenuContent(models.Model):
     help_center = models.TextField(null=True, blank=True)
     select_bus =models.CharField(max_length=50,null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
     
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -86,52 +92,55 @@ class CMSMenuContent(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        if self.name:
-            if self.type == 'Tours':
-                # Replace special characters (except hyphens) with hyphens
-                clean_name = re.sub(r'[^\w\s-]', '-', self.name)
+    # def save(self, *args, **kwargs):
+    #     if self.name:
+    #         if self.type == 'Tours':
+    #             # Replace special characters (except hyphens) with hyphens
+    #             clean_name = re.sub(r'[^\w\s-]', '-', self.name)
 
-                # Replace spaces with hyphens
-                clean_name = re.sub(r'\s+', '-', clean_name)
+    #             # Replace spaces with hyphens
+    #             clean_name = re.sub(r'\s+', '-', clean_name)
 
-                # Convert to lowercase
-                clean_name = clean_name.lower()
+    #             # Convert to lowercase
+    #             clean_name = clean_name.lower()
 
-                # Replace multiple consecutive hyphens with a single hyphen
-                clean_name = re.sub(r'-{2,}', '-', clean_name)
+    #             # Replace multiple consecutive hyphens with a single hyphen
+    #             clean_name = re.sub(r'-{2,}', '-', clean_name)
 
-                # Strip leading and trailing hyphens
-                clean_name = clean_name.strip('-')
+    #             # Strip leading and trailing hyphens
+    #             clean_name = clean_name.strip('-')
 
-                slug = clean_name
-                counter = 1
+    #             slug = clean_name
+    #             counter = 1
 
-                # Ensure slug uniqueness
-                while CMSMenuContent.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-                    slug = f"{clean_name}-{counter}"
-                    counter += 1
+    #             # Ensure slug uniqueness
+    #             while CMSMenuContent.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+    #                 slug = f"{clean_name}-{counter}"
+    #                 counter += 1
 
-                self.slug = slug
+    #             self.slug = slug
 
-        # Handle updated_by and created_by fields
-        if not self.pk:  # If it's a new record
-            self.created_by = kwargs.pop('user', None)
-        else:
-            self.updated_by = kwargs.pop('user', None)
+    #     # Handle updated_by and created_by fields
+    #     if not self.pk:  # If it's a new record
+    #         self.created_by = kwargs.pop('user', None)
+    #     else:
+    #         self.updated_by = kwargs.pop('user', None)
 
-        # Call the parent class save method
-        super().save(*args, **kwargs)
+    #     # Call the parent class save method
+    #     super().save(*args, **kwargs)
 
 
 class CMSMenuContentImage(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cms_menu = models.ForeignKey(CMSMenu, on_delete=models.PROTECT, related_name='cms_menu_content_images')
     head = models.CharField(max_length=500)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -174,6 +183,9 @@ class CMSMenuContentImage(models.Model):
  
 #add this
 class Itinerary(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
@@ -182,7 +194,7 @@ class Itinerary(models.Model):
     lng = models.FloatField(max_length=1000, null=True, blank=True)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -199,6 +211,9 @@ class Itinerary(models.Model):
 
 #For Contact
 class EmailAddress(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     full_name = models.CharField(max_length=255,null=True, blank=True)
     email = models.EmailField(null=False, blank=False)
     phn_num = models.CharField(blank=True, max_length=50, null=True)
@@ -242,6 +257,8 @@ class EmailAddress(models.Model):
 #For Subscription
 
 class SendEmail(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
    
     email = models.EmailField(null=False, blank=False)
     class Meta:
@@ -281,10 +298,13 @@ class SendEmail(models.Model):
 
 #add this
 class Tag(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=500, unique=True,null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -297,10 +317,13 @@ class Tag(models.Model):
         return self.name
     
 class BlogCategory(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=500, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -313,6 +336,9 @@ class BlogCategory(models.Model):
         return self.name
 
 class Blog(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_contents')
     title = models.CharField(max_length=500, null=True, blank=True)
     slug = models.SlugField(max_length=500, null=True, blank=True)
@@ -337,7 +363,7 @@ class Blog(models.Model):
     is_published = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -433,7 +459,9 @@ class Blog(models.Model):
 
 
 class BlogComments(models.Model):
-    
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     blog = models.ForeignKey(Blog,on_delete=models.PROTECT,null=True,blank=True)
     full_name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -441,14 +469,14 @@ class BlogComments(models.Model):
     phn_num = models.CharField(blank=True, max_length=50, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
 
 
     class Meta:
-        verbose_name_plural = 'Blog_Comments'
+        verbose_name_plural = 'BlogComments'
         ordering = ('-id', )
 
     def __str__(self):
@@ -458,6 +486,9 @@ class BlogComments(models.Model):
         super().save(*args, **kwargs)       
 
 class Review(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     supplier = models.CharField(max_length=500, null=True, blank=True)
     reviewer_name = models.CharField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='cms/ReviewImage/', null=True, blank=True)
@@ -469,7 +500,7 @@ class Review(models.Model):
     url = models.URLField(max_length=500, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
@@ -512,6 +543,9 @@ class Review(models.Model):
 
 
 class MetaData(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
     meta_title = models.CharField(max_length=255,null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
@@ -519,13 +553,13 @@ class MetaData(models.Model):
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     slug = models.SlugField(max_length=500, unique=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    updated_at = models.DateTimeField(null=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'Meta_Data'
+        verbose_name_plural = 'MetaData'
         ordering = ('-id', )
 
     def __str__(self):

@@ -1,0 +1,2795 @@
+[
+  {
+    "model": "cms.review",
+    "pk": 522,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "DayTrip123422",
+      "image": "cms/ReviewImage/DayTrip123422_picture_ZrbRvn8.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d8a22e36-e619-4f0e-4f83-7752e35e2300/v1",
+      "rating": 1,
+      "text": "Not a trust worthy company - We are a family of 3 paid $96.22 (2 adults and a teenager) visited the Colosseum couple days ago, when we were out there we found out that the children below 18 do NOT need a ticket, but this company charged us for both adults and a child. When contacted they refused to refund the childs part of the money. I will not recommend \"Dream Tourism\" for your trip needs.",
+      "title": "Not a trust worthy company",
+      "publication": "1714953600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949736431-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T03:59:49.977Z",
+      "updated_at": "2024-05-19T03:59:52.935Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 523,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "David L",
+      "image": "cms/ReviewImage/David_L_picture_NJFQWOg.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f53c92b2-b0bc-49fd-1c0e-e1d071487600/public",
+      "rating": 5,
+      "text": "Excellent, well worth paying to get quick entrance. The normal queue was very long. The whole experience was amazing. Allow yourself at least 4hrs and prepare to walk a lot!",
+      "title": "Fantastic, must see visit",
+      "publication": "1714953600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949778701-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T03:59:53.453Z",
+      "updated_at": "2024-05-19T03:59:56.313Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 524,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Isabel R",
+      "image": "cms/ReviewImage/Isabel_R_picture_EyCOAFe.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3873dac5-1561-4197-a359-d725acc1a700/v1",
+      "rating": 2,
+      "text": "The “skip the line” line is a lie. There’s no skip the line zone. You are only given a ticket to enter through regluar entrance instead of group which for some reason could or could not be longer than the “skip the line”. I was charced 48 dolars for each ticket, while the official ticket (which they sent me when I wanted to go in) only costs 18… what did i pay for? Viators fees? Personally, a scam for me.",
+      "title": "Skip the line is not real",
+      "publication": "1714867200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949548207-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T03:59:56.911Z",
+      "updated_at": "2024-05-19T03:59:59.626Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 525,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Sonia T",
+      "image": "cms/ReviewImage/Sonia_T_picture_ZIsKkap.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3e41057a-37be-4639-742c-bde2be766e00/public",
+      "rating": 2,
+      "text": "Our assessment is poor because due to heavy rain, we had to stop the visit which takes place in the open air. We couldn't do the forum. The ticket should be valid for a few days in case of bad weather to be able to visit all the planned sites. I would like to point out that the next day, the queue for the forum was huge even with the queue cut-out and we were not allowed to enter. Very frustrating :(",
+      "title": "Spoiled by the rain",
+      "publication": "1714780800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949411569-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:00.283Z",
+      "updated_at": "2024-05-19T04:00:03.882Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 526,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Caroline P",
+      "image": "cms/ReviewImage/Caroline_P_picture_Esszkn6.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/683276cb-6835-41cb-5d7b-df8924cccd00/v1",
+      "rating": 5,
+      "text": "The Skip the Line ticket was brilliant as the queues for people with no tickets was enormous. The Colosseum, Roman Forum and Palatine Hills were all amazing. So much to see, the whole experience took about 3 hours. Well worth the money and would definitely recommend,",
+      "title": "Fantastic experience",
+      "publication": "1714780800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949426690-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:04.638Z",
+      "updated_at": "2024-05-19T04:00:08.035Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 527,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Alexandra S",
+      "image": "cms/ReviewImage/Alexandra_S_picture_NsWqby2.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/eb97ba97-d68a-4a87-a577-a5b17a74b000/public",
+      "rating": 4,
+      "text": "Arrived 15 minutes before the gates opened, let in 5 minutes early, no queues, not even at security. The Colosseum was extremely busy, you were basically pushed along. Unfortunately it wasn't a ticket for the arena, but you could see everything very well from above. Palatine/Roman Forum, don't take the main entrance opposite the Colosseum (you have to queue for a long time there, even with a skip-the-line ticket), take the side entrance 270m to the left of it, there was no one there ;).",
+      "title": "No waiting time in front of the Colosseum, little tip for the Roman Forum/Palatine",
+      "publication": "1714694400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949288181-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:08.551Z",
+      "updated_at": "2024-05-19T04:00:11.305Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 528,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "mariosW8846WY",
+      "image": "cms/ReviewImage/mariosW8846WY_picture_sN2JNAK.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6964394e-a207-403e-d7d4-da37a8556f00/v1",
+      "rating": 5,
+      "text": "Waitingtime less then 15 minutes. I had additional questions and they were very helpful. I was provided with all the information needed.",
+      "title": "Recommended",
+      "publication": "1714694400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949305240-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:11.860Z",
+      "updated_at": "2024-05-19T04:00:15.636Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 529,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "dalyro19",
+      "image": "cms/ReviewImage/dalyro19_picture_J4s4eSX.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/fad3f4fe-b19f-490d-1859-993d4810d400/public",
+      "rating": 5,
+      "text": "Have to have entrance ticket buy in advance, otherwise you have to have a lot of paciente to stay on a long line ( 2, 3 ours row line )",
+      "title": "Fantastic",
+      "publication": "1714694400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949358536-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:16.581Z",
+      "updated_at": "2024-05-19T04:00:19.811Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 530,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Peter C",
+      "image": "cms/ReviewImage/Peter_C_picture_NZEmwGI.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5458d4b1-5334-476e-7a56-fc22c0c88d00/v1",
+      "rating": 5,
+      "text": "The experience was lovely and the fact that we didn't have to wait to get in was awesome. Definitely recommend this experience and Dream Tourism. We enjoyed all three sites and the transition between them was smooth and efficient.",
+      "title": "Lovely experience, lovely service",
+      "publication": "1714694400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r949366454-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:20.527Z",
+      "updated_at": "2024-05-19T04:00:23.614Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 531,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Piero A",
+      "image": "cms/ReviewImage/Piero_A_picture_wJEarf6.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b9b97881-238c-499d-425f-985992ee5900/public",
+      "rating": 5,
+      "text": "There's no need to write about the Colosseum, it's fascinating. The organization of the excursion was excellent and allowed us to skip the queue with hundreds and hundreds of people. You pay a few more, but in 5 minutes we were inside the Colosseum. Advised.",
+      "title": "Excellent organization",
+      "publication": "1714435200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948882901-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:24Z",
+      "updated_at": "2024-05-19T04:00:26.540Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 532,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Tommy S",
+      "image": "cms/ReviewImage/Tommy_S_picture_2xuX1p6.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/28d3d8e8-22a4-40fd-bec4-c798335fae00/public",
+      "rating": 3,
+      "text": "Tickets and service was good in terms of getting them and being contacted by the team ASAP, but when we arrived we were told there is no such thing as a \"skip the queue ticket\" and we had to line up but it was a quick queue",
+      "title": "Good experience \"no skip the queue tickets\"",
+      "publication": "1714348800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948794078-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:27.126Z",
+      "updated_at": "2024-05-19T04:00:30.909Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 533,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Vicki M",
+      "image": "cms/ReviewImage/Vicki_M_picture_xYuUczn.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f1a4b4e5-4d92-4a4b-a2f8-b48c8f0e1100/v1",
+      "rating": 4,
+      "text": "The only reason this didn't get a 5 star was because I didn't realise (probably my fault) that the ticket only got us limited access to the colosseum. We couldn't go to the upper or lower levels and had no way of paying extra to do so when we got there. BUT everything else was fantastic. Getting a skip the line ticket is a must as the queues were crazy. The Roman Forum and Palatine Hill was an unexpected magical bonus. Really worth spending a couple of hours there after the colosseum.",
+      "title": "Brilliant value, skip the line ticket is a must!!",
+      "publication": "1714348800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948798941-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:31.629Z",
+      "updated_at": "2024-05-19T04:00:34.785Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 534,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Steph",
+      "image": "cms/ReviewImage/Steph_picture_1ujM3Fm.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/14c46157-464c-41ae-99ca-9f0a67086600/v1",
+      "rating": 4,
+      "text": "Tickets are sent the day before, we head directly to the entrance to the Colosseum 10 minutes before the time indicated on the ticket and we set off for the visit. On the other hand, the ticket is not skip-the-line for the Palatine Hill, you will have to be patient....",
+      "title": "Coliseum",
+      "publication": "1714348800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948801711-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:35.280Z",
+      "updated_at": "2024-05-19T04:00:38.521Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 535,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Nicoleta N",
+      "image": "cms/ReviewImage/Nicoleta_N_picture_ALc5UeN.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/77304cdb-aea0-4015-4acc-53f41739f800/public",
+      "rating": 5,
+      "text": "Great service,Colosseum skip the line with palatine hills and Roman forum entry tickets was as advertised.Everything was explained clearly in the post booking email .",
+      "title": "Great service",
+      "publication": "1714262400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948687934-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:39.095Z",
+      "updated_at": "2024-05-19T04:00:41.627Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 536,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Floriana C",
+      "image": "cms/ReviewImage/Floriana_C_picture_5JaELBY.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/01c3b6f1-76a8-495c-dfa5-051ed0d4e700/public",
+      "rating": 4,
+      "text": "The cost of the ticket is excessive compared to the standard cost at the ticket office, no additional service justifying the difference Little indication of where to position yourself for the queue The Colosseum is impressive and very well preserved The ticket included a visit to the Roman and Palatine forums, very large sites, so seeing some more descriptions would be useful",
+      "title": "Ancient Rome",
+      "publication": "1714262400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948690490-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:42.163Z",
+      "updated_at": "2024-05-19T04:00:44.913Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 537,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Alejandra S",
+      "image": "cms/ReviewImage/Alejandra_S_picture_mOnSsAO.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/54f759c6-0e2e-47e8-b3c1-fe5a7ed5c500/v1",
+      "rating": 5,
+      "text": "I couldn't use the service because I got the wrong date. Although they did not allow cancellations, the agency was super kind, managed my refund and really supported me, super grateful for their kindness and concern.",
+      "title": "Very friendly",
+      "publication": "1714089600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948336731-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:45.500Z",
+      "updated_at": "2024-05-19T04:00:48.346Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 538,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Departure53850100034",
+      "image": "cms/ReviewImage/Departure53850100034_picture_HapBzoL.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e5697044-f7a0-4936-e2bc-ca894e802f00/public",
+      "rating": 5,
+      "text": "The self guided tour was best for us for this excursion. We enjoyed being able to see things atour own pace. Skip the line fee is a MUST",
+      "title": "See the Colossium at your own pace",
+      "publication": "1713916800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948093297-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:48.757Z",
+      "updated_at": "2024-05-19T04:00:51.474Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 539,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Caner O",
+      "image": "cms/ReviewImage/Caner_O_picture_PSsh0YG.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/aaed1a8b-de5f-4498-ba49-7a3d6b7d0e00/v1",
+      "rating": 5,
+      "text": "Amazing service, so friendly and made the whole procedure so easy for us, helped us squeeze rome into 3 days, nearly impossible but they made it happen. Thank you to the Dream Tourism team. Would deffo recommended to everyone.",
+      "title": "Would recommend",
+      "publication": "1713830400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r947960816-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:52.081Z",
+      "updated_at": "2024-05-19T04:00:54.648Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 540,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Raffaele R",
+      "image": "cms/ReviewImage/Raffaele_R_picture_PrXGxMx.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/26d4bdf5-4edd-4d03-72ed-627cfb74ff00/v1",
+      "rating": 4,
+      "text": "Unfortunately we had to stand in a long queue both to validate the tickets and for the normal backpack check. Splendid places but organization that could be improved.",
+      "title": "Time wasted queuing, reduced visit time.",
+      "publication": "1713830400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r948007150-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:55.126Z",
+      "updated_at": "2024-05-19T04:00:58.011Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 541,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Jonathan D",
+      "image": "cms/ReviewImage/Jonathan_D_picture_ZdmgbEp.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6c3df54e-970c-4b9f-e5e9-d4a1be7bc400/v1",
+      "rating": 1,
+      "text": "Thinking of using Dream Tourism to skip the lines? Here's what you should know first... Dream Tourism offers a service to help you avoid ticket lines, but be aware that their process might not be what you expect. While I confirmed payment and expected downloadable tickets, I received instructions instead. This lack of clarity caused some concern, and I even opened a PayPal case (which I later canceled). Thankfully, Dream Tourism did come through with the actual tickets. However, the experience between purchasing and receiving them was stressful. While their service lets you skip the very long lines (which is a big plus!), Note that you're paying double the price for these tickets. (also note that kids get in free anyway). If you're flexible with timing, you can potentially save money by buying directly from the source, \"Coopculture.it\"",
+      "title": "Thinking of using Dream Tourism to skip the lines? Here's what you should know first...",
+      "publication": "1713398400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r947119247-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:00:58.431Z",
+      "updated_at": "2024-05-19T04:01:01.152Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 542,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "John N",
+      "image": "cms/ReviewImage/John_N_picture_SJBSNvn.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d4328bcd-511a-4745-503e-26ac7bd2e300/v1",
+      "rating": 5,
+      "text": "I would highly recommend the self guided tour, it was a well run hassle free experience, the Colosseum looked better in real life than I imagined, the Forum was spectacular.",
+      "title": "Colosseum self guided tour",
+      "publication": "1713312000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r947061961-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:01.604Z",
+      "updated_at": "2024-05-19T04:01:04.805Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 543,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Merissa S",
+      "image": "cms/ReviewImage/Merissa_S_picture_H067N9i.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c65c4fb8-a5a8-4b50-e9be-b51a85019100/public",
+      "rating": 5,
+      "text": "Great value for these tickets! Instructions were super clear and easy to follow and made our day so much more efficient skipping the lines at all locations!",
+      "title": "Great value!",
+      "publication": "1713225600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r946917934-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:05.263Z",
+      "updated_at": "2024-05-19T04:01:07.840Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 544,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "mervenur ç",
+      "image": "cms/ReviewImage/mervenur_ç_picture_Ssoo3HA.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f0548c1b-eb59-4f1a-a55a-73e4f511c900/v1",
+      "rating": 5,
+      "text": "Thanks for your assistance! I could not make it to the Colosseum if I would not buy skip the line ticket because of my limited time.",
+      "title": "Colosseum Skip the Line",
+      "publication": "1713052800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r946702934-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:08.194Z",
+      "updated_at": "2024-05-19T04:01:09.987Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 545,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Glen H",
+      "image": "cms/ReviewImage/Glen_H_picture_RTl281E.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8d901902-f514-46d0-ee52-1cdcbe18e200/public",
+      "rating": 2,
+      "text": "The experience itself at the colosseum was great. Very busy as expected. However, booking through this company is disappointing. Only received my tickets 24 hours before my visit, but also found out they charge MORE THAN DOUBLE the actual ticket price. Even more annoying when you eventually get your tickets it has the original price of €18. Also states there’s a ‘skip the line’ however there’s only one queue to get in. Would recommend avoid booking through this company unless you’re desperate or don’t mind paying way over the odds.",
+      "title": "Rip off company but good trip",
+      "publication": "1712880000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r946403444-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:10.597Z",
+      "updated_at": "2024-05-19T04:01:13.928Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 546,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Elizabeth S",
+      "image": "cms/ReviewImage/Elizabeth_S_picture_41NEq6g.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2b51d87b-297f-4434-95a7-9b3cb6881300/public",
+      "rating": 5,
+      "text": "Amazingly well preserved and the tour gave us every opportunity to admire it. It was easy to collect the children's tickets.",
+      "title": "Coliseum Review",
+      "publication": "1712880000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r946416033-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:14.384Z",
+      "updated_at": "2024-05-19T04:01:17.383Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 547,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "carlosthiessen",
+      "image": "cms/ReviewImage/carlosthiessen_picture_Rb2Mghm.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0c8bc413-f6ef-4c44-5bc3-f7df528b2700/public",
+      "rating": 1,
+      "text": "Terrible, they charge me the bill and never give us the service. Never answer my message to receive the tickets. The worst of all is we lost the opportunity to see the Rome Coliseum and we do not know when we are going to return.",
+      "title": "Terrible.",
+      "publication": "1712620800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945917508-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:17.918Z",
+      "updated_at": "2024-05-19T04:01:20.930Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 548,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Maria G",
+      "image": "cms/ReviewImage/Maria_G_picture_XHVgKDv.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b1bc418f-4430-4a50-1205-36f8adac3e00/v1",
+      "rating": 5,
+      "text": "I recommend it as quick and easy. We skipped the queues and were able to enter immediately which was very convenient being alone with 3 kids .",
+      "title": "The only option I used to visit collseum. Have been several time to Rome but never visited as I don’t have the time to",
+      "publication": "1712534400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945823845-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:21.423Z",
+      "updated_at": "2024-05-19T04:01:24.093Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 549,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Calia P",
+      "image": "cms/ReviewImage/Calia_P_picture_IS6Avs2.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/791e2a4e-7151-443b-74fe-e0780ca37200/v1",
+      "rating": 5,
+      "text": "The entrance was easy, we had no waiting time like it was said for the package. Monuments were beautiful but there was a lot of people. I advise to go in the morning. We recommend, it is worth it. But we did not really understand where to go for palatine hill and Roman forum so think about taking a guide.",
+      "title": "Nice and practical",
+      "publication": "1712534400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945833566-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:25.037Z",
+      "updated_at": "2024-05-19T04:01:28.364Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 550,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Octavian C",
+      "image": "cms/ReviewImage/Octavian_C_picture_QsUpUhE.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5cb33e8a-2362-4a94-7b8b-e97d2ae5b700/public",
+      "rating": 5,
+      "text": "The views were amazing and the fact that we could get the “Skip the line” tickets was an extra cause we were in a hurry and couldn’t waste any time. (For those who read just the title ”Skip the line” means that you skip the queue to buy the tickets and not the queue for entrance so don’t make the same mistake as us.😁) We got our tickets a day before the trip on What’sApp so make sure you give your number so it makes easier the process of downloading the tickets.",
+      "title": "Definitely Pre-Book",
+      "publication": "1712534400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945835031-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:28.854Z",
+      "updated_at": "2024-05-19T04:01:31.198Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 551,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "chas58",
+      "image": "cms/ReviewImage/chas58_picture_bmXUzuq.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/60edd867-cc65-4328-889a-73e145b9c600/v1",
+      "rating": 5,
+      "text": "It’s crazy to not book tickets ahead of time for the Colosseum. The lines are extremely long for non-ticket holders and non-existent for pre-booked tickets. It took me some time to find the tickets downloaded on my phone but that was a minor inconvenience",
+      "title": "Definitely pre-book",
+      "publication": "1712361600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945532407-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:32.250Z",
+      "updated_at": "2024-05-19T04:01:35.356Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 552,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Violeta m",
+      "image": "cms/ReviewImage/Violeta_m_picture_QPXNIkG.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/118c615b-3b8d-4409-23f9-ab7ce2c38f00/v1",
+      "rating": 5,
+      "text": "The excursion was great. It was very fluid and what they say is very interesting. We took a walk around the entire area and learned a lot.",
+      "title": "Super recommended",
+      "publication": "1712102400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945200949-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:35.982Z",
+      "updated_at": "2024-05-19T04:01:39.291Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 553,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Paola V",
+      "image": "cms/ReviewImage/Paola_V_picture_6ZbnRWD.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/27d9a6a6-094f-4e87-ae3a-9ce8f1c8cf00/public",
+      "rating": 5,
+      "text": "Simple process, tickets were delivered digitally a day before, orientation for entry was received",
+      "title": "Simple process",
+      "publication": "1712102400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r945223699-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:39.839Z",
+      "updated_at": "2024-05-19T04:01:42.898Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 554,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Catalin C",
+      "image": "cms/ReviewImage/Catalin_C_picture_jpIRmbW.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3a431121-3993-4379-ddf4-8888b9eecc00/public",
+      "rating": 5,
+      "text": "Tickets received per email. For kids you get them from inside after security check. Could enter without waiting in the queue at 12:15. No issues had. Everything was fine.",
+      "title": "Wonderful",
+      "publication": "1712016000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r944894452-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:43.583Z",
+      "updated_at": "2024-05-19T04:01:45.497Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 555,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Curiosity790838",
+      "image": "cms/ReviewImage/Curiosity790838_picture_bPSUekq.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/44a18abe-2be0-4c71-8743-c82ea9db3400/public",
+      "rating": 1,
+      "text": "Little seriousness. We were sold the ticket with a time of 10.40 for the Colosseum, Palatine and Forum... without telling us that the Palatine and the Forum would close at 12.00 for the Via Crucis. Furthermore, the information on the itinerary to follow was inadequate.",
+      "title": "Incomplete information about the tour. We were sold a ride that we couldn't do. For early closing.",
+      "publication": "1711843200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r944660950-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:45.994Z",
+      "updated_at": "2024-05-19T04:01:48.665Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 556,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Liam K",
+      "image": "cms/ReviewImage/Liam_K_picture_6dJamyN.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/acad8f0f-c7b5-4d78-ccb0-148ff9523100/public",
+      "rating": 2,
+      "text": "As expected the colosseum was incredible , however don’t be fooled by these companies offering a skip the line for an extra price , we booked in advance thinking this would help get us in, after I spoke with the staff at the colosseum they informed me there is no such thing as a skip the line ticket , these tickets are €18 and companies like this are profiting €30 in each ticket purely for sending you the PDF document, be careful when purchasing!",
+      "title": "don’t be fooled by skip the line!!",
+      "publication": "1711843200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r944667933-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:49.151Z",
+      "updated_at": "2024-05-19T04:01:52.283Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 557,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Waloadler",
+      "image": "cms/ReviewImage/Waloadler_picture_EPApNi2.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/045bafdc-edae-40b8-909b-b20b02a0ce00/public",
+      "rating": 5,
+      "text": "It was a very nice experience to see all this historic places and buildings. Especially the Colosseum is very impressive",
+      "title": "Great tour without waiting time for tickets.",
+      "publication": "1711756800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r944471097-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:52.699Z",
+      "updated_at": "2024-05-19T04:01:55.064Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 558,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Travel62366 miriam alcala",
+      "image": "cms/ReviewImage/Travel62366_miriam_alcala_picture_tq0ivEd.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/9d8c0a71-6522-4952-b53a-9e4b8e0c5000/v1",
+      "rating": 5,
+      "text": "Beautiful place and the support from the Dream tourist agency was excellent, they were friendly and always on the lookout. The best visit in Rome",
+      "title": "Excellent and beautiful!",
+      "publication": "1711756800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r944495866-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:55.388Z",
+      "updated_at": "2024-05-19T04:01:56.986Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 559,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Ivonne B",
+      "image": "cms/ReviewImage/Ivonne_B_picture_OVdYe6q.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2aae56a5-c09d-4619-2694-7c48e6675100/public",
+      "rating": 5,
+      "text": "Lots of people, even in the rain. Skip-the-line ticket was worth it. Organizationally very good, tickets were online tickets and for the children we had to go to box office number 10. Everything went well.",
+      "title": "Tickets well organized",
+      "publication": "1711584000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r944301958-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:01:57.503Z",
+      "updated_at": "2024-05-19T04:02:00.956Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 560,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "malika p",
+      "image": "cms/ReviewImage/malika_p_picture_vdEYrHj.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4817e7d8-1573-487e-1eae-cc4f9e662600/v1",
+      "rating": 5,
+      "text": "Very beautiful, magnificent but the price is too high compared to the real price, we pay more every day but Rome is magical If not perfect",
+      "title": "Magic",
+      "publication": "1711411200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r943914739-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:02:01.772Z",
+      "updated_at": "2024-05-19T04:02:05.992Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 561,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Jana L",
+      "image": "cms/ReviewImage/Jana_L_picture_lvgr2Y6.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7426cb21-6153-4b36-fd6a-1e65b8d65a00/v1",
+      "rating": 4,
+      "text": "Everything worked fine except for the wrong names on the tickets. Children up to 18 years of age pay nothing. However, you specify this with your date of birth when ordering the tickets. So they don't need a ticket in advance, just adults. Tip: enter the adults first, then the kids, maybe it works better that way, we were 3 families…",
+      "title": "Everything worked.",
+      "publication": "1711411200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r943929521-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:02:06.583Z",
+      "updated_at": "2024-05-19T04:02:09.719Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 562,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Discover66615994129",
+      "image": "cms/ReviewImage/Discover66615994129_picture_T6JfCWx.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/90b7df64-d6fa-4261-c183-863f45701f00/public",
+      "rating": 5,
+      "text": "Customer service was great. They were prompt with their replies and were very accommodating with any requests that I had. If you have any changes to be made to your booking, they are more than willing to help.",
+      "title": "Great customer service",
+      "publication": "1711238400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r943700543-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:02:10.279Z",
+      "updated_at": "2024-05-19T04:02:12.870Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 563,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Frederique D",
+      "image": "cms/ReviewImage/Frederique_D_picture_rVvrA4Y.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e991a49f-d543-4734-697a-5d4e8fe07700/public",
+      "rating": 5,
+      "text": "This is an excellent place for people interested in archaeology and history. There are several special features that are extra to book and are highly recommended. However, the tours themselves without the extras are also highly recommended. I spent eight hours there!",
+      "title": "Excellent!",
+      "publication": "1711065600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r943389890-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:10:10.282Z",
+      "updated_at": "2024-05-19T04:10:12.599Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 564,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Caro J",
+      "image": "cms/ReviewImage/Caro_J_picture_DWgU3Hq.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/556bbf2d-786b-4a67-db2c-123b73c7d400/v1",
+      "rating": 5,
+      "text": "Colosseum is a must see in Rome. Skip the line tickets were excellent. They were sent to me via WhatsApp a couple of days before our visit. We went straight to the entry point at the allocated time and no queues. Slight wait to get through security, but was a really quick and easy process. The lead booker has to show ID, I took my passport as proof... we all did, just in case.",
+      "title": "Amazing Colosseum",
+      "publication": "1711065600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r943404986-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:22.306Z",
+      "updated_at": "2024-05-19T04:11:25.436Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 565,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Clairie L",
+      "image": "cms/ReviewImage/Clairie_L_picture_ivfz3eQ.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7e0e4e83-507c-4d94-ac32-117532e67400/public",
+      "rating": 5,
+      "text": "We got inside very fast 💯 tickets were send in perfect timing. You definitely have to visit this place when you visit Rome.",
+      "title": "10/10",
+      "publication": "1711065600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r943420548-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:25.996Z",
+      "updated_at": "2024-05-19T04:11:28.801Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 566,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Discover66615994129",
+      "image": "cms/ReviewImage/Discover66615994129_picture_wDxsjnd.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5b14b5f7-ac1c-4630-1bf5-af4b34ff0700/v1",
+      "rating": 5,
+      "text": "I cannot fault them. They are very professional. They handled every question and enquiry I had quickly and to my satisfaction. I would highly recommend them to anyone who is visiting Rome.",
+      "title": "Very Professional",
+      "publication": "1710633600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r942697861-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:29.302Z",
+      "updated_at": "2024-05-19T04:11:31.967Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 567,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "costing0509",
+      "image": "cms/ReviewImage/costing0509_picture_W9vzROX.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c86e9f4e-2179-4e04-bc3b-13dc0fff3600/public",
+      "rating": 5,
+      "text": "Exctly what we expected. The tickets were sent as per the brief. A fast way into the Collosseum, without the hussle for ques. However it is only skip the line for the collosseum, and not for the palatine hill and forum.",
+      "title": "Met our expectations",
+      "publication": "1710374400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r942261632-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:32.439Z",
+      "updated_at": "2024-05-19T04:11:35.335Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 568,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Suzanne J",
+      "image": "cms/ReviewImage/Suzanne_J_picture_OHtTwLO.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0e0d1664-0507-457f-a570-0b30b9deca00/public",
+      "rating": 4,
+      "text": "We did a self guided tour as guided tours all sold out when I booked. Whilst we enjoyed it and the site is amazing there were lots of areas unaccessible on our ticket type. If you are going a guided tour would be the way to go as we missed out on lots of historical detail. Also told free entry on 1st Sunday of each month.",
+      "title": "Colusseum",
+      "publication": "1707523200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r937646930-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:35.849Z",
+      "updated_at": "2024-05-19T04:11:39.483Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 569,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Valérie C",
+      "image": "cms/ReviewImage/Valérie_C_picture_z0GMCQA.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/03a3af5c-e3be-439c-3c9c-e66f30f04900/v1",
+      "rating": 1,
+      "text": "The day before the visit cancellation of my reservation on the pretext that electronic tickets could not be issued for Sunday. On the other hand, cashing out and validating the reservation posed no problem. As a result, it is impossible to visit the coliseum, which is of course full. I am very unhappy.",
+      "title": "Not at all professional",
+      "publication": "1707091200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r936961946-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:39.941Z",
+      "updated_at": "2024-05-19T04:11:42.956Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 570,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "SarasStars",
+      "image": "cms/ReviewImage/SarasStars_picture_00WQVnF.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d4961e6f-ebf9-4734-7096-c66c7ed05e00/public",
+      "rating": 5,
+      "text": "An absolutely spectacular experience- one you should definitely do whilst in Rome. A lot of walking though so come prepared with comfortable shoes.",
+      "title": "Definitely worth the money",
+      "publication": "1705017600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r933784017-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:43.551Z",
+      "updated_at": "2024-05-19T04:11:45.895Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 571,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Roslyn C",
+      "image": "cms/ReviewImage/Roslyn_C_picture_HkPTrdM.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3c856619-75c9-4b2a-1f20-d609f5c16300/v1",
+      "rating": 5,
+      "text": "Tickets arrived in plenty of time and the Colosseum experience was fantastic. Having the tickets in a digital format made the entry process very smooth.",
+      "title": "Great experience!",
+      "publication": "1704758400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r933142082-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:46.788Z",
+      "updated_at": "2024-05-19T04:11:49.409Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 572,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "jasonhenderson",
+      "image": "cms/ReviewImage/jasonhenderson_picture_GojYXlF.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/20749641-672b-46c3-4dda-8a4324660f00/v1",
+      "rating": 1,
+      "text": "There was NO “skipping of the line” and everything was very disorganized. Not worth the spend - just buy regular tickets.",
+      "title": "Not worth it",
+      "publication": "1703548800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r931042846-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:49.937Z",
+      "updated_at": "2024-05-19T04:11:52.415Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 573,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Baboooin14",
+      "image": "cms/ReviewImage/Baboooin14_picture_LQuIZMf.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/583525b8-61c1-4c9e-9960-ecde420d0f00/public",
+      "rating": 5,
+      "text": "I booked tickets for me and my family and I couldn't leave anymore and they were very kind in helping me they are fantastic, if you have to book this is the right place!!!!! 👍🏻",
+      "title": "Sooo fantastic",
+      "publication": "1702425600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r929374889-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:52.993Z",
+      "updated_at": "2024-05-19T04:11:55.399Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 574,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Aleesha J",
+      "image": "cms/ReviewImage/Aleesha_J_picture_T8xmHuO.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ed4b9b65-b7d5-476d-6687-c6233fb5cd00/public",
+      "rating": 4,
+      "text": "After seeing the long line into the colosseum, I was definitely thankful that we had pre purchased skip the line tickets! Entry was seamless and quick, just make sure you have valid ID with you. The tickets were a little pricey, but worth it to skip the line and enjoy the colosseum and Roman forum!",
+      "title": "Fast and seamless entry to colosseum and Roman forum",
+      "publication": "1701216000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r927841279-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:55.970Z",
+      "updated_at": "2024-05-19T04:11:58.902Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 575,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Céline M",
+      "image": "cms/ReviewImage/Céline_M_picture_XUeI7SJ.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/78ef9923-5b80-47fb-45a7-3e2fd5117600/v1",
+      "rating": 1,
+      "text": "The place is magnificent but the viators tickets are a real scam...3 times the real price.",
+      "title": "Tickets too expensive",
+      "publication": "1701043200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r927611741-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:11:59.519Z",
+      "updated_at": "2024-05-19T04:12:02.432Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 576,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Tourteau Fabian",
+      "image": "cms/ReviewImage/Tourteau_Fabian_picture_jW8kxFq.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ae0dfd00-3a9b-4751-d680-75e4f9921a00/public",
+      "rating": 5,
+      "text": "We received the tickets by WhatsApp the evening before our visit. Everything went perfectly well! 👍",
+      "title": "delivery ok",
+      "publication": "1701043200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r927631193-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:12:03.170Z",
+      "updated_at": "2024-05-19T04:12:06.337Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 577,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Eijoon",
+      "image": "cms/ReviewImage/Eijoon_picture_JzYwpHR.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ba24e068-03b6-4ab3-b95e-41cb1908d900/public",
+      "rating": 5,
+      "text": "Great experience with great price! Please ensure you have WhatsApp account to communicat. This agent will take care of the rest.",
+      "title": "Great Service!",
+      "publication": "1700784000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r927165567-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:29.847Z",
+      "updated_at": "2024-05-19T04:13:33.015Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 578,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "FamilyCDC",
+      "image": "cms/ReviewImage/FamilyCDC_picture_f9HQ216.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f9fa3b6a-0b97-43e1-7884-c1a2de1fd600/v1",
+      "rating": 5,
+      "text": "Easy. Operator provided tickets to us the day before using WhatsApp. We were able to use it to get to the Colosseum, Palentine Hills (emperor’s palace), and Forum. Note a lot of the statues from the Palentine Hills and Forum are in the Vatican Museum.",
+      "title": "Easy and Convenient",
+      "publication": "1700784000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r927170426-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:33.485Z",
+      "updated_at": "2024-05-19T04:13:36.379Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 579,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Ana M",
+      "image": "cms/ReviewImage/Ana_M_picture_nhPct5J.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/98e53445-f2b0-4a04-5b4b-aa29eee66b00/v1",
+      "rating": 5,
+      "text": "Excellent service and punctuality. Everything was wonderful and I will buy tours with Dream Tour again",
+      "title": "Wonderful",
+      "publication": "1700784000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r927174015-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:37.007Z",
+      "updated_at": "2024-05-19T04:13:39.802Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 580,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "annette h",
+      "image": "cms/ReviewImage/annette_h_picture_qPR9RXg.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/abc5dc60-48f3-4e2d-f618-1d346b24d800/public",
+      "rating": 5,
+      "text": "We were guided by Lorenzo who definitely knew his stuff and also had a really fun way of delivering the facts he also threw in a few fun facts too the tour was just long enough and quite easy to follow",
+      "title": "Fun and factual",
+      "publication": "1700438400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r926677593-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:40.390Z",
+      "updated_at": "2024-05-19T04:13:43.324Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 581,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Richard B",
+      "image": "cms/ReviewImage/Richard_B_picture_azHg6bW.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/aa7d081b-d96e-4559-4ae9-02e903614800/v1",
+      "rating": 4,
+      "text": "This ticket effectively enabled you to not have to queue for tickets at the colosseum, and although it includes a ticket to the palatine and forum you will have to queue to get into there.",
+      "title": "Coliseum and palatine skip the line ticket",
+      "publication": "1699660800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r925458915-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:43.895Z",
+      "updated_at": "2024-05-19T04:13:46.634Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 582,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Mariah M",
+      "image": "cms/ReviewImage/Mariah_M_picture_YIW2MAd.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8ef2bb32-3d3e-49da-40a4-4c62b33ece00/v1",
+      "rating": 5,
+      "text": "We received our etickets the night before, we entered the colosseum at 10:30 am our scheduled time, we arrived 15 minutes ahead of time but did not wait long to enter. You have 24 hours to visit the Roman Forum and Palatine Hill.",
+      "title": "No waiting in long lines to purchase tickets",
+      "publication": "1699660800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r925490170-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:47.106Z",
+      "updated_at": "2024-05-19T04:13:50.210Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 583,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Francesco F",
+      "image": "cms/ReviewImage/Francesco_F_picture_GySZDPB.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b5c2b218-4d80-4e73-af6d-2ccc11554000/v1",
+      "rating": 1,
+      "text": "I marvel at Trip. On your site I booked entry to the Colosseum for my wife and my daughter paying 45 euros, discovering that the cost of the ticket is 19 euros for my wife and free for my daughter. SCANDALOUS!!!!!!!!!",
+      "title": "I marvel at Trip Advisor. They made me pay 45 euros for entry to the Colosseum instead of 19 euros!!!!!!! Scandalous",
+      "publication": "1699228800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r924809269-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:50.818Z",
+      "updated_at": "2024-05-19T04:13:54.504Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 584,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Noémie W",
+      "image": "cms/ReviewImage/Noémie_W_picture_nCY6oSs.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a7735287-2cb2-4d22-a125-1bdf5d2b8a00/v1",
+      "rating": 3,
+      "text": "Perfect for the Colosseum, where we were able to access easily by showing up at the chosen time. On the other hand, it was impossible for us to enter the Roman Forum / Palatine Hill because the queue was gigantic. We thought we had a skip-the-line ticket since that's what we had officially purchased, but the staff there explained to us that THERE ARE NO skip-the-line tickets to enter the Roman Forum... the name of the purchased tickets is therefore misleading. We learned, but too late, that there are several entrances, some probably less busy than the one where we were. Too bad, because we paid full price and only saw half...",
+      "title": "Please note, tickets are NOT skip-the-line...",
+      "publication": "1698969600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r924367494-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:55.032Z",
+      "updated_at": "2024-05-19T04:13:57.987Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 585,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Carolina O",
+      "image": "cms/ReviewImage/Carolina_O_picture_JaF7Gru.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1583f3e1-6580-4a23-179c-fcf3c05c6b00/v1",
+      "rating": 5,
+      "text": "The place is wonderful and you can't leave Rome without going through it. The skip-the-line entry thing is utter nonsense, you stand in exactly the same line as everyone else. It's no use.",
+      "title": "You can save the entrance without lines because they are the same for everyone, but you have to go.",
+      "publication": "1698624000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r923636924-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:13:58.471Z",
+      "updated_at": "2024-05-19T04:14:01.199Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 586,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Michele",
+      "image": "cms/ReviewImage/Michele_picture_DcE1TU0.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1a725205-8f1f-47ae-0adb-9b95ae496b00/v1",
+      "rating": 1,
+      "text": "Dream Tourism provided nothing of what they promised. I got on the phone with trip advisor 3 hours before to tour to get my tickets which came in 1.5 hours before the tour. I didn’t receive the tickets I paid for and had to purchase the audio guides for my husband and I. Dream Tourism promised to refund that cost to me along with the tickets, they haven’t done so and don’t respond. The day of the tour here was their response during the tour. “ Thank you for your booking with Dream Tourism. We regret to inform you that we are unable to provide the ticket with the requested audio video guide. As a result, we will refund for the difference in amount paid for the audio video guide along with the tickets.” Avoid them at all costs! They take your money, don’t respond and don’t give you what you paid for.",
+      "title": "Horrible Tour Company",
+      "publication": "1698451200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r923324202-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:01.872Z",
+      "updated_at": "2024-05-19T04:14:04.718Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 587,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "michielslml",
+      "image": "cms/ReviewImage/michielslml_picture_UeMh25B.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/943fd84f-30e0-48db-2134-64f54c575d00/public",
+      "rating": 1,
+      "text": "Where were the tickets? only two tickets issued and one absent in three purchased from your organization so-called child ticket to collect cashier 6, where is it and given the queues to get to the cashier, impossible to return after an hour with the time in the queue: no more time for the visit in order to continue our program.",
+      "title": "purchase of unusable tickets......",
+      "publication": "1698451200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r923326764-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:05.114Z",
+      "updated_at": "2024-05-19T04:14:07.638Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 588,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Global624889",
+      "image": "cms/ReviewImage/Global624889_picture_bKVVyJ4.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1a5558b6-8222-4a35-9955-3c88f314f000/public",
+      "rating": 4,
+      "text": "I’ve been here in 2017 and I noticed some things are different in 2023. I don’t remember paying for another admission to see the ancient area of Rome across from the Colosseum with the old temple etc. It seems as if some of the first level of the Colosseum was rather restrictive in 2023 than it was in 2017.",
+      "title": "My current review in 2023 versus my 2017 visit.",
+      "publication": "1698451200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r923360212-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:08.182Z",
+      "updated_at": "2024-05-19T04:14:10.840Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 589,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Gabriel Fassio",
+      "image": "cms/ReviewImage/Gabriel_Fassio_picture_rqRBaDV.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d3b6c465-c681-4cd4-2cb0-c66f674e8800/public",
+      "rating": 1,
+      "text": "Absolutely irresponsible, without explanation and notifying us 10 hours before the start (when they said that 24 hours before they would send you a starting place) they sent me a message modifying what was contracted, in short, they left us without a guide and without a video-audio guide. We had to do it alone and in line. I DO NOT RECOMMEND IT.",
+      "title": "ABSOLUTELY IRRESPONSIBLE.",
+      "publication": "1698278400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r923074440-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:11.425Z",
+      "updated_at": "2024-05-19T04:14:14.241Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 590,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Laura",
+      "image": "cms/ReviewImage/Laura_picture_awN6S6S.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e5c75457-b444-4361-b2bf-ea7993de9300/public",
+      "rating": 3,
+      "text": "The tickets did not include clear instructions as to where to meet. We proceeded to what appeared to be the meeting place of several tour groups at the second level of the street above the Metro station at the Coliseum (this was troubling enough, as it was earlier tickets we’d canceled from a different tour company that sent us there, although the name of the area was known locally it wasn’t clear on any tickets we had). Nevertheless a different tour company representative recognized where these tickets needed to be, which is down to the pavement, across the street and through to a tent on the Coliseum plaza. Once we got there it was a quick entry, but a significant hassle over all.",
+      "title": "Confusion at the outset",
+      "publication": "1698019200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r922661810-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:14.781Z",
+      "updated_at": "2024-05-19T04:14:17.775Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 591,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Michael C",
+      "image": "cms/ReviewImage/Michael_C_picture_ajVsD3W.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3e3dcc46-013a-4a81-ebc5-8c566e49b900/public",
+      "rating": 1,
+      "text": "We did not get the tickets as promised the day before. We called the tour operator and they said go inside. Security would no let us in. For two hours we went back and forth. Finally we got tickets but by then we had to rush to catch the train. The people we called at trip advisor were very very hard to hear.",
+      "title": "Terrible Ticket Support!!",
+      "publication": "1697846400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r922246733-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:18.204Z",
+      "updated_at": "2024-05-19T04:14:21.021Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 592,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "ユウドウ",
+      "image": "cms/ReviewImage/ユウドウ_picture_FKgmUOm.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c0ef8a30-6abd-4a34-6a1e-4947ed432e00/v1",
+      "rating": 5,
+      "text": "The Colosseum's overwhelming presence when viewed from the second row seats left me very satisfied. There were a lot of visitors, but since I had already purchased my ticket in advance, the entry process was fairly smooth. The entire area of the Roman Forum was ruins, so I was able to enjoy the ancient atmosphere for a while.",
+      "title": "Stress-free ancient travel",
+      "publication": "1697760000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r922117223-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:21.507Z",
+      "updated_at": "2024-05-19T04:14:23.831Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 593,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "maria c",
+      "image": "cms/ReviewImage/maria_c_picture_NtTy2t6.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/373c449b-b35a-4ab0-9791-934fbb792700/v1",
+      "rating": 1,
+      "text": "I did not get tickets by email. Had difficulty getting in touch with local tour operator Dream Tourism to get tickets. Much effort and aggravation to get the tickets.",
+      "title": "Not good experience",
+      "publication": "1697587200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r921855222-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:24.310Z",
+      "updated_at": "2024-05-19T04:14:26.929Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 594,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Carla",
+      "image": "cms/ReviewImage/Carla_picture_y0PYhce.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/76604efd-cd70-47b9-6e3e-ac4d4ab14d00/public",
+      "rating": 1,
+      "text": "Unfortunately, the company of this experience called me the day before at 8pm trying to cancel the experience for an unknown reason. I said this was not acceptable and would not be able to find other tickets as they suggested. After a lot of going back and forward they moved my booking to an hour earlier, which is okay. The Colosseum was amazing and we loved seeing it which is why is a 3*, for the service of this company it would have been a 1*. The representative that called has also been badgering me for a 5* review by calling and messaging and asking to let them know when the 5* review is posted. If you can, book with someone else. I left a 3* review and was called by the company asking why I left a 3* review… this is a week after I used their services. Surely some GDPR laws broken there?? called me a liar over the phone, shouted and swore at me. I actually never been treated this way by a company. Disgusting behaviour!",
+      "title": "Avoid avoid avoid",
+      "publication": "1696982400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r920819919-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:27.386Z",
+      "updated_at": "2024-05-19T04:14:29.738Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 595,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Matt T",
+      "image": "cms/ReviewImage/Matt_T_picture_3MKJoqN.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4ad9f840-0a29-4f81-f84b-dbbdf14fad00/public",
+      "rating": 4,
+      "text": "So much history, amazing buildings and great preservation work. Enjoyed the experience of Rome. Fantastico",
+      "title": "Rome 2023",
+      "publication": "1696896000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r920747371-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:30.274Z",
+      "updated_at": "2024-05-19T04:14:33.347Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 596,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "beckthoven12",
+      "image": "cms/ReviewImage/beckthoven12_picture_Kuyc5IT.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7a1398a7-3d98-4dfb-dd7f-67ab67968400/v1",
+      "rating": 5,
+      "text": "This was very informative and at a good pace with skip the line which was great! Our guide was friendly and very attentive.",
+      "title": "Very informative and relaxed!",
+      "publication": "1696636800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r920195575-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:33.942Z",
+      "updated_at": "2024-05-19T04:14:37.345Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 597,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "peachey440",
+      "image": "cms/ReviewImage/peachey440_picture_NJCp2Y1.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0e35701b-9bb4-4c34-36f9-16a32f2dd200/public",
+      "rating": 3,
+      "text": "We may have been unlucky but it was oh so crowded and so many groups it was almost impossible to get around. Signage poor and videos of Sparticus- not impressed. Group tour maybe better",
+      "title": "Crowded",
+      "publication": "1696550400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r920016992-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:37.803Z",
+      "updated_at": "2024-05-19T04:14:40.483Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 598,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "carolQG1704",
+      "image": "cms/ReviewImage/carolQG1704_picture_HmWnx6Y.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/92c503fb-c141-446d-00a8-192e6afb4b00/public",
+      "rating": 5,
+      "text": "Incredible place, immersion in history, highlight of the trip! Impressive! We visited the Colosseum, Palatine Hill and the Roman Forum.",
+      "title": "Friends at the Coliseum",
+      "publication": "1696464000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919926248-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:41.566Z",
+      "updated_at": "2024-05-19T04:14:44.033Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 599,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Kate H",
+      "image": "cms/ReviewImage/Kate_H_picture_e5VR15T.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f46b2778-85f7-4c76-dd64-c5fbd0843000/public",
+      "rating": 1,
+      "text": "The day before our scheduled tour we were contacted with the message that there had been a scheduling error and we would not be able to participate in the tour. Because it was the day before we were unable to book anything else and so had to miss the colosseum during our trip to Rome. The company offered a refund but what would have been more helpful would have been an attempt to find us another way to visit.",
+      "title": "Never got to go, cancelled day before.",
+      "publication": "1696291200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919636422-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:14:44.557Z",
+      "updated_at": "2024-05-19T04:14:47.065Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 600,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Jen P",
+      "image": "cms/ReviewImage/Jen_P_picture_QUsyXOp.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4f842df0-135a-4efa-3af7-9e82712a2200/v1",
+      "rating": 1,
+      "text": "I bought tickets for colosseum, forum and Palestine hill. We went to colosseum did the audio tour then went to forum which had closed. There was no possible way we could have done all the things in the time allotted. The tickets should not have been sold. I paid for things that I didn’t have a chance of seeing. It was our one chance in life and we missed out.",
+      "title": "Shouldn’t have even sold the tickets in the first place!",
+      "publication": "1696291200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919649289-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:27.621Z",
+      "updated_at": "2024-05-19T04:17:30.880Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 601,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Dreamer45476088256",
+      "image": "cms/ReviewImage/Dreamer45476088256_picture_I3jSDnY.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b957e8b3-8bba-4423-7b03-c94f15bc9700/v1",
+      "rating": 5,
+      "text": "Amazing service and prompt replies!! It’s my very first time going to Europe, and I couldn’t find any tickets for this activity! Really happy to get 2 tickets to the colosseum. Thank you for going the extra mile and saving my whole itinerary! If not it would have been a torture queuing!",
+      "title": "Amazing service!",
+      "publication": "1696204800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919470783-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:31.422Z",
+      "updated_at": "2024-05-19T04:17:34.455Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 602,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Mariana G",
+      "image": "cms/ReviewImage/Mariana_G_picture_nEUmJY7.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6650ef03-2283-4f8b-004a-4a771029c900/public",
+      "rating": 5,
+      "text": "Very quick to respond and they fulfilled everything they offered, it stood out that I got the tickets from one day to the next, they only had tk available, very good price too!! I was a little afraid because of the other comments but they delivered! Super recommended!!!",
+      "title": "Super efficient",
+      "publication": "1696204800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919508194-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:34.999Z",
+      "updated_at": "2024-05-19T04:17:38.325Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 603,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Adam",
+      "image": "cms/ReviewImage/Adam_picture_i0317b8.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e651dbba-ac31-4745-83e1-34a07eba4d00/v1",
+      "rating": 2,
+      "text": "We purchased the tickets through Trip Advisor (Viator)..The actual tour operator who provided tickets was Dream Tourism - they were awful. They sent us the voucher by email (this does not get you admission), but then we also needed tickets sent to us. When we didn't receive the tickets by the day of our tour, we called them and they gave us the run-around for several hours. Admission is only allowed until 15 minutes after the time printed on the ticket. Fortunately, a representative from Trip Advisor was able to locate and send us the tickets at the last second. The audio quality of the tour is very poor and the disposable headsets did not fit my or my wife's ears. We ended up just walking around and looking at the sites. The Roman Forum and Palatine hill were very interesting and full of ancient history.",
+      "title": "Amazing history, poor costumer service and quality",
+      "publication": "1696118400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919228866-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:39.183Z",
+      "updated_at": "2024-05-19T04:17:42.032Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 604,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Michael G",
+      "image": "cms/ReviewImage/Michael_G_picture_hHv4dTG.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2b124d5f-a6ab-4735-9468-811c6aa36400/v1",
+      "rating": 1,
+      "text": "I was told there was a server problem and that we could go at a later time. I don’t believe that there were ever tickets. We asked for a refund and expect it in 3-5 days.",
+      "title": "Vendor did not deliver as expected",
+      "publication": "1696118400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919315479-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:42.736Z",
+      "updated_at": "2024-05-19T04:17:44.954Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 605,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Ann M",
+      "image": "cms/ReviewImage/Ann_M_picture_jcFUCAi.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/76146998-70ee-4526-03b6-e4d3e0ac9c00/v1",
+      "rating": 1,
+      "text": "Dream Tourism ran this excursion. We had one day to go to Capri. We woke up at 5am to get ready to meet the group at a location that was designated on our tour voucher. We left our hotel at 6am to walk the 22 min to the meeting spot, Boone was there. We waited and no one showed. We called Viator and they called Dream Tourism. Dream tourism said they canceled the tour because it was too cold. It was a bit cool because it was early morning, but by the time we would’ve gotten to Capri it would’ve been in the 80s or upper 70s which would’ve been perfect weather. The tour guide told a fib, because he actually canceled because there were only four of us that had signed up. He canceled because not enough people signed up. Our complaint is that we were not told in time. It was only after we called that he sent an email out to us stating that the tour had been canceled. This is not good customer service, and ruined our beautiful day we had planned !!! I do not recommend doing anything with dream tourism, they cannot be trusted. I understand the need to cancel, if the trip didn’t fill up, but we should’ve been given plenty of notice!!!!!",
+      "title": "I do not recommend dream tourism for any tour, especially the trip to Capri. Viator needs to stop using this company.",
+      "publication": "1696118400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919319574-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:45.563Z",
+      "updated_at": "2024-05-19T04:17:48.641Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 606,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Toni",
+      "image": "cms/ReviewImage/Toni_picture_4XtEmG5.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3d134c09-9244-4cb5-f336-dd024d5d3b00/public",
+      "rating": 5,
+      "text": "Look, I can't say any more than they were amazing with a reservation glitch. The communication was quick and understanding, and in this case, went beyond good service for a solution. Having come from afar, i.e., New Zealand, and on a once in a lifetime visit, they were brilliant.",
+      "title": "Brilliant service and communication l.",
+      "publication": "1696118400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919335597-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:49.266Z",
+      "updated_at": "2024-05-19T04:17:52.633Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 607,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Joshua J",
+      "image": "cms/ReviewImage/Joshua_J_picture_vFyUWq5.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2cefaced-cfc1-4f14-5dcf-21852212fa00/v1",
+      "rating": 1,
+      "text": "Unexpected cancellation. No refund after they said I would get one. No response when I have written them.",
+      "title": "Unexpected Cancellation",
+      "publication": "1696032000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919171985-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:53.053Z",
+      "updated_at": "2024-05-19T04:17:54.475Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 608,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "LP118",
+      "image": "cms/ReviewImage/LP118_picture_uTZpvlX.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b6c4bffe-46c6-4eb1-dc24-a7a147b46300/v1",
+      "rating": 2,
+      "text": "Very confusing options, thought I had booked for a guided tour, discovered it wasn't even with an audio guide. Complained to the company, agreed to \"upgrade\" us to premium to include an audio guide, for free (well, for a 5* review). \"Tickets\" didn't arrive until a couple of hours before the tour. Timing was confusing - we thought we would be doing the Colosseum first, then the Roman Forum and Palatine Hills, instructions said otherwise, so we had to be there earlier than anticipated, to be at the Colosseum at our booked time. Told us we'd need an hour for the Forum and Palatine, but you really need much longer. The assistants at the gate told us we'd need longer and should do the Colosseum first and do the others when we were ready (we decided to just do a quick tour of the Forum and Palatine rather than to and fro again). Skip the Line at the Colosseum worked well, but there was a wait for the audio guides. However, it's well worth the visit for all the history and magnificence of the building. I would recommend just buy the skip the line tickets with audio guide from the official site and save the extra hassle.",
+      "title": "Confusing Instructions from the provider, great tour of the monuments",
+      "publication": "1695945600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r919024860-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:55.002Z",
+      "updated_at": "2024-05-19T04:17:57.783Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 609,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "James R",
+      "image": "cms/ReviewImage/James_R_picture_qL8YgKL.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4bd80886-5df6-47a9-6cfa-1cddb4ab9100/public",
+      "rating": 4,
+      "text": "Skip the line tickets are the only way to enjoy the Colosseum and Forum on a tight schedule. A challenge to book though.",
+      "title": "Skip the line tickets are a must!",
+      "publication": "1695686400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r918531536-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:17:58.284Z",
+      "updated_at": "2024-05-19T04:18:00.746Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 610,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Calin Vasile H",
+      "image": "cms/ReviewImage/Calin_Vasile_H_picture_cZ1BhPW.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6c3f9e27-0d35-4038-5fe9-20eccdd09600/public",
+      "rating": 5,
+      "text": "Everything was OK. It is better to visit in the morning, there are not so many people. Roman temples are impressive.",
+      "title": "excellent",
+      "publication": "1695513600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r918199093-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:02.153Z",
+      "updated_at": "2024-05-19T04:18:04.857Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 611,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "sarah H",
+      "image": "cms/ReviewImage/sarah_H_picture_bRz2J9y.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3e3ab375-87ec-43ea-9b8d-8368f0b99900/public",
+      "rating": 5,
+      "text": "Really knowledgeable guide, Alfredo. Clearly knows lots about history. Easy to follow, we had an ear piece with the guide. Good pace - lots to take in! So glad we went early and did ‘skip the line’",
+      "title": "Fab visit",
+      "publication": "1695340800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r917834184-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:05.357Z",
+      "updated_at": "2024-05-19T04:18:08.369Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 612,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Simon G",
+      "image": "cms/ReviewImage/Simon_G_picture_gd8urWA.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f4b112bb-ece8-4572-10f8-a2ad9003bd00/v1",
+      "rating": 3,
+      "text": "This is an incredible piece of cultural history. When approaching from the Via dei fori imperiali you are already gobsmacked by the altare dela patria and monument a Vittorio Emanuele II and then you see it in the distance rising majestically, drenched in the golden sun and you are left breathless. As you approach you are a little distracted by the crowds. Once inside, the grandeur and history do grab you, but nothing comes close to first sighting. Don't just get the metro to the Colosseo station, You have to approach from the Piazza Venezia.",
+      "title": "Magnificent",
+      "publication": "1695254400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r917687235-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:08.920Z",
+      "updated_at": "2024-05-19T04:18:11.697Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 613,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Victor R",
+      "image": "cms/ReviewImage/Victor_R_picture_wsBWeLu.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1867e468-ac51-40b9-ee79-df1059da6000/v1",
+      "rating": 3,
+      "text": "Colosseum was great. Tour service not so much. They did not send entry tickets 24 hours before, and I had to send 2 emails and text Viator to get them to send the tickets. Then the tour representative told me we only had one hour to see the Forum before our Colosseum time. You can’t properly visit the Forum in 1 hour. You need at least 2 or 3. Fortunately the staff at the Forum told us not to do this and we could use our pass after the Colosseum booking. There are choices for these third party resellers of tickets - shop around for better service.",
+      "title": "Shop around",
+      "publication": "1695168000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r917470430-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:12.268Z",
+      "updated_at": "2024-05-19T04:18:15.227Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 614,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "jopolch",
+      "image": "cms/ReviewImage/jopolch_picture_qTF0Peb.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f4812b9b-81c0-4795-e6c6-10261922db00/public",
+      "rating": 4,
+      "text": "This tour was very easy to arrange and tickets were sent promptly. This was the last tour of our cruise/land tour vacation—-wish we could have done a guided tour. We had tickets for 5pm and skip the line tickets was the way to go. My husband and I really enjoyed seeing the Colosseum and surrounding sites.",
+      "title": "Colosseum visit 9/16/2023",
+      "publication": "1695081600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r917394939-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:15.755Z",
+      "updated_at": "2024-05-19T04:18:18.392Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 615,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Karo",
+      "image": "cms/ReviewImage/Karo_picture_pfrRKPD.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/bef5664b-68b1-4f78-98a4-f1f77bfe3b00/public",
+      "rating": 5,
+      "text": "Had an amazing time with my sister and best friend. The staff and security were really friendly. We took lots of pictures and videos!",
+      "title": "Excellent",
+      "publication": "1694736000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r916668235-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:18.943Z",
+      "updated_at": "2024-05-19T04:18:21.461Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 616,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Marlene",
+      "image": "cms/ReviewImage/Marlene_picture_1cDmb4c.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/70544156-20e6-44da-591c-fc144cccd000/public",
+      "rating": 5,
+      "text": "It was the first time I visited these places and I really enjoyed it. It was very easy to get in, there was no queue at all. The environment was peaceful and very safe. Well-educated people, from tourists to local employees.",
+      "title": "Magnificent",
+      "publication": "1694736000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r916701984-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:22.057Z",
+      "updated_at": "2024-05-19T04:18:24.605Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 617,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Eric S",
+      "image": "cms/ReviewImage/Eric_S_picture_1f7zzYD.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5aa41617-67ce-4afc-3c5f-31f35d49fb00/v1",
+      "rating": 3,
+      "text": "I ordered 2pm visit but was given 330pm. Disappointing. When I placed order there was plenty of 2pm reservations available.",
+      "title": "Wrong time",
+      "publication": "1694390400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r915957383-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:25.314Z",
+      "updated_at": "2024-05-19T04:18:28.223Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 618,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "susana p",
+      "image": "cms/ReviewImage/susana_p_picture_sxjVQrL.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f105c5fa-131e-4382-f1e1-a81ec7cf8a00/public",
+      "rating": 3,
+      "text": "Confused about how to enter the coliseum. Getting the head sets was hard due to the long lines. Matching the numbers at the coliseum to the head set was also a challenge.",
+      "title": "It was confusing to find out what line you needed to be in if you pre brought your ticket.",
+      "publication": "1694044800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r915327685-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:28.734Z",
+      "updated_at": "2024-05-19T04:18:31.303Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 619,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "David D",
+      "image": "cms/ReviewImage/David_D_picture_OYSrtc7.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/91a9a2c6-f7fd-48f3-793e-282e9429cf00/public",
+      "rating": 5,
+      "text": "Thank you so much, we had a fantastic day exploring ancient buildings and ruins. It was certainly the highlight of our visit to Rome. Skipping the queue was a huge benefit as we managed to get access to the Colosseum before large crowds entered. 5 stars",
+      "title": "Fantastic Experience",
+      "publication": "1693872000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r914932013-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:31.737Z",
+      "updated_at": "2024-05-19T04:18:34.417Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 620,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Wander24636273813",
+      "image": "cms/ReviewImage/Wander24636273813_picture_a4KDjoJ.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/867022a4-e63f-432b-8dae-9eed57ba4500/v1",
+      "rating": 5,
+      "text": "We got to the colosseum and the crowds were everywhere. We walked up to a tent to ask where we go with our ticket and they sent us right in, no line no waiting! Great service and delivered tickets right to phone.",
+      "title": "Colosseum visit made easy",
+      "publication": "1693872000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r915066624-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:34.889Z",
+      "updated_at": "2024-05-19T04:18:37.226Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 621,
+    "fields": {
+      "supplier": "trip-advisor",
+      "reviewer_name": "Volcanogirl2go",
+      "image": "cms/ReviewImage/Volcanogirl2go_picture_qU1uROM.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/774ba27d-a52c-4580-c18d-2b0f53488500/v1",
+      "rating": 5,
+      "text": "Booked last minute, exactly as described. Great communication, we very much enjoyed the self guide as we wanted to go at our own pace. Ticket delivery was instant. Recommended.",
+      "title": "Interesting",
+      "publication": "1693785600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17374998-r914893986-Dream_Tourism-Rome_Lazio.html",
+      "created_at": "2024-05-19T04:18:38.487Z",
+      "updated_at": "2024-05-19T04:18:41.594Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 670,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "stuart c",
+      "image": "cms/ReviewImage/stuart_c_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7a89c915-e208-47e5-f394-b7c40c68c900/public",
+      "rating": 3,
+      "text": "Communication was great, but his photography skills were not up to much. Unless you like a big white transit van in the background, of your souvenir photo! Thanks anyway.",
+      "title": "Any one for a photo of the colosseum, with a white van??",
+      "publication": "1732903200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r982710935-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:28.851Z",
+      "updated_at": "2024-12-03T12:13:30.724Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 671,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "quintus m",
+      "image": "cms/ReviewImage/quintus_m_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d8684e9b-3888-4ae9-4e0b-58e84c483200/public",
+      "rating": 5,
+      "text": "The guide was great and much knowledge of the place that made the experience wonderful. Thanks for a great experience. I can recommend this to anyone that would like to visit and book it with you.",
+      "title": "One of the most beautiful things",
+      "publication": "1732903200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r982679109-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:30.814Z",
+      "updated_at": "2024-12-03T12:13:32.184Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 672,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Liberty B",
+      "image": "cms/ReviewImage/Liberty_B_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/9c2f120b-8918-4126-0ff2-fdf399461400/v1",
+      "rating": 5,
+      "text": "Great activity for the whole family!!! We had a great time! Lots of walking. The tour guide was very helpful and made sure there was no issues",
+      "title": "Excellent",
+      "publication": "1732816800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r982584050-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:32.255Z",
+      "updated_at": "2024-12-03T12:13:33.378Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 673,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Nina S",
+      "image": "cms/ReviewImage/Nina_S_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/61cacf2b-b77b-4bde-dac9-a2d0253c6300/v1",
+      "rating": 5,
+      "text": "Sak was very friendly and polite. He was waiting for us at the meeting point and was available for assistance while we had our tour at our own pace. Highy recommend Sak!",
+      "title": "Family visit of Colloseum",
+      "publication": "1732730400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r982532492-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:33.493Z",
+      "updated_at": "2024-12-03T12:13:34.681Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 674,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "quintus m",
+      "image": "cms/ReviewImage/quintus_m_picture_YseF41p.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e56ff311-0037-4a6f-e673-0554334e9600/v1",
+      "rating": 5,
+      "text": "The guy that met us was extremely professional and so so lovely, he looked after my wife and text me to say she is ok . Very good job",
+      "title": "Recommend this to anyone",
+      "publication": "1732730400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r982520422-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:34.787Z",
+      "updated_at": "2024-12-03T12:13:35.779Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 675,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Martha T",
+      "image": "cms/ReviewImage/Martha_T_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4f84cfe9-f416-45b8-24ae-bc60d172b800/public",
+      "rating": 5,
+      "text": "Sak was very comunicative as far as where to go and what to expect .  We enjoyed our trip, but did not know we were not going to be able to use wifi for the guided tour. ",
+      "title": "Great views of ancient Rome",
+      "publication": "1732557600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r981979843-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:35.925Z",
+      "updated_at": "2024-12-03T12:13:37.002Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 676,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Jessica T",
+      "image": "cms/ReviewImage/Jessica_T_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ad3e1e31-1a86-406f-5eca-b7bb4fb02000/v1",
+      "rating": 5,
+      "text": "This was the best and easiest experience! Our guide met us out front of the Colosseum and provided us with the tickets right away. We were traveling with no phone data, and he was even kind enough to lend his hotspot so we could receive the tickets and have no issues! Would recommend to anyone!",
+      "title": "Colosseum Experience",
+      "publication": "1732471200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r981889615-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:37.132Z",
+      "updated_at": "2024-12-03T12:13:38.260Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 677,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "519samanthan",
+      "image": "cms/ReviewImage/519samanthan_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f8b9c967-7cdc-4b61-5925-093447f76d00/v1",
+      "rating": 5,
+      "text": "The guide met us and went through everything, I even messaged him whilst in the Colosseum with a query and he responded straight away. It was easy to navigate. I enjoyed going round on our own and listening to the audio.",
+      "title": "Visit to the Colosseum",
+      "publication": "1732471200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r981818365-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:38.377Z",
+      "updated_at": "2024-12-03T12:13:39.362Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 678,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "christylynn2712",
+      "image": "cms/ReviewImage/christylynn2712_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/9017d0c4-4f72-47ff-5513-86faa7311f00/v1",
+      "rating": 5,
+      "text": "Had a self guided  tour at the Colessium.  We met at the front.  Guide kept in touch.   Easy process Had a great time,  thanks!!!",
+      "title": "Self Guided Tour",
+      "publication": "1732471200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r981806643-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:39.415Z",
+      "updated_at": "2024-12-03T12:13:41.199Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 679,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Sabra P",
+      "image": "cms/ReviewImage/Sabra_P_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c4d1a2c0-2ea8-4403-ba21-dde8ac895800/v1",
+      "rating": 5,
+      "text": "Visit to the Coliseum and the Amazing Forum! No time wasted in line thanks to tickets and access to the unforgettable arena for our children! We recommend 100% the services of Nassim!!",
+      "title": "Visit the Coliseum and Forum!",
+      "publication": "1732039200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r981318677-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:41.253Z",
+      "updated_at": "2024-12-03T12:13:42.424Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 680,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Alain",
+      "image": "cms/ReviewImage/Alain_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0125d26e-ca83-4460-38dc-0e69c4566000/v1",
+      "rating": 5,
+      "text": "The day at the Colosseum, the Roman Forum and the Palatine were unforgettable. In November it has few people and you can take all the time in the world without being pushed around.The information from Dream Tourism was very good. You get everything via Whatsapp with tickets and photos from the right entrance. In addition, you will be called again and informed before the visit.",
+      "title": "An Impressive Day in Ancient Rome",
+      "publication": "1732039200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r981303435image_url-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:42.538Z",
+      "updated_at": "2024-12-03T12:13:43.552Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 681,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "MaggerZ",
+      "image": "cms/ReviewImage/MaggerZ_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/45b9eea2-ae3d-4251-72d3-97831bd8bd00/v1",
+      "rating": 4,
+      "text": "Dream Tourism were brilliant…even making an adjustment to our booking when I was a bit of an idiot.  The Colosseum is a bit of a squeeze and you don’t really get the time to take in all the information made available but our high lights were the Forum and Palentine Hill.  Absolutely amazing and lots of space to wander around in you never felt the press of the crowd.  An absolute MUST for any Rome trip",
+      "title": "Really MUST do",
+      "publication": "1732039200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r981294998-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:43.696Z",
+      "updated_at": "2024-12-03T12:13:44.683Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 682,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Adam N",
+      "image": "cms/ReviewImage/Adam_N_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/87e6ad2a-1a9a-42f2-b9b4-9706e3e81300/v1",
+      "rating": 5,
+      "text": "SAK was so helpful! He was so friendly and accommodating. The views and experiences of the Colosseum, Roman Forum and Palatine Hill were incredible! We had a great day. Would highly recommend!",
+      "title": "Amazing day out!",
+      "publication": "1731693600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r980595978-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:44.790Z",
+      "updated_at": "2024-12-03T12:13:45.758Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 683,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "LJones",
+      "image": "cms/ReviewImage/LJones_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d23fc57a-a232-48f6-1bee-f3b4cf94c700/public",
+      "rating": 5,
+      "text": "Mr SAK from Dream Tourism was really helpful – we were grateful to have him as a point of contact when we arrived, as it was busy and quite confusing at the entrance. We loved our trip to the Colosseum – just spectacular! And we loved the Roman Forum and Palatine Hill just as much. The views were astonishing and there was so much to see and learn.",
+      "title": "Colosseum visit with Dream Tourism",
+      "publication": "1731434400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r980295102-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:45.871Z",
+      "updated_at": "2024-12-03T12:13:46.941Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 684,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Nicola B",
+      "image": "cms/ReviewImage/Nicola_B_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c81a510c-09c9-4dfa-aefa-2f11f8d4f800/v1",
+      "rating": 5,
+      "text": "Awesome trip to the coliseum and room forum. Be careful through we got taken with the crowd and ended up at the exit of the colosseum after only being inside for ten minutes and when we tried to go back to see inside the colosseum arena the staff would not let us due to  “health and safety” and we were not permitted to walk against the crowds. We did manage to get back in through and actually see the inside after quite a bit of begging",
+      "title": "Colosseum and Roman forum",
+      "publication": "1731348000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r979649212-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:47.048Z",
+      "updated_at": "2024-12-03T12:13:48.146Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 685,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "905hennah",
+      "image": "cms/ReviewImage/905hennah_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/753b863c-8509-46c4-adc4-e70f5097d400/public",
+      "rating": 5,
+      "text": "Our trip was organised by Sak who was super attentive. He messaged us the night before to ensure we had received our tickets and knew where to locate him on the day. Unfortunately we ran late to the pick up point but Sak was extremely helpful, was very easy to contact, and still managed to get us in and let us have the full experience. I would definitely recommend this tour to anyone interested and we would like to give the biggest thank you to Mr Sak for making the experience so easy and fun!",
+      "title": "Colosseum, Palatine Hill and Roman Forums organised by Mr SAK",
+      "publication": "1731261600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r979465156-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:48.225Z",
+      "updated_at": "2024-12-03T12:13:49.347Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 686,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Parisa G",
+      "image": "cms/ReviewImage/Parisa_G_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/570776ec-4baa-41a4-50be-2e33ba7edc00/public",
+      "rating": 4,
+      "text": "I had an excellent experience purchasing tickets from dream tourism The process was smooth and user-friendly, making it easy to find and select the best options for my visit. The customer service team was knowledgeable and responsive, addressing any questions I had promptly and providing helpful insights. On the day of the event, everything went as planned, and the tickets worked seamlessly without any issues. I highly recommend Dream tourism for their reliable service, knowledgeable staff, and great selection. I will definitely be buying from them again in the future!”",
+      "title": "Great Experience Despite the Crowds",
+      "publication": "1731088800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r979219461-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:49.428Z",
+      "updated_at": "2024-12-03T12:13:50.475Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 687,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Karina R",
+      "image": "cms/ReviewImage/Karina_R_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7f18f6de-7fe2-4285-8d1f-f139fc863c00/public",
+      "rating": 5,
+      "text": "Initially had slight difficulties finding the provider, but after a short phone call everything worked out well Very good service.It all happened quickly.Always happy.",
+      "title": "Excellent!",
+      "publication": "1730743200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r978772178-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:50.599Z",
+      "updated_at": "2024-12-03T12:13:51.789Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 688,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Cruiser34336997473",
+      "image": "cms/ReviewImage/Cruiser34336997473_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e3a96825-1e2a-42b2-c079-6a6a0876ef00/v1",
+      "rating": 5,
+      "text": "Sak really helped us navigate the very busy venue of the Colosseum and Roman Forum. He was patient, kind and a clear communicator. We lost our children’s tickets into the Roman Forum and turned away at the front gate, Sak and his business partner helped us get in with new tickets. We were so thankful for their help!",
+      "title": "Colosseum and Roman Forum",
+      "publication": "1730570400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r978500228-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:51.914Z",
+      "updated_at": "2024-12-03T12:13:52.976Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 689,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Monika P",
+      "image": "cms/ReviewImage/Monika_P_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/90eda176-937d-474f-f887-57ce2ebe0b00/public",
+      "rating": 4,
+      "text": "I would award 5 stars if we had found our guide. We then visited everything without an audio guide.",
+      "title": "Colloseum",
+      "publication": "1730570400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r978473366-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:53.092Z",
+      "updated_at": "2024-12-03T12:13:54.215Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 690,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Ana L",
+      "image": "cms/ReviewImage/Ana_L_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/032e6e14-7f64-4dd2-dbd8-d5b0b732ab00/v1",
+      "rating": 5,
+      "text": "Enjoy the experience of getting up close and personal with one of the most important historical sites where Western civilization developed.",
+      "title": "The Roman Colosseum a unique experience",
+      "publication": "1730484000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r978384818-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:54.326Z",
+      "updated_at": "2024-12-03T12:13:55.421Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 691,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "punya",
+      "image": "cms/ReviewImage/punya_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/9c31d4c8-769e-45c5-c98c-ea716b053800/public",
+      "rating": 5,
+      "text": "it was an excellent tour. our guide was very efficient and helpful and made our experience very smooth. the place is very well documented, with audio guides available and does create a memorable experience.",
+      "title": "A day back in history",
+      "publication": "1730397600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r978245502-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:55.505Z",
+      "updated_at": "2024-12-03T12:13:57.432Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 692,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "ROGER J",
+      "image": "cms/ReviewImage/ROGER_J_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/56686530-7673-4254-50b4-82a7e3af4e00/public",
+      "rating": 2,
+      "text": "Ineligible not to provide audio guides in French Difficulty getting tickets and practical information through the app ma",
+      "title": "Bad experience",
+      "publication": "1730311200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r978088572-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:57.493Z",
+      "updated_at": "2024-12-03T12:13:58.607Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 693,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Andrew H",
+      "image": "cms/ReviewImage/Andrew_H_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8f6e3701-9e06-4543-8e24-b860a4bfe100/public",
+      "rating": 5,
+      "text": "Would recommend pre booking and having your tickets before you. Just remember your photo ID as lots of people In the Que were having issues",
+      "title": "Really good",
+      "publication": "1730224800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r977760540-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:58.670Z",
+      "updated_at": "2024-12-03T12:13:59.675Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 694,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Sudhir P",
+      "image": "cms/ReviewImage/Sudhir_P_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b71f6890-111c-46e8-eb44-6a844022a800/v1",
+      "rating": 1,
+      "text": "",
+      "title": "VERY UNPROFESSIONAL VERY DISSATISFIED",
+      "publication": "1730138400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r977124735-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:13:59.779Z",
+      "updated_at": "2024-12-03T12:14:00.884Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 695,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "MWATSON1976",
+      "image": "cms/ReviewImage/MWATSON1976_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/66be7a36-1cbc-449c-fb62-62d91a394e00/public",
+      "rating": 4,
+      "text": "Great communication, well organised and we received all of the assistance needed. We were met outside of the Colessium and given instructions of where to go. On returning a couple of hours later, given further help to go into Roman Forum and Palantine Hill.",
+      "title": "Colessium Visit",
+      "publication": "1730052000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r976990513-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:01.024Z",
+      "updated_at": "2024-12-03T12:14:02.048Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 696,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Amira S",
+      "image": "cms/ReviewImage/Amira_S_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7c150ac5-cce8-4d60-b1ff-24fc9f079b00/public",
+      "rating": 5,
+      "text": "Good experience very friendly in their treatment the service was what they promised we liked very much we were very happy because they contacted us from before to give us the indications",
+      "title": "Visita Colesseum Romano",
+      "publication": "1729965600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r976882193-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:02.142Z",
+      "updated_at": "2024-12-03T12:14:03.318Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 697,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Christopher L",
+      "image": "cms/ReviewImage/Christopher_L_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d100546e-2dbe-4712-c5fa-dafa445cb500/v1",
+      "rating": 5,
+      "text": "It was really all wonderful! From 1. Booking there were regular updates until the event. A few days before the event there was a WhatsApp contact, on the day of the event a call - otherwise it worked wonderfully and digitally with the tickets. In this respect, we can recommend the service 100 percent.",
+      "title": "Super Tour- super organization",
+      "publication": "1729879200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r976734960-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:03.416Z",
+      "updated_at": "2024-12-03T12:14:04.634Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 698,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "tareq i",
+      "image": "cms/ReviewImage/tareq_i_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/16a55574-570b-4cf5-3049-738e4b6c5d00/v1",
+      "rating": 5,
+      "text": "I brought ticket from dream tourism.I had good experience with their tickets system. If I will replan I will go with their service.",
+      "title": "Great experience",
+      "publication": "1729620000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r976356741-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:04.762Z",
+      "updated_at": "2024-12-03T12:14:05.849Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 699,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Myra J",
+      "image": "cms/ReviewImage/Myra_J_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7640b564-b1ef-47ac-7424-040045dd6400/public",
+      "rating": 4,
+      "text": "Amazing experience to see historical places.  Everyone should experience this.         It was sort of  chaotic to find the third party vendor. Need a sign",
+      "title": "A lot of walking but the crowds were manageable; I am glad I made the trip in October",
+      "publication": "1729620000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r976321020-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:05.952Z",
+      "updated_at": "2024-12-03T12:14:07.201Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 700,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Michelle M",
+      "image": "cms/ReviewImage/Michelle_M_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/bc6c1248-27c5-4776-5855-e22e7eee3a00/v1",
+      "rating": 4,
+      "text": "Stephania from City Wonders was an amazing tour guide for this experience. She was so engaging and thorough and had so many pictures and other details for the tour that we truly appreciated. She made the tour fun and interesting. Although we were very disappointed that we didn't get to see the underground section, City Wonders credited us quickly for this and this was applicable to all 3rd party vendors when you don't book directly with the Coliseum. I personally love history and was in awe the entire tour. The rain did not take away from my experience. I would absolutely recommend City wonders. The headsets were clear and we could hear very well throughout.",
+      "title": "Great experience, Loved it!",
+      "publication": "1729533600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r974990080-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:07.322Z",
+      "updated_at": "2024-12-03T12:14:08.328Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 701,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Bunsen1999",
+      "image": "cms/ReviewImage/Bunsen1999_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/43e8504d-1dfb-4099-09c8-88eada103400/v1",
+      "rating": 5,
+      "text": "Interesting place to visit, buying tickets ahead of trip skipped one of the longer queues. Lots to see someplace yourself plenty of time. Sak very helpful.",
+      "title": "Great trip, top place to visit",
+      "publication": "1729533600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r974976881-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:08.382Z",
+      "updated_at": "2024-12-03T12:14:09.396Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 702,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Grant C",
+      "image": "cms/ReviewImage/Grant_C_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a35b1074-8739-4987-bd2b-bb569fef8c00/public",
+      "rating": 5,
+      "text": "Amazing place and visit. Welcomed and instructed well by tour operator and the building itself is a sight to behold. A must see in Rome",
+      "title": "Rome",
+      "publication": "1729533600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r974908157-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:09.455Z",
+      "updated_at": "2024-12-03T12:14:10.665Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 703,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Claire G",
+      "image": "cms/ReviewImage/Claire_G_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3be8af06-2800-4bd7-d9bc-aec662e8dc00/public",
+      "rating": 5,
+      "text": "I was kept up to date with all information in preparation for my visit to the Coliseum in Rome via WhatsApp and a phone call.",
+      "title": "Coliseum visit in Rome",
+      "publication": "1729360800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r974681523-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:10.792Z",
+      "updated_at": "2024-12-03T12:14:12.088Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 704,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Setty G",
+      "image": "cms/ReviewImage/Setty_G_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/511e7aed-8404-4977-eabd-9120e5e88500/v1",
+      "rating": 5,
+      "text": "Communication of meeting point and how to enter if I can’t meet them is great.we can’t expect to meet all the time with big crowds..Colosseum guys too helped.",
+      "title": "Colosseum visit on 20 October 2024 with family. We had a wonderful time.",
+      "publication": "1729360800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r974647494-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:12.148Z",
+      "updated_at": "2024-12-03T12:14:13.029Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 705,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Tom V",
+      "image": "cms/ReviewImage/Tom_V_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d5a4692a-19e2-4f77-a386-57778fc0fd00/public",
+      "rating": 5,
+      "text": "Coleseum was amazing and impressive to see and experience. Palatine Hill and Forum Romanum are a huge area which is quite impressive next to the coleseum. Can only recommend seeing these impressive buildings and areas.",
+      "title": "Great trip to the coleseum and the surrounding area.",
+      "publication": "1729188000",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r974423145-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:13.147Z",
+      "updated_at": "2024-12-03T12:14:14.279Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 706,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Kendra M",
+      "image": "cms/ReviewImage/Kendra_M_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/dcf72655-8f85-4ec6-4087-d050cadf5500/v1",
+      "rating": 5,
+      "text": "Great host!  Thanks SAK!!  We really enjoyed the tour! Very interesting to see all the history in Rome! If you get the opportunity to see you won’t regret it!",
+      "title": "Colosseum",
+      "publication": "1729015200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d18751459-r974144451-Colosseum_Forum_Palatine_Hill_with_Arena_Access_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:14.398Z",
+      "updated_at": "2024-12-03T12:14:15.375Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 707,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "TheJAMS1001",
+      "image": "cms/ReviewImage/TheJAMS1001_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2892efc8-f837-498f-df5e-e244bdfbbb00/public",
+      "rating": 4,
+      "text": "Our guide did a great job of explaining the process and then made sure  we got into the Colosseum as quickly as possible. We skipped huge lines! Then he repeated the process for the Roman Forum. Would highly recommend to get in as quickly as possible.",
+      "title": "Worth the money to skip the lines!",
+      "publication": "1728842400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973926801-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:15.488Z",
+      "updated_at": "2024-12-03T12:14:16.403Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 708,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Ann",
+      "image": "cms/ReviewImage/Ann_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/05cf8754-75e3-49b7-e64b-054c1927f400/v1",
+      "rating": 5,
+      "text": "I wish to highlight the great customer service that I received when making an incorrect booking. I accidently inputted the wrong date. I used the online chat and was personally contacted within 30 mins via WhatsApp. My alteration was actioned and confirmed immediately .Now that's what I call great customer service!Thank you  again",
+      "title": "Great Customer Service",
+      "publication": "1728842400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973905790-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:16.554Z",
+      "updated_at": "2024-12-03T12:14:18.210Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 709,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "ManonHoope",
+      "image": "cms/ReviewImage/ManonHoope_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a261052b-f0a1-4286-ac59-d4ac568c6d00/public",
+      "rating": 5,
+      "text": "It was all great, contact was good. We didn't need to find the guide and we could arrange everything easily by our phone!!",
+      "title": "Good arranged",
+      "publication": "1728669600",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973606825-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:18.313Z",
+      "updated_at": "2024-12-03T12:14:19.274Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 710,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Ginna L",
+      "image": "cms/ReviewImage/Ginna_L_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/64b84514-d3a7-4a36-765d-6157c8d96c00/v1",
+      "rating": 5,
+      "text": "Great and easy experience! It was raining a lot but we made it happen. Its a great experience. Totally recommended for sure!",
+      "title": "Colosseum",
+      "publication": "1728583200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973443836-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:19.335Z",
+      "updated_at": "2024-12-03T12:14:20.481Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 711,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "4fiona69",
+      "image": "cms/ReviewImage/4fiona69_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a257bea4-fe6a-41bb-fe26-bb9a6143af00/public",
+      "rating": 5,
+      "text": "Had a great time at the colloseum & palatine hillWe used Dream Tourism London and did the visit on our own but having said that we were still met by a member of their staff to help us.We had sak who was amazing from start to finish.He rang us to make sure we were ok getting there, he met us in the grounds, explained everything to us, took us to the security line and then met us again after the colloseum to explain the next part and directed us to the security queue for that part.He took the time to take a picture or 2 of us and was a very kind and thoughtful manAnd if you’ve never been you will know how much you appreciate that help when you arrive in the middle of what seems like thousands of people and queues in all different directions, it was quite daunting.We paid for fast track which is so worth it Great experience made a whole lot easier by these guys",
+      "title": "Great experience",
+      "publication": "1728583200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973439955-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:20.594Z",
+      "updated_at": "2024-12-03T12:14:21.641Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 712,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Paradise01325363967",
+      "image": "cms/ReviewImage/Paradise01325363967_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/477875cf-21a3-42a3-90f8-6a7e76baeb00/v1",
+      "rating": 3,
+      "text": "Our guide was brilliant . We Were running late as we had elderly parents and the guide got us sorted and found us on the way out to make sure all went ok. So 5 stars for the guide . However the inside the coliseum was awful. Not family friendly , staff were all very rude. Not at all pram or elderly friendly. Absolulty crammed , no room to actually enjoy and see the place, just a complete money racket, which could be run soo much smoother with a bit of organisation, and some training for the staff to actually be kind and helpful rather than rude.",
+      "title": "Guide was brilliant coluseum itself was terrible",
+      "publication": "1728583200",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973429623-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:21.761Z",
+      "updated_at": "2024-12-03T12:14:22.880Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 713,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "chatterbes1",
+      "image": "cms/ReviewImage/chatterbes1_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a56d7186-c029-48de-3bb6-9ee75e9a2a00/public",
+      "rating": 4,
+      "text": "The sites are of course amazing and interesting.  Allow plenty of time to really walk through everything available.  The skip the line tix are great.",
+      "title": "Antiquities are beyond words amazing",
+      "publication": "1728496800",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973294596-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:22.984Z",
+      "updated_at": "2024-12-03T12:14:24.076Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 714,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Craig",
+      "image": "cms/ReviewImage/Craig_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/39ae22ac-5fb1-470f-6b4e-768a05d92800/public",
+      "rating": 5,
+      "text": "It was a seamless experience - very happy with the whole procedure . A big shoutout to our guide who clearly enjoyed his job .",
+      "title": "Happy customer",
+      "publication": "1728410400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973200528-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:24.145Z",
+      "updated_at": "2024-12-03T12:14:25.126Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 715,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "jlach20162019",
+      "image": "cms/ReviewImage/jlach20162019_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0c724887-f8e0-4345-d49e-7f5ab9906200/v1",
+      "rating": 5,
+      "text": "Had a great time! They were very easy to work with and understand. They kept in contact and would def use this company again.",
+      "title": "Best trip",
+      "publication": "1728410400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973189861-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:25.253Z",
+      "updated_at": "2024-12-03T12:14:26.768Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.review",
+    "pk": 716,
+    "fields": {
+      "supplier": null,
+      "reviewer_name": "Peter W",
+      "image": "cms/ReviewImage/Peter_W_picture.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8a16fda1-1d99-4731-91dc-0d2d270d5000/v1",
+      "rating": 5,
+      "text": "Amazing. Tour guide  was very helpful and gave us everything we needed. The experience was stress free and I would recommend anyone to use this",
+      "title": "Great",
+      "publication": "1728410400",
+      "url": "https://www.tripadvisor.com/ShowUserReviews-g187791-d17486873-r973178529-Colosseum_Roman_Forum_and_Palatine_Hill_Access_with_Audio_Guide-Rome_Lazio.html",
+      "created_at": "2024-12-03T12:14:26.838Z",
+      "updated_at": "2024-12-03T12:14:27.958Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  }
+]

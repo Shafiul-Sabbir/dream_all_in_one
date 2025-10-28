@@ -1,0 +1,101 @@
+[
+  {
+    "model": "cms.blogcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Couples Travel",
+      "created_at": "2024-12-31T03:24:05.203Z",
+      "updated_at": "2024-12-31T03:24:05.203Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Family Travel",
+      "created_at": "2024-12-31T03:24:17.830Z",
+      "updated_at": "2024-12-31T03:24:17.830Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Travel Tips",
+      "created_at": "2024-12-31T03:24:25.395Z",
+      "updated_at": "2024-12-31T03:24:25.395Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Australia",
+      "created_at": "2024-12-31T03:24:33.037Z",
+      "updated_at": "2024-12-31T03:24:33.037Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Canada",
+      "created_at": "2024-12-31T03:24:42.225Z",
+      "updated_at": "2024-12-31T03:24:42.225Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 6,
+    "fields": {
+      "name": "America",
+      "created_at": "2024-12-31T03:24:49.291Z",
+      "updated_at": "2024-12-31T03:24:49.291Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 7,
+    "fields": {
+      "name": "Asia",
+      "created_at": "2024-12-31T03:24:57.757Z",
+      "updated_at": "2024-12-31T03:24:57.757Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 8,
+    "fields": {
+      "name": "United Kingdom",
+      "created_at": "2024-12-31T03:25:04.058Z",
+      "updated_at": "2024-12-31T03:25:04.058Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.blogcategory",
+    "pk": 9,
+    "fields": {
+      "name": "Europe",
+      "created_at": "2024-12-31T03:25:09.374Z",
+      "updated_at": "2024-12-31T03:25:09.374Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "model": "cms.metadata",
+    "pk": 11,
+    "fields": {
+      "cms_content": 60,
+      "meta_title": "Dream Tourism Ltd - Your Place for Amazing Travel Adventures",
+      "meta_description": "Start your dream vacation with Dream Tourism Ltd. Explore fantastic destinations and enjoy unforgettable adventures. Your perfect getaway is just a click away!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3ad9c3dc-9b98-4b03-05bf-e2d9895deb00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_i80zgaO.webp",
+      "slug": "dream-tourism-ltd-your-place-for-amazing-travel-adventures",
+      "created_at": "2024-06-26T05:14:36.931Z",
+      "updated_at": "2025-05-19T05:25:39.831Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 12,
+    "fields": {
+      "cms_content": 61,
+      "meta_title": "404 | Dream Tourism Limited",
+      "meta_description": "404 | Start your dream vacation with Dream Tourism Limited. Explore fantastic destinations and enjoy unforgettable adventures.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7f7f3cc1-81ac-4411-05f7-95601936fc00/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_G2VC4zM.webp",
+      "slug": "404-dream-tourism-limited",
+      "created_at": "2024-06-26T05:31:03.237Z",
+      "updated_at": "2025-05-19T04:51:34.181Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 14,
+    "fields": {
+      "cms_content": 59,
+      "meta_title": "Tours | Dream Tourism - Amazing Travel Adventures",
+      "meta_description": "Tours || Start your dream vacation with Dream Tourism Ltd. Discover amazing destinations and unforgettable adventures. Your perfect getaway is a click away!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b7deba08-22ca-424f-fde9-67f365476c00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_h3V3DRs.webp",
+      "slug": "tours-dream-tourism-amazing-travel-adventures",
+      "created_at": "2024-06-26T05:33:39.240Z",
+      "updated_at": "2025-05-19T04:51:03.849Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 15,
+    "fields": {
+      "cms_content": 4,
+      "meta_title": "Day Trip to Capri Island from Rome - Discover Paradise",
+      "meta_description": "Escape to the enchanting Capri Island for a day. Explore its beauty, stroll through charming streets, and enjoy breathtaking views. A perfect getaway from Rome!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c50550b8-4a17-4528-57f0-6d22a5b93600/v1",
+      "image": "cms/ContentImage/Capri_1.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T05:47:17.783Z",
+      "updated_at": "2024-06-26T05:47:19.810Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 16,
+    "fields": {
+      "cms_content": 63,
+      "meta_title": "About Dream Tourism Limited - Your Journey, Our Story",
+      "meta_description": "Discover the heart of Dream Tourism Ltd. Learn about our passion for travel, commitment to excellence, and the stories that make us your ideal travel companion.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5361cebd-945f-47ed-de15-540b2d317200/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_ui5sEpU.webp",
+      "slug": "about-dream-tourism-limited-your-journey-our-story",
+      "created_at": "2024-06-26T05:56:03.936Z",
+      "updated_at": "2025-05-19T04:48:16.688Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 17,
+    "fields": {
+      "cms_content": 64,
+      "meta_title": "Contact Dream Tourism Ltd - Unforgettable Adventures Await!",
+      "meta_description": "Connect with Dream Tourism Ltd for your travel needs. Our team is ready to help plan your dream getaway. Let's turn your travel dreams into reality together!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5692aa6f-89ae-436c-46ca-4dc816cdc600/public",
+      "image": "cms/ContentImage/Logo_150_px-01_9l6y7e3.webp",
+      "slug": "contact-dream-tourism-ltd-unforgettable-adventures-await",
+      "created_at": "2024-06-26T06:00:59.451Z",
+      "updated_at": "2025-05-19T04:47:42.687Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 18,
+    "fields": {
+      "cms_content": 11,
+      "meta_title": "Discover Italy - Dream Tourism Limited",
+      "meta_description": "Indulge in the beauty and culture of Italy with Dream Tourism Limited. From ancient ruins to delicious food, plan your dream Italian vacation today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2bccbc61-4577-43d4-fb06-e748ea65a700/public",
+      "image": "cms/ContentImage/Logo_150_px-01_xCXxvIr.webp",
+      "slug": "discover-italy-dream-tourism-limited",
+      "created_at": "2024-06-26T06:20:57.855Z",
+      "updated_at": "2025-05-19T04:47:10.453Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 19,
+    "fields": {
+      "cms_content": 65,
+      "meta_title": "Dream Tourism Limited - Terms and Conditions",
+      "meta_description": "Explore the terms and conditions that govern your experience with Dream Tourism Limited. Understand our commitment to quality, fairness, and your satisfaction.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/63b38570-37d8-4521-28e3-ab9319d99e00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_qCTqNql.webp",
+      "slug": "dream-tourism-limited-terms-and-conditions",
+      "created_at": "2024-06-26T06:26:57.479Z",
+      "updated_at": "2025-05-19T04:46:47.853Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 20,
+    "fields": {
+      "cms_content": 66,
+      "meta_title": "Dream Tourism Ltd Privacy Policy-Your Privacy, Our Priority",
+      "meta_description": "Read Dream Tourism Ltd's privacy policy to learn how we protect your information. Your privacy is our priority and we are committed to keeping your data secure.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5732f960-02e5-4bf9-39b3-7819f22db100/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_0MAfulT.webp",
+      "slug": "dream-tourism-ltd-privacy-policy-your-privacy-our-priority",
+      "created_at": "2024-06-26T06:28:54.620Z",
+      "updated_at": "2025-05-19T04:46:08.379Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 21,
+    "fields": {
+      "cms_content": 8,
+      "meta_title": "Switzerland Awaits - Dream Tourism Limited",
+      "meta_description": "Experience the magic of Switzerland with Dream Tourism Limited. Enjoy stunning mountains, calm lakes, and charming cities. Plan your Swiss getaway today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/45a8925a-3e63-4621-17ec-3ccb0d339e00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_R7RzqVC.webp",
+      "slug": "switzerland-awaits-dream-tourism-limited",
+      "created_at": "2024-06-26T06:46:19.790Z",
+      "updated_at": "2025-05-19T04:44:55.276Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 22,
+    "fields": {
+      "cms_content": 9,
+      "meta_title": "Explore the Netherlands with Dream Tourism Limited",
+      "meta_description": "Discover the beauty of the Netherlands with Dream Tourism Limited. Enjoy scenic landscapes, lively cities, and rich culture. Plan your Dutch adventure now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d6cfee80-9ff8-49cc-7ce5-e8547d12c700/public",
+      "image": "cms/ContentImage/Logo_150_px-01_1l9rgHi.webp",
+      "slug": "explore-the-netherlands-with-dream-tourism-limited",
+      "created_at": "2024-06-26T06:47:07.967Z",
+      "updated_at": "2025-05-19T04:44:16.714Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 23,
+    "fields": {
+      "cms_content": 12,
+      "meta_title": "Charm of Belgium - Dream Tourism Limited",
+      "meta_description": "Discover Belgium's beauty with Dream Tourism Ltd. Explore historic towns, taste chocolates, and enjoy Belgian hospitality. Plan your Belgian adventure today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0cfd8356-cc76-46df-ff7c-e51e19155c00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_TdIuPKw.webp",
+      "slug": "charm-of-belgium-dream-tourism-limited",
+      "created_at": "2024-06-26T06:49:37.707Z",
+      "updated_at": "2025-05-19T04:43:14.739Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 24,
+    "fields": {
+      "cms_content": 1,
+      "meta_title": "Discover Germany - Dream Tourism Limited",
+      "meta_description": "Explore Germany's diverse beauty with Dream Tourism Ltd. From historic castles to modern cities, immerse yourself in German culture. Plan your adventure now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e26c9015-0f54-4833-d62a-38acaf01ed00/public",
+      "image": "cms/ContentImage/Logo_150_px-01.webp",
+      "slug": "discover-germany-dream-tourism-limited",
+      "created_at": "2024-06-26T06:54:47.539Z",
+      "updated_at": "2025-05-19T04:42:38.914Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 25,
+    "fields": {
+      "cms_content": 2,
+      "meta_title": "New Year Celebration in Paris - 3 Nights, 4 Days from London",
+      "meta_description": "Ring in the New Year in the City of Lights! Join our 3-night, 4-day tour from London to celebrate in style. Experience Paris with festive charm.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/bc427900-0ad0-42aa-186b-47b3612ac400/public",
+      "image": "cms/ContentImage/Celebrate_New_Year_In_Paris.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T07:16:07.415Z",
+      "updated_at": "2024-06-26T07:16:08.993Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 28,
+    "fields": {
+      "cms_content": 53,
+      "meta_title": "Dream Meets The Blue At Santorini",
+      "meta_description": "Let your dreams soar amidst the azure beauty of Santorini. Experience a perfect blend of romance, breathtaking vistas",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5c3eda70-7ab0-4486-9836-228056394600/v1",
+      "image": "cms/ContentImage/Santorini_Up9t4kn.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T09:12:56.579Z",
+      "updated_at": "2024-07-30T10:02:20.062Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 30,
+    "fields": {
+      "cms_content": 51,
+      "meta_title": "Visit Europe In Summer Holiday",
+      "meta_description": "Experience Europe this summer: Switzerland's Alps, Venice's canals, Austria's culture, and Liechtenstein's charm.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/63c96212-da6d-4030-13ee-50fc04660f00/public",
+      "image": "cms/ContentImage/Switzerland-Italy-Austria-Licehtenstine_HPWUPn2.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T09:21:39.032Z",
+      "updated_at": "2024-06-26T09:21:42.088Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 31,
+    "fields": {
+      "cms_content": 7,
+      "meta_title": "Full Colosseum Experience with Arena Access - Rome Tour",
+      "meta_description": "Immerse yourself in the grandeur of ancient Rome! Explore the Colosseum, Roman Forum, and Palatine Hill with exclusive arena access.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ba6789ec-c28c-488b-3034-70b4261d3f00/public",
+      "image": "cms/ContentImage/Colosseum-Inside_WD15gjU.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T09:22:43.896Z",
+      "updated_at": "2024-06-26T09:22:46.262Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 32,
+    "fields": {
+      "cms_content": 55,
+      "meta_title": "Capri Island Day Trip from Rome with Blue Grotto Adventure",
+      "meta_description": "Experience the magic of Capri and venture into the famous Blue Grotto on this day trip from Rome. A day filled with natural beauty and unforgettable moments.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/9f427f3d-0e00-4e83-518d-8e0da62bba00/public",
+      "image": "cms/ContentImage/blue-grotto-capri_2MMkBSm.jpg",
+      "slug": "capri-island-day-trip-from-rome-with-blue-grotto-adventure",
+      "created_at": "2024-06-26T09:23:33.552Z",
+      "updated_at": "2025-05-04T09:05:46.499Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 33,
+    "fields": {
+      "cms_content": 35,
+      "meta_title": "Valentine's Day Journey to Switzerland",
+      "meta_description": "Celebrate love with a romantic Valentine's Day in Venice.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6e94fa7d-0458-45aa-1bf0-bf2eb61f7b00/public",
+      "image": "cms/ContentImage/Valentine_s-Day-In-Venice-And-Bernina-Express-Journey-To-Switzerland_mUz7C2s.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T09:24:54.719Z",
+      "updated_at": "2024-06-26T09:24:57.173Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 34,
+    "fields": {
+      "cms_content": 36,
+      "meta_title": "Tulip Garden Tour from London by Eurostar - Blooming Beauty",
+      "meta_description": "Witness the beauty of blooming tulip gardens with our Eurostar tour from London. A colorful journey awaits as you explore stunning tulip fields and gardens.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0c27daa0-d2ae-405e-92d8-c71337e82a00/v1",
+      "image": "cms/ContentImage/Tulip-Garden_vijTgi5.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T09:25:36.156Z",
+      "updated_at": "2024-06-26T09:25:38.648Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 35,
+    "fields": {
+      "cms_content": 5,
+      "meta_title": "Skip-the-Line Colosseum Tour",
+      "meta_description": "Discover ancient Rome hassle-free with our priority ticket tour. Skip the lines and explore the Colosseum, Roman Forum, and Palatine Hills.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b07d2676-fd8c-495b-148d-e63f495e6e00/v1",
+      "image": "cms/ContentImage/Colosseum_KKc7khZ.jpg",
+      "slug": null,
+      "created_at": "2024-06-26T11:08:46.654Z",
+      "updated_at": "2024-06-26T12:10:06.940Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 36,
+    "fields": {
+      "cms_content": 67,
+      "meta_title": "Switzerland by Bernina Express & Venice and Dolomites",
+      "meta_description": "Switzerland by Bernina Express & Venice and Dolomites",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4c51fc39-c16e-4c27-3875-a94959321700/v1",
+      "image": "cms/ContentImage/Switzerland--Milan_V94a36V_wsGRR16.jpg",
+      "slug": "switzerland-by-bernina-express-venice-and-dolomites",
+      "created_at": "2024-09-15T07:09:16.418Z",
+      "updated_at": "2025-09-02T04:48:29.560Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 37,
+    "fields": {
+      "cms_content": 76,
+      "meta_title": "Glamorous Iceland",
+      "meta_description": "Glamorous Iceland",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/020d39f2-8320-457b-9da9-896e981e5b00/v1",
+      "image": "cms/ContentImage/Glamorous-Iceland_wo73S0m.jpg",
+      "slug": "glamorous-iceland",
+      "created_at": "2025-01-07T11:10:30.543Z",
+      "updated_at": "2025-01-07T11:10:32.912Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 38,
+    "fields": {
+      "cms_content": 77,
+      "meta_title": "Scandinavian Cruise & Amsterdam Tulip Garden Tour",
+      "meta_description": "Scandinavian Cruise & Amsterdam Tulip Garden Tour",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/7adecd95-61d5-4fe4-427e-ba4fda4c3800/public",
+      "image": "cms/ContentImage/Scandinavian-Cruise--Amsterdam-Tulip-Garden-Tour_jxFICBK.jpg",
+      "slug": "scandinavian-cruise-amsterdam-tulip-garden-tour",
+      "created_at": "2025-01-07T11:11:16.674Z",
+      "updated_at": "2025-01-07T11:11:19.397Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 40,
+    "fields": {
+      "cms_content": 79,
+      "meta_title": "Venice and Switzerland by Bernina Express",
+      "meta_description": "Venice and Switzerland by Bernina Express",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/514a6ec7-0e4d-4968-411a-8b76165a0900/v1",
+      "image": "cms/ContentImage/Venice-and-Switzerland-by-Bernina-Express_lcW8bEy.jpg",
+      "slug": "venice-and-switzerland-by-bernina-express",
+      "created_at": "2025-01-07T11:12:09.064Z",
+      "updated_at": "2025-01-07T11:12:11.548Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 41,
+    "fields": {
+      "cms_content": 80,
+      "meta_title": "The End of The World Norway",
+      "meta_description": "The End of The World Norway",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/167f4577-ad40-4f7e-96a1-7743b2524e00/public",
+      "image": "cms/ContentImage/The-End-of-The-World-Norway_37qNGZq.jpg",
+      "slug": "the-end-of-the-world-norway",
+      "created_at": "2025-01-07T11:12:34.593Z",
+      "updated_at": "2025-05-04T07:25:08.419Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 42,
+    "fields": {
+      "cms_content": 81,
+      "meta_title": "Disneyland Park Belgium, Netherlands & Paris Tour",
+      "meta_description": "Disneyland Park Belgium, Netherlands & Paris Tour",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/bb0dd31a-681c-4906-fb54-db5b0c900200/public",
+      "image": "cms/ContentImage/Disneyland-Park-Belgium-Netherlands--Paris-Tour_PW2UVnf.jpg",
+      "slug": "disneyland-park-belgium-netherlands-paris-tour",
+      "created_at": "2025-01-07T11:12:59.514Z",
+      "updated_at": "2025-05-04T07:36:15.976Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 44,
+    "fields": {
+      "cms_content": 78,
+      "meta_title": "Istanbul and Cappadocia",
+      "meta_description": "Istanbul and Cappadocia",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a434e141-40d3-4eed-024e-3aae93e64200/v1",
+      "image": "cms/ContentImage/Turkey-Istanbul_dzB6s8p.jpg",
+      "slug": "istanbul-and-cappadocia",
+      "created_at": "2025-04-21T11:57:11.262Z",
+      "updated_at": "2025-04-21T12:05:00.670Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 45,
+    "fields": {
+      "cms_content": 74,
+      "meta_title": "Celebrate New Year's Eve 2025 In Europe",
+      "meta_description": "Celebrate New Year's Eve 2025 In Europe",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c41f31e1-a09b-41a8-869a-aabccc2e2c00/public",
+      "image": "cms/ContentImage/New-Year-Celebration-in-Europe_z0X6jds_Fvm0tZX.jpg",
+      "slug": "celebrate-new-year-s-eve-2025-in-europe",
+      "created_at": "2025-05-04T04:14:19.467Z",
+      "updated_at": "2025-05-04T04:46:40.131Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 46,
+    "fields": {
+      "cms_content": 13,
+      "meta_title": "Discover France - Dream Tourism Limited",
+      "meta_description": "Experience the charm and elegance of France with Dream Tourism Limited. From iconic landmarks to exquisite cuisine, plan your perfect French getaway today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8888b611-96c1-4393-27c0-39aa77aa6c00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_W9dmvBE.webp",
+      "slug": "discover-france-dream-tourism-limited",
+      "created_at": "2025-05-19T06:15:42.050Z",
+      "updated_at": "2025-05-19T06:15:42.050Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  }
+]

@@ -1,1 +1,1464 @@
-[{"model": "cms.itinerary", "pk": 1, "fields": {"cms_content": 5, "title": "Colosseum", "description": "<p>Your experience begins at the Colosseum, where one of our friendly hosts will meet you, provide your priority access tickets, and guide you through the entry process, ensuring a smooth and stress-free start to your visit. Once inside, explore the iconic amphitheater at your own pace. Delve into the fascinating stories of gladiators, emperors, and epic battles, and learn about its remarkable construction and historical significance through informative displays and signs.\r\n</p>", "location": null, "lat": 41.8902, "lng": 12.4922, "image": "", "created_at": "2024-02-05T06:03:29.565Z", "updated_at": "2024-07-04T12:43:02.090Z", "created_by": 2, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 2, "fields": {"cms_content": 5, "title": "Roman Forum", "description": "<p>Next, head to the Roman Forum, the bustling heart of ancient Rome’s political, social, and economic life. With your pre-arranged tickets, you'll gain swift entry and can freely wander through the ruins, imagining the grandeur of the surrounding temples and buildings. Experience firsthand the daily lives of Romans and their ceremonies.\r\n</p>", "location": null, "lat": 41.8925, "lng": 12.4853, "image": "", "created_at": "2024-02-05T06:06:09.511Z", "updated_at": "2024-07-04T12:43:14.430Z", "created_by": 2, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 3, "fields": {"cms_content": 5, "title": "Palatine Hills", "description": "<p>Conclude your tour with a visit to Palatine Hill, the legendary birthplace of Rome. From this vantage point, enjoy breathtaking views of the city and uncover the history of Rome’s founding and the opulent residences of its emperors.</p>", "location": null, "lat": 41.8894, "lng": 12.488, "image": "", "created_at": "2024-02-05T06:07:35.217Z", "updated_at": "2024-07-04T12:43:20.702Z", "created_by": 2, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 5, "fields": {"cms_content": 7, "title": "Colosseum", "description": "<p>Print or bring the Eticket provided at the entrance of the Colosseum and enter after security check. Then you will be free to be your own for discovering the beauty of the Colosseum and the arena.</p>", "location": null, "lat": 41.8902, "lng": 12.4922, "image": "", "created_at": "2024-02-05T06:20:33.227Z", "updated_at": "2024-06-13T04:10:45.740Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 6, "fields": {"cms_content": 7, "title": "roman", "description": "<div class=\"sc-kFuwaP dZMhFc\">\n<div class=\"sc-hZLPDR sc-cWvMYY fSfJbt fnmGNt text body\">After finishing the colosseum you can now move to the roman forum. your entrance ticket is valid for 24h so you can visit the forum and palatine hills at your convenience.</div>\n</div>", "location": null, "lat": 41.8925, "lng": 12.4853, "image": "", "created_at": "2024-02-05T06:22:00.899Z", "updated_at": "2024-06-13T04:10:45.788Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 7, "fields": {"cms_content": 7, "title": "palatine hills", "description": "<p>Your ticket given is valid for palatine hills for 24h. So visit this place at your convenience.</p>", "location": null, "lat": 41.8894, "lng": 12.488, "image": "", "created_at": "2024-02-05T06:23:58.639Z", "updated_at": "2024-06-13T04:10:45.807Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 8, "fields": {"cms_content": 36, "title": "Day 1 : Brussels Discovery", "description": "<p>Begin your journey with a Eurostar ride from London to Brussels. Upon arrival at Brussels Central station, indulge in an orientation city tour, marveling at the city's architectural wonders. Explore the futuristic Atomium before proceeding to the enchanting canals of Amsterdam. Conclude the day with a delightful Indian dinner and a comfortable overnight stay in Amsterdam.</p>", "location": null, "lat": 34.09613457516202, "lng": 74.87879125846852, "image": "", "created_at": "2024-02-06T06:35:07.126Z", "updated_at": "2024-06-13T04:10:46.012Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 9, "fields": {"cms_content": 36, "title": "Day 2 : Blooms and Canals", "description": "<p>Fuel your day with a hearty breakfast before immersing yourself in the breathtaking Keukenhof Tulip Garden. Cruise along Amsterdam's picturesque canals, witnessing the city's charm from a unique perspective. Indulge in another evening of culinary delights with dinner at an Indian restaurant, followed by a peaceful overnight stay in Amsterdam.</p>", "location": null, "lat": 34.09613457516202, "lng": 74.87879125846852, "image": "", "created_at": "2024-02-06T06:35:38.211Z", "updated_at": "2024-06-13T04:10:46.030Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 10, "fields": {"cms_content": 36, "title": "Day 3 : Windmills and Farewell", "description": "<div class=\"sc-kFuwaP dZMhFc\">\n<div class=\"sc-hZLPDR sc-cWvMYY fSfJbt fnmGNt text body\">\n<p style=\"text-align: left;\">After breakfast, venture to Zaanse Schans for a glimpse into Dutch heritage at the windmill village, cheese factory, and wooden shoes factory. Conclude your tour with a Eurostar journey from Brussels back to London, cherishing the memories of a blossoming adventure through these captivating European cities.</p>\n</div>\n</div>", "location": null, "lat": 34.09613457516202, "lng": 74.87879125846852, "image": "", "created_at": "2024-02-06T06:43:36.050Z", "updated_at": "2024-06-13T04:10:46.046Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 15, "fields": {"cms_content": 35, "title": "Day 1 : London Love Affair", "description": "<ul>\n<li style=\"text-align: left;\">London To Milan by air.</li>\n<li style=\"text-align: left;\">Venice city tour.</li>\n<li style=\"text-align: left;\">Valentines day dinner in Venice Island.</li>\n<li style=\"text-align: left;\">Over night in Venice.</li>\n</ul>", "location": null, "lat": 45.468512518622454, "lng": 9.181208279213424, "image": "", "created_at": "2024-02-06T06:54:43.062Z", "updated_at": "2024-06-13T04:10:45.874Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 16, "fields": {"cms_content": 35, "title": "Day 2 : Venetian Romance Unveiled", "description": "<ul>\n<li style=\"text-align: left;\">Venice to Tirano.</li>\n<li style=\"text-align: left;\">Explore Bernina Express.</li>\n<li style=\"text-align: left;\">Tirano to Chur.</li>\n<li style=\"text-align: left;\">Interlaken city tour.</li>\n<li style=\"text-align: left;\">Overnight in Meiringen.</li>\n</ul>", "location": null, "lat": 46.217123028288206, "lng": 10.170310993032096, "image": "", "created_at": "2024-02-06T06:55:10.618Z", "updated_at": "2024-06-13T04:10:45.891Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 17, "fields": {"cms_content": 35, "title": "Day 3 : Swiss Alpine Love Symphony", "description": "<ul>\n<li style=\"text-align: left;\">Interlaken to Lauterbrunnen.</li>\n<li style=\"text-align: left;\">Grindelwald to James Bond 007 world.</li>\n<li style=\"text-align: left;\">Overnight in Meiringen.</li>\n</ul>", "location": null, "lat": 46.592123953594594, "lng": 7.907974463913518, "image": "", "created_at": "2024-02-06T06:55:39.632Z", "updated_at": "2024-06-13T04:10:45.912Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 18, "fields": {"cms_content": 35, "title": "Day 4 : Cultural Embrace in Luzern's Love", "description": "<ul>\n<li style=\"text-align: left;\">Meiringen To Luzern (city tour).</li>\n<li style=\"text-align: left;\">Luzern to Milano Airport.</li>\n<li style=\"text-align: left;\">Milan to London.</li>\n</ul>", "location": null, "lat": 47.050186027966184, "lng": 8.309269442819328, "image": "", "created_at": "2024-02-06T06:56:05.825Z", "updated_at": "2024-06-13T04:10:45.929Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 19, "fields": {"cms_content": 2, "title": "Day 1 : Coastal Crossing and Amsterdam's Canals", "description": "<p style=\"text-align: left;\">7:30 AM: &nbsp;Morning join up with your coach and</p>\n<p style=\"text-align: left;\">depart towards Dover.</p>\n<p style=\"text-align: left;\">9:30 AM The crossing on the ferry to Calais. (Approx 90 Minutes)</p>\n<p style=\"text-align: left;\">11:30 AM On arrival Calais join up with your Coach and depart</p>\n<p style=\"text-align: left;\">Towards Amsterdam.</p>\n<p style=\"text-align: left;\">4:30 PM One hour Canal Cruise Amsterdam City Tour.</p>\n<p style=\"text-align: left;\">7:30 PM Check in Hotel</p>\n<p style=\"text-align: left;\">Over Night in Amsterdam (3/4-Star Hotel)</p>", "location": null, "lat": 48.858554808343975, "lng": 2.295087576585987, "image": "", "created_at": "2024-02-06T07:00:26.161Z", "updated_at": "2024-06-13T04:10:45.945Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 20, "fields": {"cms_content": 2, "title": "Day 2 : Windmills, Atomium, and Belgian Charm", "description": "<p style=\"text-align: left;\">8:00 AM - Breakfast at Hotel.</p>\n<p style=\"text-align: left;\">9:30AM - process to Zans village tour.</p>\n<p style=\"text-align: left;\">Village descriptions &ndash;</p>\n<p style=\"text-align: left;\">(Windmill, Wooden House &amp; Cheese Factory).</p>\n<p style=\"text-align: left;\">2:00 PM - Process to Brussels.</p>\n<p style=\"text-align: left;\">4: 30 PM - Brussels Atomium visit.</p>\n<p style=\"text-align: left;\">5:30 PM - Brussels Orientation City Tour (Grand Place &amp; Manneken Pis).</p>\n<p style=\"text-align: left;\">7:30 PM - Check in Hotel.</p>\n<p style=\"text-align: left;\">Over Night in Brussels (3/4-Star Hotel).</p>", "location": null, "lat": 48.858554808343975, "lng": 2.295087576585987, "image": "", "created_at": "2024-02-06T07:01:08.414Z", "updated_at": "2024-06-13T04:10:45.962Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 21, "fields": {"cms_content": 2, "title": "Day 3 : Eiffel Tower Extravaganza: New Year's Eve in Paris", "description": "<p style=\"text-align: left;\">8.00AM - Breakfast at Hotel</p>\n<p style=\"text-align: left;\">9:30 AM - Process to Paris</p>\n<p style=\"text-align: left;\">1: 30 PM - Visit Eiffel Tower (2nd Level)</p>\n<p style=\"text-align: left;\">4:30 PM - Paris Orientation City Tour</p>\n<p style=\"text-align: left;\">6:30 PM - Check in Hotel</p>\n<p style=\"text-align: left;\">10:30 PM - Celebrate New Year 2024 in Eiffel Tower</p>\n<p style=\"text-align: left;\">1:30 PM - Process to Hotel Over Night in Hotel</p>", "location": null, "lat": 48.858554808343975, "lng": 2.295087576585987, "image": "", "created_at": "2024-02-06T07:01:43.372Z", "updated_at": "2024-06-13T04:10:45.979Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 22, "fields": {"cms_content": 2, "title": "Day 4 : Seine River Serenity and Homeward Bound", "description": "<p style=\"text-align: left;\">9:30 AM - Breakfast at Hotel.</p>\n<p style=\"text-align: left;\">11:30 AM - Paris Seine River Cruise.</p>\n<p style=\"text-align: left;\">1:30 PM - Process to London. Departure Time (Approximate 10:30 PM).</p>", "location": null, "lat": 48.858554808343975, "lng": 2.295087576585987, "image": "", "created_at": "2024-02-06T07:03:23.053Z", "updated_at": "2024-06-13T04:10:45.995Z", "created_by": 2, "updated_by": null}}, {"model": "cms.itinerary", "pk": 24, "fields": {"cms_content": 55, "title": "Process for Rome to Capri", "description": "<p>7.00 &ndash; (ROME) Process for Rome to Capri.<br />10.00 &ndash; (NAPOLI) After reaching Napoli we will go to the most beautiful CAPRI ISLAND using a cruise.<br />11.30 &ndash; (CAPRI) DURATION- 5 HOURS</p>", "location": null, "lat": 40.560989168486415, "lng": 14.205556232256336, "image": "", "created_at": "2024-06-06T12:09:20.176Z", "updated_at": "2024-06-13T04:10:45.840Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 25, "fields": {"cms_content": 55, "title": "Process from Capri to Rome", "description": "<p>5.15 &ndash; process from Capri to Napoli.<br />6.30 &ndash; Back to Rome by bus.<br />9.30- come back to ROME.</p>", "location": "", "lat": 40.552291762478085, "lng": 14.225564026201852, "image": "", "created_at": "2024-06-06T12:10:22.402Z", "updated_at": "2024-06-13T04:10:45.857Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 26, "fields": {"cms_content": 1, "title": "test", "description": "", "location": null, "lat": null, "lng": null, "image": "cms/ContentImage/Screenshot_from_2024-05-21_18-33-30.png", "created_at": "2024-06-11T12:03:04.791Z", "updated_at": "2024-06-11T12:03:04.791Z", "created_by": null, "updated_by": null}}, {"model": "cms.itinerary", "pk": 27, "fields": {"cms_content": 53, "title": "Day 1 : London to Santorini", "description": "<div class=\"space-y-2\">\n<div class=\"space-y-2 text-font-p text-sm\">\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\n<div class=\"sc-bfLWyY OhWeG\">\n<p><span style=\"color: #000000;\">&THORN; London To Santorini.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Explore Oia And Find The Best Photography Spots, Ammoudi Bay, Visit Sunset View From Oia.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Overnight In Santorini</span></p>\n</div>\n</div>\n</div>\n</div>\n<div class=\"space-y-2\">\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\n</div>", "location": null, "lat": 36.40341316678613, "lng": 25.48814796239934, "image": "", "created_at": "2024-06-12T11:23:20.155Z", "updated_at": "2024-06-13T04:10:45.546Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 28, "fields": {"cms_content": 53, "title": "Day 2 : Drive From Oia To Fira, Imerovigli, Skaros Rock", "description": "<div class=\"space-y-2\">\n<div class=\"space-y-2 text-font-p text-sm\">\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\n<div class=\"sc-bfLWyY OhWeG\">\n<p><span style=\"color: #000000;\">&THORN; Breakfast At Hotel.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Drive From Oia To Fira, Imerovigli, Skaros Rock, Three Bells Of Fira, Orthodox Metropolitan Cathedral.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Overnight In Santorini</span></p>\n</div>\n</div>\n</div>\n</div>", "location": "", "lat": 36.41690694000925, "lng": 25.43238495974569, "image": "", "created_at": "2024-06-12T11:23:40.564Z", "updated_at": "2024-06-13T04:10:45.654Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 29, "fields": {"cms_content": 53, "title": "Day 3 : Pyrgos, Monastery of Profitis Ilias, Perissa Black Sand Beach, Red Beach, Akrotiri Archaeological Site, Akrotiri Lighthouse.and Santorini To London", "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast At Hotel.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Pyrgos, Monastery of Profitis Ilias, Perissa Black Sand Beach, Red Beach, Akrotiri Archaeological Site, Akrotiri Lighthouse.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Process To Airport</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Santorini To London</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>", "location": null, "lat": 36.38290560522265, "lng": 25.449108196441262, "image": "", "created_at": "2024-06-12T11:25:03.217Z", "updated_at": "2024-06-13T04:13:40.334Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 31, "fields": {"cms_content": 51, "title": "Day-1: Journey from London to Venice and Venice Island Walking Tour 4 Hours", "description": "<p><span style=\"color: #000000;\">Walking through Venice is a unique and enchanting experience. Venice can get quite crowded, so starting your walk early in the morning can help you enjoy the city's beauty without the rush of tourists. The streets and alleys of Venice are primarily cobblestone, so comfortable walking shoes are a must.</span></p>", "location": "", "lat": 45.439043112101864, "lng": 12.339935951301163, "image": "", "created_at": "2024-06-12T11:27:29.428Z", "updated_at": "2024-06-13T04:10:45.676Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 32, "fields": {"cms_content": 51, "title": "Day-2: Innsbruck City Tour and Vaduz City Tour", "description": "<p><span style=\"color: #000000;\">Innsbruck city tour can give you a wonderful glimpse into the charm and history of this beautiful Austrian city. A short walk from the Golden Roof, visit the Hofkirche (Court Church) and see the elaborate tomb of Emperor Maximilian I surrounded by 28 bronze statues. Then, head over to the nearby Imperial Palace, one of the most significant cultural buildings in Austria</span></p>\n<p><span style=\"color: #000000;\">Vaduz, the capital of Liechtenstein, is a small but charming city with a rich cultural and historical heritage. Vaduz Castle, the official residence of the Prince of Liechtenstein. While the castle itself is not open to the public. we can enjoy a walk up to it and take in the stunning panoramic views of the city and the Rhine Valley. Just a short walk away is the Liechtenstein National Museum. This museum offers an excellent overview of the country&rsquo;s history, culture, and natural history</span></p>", "location": "", "lat": 47.26576324452061, "lng": 11.393891357219372, "image": "", "created_at": "2024-06-12T11:27:47.376Z", "updated_at": "2024-06-13T04:10:45.691Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 33, "fields": {"cms_content": 51, "title": "Day-3: Zurich Rhine Falls Visit and Interlaken City Tour", "description": "<p><span style=\"color: #000000;\">Visiting the Rhine Falls in Zurich can be an exhilarating experience. Visit the castle, which offers panoramic views of the falls. Required tickets for access to the viewing platforms. Walk down to the various viewing platforms. They provide different perspectives and breathtaking views of the falls. The K&auml;nzeli platform, which offers one of the closest views. The boat ride lasts around 30 minutes and gives you a unique perspective from the water</span></p>\n<p><span style=\"color: #000000;\">Walking is the best way to get around Interlaken given the short distance between most attractions. Accessed via funicular from Interlaken Ost. Take the funicular from Interlaken Ost up to Harder Kulm, which offers breathtaking panoramic views of Interlaken, Lake Thun, and Lake Brienz, as well as the Jungfrau region. The ride itself is quick, around 10 minutes each way, leaving you ample time to soak in the scenery from the viewing platform at the top.</span></p>", "location": "", "lat": 47.67889424229632, "lng": 8.61795956631508, "image": "", "created_at": "2024-06-12T11:28:12.735Z", "updated_at": "2024-06-13T04:10:45.707Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 34, "fields": {"cms_content": 51, "title": "Day-4: Lauterbrunnen, Grindelwald Visit and back to London", "description": "<p><span style=\"text-decoration: underline; color: #000000;\">Top Attractions:</span></p>\n<p><span style=\"color: #000000;\"><strong>First Cliff Walk:</strong>&nbsp;A thrilling cliffside walkway with spectacular views and a glass-bottom lookout point.</span></p>\n<p><span style=\"color: #000000;\"><strong>Bachalpsee Lake:</strong>&nbsp;A beautiful alpine lake accessible by a moderate hike from the First gondola station.</span></p>\n<p><span style=\"color: #000000;\"><strong>Eiger Trail:</strong>&nbsp;A hiking path that runs along the foot of the Eiger's North Face, offering close-up views of this famous mountain.</span></p>\n<p><span style=\"color: #000000;\"><strong>Grindelwald Glacier Canyon:</strong>&nbsp;A dramatic gorge with walkways and a spiderweb net for adventurous visitors.</span></p>", "location": "", "lat": 46.593539497466004, "lng": 7.905914527411871, "image": "", "created_at": "2024-06-12T11:28:59.947Z", "updated_at": "2024-06-13T04:10:45.724Z", "created_by": 3, "updated_by": null}}, {"model": "cms.itinerary", "pk": 38, "fields": {"cms_content": 64, "title": "1. Vatican Museums", "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Start your Vatican tour in the heart of Vatican City. Enter the museum by following the entrance with the skip-the-line ticket sent to you. Explore the extensive 9-mile (15 km) collection of impressive rooms and galleries at your own pace. The ultimate Vatican adventure awaits!</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>", "location": null, "lat": 41.90663149721413, "lng": 12.453641295663013, "image": "", "created_at": "2024-10-07T09:28:21.685Z", "updated_at": "2024-10-07T09:44:55.446Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 39, "fields": {"cms_content": 64, "title": "2. Sphere within a Sphere", "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">In the heart of the Vatican's Cortile della Pigna stands a remarkable bronze sculpture: Sfera con Sfera (Sphere Within a Sphere) by Italian artist Arnaldo Pomodoro. This captivating artwork depicts two fractured orbs resembling intricate machine gears, symbolizing the complex and fragile nature of the modern world. Pomodoro started creating similar sculptures in the early 1960s, exploring the theme of complexity.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>", "location": null, "lat": 41.905898253499544, "lng": 12.454557551481212, "image": "", "created_at": "2024-10-07T09:28:42.780Z", "updated_at": "2024-10-07T09:45:33.791Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 40, "fields": {"cms_content": 64, "title": "3. Museo Pio Clementino", "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Pope Julius II initiated the collection of classical statues in these galleries at the start of the 16th century. However, the gallery is named after later popes, Clement XIV (1769-1774) and Pius VI (1775-1799), who established the current galleries. Many of the artworks here were confiscated by Napoleon but later returned to the Museum after his defeat.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>", "location": null, "lat": 41.906725451326984, "lng": 12.454527782172066, "image": "", "created_at": "2024-10-07T09:29:02.677Z", "updated_at": "2024-10-07T09:46:12.565Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 41, "fields": {"cms_content": 64, "title": "4. Galleria Delle Carte Geografiche", "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">This room is one of the most extravagant galleries in terms of decor. It features a massive mural with frescoes on both sides depicting maps of Italy. Pope Gregory XIII, also known as the calendar pope, commissioned the painting of this room so that he could accurately study the lands where he lived and the surrounding areas.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>", "location": null, "lat": 41.904380617215445, "lng": 12.454533418426045, "image": "", "created_at": "2024-10-07T09:29:19.705Z", "updated_at": "2024-10-07T09:46:44.943Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 42, "fields": {"cms_content": 64, "title": "5. Stanze di Raffaello", "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Explore the Raphael Rooms, painted by Raphael and his students between 1508 and 1524. These rooms were commissioned by Pope Julius II and used by his successors, including Leo X, the Medici Pope (1512-1521).</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>", "location": null, "lat": 41.90192284427927, "lng": 12.451103740657954, "image": "", "created_at": "2024-10-07T09:29:40.181Z", "updated_at": "2024-10-07T09:49:22.869Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 43, "fields": {"cms_content": 64, "title": "6. Sistine Chapel", "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"sc-fbbtMj kWuGAF\">\r\n<div class=\"sc-biDSBu gvRRyB\">\r\n<div class=\"sc-hsETdY fGdMgV\">\r\n<div class=\"sc-cQPkDr kucCwG\" data-tabs=\"true\">\r\n<div id=\"react-tabs-3\" class=\"sc-lfOptZ kbrjaK selected\" role=\"tabpanel\" aria-labelledby=\"react-tabs-2\">\r\n<div class=\"sc-engKbd jFaFVO space-y-4\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Most tours of the Vatican Museums conclude at the renowned Sistine Chapel, a highly sacred site where new popes are elected. Visitors are drawn to see Michelangelo&rsquo;s legendary frescoes, including The Creation of Adam on the ceiling and The Last Judgment on the wall.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>", "location": null, "lat": 41.90309842684568, "lng": 12.454923357708436, "image": "", "created_at": "2024-10-07T09:30:09.532Z", "updated_at": "2024-10-07T09:50:06.959Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 44, "fields": {"cms_content": 66, "title": "Rome to Florence", "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p><span style=\"color: #000000;\">Get ready for an exciting start to your tour! We'll pick you up from your preferred location in Rome and time. It could be from any hotel in Rome.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:37:11.834Z", "updated_at": "2024-11-03T05:18:30.900Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 45, "fields": {"cms_content": 66, "title": "Piazzale Michelangelo", "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p><span style=\"color: #000000;\">You will enjoy the complete view of the city from above, just the moment you arrive in Florence! Enjoy the stop at Piazzale Michelangelo, the perfect location to take memorable pictures! Few places are so compact or so packed with incredible art and architectural masterpieces in every corner of the city.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 30 minutes.&nbsp;</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket free.&nbsp;</span></li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n</div>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:37:30.358Z", "updated_at": "2024-10-28T07:10:26.623Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 46, "fields": {"cms_content": 66, "title": "Duomo - Cattedrale di Santa Maria del Fiore", "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p><span style=\"color: #000000;\">Admire the breathtaking beauty of the Duomo of Florence! The Santa Maria del Fiore Cathedral is one of the most iconic landmarks in the city. Built by Filippo Brunelleschi's red-tiled dome, it's a staggering construction. The amazing pink, white and green marble facade, along with the graceful bell tower, dominates the Renaissance cityscape.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 60 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket not included</span></li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n</div>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:37:52.746Z", "updated_at": "2024-10-28T07:11:19.456Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 47, "fields": {"cms_content": 66, "title": "Palazzo Vecchio", "description": "<p><span style=\"color: #000000;\">The Palazzo Vecchio is one of the most famous symbols in Florence which built between 1299 and 1314. &nbsp;It is used as the residence and workplace of republic officials and features the impressive \"Salone dei Cinquecento,\" the largest room in Florence.</span><br /><span style=\"color: #000000;\">Enjoy the taste of many Tuscan delicious regional wines in the local Florentine restaurant at lunchtime.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 90 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket is free</span></li>\r\n<li><span style=\"color: #000000;\">Food cost is not included</span></li>\r\n</ul>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:38:53.639Z", "updated_at": "2024-10-28T07:11:24.583Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 48, "fields": {"cms_content": 66, "title": "The Basilica of Santa Croce", "description": "<p><span style=\"color: #000000;\">Explore the Basilica of Santa Croce. This wonderful place is the final resting land of the greatest minds artistic visionaries like Dante and Michelangelo, infusing Santa Croce with unique wisdom and boundless creativity. You won't want to miss experiencing the unique place of this wonderful location.&nbsp;</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 60 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission is free</span></li>\r\n</ul>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:39:13.827Z", "updated_at": "2024-10-28T07:11:29.526Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 49, "fields": {"cms_content": 66, "title": "The Uffizi Gallery", "description": "<p><span style=\"color: #000000;\">At the Uffizi Gallery, you can take a guided tour and explore the world's best collection of Renaissance art. If you're interested, we can reserve access for you. Please note that this cost is not included in this tour.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 60 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket is not included</span></li>\r\n</ul>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:39:32.309Z", "updated_at": "2024-10-28T07:11:34.082Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 50, "fields": {"cms_content": 66, "title": "Back to Rome", "description": "<div class=\"sc-hLVzOi kEsuuS\">\r\n<div class=\"sc-eUXrtT bFddlU\">\r\n<div class=\"sc-hilkcu kKCBiW\">\r\n<div class=\"sc-hVkMzN hgubjN\" data-tabs=\"true\">\r\n<div id=\"react-tabs-3\" class=\"sc-liGlwv dUoOOa selected\" role=\"tabpanel\" aria-labelledby=\"react-tabs-2\">\r\n<div class=\"sc-epYGdz gjccAO space-y-4\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p>After enjoying a full day, it's time to head back from Florence to Rome.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-10-28T06:39:48.468Z", "updated_at": "2024-10-28T07:11:38.807Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 51, "fields": {"cms_content": 68, "title": "7:30 AM – Departure from Rome", "description": "<p><span style=\"color: #000000;\">Begin your adventure with a comfortable pick-up from your hotel in Rome. Sit back and enjoy a scenic 2-hour drive through the picturesque countryside as you head towards Civita Di Bagnoregio.</span></p>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T06:49:03.168Z", "updated_at": "2024-11-03T06:49:03.318Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 53, "fields": {"cms_content": 68, "title": "9:30 AM – Arrival at Civita Di Bagnoregio", "description": "<p>Explore the enchanting medieval village known as the \"dying town,\" famed for its unique cliffside location and charming stone buildings. Wander through narrow cobblestone streets, take in panoramic views of the surrounding valleys, and learn about the town&rsquo;s fascinating history and preservation efforts.</p>\n<p>Activities include: Visits to local artisan shops, photo opportunities, and time to enjoy refreshments at a local caf&eacute;.</p>\n<p>Duration: 3 hours.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:14:28.013Z", "updated_at": "2024-11-03T09:14:28.180Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 54, "fields": {"cms_content": 68, "title": "12:30 PM – Departure to Bolsena Lake", "description": "<p>Travel from Civita Di Bagnoregio to Bolsena Lake, a journey of approximately 30 minutes. Marvel at the tranquil beauty of this volcanic lake as you approach.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:14:47.246Z", "updated_at": "2024-11-03T09:14:47.329Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 55, "fields": {"cms_content": 68, "title": "1:00 PM – Arrival at Bolsena Lake", "description": "<p>Unwind and experience the natural beauty of Bolsena Lake, the largest volcanic lake in Europe. Enjoy a relaxing stroll along the lake&rsquo;s shores, visit the charming town of Bolsena, or dip your feet in the clear waters.</p>\n<p>Activities include: Leisurely lakeside walk, exploration of Bolsena town&rsquo;s historical sites (such as the Rocca Monaldeschi Fortress), and optional boat rides on the lake.</p>\n<p>Duration: 3 hours.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:15:03.668Z", "updated_at": "2024-11-03T09:15:03.695Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 56, "fields": {"cms_content": 68, "title": "4:00 PM – Return Journey to Rome", "description": "<p>Begin the 2-hour journey back to Rome, reflecting on the day&rsquo;s experiences and capturing final glimpses of the scenic landscapes.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:15:17.952Z", "updated_at": "2024-11-03T09:15:18.058Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 57, "fields": {"cms_content": 68, "title": "6:00 PM – Arrival in Rome", "description": "<p>The tour concludes with a drop-off at your hotel or a central location in Rome.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:15:29.074Z", "updated_at": "2024-11-03T09:15:29.197Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 58, "fields": {"cms_content": 69, "title": "7:30 AM – Departure from Rome", "description": "<p>Begin your day with a comfortable drive through the scenic Italian countryside to Orvieto.</p>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:16:54.036Z", "updated_at": "2024-11-03T09:16:54.065Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 59, "fields": {"cms_content": 69, "title": "9:30 AM – Arrival in Orvieto", "description": "<p>Visit the magnificent Orvieto Cathedral, explore the medieval streets, and learn about the town's Etruscan roots. Enjoy time for shopping and a coffee break.<br />Duration: 3 hours.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:17:47.102Z", "updated_at": "2024-11-03T09:17:47.225Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 60, "fields": {"cms_content": 69, "title": "12:30 PM – Departure to Assisi", "description": "<p>Travel to Assisi, soaking in the picturesque views along the way.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:20:15.153Z", "updated_at": "2024-11-03T09:20:15.247Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 61, "fields": {"cms_content": 69, "title": "1:30 PM – Arrival in Assisi", "description": "<p>Explore the Basilica of Saint Francis, stroll through the historic center, visit landmarks like the Basilica of Santa Chiara, and enjoy the peaceful ambiance of this UNESCO World Heritage site.<br />Duration*: 4.5 hours.<br />Lunch at a local restaurant (not included in the tour price).</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:20:53.375Z", "updated_at": "2024-11-03T09:20:53.733Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 62, "fields": {"cms_content": 69, "title": "6:00 PM – Departure for Rome", "description": "<p>Relax and reflect on the day&rsquo;s experiences during the return journey.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:21:10.301Z", "updated_at": "2024-11-03T09:21:10.361Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 63, "fields": {"cms_content": 69, "title": "7:30 PM – Arrival in Rome", "description": "<p>Drop-off at your hotel or a central location in the city.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:21:33.324Z", "updated_at": "2024-11-03T09:21:33.427Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 64, "fields": {"cms_content": 70, "title": "Departure from Rome", "description": "<p>Begin your day with a seamless pick-up from your hotel or preferred location in Rome. Settle into your luxury minivan and enjoy a comfortable 2.5-hour drive south through the scenic Italian landscape. &nbsp;</p>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:22:18.886Z", "updated_at": "2024-11-03T09:22:18.955Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 65, "fields": {"cms_content": 70, "title": "Stop 1: Pompeii Archaeological Park", "description": "<p>Duration: 3 hours &nbsp;<br />Admission: Included.<br />Explore the legendary ruins of Pompeii, a city frozen in time since the catastrophic eruption of Mount Vesuvius in AD 79. Your visit will take you through remarkable sites such as the House of the Vetti, the Forum, the Villa dei Misteri, and the Temple of Apollo and Isis. Discover the vibrant frescoes, preserved architecture, and remnants of everyday life that paint a vivid picture of ancient Roman culture.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:23:14.034Z", "updated_at": "2024-11-03T09:23:14.092Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 66, "fields": {"cms_content": 70, "title": "Transfer to Naples", "description": "<p>After your immersive journey through Pompeii, head to Naples, where you'll have free time for independent exploration and sightseeing.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:23:38.159Z", "updated_at": "2024-11-03T09:23:38.218Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 67, "fields": {"cms_content": 70, "title": "Stop 2: Plebiscito Square", "description": "<p>Duration: 30 minutes &nbsp;<br />Admission: Free &nbsp;<br />Visit the grand and traffic-free Plebiscito Square, a hub of historical significance and the perfect starting point for exploring Naples&rsquo; landmarks.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:24:15.792Z", "updated_at": "2024-11-03T09:24:15.883Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 68, "fields": {"cms_content": 70, "title": "Stop 3: Royal Palace of Naples", "description": "<p>Duration: 1.5 hours &nbsp;<br />Admission: &euro;10 &nbsp;<br />The Royal Palace, a symbol of the Spanish Bourbon monarchy, showcases opulent architecture and a rich history dating back to the 17th century. Stroll through its lavish halls and take in the impressive d&eacute;cor.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:24:53.780Z", "updated_at": "2024-11-03T09:24:53.847Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 69, "fields": {"cms_content": 70, "title": "Stop 4: Castel Nuovo (Maschio Angioino)", "description": "<p>Duration: 30 minutes &nbsp;<br />Admission: &euro;6 &nbsp;<br />Opening Times: Mon-Sat 8:30 AM-6 PM; Sun 10 AM-1 PM &nbsp;<br />Explore Castel Nuovo, a monumental 13th-century fortress that stands as a testament to Naples&rsquo; medieval power and heritage. Admire its robust towers and rich history.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:25:32.779Z", "updated_at": "2024-11-03T09:25:32.871Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 70, "fields": {"cms_content": 70, "title": "Stop 5: Galleria Umberto I", "description": "<p>Duration: 30 minutes &nbsp;<br />Admission: Free &nbsp;<br />Conclude your visit with a short walk to Galleria Umberto I, an architectural masterpiece and UNESCO-listed shopping gallery. Experience the grandeur of this beautiful arcade, adorned with intricate glass and ironwork, offering an ambiance akin to a cathedral for shoppers.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:26:05.997Z", "updated_at": "2024-11-03T09:26:06.117Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 71, "fields": {"cms_content": 70, "title": "Return to Rome", "description": "<p>After an enriching day filled with history and culture, relax on your journey back to Rome, where the tour concludes with a drop-off at your location around 7:30 PM.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:26:24.863Z", "updated_at": "2024-11-03T09:26:24.959Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 84, "fields": {"cms_content": 71, "title": "Departure from Rome", "description": "<p>Start your day with a pick-up from your preferred location in Rome. Settle into the comfortable minivan and prepare for a scenic 3-hour drive to Florence.</p>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:37:38.841Z", "updated_at": "2024-11-03T09:37:38.937Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 85, "fields": {"cms_content": 71, "title": "Stop 1: Piazzale Michelangelo", "description": "<ul>\n<li><strong>Duration: </strong>15 minutes &nbsp;</li>\n<li><strong>Admission: </strong>Free &nbsp;</li>\n<li>Begin your Florence visit with a panoramic view of the city from Piazzale Michelangelo. This spot offers breathtaking vistas perfect for memorable photos.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:40:11.616Z", "updated_at": "2024-11-03T09:40:11.712Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 86, "fields": {"cms_content": 71, "title": "Stop 2: Duomo - Cattedrale di Santa Maria del Fiore", "description": "<ul>\n<li><strong>Duration:</strong> 30 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Not included.</li>\n<li>Marvel at the iconic Duomo, with its striking red-tiled dome by Filippo Brunelleschi and its elaborate pink, white, and green marble fa&ccedil;ade.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:41:10.266Z", "updated_at": "2024-11-03T09:41:10.409Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 87, "fields": {"cms_content": 71, "title": "Stop 3: Ponte Vecchio", "description": "<ul>\n<li><strong>Duration:</strong> 15 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Free &nbsp;</li>\n<li>Walk across Ponte Vecchio, the famous medieval bridge lined with boutique shops. Explore local crafts, jewelry, and fashion.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:42:04.278Z", "updated_at": "2024-11-03T09:42:04.379Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 88, "fields": {"cms_content": 71, "title": "Stop 4: Basilica of Santa Croce", "description": "<ul>\n<li>\n<p><strong>Duration:</strong> 30 minutes &nbsp;</p>\n</li>\n<li>\n<p><strong>Admission:</strong> Free&nbsp;</p>\n</li>\n<li>\n<p>Visit the historic Basilica of Santa Croce, the burial site of legendary figures like Michelangelo and Dante, embodying artistic and intellectual brilliance.</p>\n</li>\n</ul>\n<p><strong>Lunch Break</strong>&nbsp;&nbsp;</p>\n<ul>\n<li><strong>Duration:</strong> 60 minutes &nbsp;<br />Enjoy a typical Tuscan lunch at a local restaurant (cost not included).&nbsp;</li>\n</ul>\n<p><strong>Journey to Pisa</strong></p>\n<ul>\n<li><strong>Duration:</strong> 1 hour &nbsp;</li>\n<li>Depart Florence and head to Pisa for the next part of your adventure.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:46:02.533Z", "updated_at": "2024-11-03T09:46:02.629Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 89, "fields": {"cms_content": 71, "title": "Stop 5: Piazza dei Miracoli", "description": "<p>Admire the grand square that houses Pisa&rsquo;s most iconic monuments: the Leaning Tower, the Baptistery, and the Cathedral.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:46:22.647Z", "updated_at": "2024-11-03T09:46:22.771Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 90, "fields": {"cms_content": 71, "title": "Stop 6: Leaning Tower of Pisa", "description": "<ul>\n<li><strong>Duration:</strong> 90 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Free &nbsp;</li>\n<li>Explore the Leaning Tower and capture classic photos. Enjoy time walking around the site and taking in its unique architecture.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:47:31.757Z", "updated_at": "2024-11-03T09:47:31.837Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 91, "fields": {"cms_content": 71, "title": "Stop 7: Baptistery of San Giovanni", "description": "<p>Discover the ancient Baptistery, a masterpiece of Romanesque architecture that stands opposite the Cathedral.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:47:56.253Z", "updated_at": "2024-11-03T09:47:56.366Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 92, "fields": {"cms_content": 71, "title": "Return to Rome", "description": "<p>After a day filled with artistic, historical, and cultural wonders, relax during your 4-hour drive back to Rome, where you will be dropped off at your hotel or a central location.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:48:16.055Z", "updated_at": "2024-11-03T09:48:16.129Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 93, "fields": {"cms_content": 72, "title": "Departure from Rome", "description": "<ul>\n<li><strong>Duration:</strong> 2.5 hours &nbsp;</li>\n<li>Get ready for an exciting start to your tour! We'll pick you up from your preferred location in Rome, whether it's your hotel or another central point, and begin our journey to Tuscany.</li>\n</ul>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:49:14.983Z", "updated_at": "2024-11-03T09:49:15.076Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 94, "fields": {"cms_content": 72, "title": "Stop 1: San Gimignano", "description": "<ul>\n<li><strong>Duration:</strong> 30 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Free &nbsp;</li>\n<li>Enjoy a brief visit to the medieval town of San Gimignano, famous for its impressive towers and beautiful views. Stroll through the charming streets and capture stunning photographs of this UNESCO World Heritage site.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:50:04.971Z", "updated_at": "2024-11-03T09:50:05.037Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 95, "fields": {"cms_content": 72, "title": "Stop 2: Siena", "description": "<ul>\n<li>\n<p><strong>Duration: </strong>5.5 hours &nbsp;</p>\n</li>\n<li>\n<p>Explore the historic city of Siena, known for its stunning architecture and rich cultural heritage. You&rsquo;ll visit several key sites, including:</p>\n<p><strong>Siena Cathedral (Duomo di Siena): </strong>Marvel at the intricate fa&ccedil;ade and beautiful interior of this stunning cathedral.<br /><strong>Piazza del Campo:</strong> Experience the heart of Siena, where the famous Palio horse race takes place. Enjoy the vibrant atmosphere and take in the breathtaking views.<br /><strong>Palazzo Pubblico:</strong> Discover the historic town hall and its impressive artworks while learning about the city&rsquo;s history.<br /><strong>Torre del Mangia:</strong> Admire this iconic tower that offers panoramic views of Siena (climbing the tower requires an admission fee).<br /><strong>Santa Maria della Scala:</strong> Explore this ancient hospital complex, now a museum, that reflects Siena&rsquo;s rich history.<br /><strong>Basilica of San Domenico:</strong> Visit this important religious site known for its beautiful frescoes and the relics of Saint Catherine of Siena.</p>\n<p><strong>Lunch Break&nbsp;&nbsp;</strong><br />Enjoy a leisurely lunch at a local restaurant in Siena (cost not included) and savor traditional Tuscan cuisine.</p>\n</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:53:52.074Z", "updated_at": "2024-11-03T09:53:52.113Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 96, "fields": {"cms_content": 72, "title": "Return to Rome", "description": "<p>After a full day of exploring the highlights of Tuscany and Siena, relax during your drive back to Rome, where you will be dropped off at your preferred location.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T09:54:15.046Z", "updated_at": "2024-11-03T09:54:15.124Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 97, "fields": {"cms_content": 73, "title": "Departure from Rome", "description": "<ul>\n<li><strong>Duration: </strong>3 hours &nbsp;</li>\n<li>Get ready for an exciting start to your tour! We'll pick you up from your preferred location in Rome, whether it&rsquo;s your hotel or another central point, and begin our scenic journey to the stunning Amalfi Coast.</li>\n</ul>", "location": null, "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T10:09:44.438Z", "updated_at": "2024-11-03T10:09:44.527Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 98, "fields": {"cms_content": 73, "title": "Stop 1: Sorrento", "description": "<ul>\n<li><strong>Duration:</strong> 1 hour &nbsp;</li>\n<li>Arrive in the charming town of Sorrento. Explore key highlights, including:<br /><strong>Piazza Tasso:</strong> Stroll through this lively square, surrounded by cafes and shops, and soak in the vibrant atmosphere.<br /><strong>Marina Grande:</strong> Enjoy picturesque views of the marina and the beautiful coastline, perfect for memorable photos and a relaxing ambiance.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T10:11:45.013Z", "updated_at": "2024-11-03T10:11:45.141Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 99, "fields": {"cms_content": 73, "title": "Stop 2: Positano", "description": "<ul>\n<li><strong>Duration:</strong> 1 hour &nbsp;</li>\n<li>Continue to Positano, famous for its colorful cliffside houses and stunning beach.</li>\n</ul>\n<p><strong>Marina Grande Beach:</strong> Spend time at this beautiful beach, where you can relax, swim, or simply enjoy the breathtaking views of the surrounding cliffs.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T10:13:00.020Z", "updated_at": "2024-11-03T10:13:00.105Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 100, "fields": {"cms_content": 73, "title": "Stop 3: Amalfi", "description": "<ul>\n<li><strong>Duration:</strong> 3 hours &nbsp;</li>\n<li>Arrive in Amalfi, one of the most iconic towns along the coast. Explore the highlights, including:<br />&nbsp; - <strong>Amalfi Cathedral (Cattedrale di Sant'Andrea)</strong>: Visit this stunning cathedral with its beautiful fa&ccedil;ade and historic significance.<br />&nbsp; - Take some time to wander the charming streets filled with shops, cafes, and local artisan products.<br />&nbsp; - Enjoy lunch at a local restaurant (cost not included) while savoring the flavors of the region.</li>\n</ul>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T10:14:07.132Z", "updated_at": "2024-11-03T10:14:07.296Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 101, "fields": {"cms_content": 73, "title": "Return to Rome", "description": "<p>After a delightful day exploring the Amalfi Coast, relax during your scenic drive back to Rome, where you will be dropped off at your preferred location.</p>", "location": "", "lat": null, "lng": null, "image": "", "created_at": "2024-11-03T10:14:27.755Z", "updated_at": "2024-11-03T10:14:27.955Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 102, "fields": {"cms_content": 4, "title": "6:30 AM – Meeting Point Gathering", "description": "<p>All participants must arrive at the meeting point at <strong>Castro Pretorio Metro Station (Line B). </strong> It&rsquo;s essential to be on time, as the tour will depart promptly. Late arrivals may miss the trip without refund.</p>", "location": null, "lat": 41.90621852445018, "lng": 12.505545625783789, "image": "", "created_at": "2025-05-21T17:24:50.731Z", "updated_at": "2025-05-21T17:38:06.615Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 103, "fields": {"cms_content": 4, "title": "7:00 AM – Departure from Rome", "description": "<p>Begin your journey to Naples by comfortable air-conditioned coach. Enjoy scenic views along the way. A brief stop for breakfast will be made at <strong>Autogrill</strong>.</p>", "location": null, "lat": 41.896154824272905, "lng": 12.478307567087848, "image": "", "created_at": "2025-05-21T17:25:34.616Z", "updated_at": "2025-05-21T17:43:30.238Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 104, "fields": {"cms_content": 4, "title": "10:00 AM – Arrival in Naples", "description": "<p>Upon arrival in Naples, you'll head to the port for your transfer to Capri Island.</p>", "location": null, "lat": 40.84911526119546, "lng": 14.261966892590515, "image": "", "created_at": "2025-05-21T17:26:04.396Z", "updated_at": "2025-05-21T17:44:34.077Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 105, "fields": {"cms_content": 4, "title": "10:30 AM – Ferry to Capri", "description": "<p>Board a cruise from Naples to the beautiful island of Capri. The ferry ride offers coastal views and a smooth transition to island life.</p>", "location": null, "lat": 40.55154159115154, "lng": 14.24126858331358, "image": "", "created_at": "2025-05-21T17:26:32.470Z", "updated_at": "2025-05-21T17:46:20.003Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 106, "fields": {"cms_content": 4, "title": "11:30 AM – Capri Island Exploration Begins", "description": "<p dir=\"ltr\">&nbsp;Spend the next 4 hours exploring the stunning island of Capri. Activities include:</p>\r\n<ul>\r\n<li dir=\"ltr\" role=\"presentation\">Free time in Capri town</li>\r\n<li dir=\"ltr\" role=\"presentation\">A walk in the center of Ana Capri</li>\r\n<li dir=\"ltr\" role=\"presentation\">A visit to Piazzetta and Tagara Viewpoint</li>\r\n<li dir=\"ltr\" role=\"presentation\">Option to join a boat tour to the Blue Grotto (self-paid)</li>\r\n<li dir=\"ltr\" role=\"presentation\">Take the Monte Solaro chairlift from Piazza Vittoria (self-paid)<strong id=\"docs-internal-guid-f2546511-7fff-1721-9563-2009403e688b\"><br></strong></li>\r\n</ul>", "location": null, "lat": 40.55064582733902, "lng": 14.242561236362915, "image": "", "created_at": "2025-05-21T17:28:45.596Z", "updated_at": "2025-05-21T17:47:49.314Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 107, "fields": {"cms_content": 4, "title": "5:15 PM – Departure from Capri to Naples", "description": "<p>Cruise back to Naples after a refreshing island experience.</p>", "location": null, "lat": 40.85846384562945, "lng": 14.257847019719405, "image": "", "created_at": "2025-05-21T17:29:26.196Z", "updated_at": "2025-05-21T17:48:59.105Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 108, "fields": {"cms_content": 4, "title": "6:30 PM – Departure from Naples to Rome", "description": "<p>Board the coach for your return journey to Rome.</p>", "location": null, "lat": 41.896957063110264, "lng": 12.457041944398933, "image": "", "created_at": "2025-05-21T17:29:47.753Z", "updated_at": "2025-05-21T17:49:53.440Z", "created_by": 3, "updated_by": 3}}, {"model": "cms.itinerary", "pk": 109, "fields": {"cms_content": 4, "title": "9:30 PM – Arrival in Rome", "description": "<p>You&rsquo;ll be dropped off at the same meeting point where the tour began, completing your full-day adventure.</p>", "location": null, "lat": 41.896957063110264, "lng": 12.457041944398933, "image": "", "created_at": "2025-05-21T17:30:11.016Z", "updated_at": "2025-05-21T17:50:32.642Z", "created_by": 3, "updated_by": 3}}]
+[
+  {
+    "model": "cms.itinerary",
+    "pk": 1,
+    "fields": {
+      "cms_content": 5,
+      "title": "Colosseum",
+      "description": "<p>Your experience begins at the Colosseum, where one of our friendly hosts will meet you, provide your priority access tickets, and guide you through the entry process, ensuring a smooth and stress-free start to your visit. Once inside, explore the iconic amphitheater at your own pace. Delve into the fascinating stories of gladiators, emperors, and epic battles, and learn about its remarkable construction and historical significance through informative displays and signs.\r\n</p>",
+      "location": null,
+      "lat": 41.8902,
+      "lng": 12.4922,
+      "image": "",
+      "created_at": "2024-02-05T06:03:29.565Z",
+      "updated_at": "2024-07-04T12:43:02.090Z",
+      "created_by": 2,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 2,
+    "fields": {
+      "cms_content": 5,
+      "title": "Roman Forum",
+      "description": "<p>Next, head to the Roman Forum, the bustling heart of ancient Rome’s political, social, and economic life. With your pre-arranged tickets, you'll gain swift entry and can freely wander through the ruins, imagining the grandeur of the surrounding temples and buildings. Experience firsthand the daily lives of Romans and their ceremonies.\r\n</p>",
+      "location": null,
+      "lat": 41.8925,
+      "lng": 12.4853,
+      "image": "",
+      "created_at": "2024-02-05T06:06:09.511Z",
+      "updated_at": "2024-07-04T12:43:14.430Z",
+      "created_by": 2,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 3,
+    "fields": {
+      "cms_content": 5,
+      "title": "Palatine Hills",
+      "description": "<p>Conclude your tour with a visit to Palatine Hill, the legendary birthplace of Rome. From this vantage point, enjoy breathtaking views of the city and uncover the history of Rome’s founding and the opulent residences of its emperors.</p>",
+      "location": null,
+      "lat": 41.8894,
+      "lng": 12.488,
+      "image": "",
+      "created_at": "2024-02-05T06:07:35.217Z",
+      "updated_at": "2024-07-04T12:43:20.702Z",
+      "created_by": 2,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 5,
+    "fields": {
+      "cms_content": 7,
+      "title": "Colosseum",
+      "description": "<p>Print or bring the Eticket provided at the entrance of the Colosseum and enter after security check. Then you will be free to be your own for discovering the beauty of the Colosseum and the arena.</p>",
+      "location": null,
+      "lat": 41.8902,
+      "lng": 12.4922,
+      "image": "",
+      "created_at": "2024-02-05T06:20:33.227Z",
+      "updated_at": "2024-06-13T04:10:45.740Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 6,
+    "fields": {
+      "cms_content": 7,
+      "title": "roman",
+      "description": "<div class=\"sc-kFuwaP dZMhFc\">\n<div class=\"sc-hZLPDR sc-cWvMYY fSfJbt fnmGNt text body\">After finishing the colosseum you can now move to the roman forum. your entrance ticket is valid for 24h so you can visit the forum and palatine hills at your convenience.</div>\n</div>",
+      "location": null,
+      "lat": 41.8925,
+      "lng": 12.4853,
+      "image": "",
+      "created_at": "2024-02-05T06:22:00.899Z",
+      "updated_at": "2024-06-13T04:10:45.788Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 7,
+    "fields": {
+      "cms_content": 7,
+      "title": "palatine hills",
+      "description": "<p>Your ticket given is valid for palatine hills for 24h. So visit this place at your convenience.</p>",
+      "location": null,
+      "lat": 41.8894,
+      "lng": 12.488,
+      "image": "",
+      "created_at": "2024-02-05T06:23:58.639Z",
+      "updated_at": "2024-06-13T04:10:45.807Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 8,
+    "fields": {
+      "cms_content": 36,
+      "title": "Day 1 : Brussels Discovery",
+      "description": "<p>Begin your journey with a Eurostar ride from London to Brussels. Upon arrival at Brussels Central station, indulge in an orientation city tour, marveling at the city's architectural wonders. Explore the futuristic Atomium before proceeding to the enchanting canals of Amsterdam. Conclude the day with a delightful Indian dinner and a comfortable overnight stay in Amsterdam.</p>",
+      "location": null,
+      "lat": 34.09613457516202,
+      "lng": 74.87879125846852,
+      "image": "",
+      "created_at": "2024-02-06T06:35:07.126Z",
+      "updated_at": "2024-06-13T04:10:46.012Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 9,
+    "fields": {
+      "cms_content": 36,
+      "title": "Day 2 : Blooms and Canals",
+      "description": "<p>Fuel your day with a hearty breakfast before immersing yourself in the breathtaking Keukenhof Tulip Garden. Cruise along Amsterdam's picturesque canals, witnessing the city's charm from a unique perspective. Indulge in another evening of culinary delights with dinner at an Indian restaurant, followed by a peaceful overnight stay in Amsterdam.</p>",
+      "location": null,
+      "lat": 34.09613457516202,
+      "lng": 74.87879125846852,
+      "image": "",
+      "created_at": "2024-02-06T06:35:38.211Z",
+      "updated_at": "2024-06-13T04:10:46.030Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 10,
+    "fields": {
+      "cms_content": 36,
+      "title": "Day 3 : Windmills and Farewell",
+      "description": "<div class=\"sc-kFuwaP dZMhFc\">\n<div class=\"sc-hZLPDR sc-cWvMYY fSfJbt fnmGNt text body\">\n<p style=\"text-align: left;\">After breakfast, venture to Zaanse Schans for a glimpse into Dutch heritage at the windmill village, cheese factory, and wooden shoes factory. Conclude your tour with a Eurostar journey from Brussels back to London, cherishing the memories of a blossoming adventure through these captivating European cities.</p>\n</div>\n</div>",
+      "location": null,
+      "lat": 34.09613457516202,
+      "lng": 74.87879125846852,
+      "image": "",
+      "created_at": "2024-02-06T06:43:36.050Z",
+      "updated_at": "2024-06-13T04:10:46.046Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 15,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 1 : London Love Affair",
+      "description": "<ul>\n<li style=\"text-align: left;\">London To Milan by air.</li>\n<li style=\"text-align: left;\">Venice city tour.</li>\n<li style=\"text-align: left;\">Valentines day dinner in Venice Island.</li>\n<li style=\"text-align: left;\">Over night in Venice.</li>\n</ul>",
+      "location": null,
+      "lat": 45.468512518622454,
+      "lng": 9.181208279213424,
+      "image": "",
+      "created_at": "2024-02-06T06:54:43.062Z",
+      "updated_at": "2024-06-13T04:10:45.874Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 16,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 2 : Venetian Romance Unveiled",
+      "description": "<ul>\n<li style=\"text-align: left;\">Venice to Tirano.</li>\n<li style=\"text-align: left;\">Explore Bernina Express.</li>\n<li style=\"text-align: left;\">Tirano to Chur.</li>\n<li style=\"text-align: left;\">Interlaken city tour.</li>\n<li style=\"text-align: left;\">Overnight in Meiringen.</li>\n</ul>",
+      "location": null,
+      "lat": 46.217123028288206,
+      "lng": 10.170310993032096,
+      "image": "",
+      "created_at": "2024-02-06T06:55:10.618Z",
+      "updated_at": "2024-06-13T04:10:45.891Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 17,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 3 : Swiss Alpine Love Symphony",
+      "description": "<ul>\n<li style=\"text-align: left;\">Interlaken to Lauterbrunnen.</li>\n<li style=\"text-align: left;\">Grindelwald to James Bond 007 world.</li>\n<li style=\"text-align: left;\">Overnight in Meiringen.</li>\n</ul>",
+      "location": null,
+      "lat": 46.592123953594594,
+      "lng": 7.907974463913518,
+      "image": "",
+      "created_at": "2024-02-06T06:55:39.632Z",
+      "updated_at": "2024-06-13T04:10:45.912Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 18,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 4 : Cultural Embrace in Luzern's Love",
+      "description": "<ul>\n<li style=\"text-align: left;\">Meiringen To Luzern (city tour).</li>\n<li style=\"text-align: left;\">Luzern to Milano Airport.</li>\n<li style=\"text-align: left;\">Milan to London.</li>\n</ul>",
+      "location": null,
+      "lat": 47.050186027966184,
+      "lng": 8.309269442819328,
+      "image": "",
+      "created_at": "2024-02-06T06:56:05.825Z",
+      "updated_at": "2024-06-13T04:10:45.929Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 19,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 1 : Coastal Crossing and Amsterdam's Canals",
+      "description": "<p style=\"text-align: left;\">7:30 AM: &nbsp;Morning join up with your coach and</p>\n<p style=\"text-align: left;\">depart towards Dover.</p>\n<p style=\"text-align: left;\">9:30 AM The crossing on the ferry to Calais. (Approx 90 Minutes)</p>\n<p style=\"text-align: left;\">11:30 AM On arrival Calais join up with your Coach and depart</p>\n<p style=\"text-align: left;\">Towards Amsterdam.</p>\n<p style=\"text-align: left;\">4:30 PM One hour Canal Cruise Amsterdam City Tour.</p>\n<p style=\"text-align: left;\">7:30 PM Check in Hotel</p>\n<p style=\"text-align: left;\">Over Night in Amsterdam (3/4-Star Hotel)</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:00:26.161Z",
+      "updated_at": "2024-06-13T04:10:45.945Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 20,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 2 : Windmills, Atomium, and Belgian Charm",
+      "description": "<p style=\"text-align: left;\">8:00 AM - Breakfast at Hotel.</p>\n<p style=\"text-align: left;\">9:30AM - process to Zans village tour.</p>\n<p style=\"text-align: left;\">Village descriptions &ndash;</p>\n<p style=\"text-align: left;\">(Windmill, Wooden House &amp; Cheese Factory).</p>\n<p style=\"text-align: left;\">2:00 PM - Process to Brussels.</p>\n<p style=\"text-align: left;\">4: 30 PM - Brussels Atomium visit.</p>\n<p style=\"text-align: left;\">5:30 PM - Brussels Orientation City Tour (Grand Place &amp; Manneken Pis).</p>\n<p style=\"text-align: left;\">7:30 PM - Check in Hotel.</p>\n<p style=\"text-align: left;\">Over Night in Brussels (3/4-Star Hotel).</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:01:08.414Z",
+      "updated_at": "2024-06-13T04:10:45.962Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 21,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 3 : Eiffel Tower Extravaganza: New Year's Eve in Paris",
+      "description": "<p style=\"text-align: left;\">8.00AM - Breakfast at Hotel</p>\n<p style=\"text-align: left;\">9:30 AM - Process to Paris</p>\n<p style=\"text-align: left;\">1: 30 PM - Visit Eiffel Tower (2nd Level)</p>\n<p style=\"text-align: left;\">4:30 PM - Paris Orientation City Tour</p>\n<p style=\"text-align: left;\">6:30 PM - Check in Hotel</p>\n<p style=\"text-align: left;\">10:30 PM - Celebrate New Year 2024 in Eiffel Tower</p>\n<p style=\"text-align: left;\">1:30 PM - Process to Hotel Over Night in Hotel</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:01:43.372Z",
+      "updated_at": "2024-06-13T04:10:45.979Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 22,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 4 : Seine River Serenity and Homeward Bound",
+      "description": "<p style=\"text-align: left;\">9:30 AM - Breakfast at Hotel.</p>\n<p style=\"text-align: left;\">11:30 AM - Paris Seine River Cruise.</p>\n<p style=\"text-align: left;\">1:30 PM - Process to London. Departure Time (Approximate 10:30 PM).</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:03:23.053Z",
+      "updated_at": "2024-06-13T04:10:45.995Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 24,
+    "fields": {
+      "cms_content": 55,
+      "title": "Process for Rome to Capri",
+      "description": "<p>7.00 &ndash; (ROME) Process for Rome to Capri.<br />10.00 &ndash; (NAPOLI) After reaching Napoli we will go to the most beautiful CAPRI ISLAND using a cruise.<br />11.30 &ndash; (CAPRI) DURATION- 5 HOURS</p>",
+      "location": null,
+      "lat": 40.560989168486415,
+      "lng": 14.205556232256336,
+      "image": "",
+      "created_at": "2024-06-06T12:09:20.176Z",
+      "updated_at": "2024-06-13T04:10:45.840Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 25,
+    "fields": {
+      "cms_content": 55,
+      "title": "Process from Capri to Rome",
+      "description": "<p>5.15 &ndash; process from Capri to Napoli.<br />6.30 &ndash; Back to Rome by bus.<br />9.30- come back to ROME.</p>",
+      "location": "",
+      "lat": 40.552291762478085,
+      "lng": 14.225564026201852,
+      "image": "",
+      "created_at": "2024-06-06T12:10:22.402Z",
+      "updated_at": "2024-06-13T04:10:45.857Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 26,
+    "fields": {
+      "cms_content": 1,
+      "title": "test",
+      "description": "",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "cms/ContentImage/Screenshot_from_2024-05-21_18-33-30.png",
+      "created_at": "2024-06-11T12:03:04.791Z",
+      "updated_at": "2024-06-11T12:03:04.791Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 27,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 1 : London to Santorini",
+      "description": "<div class=\"space-y-2\">\n<div class=\"space-y-2 text-font-p text-sm\">\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\n<div class=\"sc-bfLWyY OhWeG\">\n<p><span style=\"color: #000000;\">&THORN; London To Santorini.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Explore Oia And Find The Best Photography Spots, Ammoudi Bay, Visit Sunset View From Oia.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Overnight In Santorini</span></p>\n</div>\n</div>\n</div>\n</div>\n<div class=\"space-y-2\">\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\n</div>",
+      "location": null,
+      "lat": 36.40341316678613,
+      "lng": 25.48814796239934,
+      "image": "",
+      "created_at": "2024-06-12T11:23:20.155Z",
+      "updated_at": "2024-06-13T04:10:45.546Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 28,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 2 : Drive From Oia To Fira, Imerovigli, Skaros Rock",
+      "description": "<div class=\"space-y-2\">\n<div class=\"space-y-2 text-font-p text-sm\">\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\n<div class=\"sc-bfLWyY OhWeG\">\n<p><span style=\"color: #000000;\">&THORN; Breakfast At Hotel.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Drive From Oia To Fira, Imerovigli, Skaros Rock, Three Bells Of Fira, Orthodox Metropolitan Cathedral.</span></p>\n<p><span style=\"color: #000000;\">&THORN; Overnight In Santorini</span></p>\n</div>\n</div>\n</div>\n</div>",
+      "location": "",
+      "lat": 36.41690694000925,
+      "lng": 25.43238495974569,
+      "image": "",
+      "created_at": "2024-06-12T11:23:40.564Z",
+      "updated_at": "2024-06-13T04:10:45.654Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 29,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 3 : Pyrgos, Monastery of Profitis Ilias, Perissa Black Sand Beach, Red Beach, Akrotiri Archaeological Site, Akrotiri Lighthouse.and Santorini To London",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast At Hotel.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Pyrgos, Monastery of Profitis Ilias, Perissa Black Sand Beach, Red Beach, Akrotiri Archaeological Site, Akrotiri Lighthouse.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Process To Airport</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Santorini To London</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": 36.38290560522265,
+      "lng": 25.449108196441262,
+      "image": "",
+      "created_at": "2024-06-12T11:25:03.217Z",
+      "updated_at": "2024-06-13T04:13:40.334Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 31,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-1: Journey from London to Venice and Venice Island Walking Tour 4 Hours",
+      "description": "<p><span style=\"color: #000000;\">Walking through Venice is a unique and enchanting experience. Venice can get quite crowded, so starting your walk early in the morning can help you enjoy the city's beauty without the rush of tourists. The streets and alleys of Venice are primarily cobblestone, so comfortable walking shoes are a must.</span></p>",
+      "location": "",
+      "lat": 45.439043112101864,
+      "lng": 12.339935951301163,
+      "image": "",
+      "created_at": "2024-06-12T11:27:29.428Z",
+      "updated_at": "2024-06-13T04:10:45.676Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 32,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-2: Innsbruck City Tour and Vaduz City Tour",
+      "description": "<p><span style=\"color: #000000;\">Innsbruck city tour can give you a wonderful glimpse into the charm and history of this beautiful Austrian city. A short walk from the Golden Roof, visit the Hofkirche (Court Church) and see the elaborate tomb of Emperor Maximilian I surrounded by 28 bronze statues. Then, head over to the nearby Imperial Palace, one of the most significant cultural buildings in Austria</span></p>\n<p><span style=\"color: #000000;\">Vaduz, the capital of Liechtenstein, is a small but charming city with a rich cultural and historical heritage. Vaduz Castle, the official residence of the Prince of Liechtenstein. While the castle itself is not open to the public. we can enjoy a walk up to it and take in the stunning panoramic views of the city and the Rhine Valley. Just a short walk away is the Liechtenstein National Museum. This museum offers an excellent overview of the country&rsquo;s history, culture, and natural history</span></p>",
+      "location": "",
+      "lat": 47.26576324452061,
+      "lng": 11.393891357219372,
+      "image": "",
+      "created_at": "2024-06-12T11:27:47.376Z",
+      "updated_at": "2024-06-13T04:10:45.691Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 33,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-3: Zurich Rhine Falls Visit and Interlaken City Tour",
+      "description": "<p><span style=\"color: #000000;\">Visiting the Rhine Falls in Zurich can be an exhilarating experience. Visit the castle, which offers panoramic views of the falls. Required tickets for access to the viewing platforms. Walk down to the various viewing platforms. They provide different perspectives and breathtaking views of the falls. The K&auml;nzeli platform, which offers one of the closest views. The boat ride lasts around 30 minutes and gives you a unique perspective from the water</span></p>\n<p><span style=\"color: #000000;\">Walking is the best way to get around Interlaken given the short distance between most attractions. Accessed via funicular from Interlaken Ost. Take the funicular from Interlaken Ost up to Harder Kulm, which offers breathtaking panoramic views of Interlaken, Lake Thun, and Lake Brienz, as well as the Jungfrau region. The ride itself is quick, around 10 minutes each way, leaving you ample time to soak in the scenery from the viewing platform at the top.</span></p>",
+      "location": "",
+      "lat": 47.67889424229632,
+      "lng": 8.61795956631508,
+      "image": "",
+      "created_at": "2024-06-12T11:28:12.735Z",
+      "updated_at": "2024-06-13T04:10:45.707Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 34,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-4: Lauterbrunnen, Grindelwald Visit and back to London",
+      "description": "<p><span style=\"text-decoration: underline; color: #000000;\">Top Attractions:</span></p>\n<p><span style=\"color: #000000;\"><strong>First Cliff Walk:</strong>&nbsp;A thrilling cliffside walkway with spectacular views and a glass-bottom lookout point.</span></p>\n<p><span style=\"color: #000000;\"><strong>Bachalpsee Lake:</strong>&nbsp;A beautiful alpine lake accessible by a moderate hike from the First gondola station.</span></p>\n<p><span style=\"color: #000000;\"><strong>Eiger Trail:</strong>&nbsp;A hiking path that runs along the foot of the Eiger's North Face, offering close-up views of this famous mountain.</span></p>\n<p><span style=\"color: #000000;\"><strong>Grindelwald Glacier Canyon:</strong>&nbsp;A dramatic gorge with walkways and a spiderweb net for adventurous visitors.</span></p>",
+      "location": "",
+      "lat": 46.593539497466004,
+      "lng": 7.905914527411871,
+      "image": "",
+      "created_at": "2024-06-12T11:28:59.947Z",
+      "updated_at": "2024-06-13T04:10:45.724Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 38,
+    "fields": {
+      "cms_content": 64,
+      "title": "1. Vatican Museums",
+      "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Start your Vatican tour in the heart of Vatican City. Enter the museum by following the entrance with the skip-the-line ticket sent to you. Explore the extensive 9-mile (15 km) collection of impressive rooms and galleries at your own pace. The ultimate Vatican adventure awaits!</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "location": null,
+      "lat": 41.90663149721413,
+      "lng": 12.453641295663013,
+      "image": "",
+      "created_at": "2024-10-07T09:28:21.685Z",
+      "updated_at": "2024-10-07T09:44:55.446Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 39,
+    "fields": {
+      "cms_content": 64,
+      "title": "2. Sphere within a Sphere",
+      "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">In the heart of the Vatican's Cortile della Pigna stands a remarkable bronze sculpture: Sfera con Sfera (Sphere Within a Sphere) by Italian artist Arnaldo Pomodoro. This captivating artwork depicts two fractured orbs resembling intricate machine gears, symbolizing the complex and fragile nature of the modern world. Pomodoro started creating similar sculptures in the early 1960s, exploring the theme of complexity.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "location": null,
+      "lat": 41.905898253499544,
+      "lng": 12.454557551481212,
+      "image": "",
+      "created_at": "2024-10-07T09:28:42.780Z",
+      "updated_at": "2024-10-07T09:45:33.791Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 40,
+    "fields": {
+      "cms_content": 64,
+      "title": "3. Museo Pio Clementino",
+      "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Pope Julius II initiated the collection of classical statues in these galleries at the start of the 16th century. However, the gallery is named after later popes, Clement XIV (1769-1774) and Pius VI (1775-1799), who established the current galleries. Many of the artworks here were confiscated by Napoleon but later returned to the Museum after his defeat.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "location": null,
+      "lat": 41.906725451326984,
+      "lng": 12.454527782172066,
+      "image": "",
+      "created_at": "2024-10-07T09:29:02.677Z",
+      "updated_at": "2024-10-07T09:46:12.565Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 41,
+    "fields": {
+      "cms_content": 64,
+      "title": "4. Galleria Delle Carte Geografiche",
+      "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">This room is one of the most extravagant galleries in terms of decor. It features a massive mural with frescoes on both sides depicting maps of Italy. Pope Gregory XIII, also known as the calendar pope, commissioned the painting of this room so that he could accurately study the lands where he lived and the surrounding areas.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "location": null,
+      "lat": 41.904380617215445,
+      "lng": 12.454533418426045,
+      "image": "",
+      "created_at": "2024-10-07T09:29:19.705Z",
+      "updated_at": "2024-10-07T09:46:44.943Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 42,
+    "fields": {
+      "cms_content": 64,
+      "title": "5. Stanze di Raffaello",
+      "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Explore the Raphael Rooms, painted by Raphael and his students between 1508 and 1524. These rooms were commissioned by Pope Julius II and used by his successors, including Leo X, the Medici Pope (1512-1521).</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "location": null,
+      "lat": 41.90192284427927,
+      "lng": 12.451103740657954,
+      "image": "",
+      "created_at": "2024-10-07T09:29:40.181Z",
+      "updated_at": "2024-10-07T09:49:22.869Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 43,
+    "fields": {
+      "cms_content": 64,
+      "title": "6. Sistine Chapel",
+      "description": "<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<div class=\"sc-fbbtMj kWuGAF\">\r\n<div class=\"sc-biDSBu gvRRyB\">\r\n<div class=\"sc-hsETdY fGdMgV\">\r\n<div class=\"sc-cQPkDr kucCwG\" data-tabs=\"true\">\r\n<div id=\"react-tabs-3\" class=\"sc-lfOptZ kbrjaK selected\" role=\"tabpanel\" aria-labelledby=\"react-tabs-2\">\r\n<div class=\"sc-engKbd jFaFVO space-y-4\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">Most tours of the Vatican Museums conclude at the renowned Sistine Chapel, a highly sacred site where new popes are elected. Visitors are drawn to see Michelangelo&rsquo;s legendary frescoes, including The Creation of Adam on the ceiling and The Last Judgment on the wall.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<p>&nbsp;</p>",
+      "location": null,
+      "lat": 41.90309842684568,
+      "lng": 12.454923357708436,
+      "image": "",
+      "created_at": "2024-10-07T09:30:09.532Z",
+      "updated_at": "2024-10-07T09:50:06.959Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 44,
+    "fields": {
+      "cms_content": 66,
+      "title": "Rome to Florence",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p><span style=\"color: #000000;\">Get ready for an exciting start to your tour! We'll pick you up from your preferred location in Rome and time. It could be from any hotel in Rome.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:37:11.834Z",
+      "updated_at": "2024-11-03T05:18:30.900Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 45,
+    "fields": {
+      "cms_content": 66,
+      "title": "Piazzale Michelangelo",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p><span style=\"color: #000000;\">You will enjoy the complete view of the city from above, just the moment you arrive in Florence! Enjoy the stop at Piazzale Michelangelo, the perfect location to take memorable pictures! Few places are so compact or so packed with incredible art and architectural masterpieces in every corner of the city.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 30 minutes.&nbsp;</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket free.&nbsp;</span></li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:37:30.358Z",
+      "updated_at": "2024-10-28T07:10:26.623Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 46,
+    "fields": {
+      "cms_content": 66,
+      "title": "Duomo - Cattedrale di Santa Maria del Fiore",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p><span style=\"color: #000000;\">Admire the breathtaking beauty of the Duomo of Florence! The Santa Maria del Fiore Cathedral is one of the most iconic landmarks in the city. Built by Filippo Brunelleschi's red-tiled dome, it's a staggering construction. The amazing pink, white and green marble facade, along with the graceful bell tower, dominates the Renaissance cityscape.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 60 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket not included</span></li>\r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:37:52.746Z",
+      "updated_at": "2024-10-28T07:11:19.456Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 47,
+    "fields": {
+      "cms_content": 66,
+      "title": "Palazzo Vecchio",
+      "description": "<p><span style=\"color: #000000;\">The Palazzo Vecchio is one of the most famous symbols in Florence which built between 1299 and 1314. &nbsp;It is used as the residence and workplace of republic officials and features the impressive \"Salone dei Cinquecento,\" the largest room in Florence.</span><br /><span style=\"color: #000000;\">Enjoy the taste of many Tuscan delicious regional wines in the local Florentine restaurant at lunchtime.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 90 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket is free</span></li>\r\n<li><span style=\"color: #000000;\">Food cost is not included</span></li>\r\n</ul>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:38:53.639Z",
+      "updated_at": "2024-10-28T07:11:24.583Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 48,
+    "fields": {
+      "cms_content": 66,
+      "title": "The Basilica of Santa Croce",
+      "description": "<p><span style=\"color: #000000;\">Explore the Basilica of Santa Croce. This wonderful place is the final resting land of the greatest minds artistic visionaries like Dante and Michelangelo, infusing Santa Croce with unique wisdom and boundless creativity. You won't want to miss experiencing the unique place of this wonderful location.&nbsp;</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 60 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission is free</span></li>\r\n</ul>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:39:13.827Z",
+      "updated_at": "2024-10-28T07:11:29.526Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 49,
+    "fields": {
+      "cms_content": 66,
+      "title": "The Uffizi Gallery",
+      "description": "<p><span style=\"color: #000000;\">At the Uffizi Gallery, you can take a guided tour and explore the world's best collection of Renaissance art. If you're interested, we can reserve access for you. Please note that this cost is not included in this tour.</span></p>\r\n<ul>\r\n<li><span style=\"color: #000000;\">Stay duration: 60 minutes</span></li>\r\n<li><span style=\"color: #000000;\">Admission ticket is not included</span></li>\r\n</ul>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:39:32.309Z",
+      "updated_at": "2024-10-28T07:11:34.082Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 50,
+    "fields": {
+      "cms_content": 66,
+      "title": "Back to Rome",
+      "description": "<div class=\"sc-hLVzOi kEsuuS\">\r\n<div class=\"sc-eUXrtT bFddlU\">\r\n<div class=\"sc-hilkcu kKCBiW\">\r\n<div class=\"sc-hVkMzN hgubjN\" data-tabs=\"true\">\r\n<div id=\"react-tabs-3\" class=\"sc-liGlwv dUoOOa selected\" role=\"tabpanel\" aria-labelledby=\"react-tabs-2\">\r\n<div class=\"sc-epYGdz gjccAO space-y-4\">\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-biDSBu kiDTKK\">\r\n<p>After enjoying a full day, it's time to head back from Florence to Rome.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-10-28T06:39:48.468Z",
+      "updated_at": "2024-10-28T07:11:38.807Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 51,
+    "fields": {
+      "cms_content": 68,
+      "title": "7:30 AM – Departure from Rome",
+      "description": "<p><span style=\"color: #000000;\">Begin your adventure with a comfortable pick-up from your hotel in Rome. Sit back and enjoy a scenic 2-hour drive through the picturesque countryside as you head towards Civita Di Bagnoregio.</span></p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T06:49:03.168Z",
+      "updated_at": "2024-11-03T06:49:03.318Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 53,
+    "fields": {
+      "cms_content": 68,
+      "title": "9:30 AM – Arrival at Civita Di Bagnoregio",
+      "description": "<p>Explore the enchanting medieval village known as the \"dying town,\" famed for its unique cliffside location and charming stone buildings. Wander through narrow cobblestone streets, take in panoramic views of the surrounding valleys, and learn about the town&rsquo;s fascinating history and preservation efforts.</p>\n<p>Activities include: Visits to local artisan shops, photo opportunities, and time to enjoy refreshments at a local caf&eacute;.</p>\n<p>Duration: 3 hours.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:14:28.013Z",
+      "updated_at": "2024-11-03T09:14:28.180Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 54,
+    "fields": {
+      "cms_content": 68,
+      "title": "12:30 PM – Departure to Bolsena Lake",
+      "description": "<p>Travel from Civita Di Bagnoregio to Bolsena Lake, a journey of approximately 30 minutes. Marvel at the tranquil beauty of this volcanic lake as you approach.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:14:47.246Z",
+      "updated_at": "2024-11-03T09:14:47.329Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 55,
+    "fields": {
+      "cms_content": 68,
+      "title": "1:00 PM – Arrival at Bolsena Lake",
+      "description": "<p>Unwind and experience the natural beauty of Bolsena Lake, the largest volcanic lake in Europe. Enjoy a relaxing stroll along the lake&rsquo;s shores, visit the charming town of Bolsena, or dip your feet in the clear waters.</p>\n<p>Activities include: Leisurely lakeside walk, exploration of Bolsena town&rsquo;s historical sites (such as the Rocca Monaldeschi Fortress), and optional boat rides on the lake.</p>\n<p>Duration: 3 hours.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:15:03.668Z",
+      "updated_at": "2024-11-03T09:15:03.695Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 56,
+    "fields": {
+      "cms_content": 68,
+      "title": "4:00 PM – Return Journey to Rome",
+      "description": "<p>Begin the 2-hour journey back to Rome, reflecting on the day&rsquo;s experiences and capturing final glimpses of the scenic landscapes.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:15:17.952Z",
+      "updated_at": "2024-11-03T09:15:18.058Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 57,
+    "fields": {
+      "cms_content": 68,
+      "title": "6:00 PM – Arrival in Rome",
+      "description": "<p>The tour concludes with a drop-off at your hotel or a central location in Rome.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:15:29.074Z",
+      "updated_at": "2024-11-03T09:15:29.197Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 58,
+    "fields": {
+      "cms_content": 69,
+      "title": "7:30 AM – Departure from Rome",
+      "description": "<p>Begin your day with a comfortable drive through the scenic Italian countryside to Orvieto.</p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:16:54.036Z",
+      "updated_at": "2024-11-03T09:16:54.065Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 59,
+    "fields": {
+      "cms_content": 69,
+      "title": "9:30 AM – Arrival in Orvieto",
+      "description": "<p>Visit the magnificent Orvieto Cathedral, explore the medieval streets, and learn about the town's Etruscan roots. Enjoy time for shopping and a coffee break.<br />Duration: 3 hours.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:17:47.102Z",
+      "updated_at": "2024-11-03T09:17:47.225Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 60,
+    "fields": {
+      "cms_content": 69,
+      "title": "12:30 PM – Departure to Assisi",
+      "description": "<p>Travel to Assisi, soaking in the picturesque views along the way.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:20:15.153Z",
+      "updated_at": "2024-11-03T09:20:15.247Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 61,
+    "fields": {
+      "cms_content": 69,
+      "title": "1:30 PM – Arrival in Assisi",
+      "description": "<p>Explore the Basilica of Saint Francis, stroll through the historic center, visit landmarks like the Basilica of Santa Chiara, and enjoy the peaceful ambiance of this UNESCO World Heritage site.<br />Duration*: 4.5 hours.<br />Lunch at a local restaurant (not included in the tour price).</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:20:53.375Z",
+      "updated_at": "2024-11-03T09:20:53.733Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 62,
+    "fields": {
+      "cms_content": 69,
+      "title": "6:00 PM – Departure for Rome",
+      "description": "<p>Relax and reflect on the day&rsquo;s experiences during the return journey.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:21:10.301Z",
+      "updated_at": "2024-11-03T09:21:10.361Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 63,
+    "fields": {
+      "cms_content": 69,
+      "title": "7:30 PM – Arrival in Rome",
+      "description": "<p>Drop-off at your hotel or a central location in the city.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:21:33.324Z",
+      "updated_at": "2024-11-03T09:21:33.427Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 64,
+    "fields": {
+      "cms_content": 70,
+      "title": "Departure from Rome",
+      "description": "<p>Begin your day with a seamless pick-up from your hotel or preferred location in Rome. Settle into your luxury minivan and enjoy a comfortable 2.5-hour drive south through the scenic Italian landscape. &nbsp;</p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:22:18.886Z",
+      "updated_at": "2024-11-03T09:22:18.955Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 65,
+    "fields": {
+      "cms_content": 70,
+      "title": "Stop 1: Pompeii Archaeological Park",
+      "description": "<p>Duration: 3 hours &nbsp;<br />Admission: Included.<br />Explore the legendary ruins of Pompeii, a city frozen in time since the catastrophic eruption of Mount Vesuvius in AD 79. Your visit will take you through remarkable sites such as the House of the Vetti, the Forum, the Villa dei Misteri, and the Temple of Apollo and Isis. Discover the vibrant frescoes, preserved architecture, and remnants of everyday life that paint a vivid picture of ancient Roman culture.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:23:14.034Z",
+      "updated_at": "2024-11-03T09:23:14.092Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 66,
+    "fields": {
+      "cms_content": 70,
+      "title": "Transfer to Naples",
+      "description": "<p>After your immersive journey through Pompeii, head to Naples, where you'll have free time for independent exploration and sightseeing.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:23:38.159Z",
+      "updated_at": "2024-11-03T09:23:38.218Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 67,
+    "fields": {
+      "cms_content": 70,
+      "title": "Stop 2: Plebiscito Square",
+      "description": "<p>Duration: 30 minutes &nbsp;<br />Admission: Free &nbsp;<br />Visit the grand and traffic-free Plebiscito Square, a hub of historical significance and the perfect starting point for exploring Naples&rsquo; landmarks.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:24:15.792Z",
+      "updated_at": "2024-11-03T09:24:15.883Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 68,
+    "fields": {
+      "cms_content": 70,
+      "title": "Stop 3: Royal Palace of Naples",
+      "description": "<p>Duration: 1.5 hours &nbsp;<br />Admission: &euro;10 &nbsp;<br />The Royal Palace, a symbol of the Spanish Bourbon monarchy, showcases opulent architecture and a rich history dating back to the 17th century. Stroll through its lavish halls and take in the impressive d&eacute;cor.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:24:53.780Z",
+      "updated_at": "2024-11-03T09:24:53.847Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 69,
+    "fields": {
+      "cms_content": 70,
+      "title": "Stop 4: Castel Nuovo (Maschio Angioino)",
+      "description": "<p>Duration: 30 minutes &nbsp;<br />Admission: &euro;6 &nbsp;<br />Opening Times: Mon-Sat 8:30 AM-6 PM; Sun 10 AM-1 PM &nbsp;<br />Explore Castel Nuovo, a monumental 13th-century fortress that stands as a testament to Naples&rsquo; medieval power and heritage. Admire its robust towers and rich history.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:25:32.779Z",
+      "updated_at": "2024-11-03T09:25:32.871Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 70,
+    "fields": {
+      "cms_content": 70,
+      "title": "Stop 5: Galleria Umberto I",
+      "description": "<p>Duration: 30 minutes &nbsp;<br />Admission: Free &nbsp;<br />Conclude your visit with a short walk to Galleria Umberto I, an architectural masterpiece and UNESCO-listed shopping gallery. Experience the grandeur of this beautiful arcade, adorned with intricate glass and ironwork, offering an ambiance akin to a cathedral for shoppers.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:26:05.997Z",
+      "updated_at": "2024-11-03T09:26:06.117Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 71,
+    "fields": {
+      "cms_content": 70,
+      "title": "Return to Rome",
+      "description": "<p>After an enriching day filled with history and culture, relax on your journey back to Rome, where the tour concludes with a drop-off at your location around 7:30 PM.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:26:24.863Z",
+      "updated_at": "2024-11-03T09:26:24.959Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 84,
+    "fields": {
+      "cms_content": 71,
+      "title": "Departure from Rome",
+      "description": "<p>Start your day with a pick-up from your preferred location in Rome. Settle into the comfortable minivan and prepare for a scenic 3-hour drive to Florence.</p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:37:38.841Z",
+      "updated_at": "2024-11-03T09:37:38.937Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 85,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 1: Piazzale Michelangelo",
+      "description": "<ul>\n<li><strong>Duration: </strong>15 minutes &nbsp;</li>\n<li><strong>Admission: </strong>Free &nbsp;</li>\n<li>Begin your Florence visit with a panoramic view of the city from Piazzale Michelangelo. This spot offers breathtaking vistas perfect for memorable photos.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:40:11.616Z",
+      "updated_at": "2024-11-03T09:40:11.712Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 86,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 2: Duomo - Cattedrale di Santa Maria del Fiore",
+      "description": "<ul>\n<li><strong>Duration:</strong> 30 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Not included.</li>\n<li>Marvel at the iconic Duomo, with its striking red-tiled dome by Filippo Brunelleschi and its elaborate pink, white, and green marble fa&ccedil;ade.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:41:10.266Z",
+      "updated_at": "2024-11-03T09:41:10.409Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 87,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 3: Ponte Vecchio",
+      "description": "<ul>\n<li><strong>Duration:</strong> 15 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Free &nbsp;</li>\n<li>Walk across Ponte Vecchio, the famous medieval bridge lined with boutique shops. Explore local crafts, jewelry, and fashion.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:42:04.278Z",
+      "updated_at": "2024-11-03T09:42:04.379Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 88,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 4: Basilica of Santa Croce",
+      "description": "<ul>\n<li>\n<p><strong>Duration:</strong> 30 minutes &nbsp;</p>\n</li>\n<li>\n<p><strong>Admission:</strong> Free&nbsp;</p>\n</li>\n<li>\n<p>Visit the historic Basilica of Santa Croce, the burial site of legendary figures like Michelangelo and Dante, embodying artistic and intellectual brilliance.</p>\n</li>\n</ul>\n<p><strong>Lunch Break</strong>&nbsp;&nbsp;</p>\n<ul>\n<li><strong>Duration:</strong> 60 minutes &nbsp;<br />Enjoy a typical Tuscan lunch at a local restaurant (cost not included).&nbsp;</li>\n</ul>\n<p><strong>Journey to Pisa</strong></p>\n<ul>\n<li><strong>Duration:</strong> 1 hour &nbsp;</li>\n<li>Depart Florence and head to Pisa for the next part of your adventure.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:46:02.533Z",
+      "updated_at": "2024-11-03T09:46:02.629Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 89,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 5: Piazza dei Miracoli",
+      "description": "<p>Admire the grand square that houses Pisa&rsquo;s most iconic monuments: the Leaning Tower, the Baptistery, and the Cathedral.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:46:22.647Z",
+      "updated_at": "2024-11-03T09:46:22.771Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 90,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 6: Leaning Tower of Pisa",
+      "description": "<ul>\n<li><strong>Duration:</strong> 90 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Free &nbsp;</li>\n<li>Explore the Leaning Tower and capture classic photos. Enjoy time walking around the site and taking in its unique architecture.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:47:31.757Z",
+      "updated_at": "2024-11-03T09:47:31.837Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 91,
+    "fields": {
+      "cms_content": 71,
+      "title": "Stop 7: Baptistery of San Giovanni",
+      "description": "<p>Discover the ancient Baptistery, a masterpiece of Romanesque architecture that stands opposite the Cathedral.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:47:56.253Z",
+      "updated_at": "2024-11-03T09:47:56.366Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 92,
+    "fields": {
+      "cms_content": 71,
+      "title": "Return to Rome",
+      "description": "<p>After a day filled with artistic, historical, and cultural wonders, relax during your 4-hour drive back to Rome, where you will be dropped off at your hotel or a central location.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:48:16.055Z",
+      "updated_at": "2024-11-03T09:48:16.129Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 93,
+    "fields": {
+      "cms_content": 72,
+      "title": "Departure from Rome",
+      "description": "<ul>\n<li><strong>Duration:</strong> 2.5 hours &nbsp;</li>\n<li>Get ready for an exciting start to your tour! We'll pick you up from your preferred location in Rome, whether it's your hotel or another central point, and begin our journey to Tuscany.</li>\n</ul>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:49:14.983Z",
+      "updated_at": "2024-11-03T09:49:15.076Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 94,
+    "fields": {
+      "cms_content": 72,
+      "title": "Stop 1: San Gimignano",
+      "description": "<ul>\n<li><strong>Duration:</strong> 30 minutes &nbsp;</li>\n<li><strong>Admission:</strong> Free &nbsp;</li>\n<li>Enjoy a brief visit to the medieval town of San Gimignano, famous for its impressive towers and beautiful views. Stroll through the charming streets and capture stunning photographs of this UNESCO World Heritage site.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:50:04.971Z",
+      "updated_at": "2024-11-03T09:50:05.037Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 95,
+    "fields": {
+      "cms_content": 72,
+      "title": "Stop 2: Siena",
+      "description": "<ul>\n<li>\n<p><strong>Duration: </strong>5.5 hours &nbsp;</p>\n</li>\n<li>\n<p>Explore the historic city of Siena, known for its stunning architecture and rich cultural heritage. You&rsquo;ll visit several key sites, including:</p>\n<p><strong>Siena Cathedral (Duomo di Siena): </strong>Marvel at the intricate fa&ccedil;ade and beautiful interior of this stunning cathedral.<br /><strong>Piazza del Campo:</strong> Experience the heart of Siena, where the famous Palio horse race takes place. Enjoy the vibrant atmosphere and take in the breathtaking views.<br /><strong>Palazzo Pubblico:</strong> Discover the historic town hall and its impressive artworks while learning about the city&rsquo;s history.<br /><strong>Torre del Mangia:</strong> Admire this iconic tower that offers panoramic views of Siena (climbing the tower requires an admission fee).<br /><strong>Santa Maria della Scala:</strong> Explore this ancient hospital complex, now a museum, that reflects Siena&rsquo;s rich history.<br /><strong>Basilica of San Domenico:</strong> Visit this important religious site known for its beautiful frescoes and the relics of Saint Catherine of Siena.</p>\n<p><strong>Lunch Break&nbsp;&nbsp;</strong><br />Enjoy a leisurely lunch at a local restaurant in Siena (cost not included) and savor traditional Tuscan cuisine.</p>\n</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:53:52.074Z",
+      "updated_at": "2024-11-03T09:53:52.113Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 96,
+    "fields": {
+      "cms_content": 72,
+      "title": "Return to Rome",
+      "description": "<p>After a full day of exploring the highlights of Tuscany and Siena, relax during your drive back to Rome, where you will be dropped off at your preferred location.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T09:54:15.046Z",
+      "updated_at": "2024-11-03T09:54:15.124Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 97,
+    "fields": {
+      "cms_content": 73,
+      "title": "Departure from Rome",
+      "description": "<ul>\n<li><strong>Duration: </strong>3 hours &nbsp;</li>\n<li>Get ready for an exciting start to your tour! We'll pick you up from your preferred location in Rome, whether it&rsquo;s your hotel or another central point, and begin our scenic journey to the stunning Amalfi Coast.</li>\n</ul>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T10:09:44.438Z",
+      "updated_at": "2024-11-03T10:09:44.527Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 98,
+    "fields": {
+      "cms_content": 73,
+      "title": "Stop 1: Sorrento",
+      "description": "<ul>\n<li><strong>Duration:</strong> 1 hour &nbsp;</li>\n<li>Arrive in the charming town of Sorrento. Explore key highlights, including:<br /><strong>Piazza Tasso:</strong> Stroll through this lively square, surrounded by cafes and shops, and soak in the vibrant atmosphere.<br /><strong>Marina Grande:</strong> Enjoy picturesque views of the marina and the beautiful coastline, perfect for memorable photos and a relaxing ambiance.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T10:11:45.013Z",
+      "updated_at": "2024-11-03T10:11:45.141Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 99,
+    "fields": {
+      "cms_content": 73,
+      "title": "Stop 2: Positano",
+      "description": "<ul>\n<li><strong>Duration:</strong> 1 hour &nbsp;</li>\n<li>Continue to Positano, famous for its colorful cliffside houses and stunning beach.</li>\n</ul>\n<p><strong>Marina Grande Beach:</strong> Spend time at this beautiful beach, where you can relax, swim, or simply enjoy the breathtaking views of the surrounding cliffs.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T10:13:00.020Z",
+      "updated_at": "2024-11-03T10:13:00.105Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 100,
+    "fields": {
+      "cms_content": 73,
+      "title": "Stop 3: Amalfi",
+      "description": "<ul>\n<li><strong>Duration:</strong> 3 hours &nbsp;</li>\n<li>Arrive in Amalfi, one of the most iconic towns along the coast. Explore the highlights, including:<br />&nbsp; - <strong>Amalfi Cathedral (Cattedrale di Sant'Andrea)</strong>: Visit this stunning cathedral with its beautiful fa&ccedil;ade and historic significance.<br />&nbsp; - Take some time to wander the charming streets filled with shops, cafes, and local artisan products.<br />&nbsp; - Enjoy lunch at a local restaurant (cost not included) while savoring the flavors of the region.</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T10:14:07.132Z",
+      "updated_at": "2024-11-03T10:14:07.296Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 101,
+    "fields": {
+      "cms_content": 73,
+      "title": "Return to Rome",
+      "description": "<p>After a delightful day exploring the Amalfi Coast, relax during your scenic drive back to Rome, where you will be dropped off at your preferred location.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-03T10:14:27.755Z",
+      "updated_at": "2024-11-03T10:14:27.955Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 102,
+    "fields": {
+      "cms_content": 4,
+      "title": "6:30 AM – Meeting Point Gathering",
+      "description": "<p>All participants must arrive at the meeting point at <strong>Castro Pretorio Metro Station (Line B). </strong> It&rsquo;s essential to be on time, as the tour will depart promptly. Late arrivals may miss the trip without refund.</p>",
+      "location": null,
+      "lat": 41.90621852445018,
+      "lng": 12.505545625783789,
+      "image": "",
+      "created_at": "2025-05-21T17:24:50.731Z",
+      "updated_at": "2025-05-21T17:38:06.615Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 103,
+    "fields": {
+      "cms_content": 4,
+      "title": "7:00 AM – Departure from Rome",
+      "description": "<p>Begin your journey to Naples by comfortable air-conditioned coach. Enjoy scenic views along the way. A brief stop for breakfast will be made at <strong>Autogrill</strong>.</p>",
+      "location": null,
+      "lat": 41.896154824272905,
+      "lng": 12.478307567087848,
+      "image": "",
+      "created_at": "2025-05-21T17:25:34.616Z",
+      "updated_at": "2025-05-21T17:43:30.238Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 104,
+    "fields": {
+      "cms_content": 4,
+      "title": "10:00 AM – Arrival in Naples",
+      "description": "<p>Upon arrival in Naples, you'll head to the port for your transfer to Capri Island.</p>",
+      "location": null,
+      "lat": 40.84911526119546,
+      "lng": 14.261966892590515,
+      "image": "",
+      "created_at": "2025-05-21T17:26:04.396Z",
+      "updated_at": "2025-05-21T17:44:34.077Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 105,
+    "fields": {
+      "cms_content": 4,
+      "title": "10:30 AM – Ferry to Capri",
+      "description": "<p>Board a cruise from Naples to the beautiful island of Capri. The ferry ride offers coastal views and a smooth transition to island life.</p>",
+      "location": null,
+      "lat": 40.55154159115154,
+      "lng": 14.24126858331358,
+      "image": "",
+      "created_at": "2025-05-21T17:26:32.470Z",
+      "updated_at": "2025-05-21T17:46:20.003Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 106,
+    "fields": {
+      "cms_content": 4,
+      "title": "11:30 AM – Capri Island Exploration Begins",
+      "description": "<p dir=\"ltr\">&nbsp;Spend the next 4 hours exploring the stunning island of Capri. Activities include:</p>\r\n<ul>\r\n<li dir=\"ltr\" role=\"presentation\">Free time in Capri town</li>\r\n<li dir=\"ltr\" role=\"presentation\">A walk in the center of Ana Capri</li>\r\n<li dir=\"ltr\" role=\"presentation\">A visit to Piazzetta and Tagara Viewpoint</li>\r\n<li dir=\"ltr\" role=\"presentation\">Option to join a boat tour to the Blue Grotto (self-paid)</li>\r\n<li dir=\"ltr\" role=\"presentation\">Take the Monte Solaro chairlift from Piazza Vittoria (self-paid)<strong id=\"docs-internal-guid-f2546511-7fff-1721-9563-2009403e688b\"><br></strong></li>\r\n</ul>",
+      "location": null,
+      "lat": 40.55064582733902,
+      "lng": 14.242561236362915,
+      "image": "",
+      "created_at": "2025-05-21T17:28:45.596Z",
+      "updated_at": "2025-05-21T17:47:49.314Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 107,
+    "fields": {
+      "cms_content": 4,
+      "title": "5:15 PM – Departure from Capri to Naples",
+      "description": "<p>Cruise back to Naples after a refreshing island experience.</p>",
+      "location": null,
+      "lat": 40.85846384562945,
+      "lng": 14.257847019719405,
+      "image": "",
+      "created_at": "2025-05-21T17:29:26.196Z",
+      "updated_at": "2025-05-21T17:48:59.105Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 108,
+    "fields": {
+      "cms_content": 4,
+      "title": "6:30 PM – Departure from Naples to Rome",
+      "description": "<p>Board the coach for your return journey to Rome.</p>",
+      "location": null,
+      "lat": 41.896957063110264,
+      "lng": 12.457041944398933,
+      "image": "",
+      "created_at": "2025-05-21T17:29:47.753Z",
+      "updated_at": "2025-05-21T17:49:53.440Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 109,
+    "fields": {
+      "cms_content": 4,
+      "title": "9:30 PM – Arrival in Rome",
+      "description": "<p>You&rsquo;ll be dropped off at the same meeting point where the tour began, completing your full-day adventure.</p>",
+      "location": null,
+      "lat": 41.896957063110264,
+      "lng": 12.457041944398933,
+      "image": "",
+      "created_at": "2025-05-21T17:30:11.016Z",
+      "updated_at": "2025-05-21T17:50:32.642Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  }
+]

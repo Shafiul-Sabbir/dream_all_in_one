@@ -1,0 +1,1107 @@
+[
+  {
+    "model": "cms.itinerary",
+    "pk": 8,
+    "fields": {
+      "cms_content": 36,
+      "title": "Day 1 : Brussels Discovery",
+      "description": "<p>Begin your journey with a Eurostar ride from London to Brussels. Upon arrival at Brussels Central station, indulge in an orientation city tour, marveling at the city's architectural wonders. Explore the futuristic Atomium before proceeding to the enchanting canals of Amsterdam. Conclude the day with a delightful Indian dinner and a comfortable overnight stay in Amsterdam.</p>",
+      "location": null,
+      "lat": 34.09613457516202,
+      "lng": 74.87879125846852,
+      "image": "",
+      "created_at": "2024-02-06T06:35:07.126Z",
+      "updated_at": "2024-06-13T04:10:46.012Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 9,
+    "fields": {
+      "cms_content": 36,
+      "title": "Day 2 : Blooms and Canals",
+      "description": "<p>Fuel your day with a hearty breakfast before immersing yourself in the breathtaking Keukenhof Tulip Garden. Cruise along Amsterdam's picturesque canals, witnessing the city's charm from a unique perspective. Indulge in another evening of culinary delights with dinner at an Indian restaurant, followed by a peaceful overnight stay in Amsterdam.</p>",
+      "location": null,
+      "lat": 34.09613457516202,
+      "lng": 74.87879125846852,
+      "image": "",
+      "created_at": "2024-02-06T06:35:38.211Z",
+      "updated_at": "2024-06-13T04:10:46.030Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 10,
+    "fields": {
+      "cms_content": 36,
+      "title": "Day 3 : Windmills and Farewell",
+      "description": "<div class=\"sc-kFuwaP dZMhFc\">\n<div class=\"sc-hZLPDR sc-cWvMYY fSfJbt fnmGNt text body\">\n<p style=\"text-align: left;\">After breakfast, venture to Zaanse Schans for a glimpse into Dutch heritage at the windmill village, cheese factory, and wooden shoes factory. Conclude your tour with a Eurostar journey from Brussels back to London, cherishing the memories of a blossoming adventure through these captivating European cities.</p>\n</div>\n</div>",
+      "location": null,
+      "lat": 34.09613457516202,
+      "lng": 74.87879125846852,
+      "image": "",
+      "created_at": "2024-02-06T06:43:36.050Z",
+      "updated_at": "2024-06-13T04:10:46.046Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 15,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 1 : London Love Affair",
+      "description": "<ul>\n<li style=\"text-align: left;\">London To Milan by air.</li>\n<li style=\"text-align: left;\">Venice city tour.</li>\n<li style=\"text-align: left;\">Valentines day dinner in Venice Island.</li>\n<li style=\"text-align: left;\">Over night in Venice.</li>\n</ul>",
+      "location": null,
+      "lat": 45.468512518622454,
+      "lng": 9.181208279213424,
+      "image": "",
+      "created_at": "2024-02-06T06:54:43.062Z",
+      "updated_at": "2024-06-13T04:10:45.874Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 16,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 2 : Venetian Romance Unveiled",
+      "description": "<ul>\n<li style=\"text-align: left;\">Venice to Tirano.</li>\n<li style=\"text-align: left;\">Explore Bernina Express.</li>\n<li style=\"text-align: left;\">Tirano to Chur.</li>\n<li style=\"text-align: left;\">Interlaken city tour.</li>\n<li style=\"text-align: left;\">Overnight in Meiringen.</li>\n</ul>",
+      "location": null,
+      "lat": 46.217123028288206,
+      "lng": 10.170310993032096,
+      "image": "",
+      "created_at": "2024-02-06T06:55:10.618Z",
+      "updated_at": "2024-06-13T04:10:45.891Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 17,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 3 : Swiss Alpine Love Symphony",
+      "description": "<ul>\n<li style=\"text-align: left;\">Interlaken to Lauterbrunnen.</li>\n<li style=\"text-align: left;\">Grindelwald to James Bond 007 world.</li>\n<li style=\"text-align: left;\">Overnight in Meiringen.</li>\n</ul>",
+      "location": null,
+      "lat": 46.592123953594594,
+      "lng": 7.907974463913518,
+      "image": "",
+      "created_at": "2024-02-06T06:55:39.632Z",
+      "updated_at": "2024-06-13T04:10:45.912Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 18,
+    "fields": {
+      "cms_content": 35,
+      "title": "Day 4 : Cultural Embrace in Luzern's Love",
+      "description": "<ul>\n<li style=\"text-align: left;\">Meiringen To Luzern (city tour).</li>\n<li style=\"text-align: left;\">Luzern to Milano Airport.</li>\n<li style=\"text-align: left;\">Milan to London.</li>\n</ul>",
+      "location": null,
+      "lat": 47.050186027966184,
+      "lng": 8.309269442819328,
+      "image": "",
+      "created_at": "2024-02-06T06:56:05.825Z",
+      "updated_at": "2024-06-13T04:10:45.929Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 19,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 1 : Coastal Crossing and Amsterdam's Canals",
+      "description": "<p style=\"text-align: left;\">7:30 AM: &nbsp;Morning join up with your coach and</p>\n<p style=\"text-align: left;\">depart towards Dover.</p>\n<p style=\"text-align: left;\">9:30 AM The crossing on the ferry to Calais. (Approx 90 Minutes)</p>\n<p style=\"text-align: left;\">11:30 AM On arrival Calais join up with your Coach and depart</p>\n<p style=\"text-align: left;\">Towards Amsterdam.</p>\n<p style=\"text-align: left;\">4:30 PM One hour Canal Cruise Amsterdam City Tour.</p>\n<p style=\"text-align: left;\">7:30 PM Check in Hotel</p>\n<p style=\"text-align: left;\">Over Night in Amsterdam (3/4-Star Hotel)</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:00:26.161Z",
+      "updated_at": "2024-06-13T04:10:45.945Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 20,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 2 : Windmills, Atomium, and Belgian Charm",
+      "description": "<p style=\"text-align: left;\">8:00 AM - Breakfast at Hotel.</p>\n<p style=\"text-align: left;\">9:30AM - process to Zans village tour.</p>\n<p style=\"text-align: left;\">Village descriptions &ndash;</p>\n<p style=\"text-align: left;\">(Windmill, Wooden House &amp; Cheese Factory).</p>\n<p style=\"text-align: left;\">2:00 PM - Process to Brussels.</p>\n<p style=\"text-align: left;\">4: 30 PM - Brussels Atomium visit.</p>\n<p style=\"text-align: left;\">5:30 PM - Brussels Orientation City Tour (Grand Place &amp; Manneken Pis).</p>\n<p style=\"text-align: left;\">7:30 PM - Check in Hotel.</p>\n<p style=\"text-align: left;\">Over Night in Brussels (3/4-Star Hotel).</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:01:08.414Z",
+      "updated_at": "2024-06-13T04:10:45.962Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 21,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 3 : Eiffel Tower Extravaganza: New Year's Eve in Paris",
+      "description": "<p style=\"text-align: left;\">8.00AM - Breakfast at Hotel</p>\n<p style=\"text-align: left;\">9:30 AM - Process to Paris</p>\n<p style=\"text-align: left;\">1: 30 PM - Visit Eiffel Tower (2nd Level)</p>\n<p style=\"text-align: left;\">4:30 PM - Paris Orientation City Tour</p>\n<p style=\"text-align: left;\">6:30 PM - Check in Hotel</p>\n<p style=\"text-align: left;\">10:30 PM - Celebrate New Year 2024 in Eiffel Tower</p>\n<p style=\"text-align: left;\">1:30 PM - Process to Hotel Over Night in Hotel</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:01:43.372Z",
+      "updated_at": "2024-06-13T04:10:45.979Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 22,
+    "fields": {
+      "cms_content": 2,
+      "title": "Day 4 : Seine River Serenity and Homeward Bound",
+      "description": "<p style=\"text-align: left;\">9:30 AM - Breakfast at Hotel.</p>\n<p style=\"text-align: left;\">11:30 AM - Paris Seine River Cruise.</p>\n<p style=\"text-align: left;\">1:30 PM - Process to London. Departure Time (Approximate 10:30 PM).</p>",
+      "location": null,
+      "lat": 48.858554808343975,
+      "lng": 2.295087576585987,
+      "image": "",
+      "created_at": "2024-02-06T07:03:23.053Z",
+      "updated_at": "2024-06-13T04:10:45.995Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 23,
+    "fields": {
+      "cms_content": 4,
+      "title": "Departure from Rome",
+      "description": "<p style=\"text-align: left;\">7:00 AM: Departure from Rome for Capri.<br />Arrival in Napoli</p>\n<p style=\"text-align: left;\">10:00 AM: Arrival in Napoli.<br />Transfer to Capri Island</p>\n<p style=\"text-align: left;\">10:30 AM: Departure for Capri Island via cruise.<br />Exploration of Capri Island</p>\n<p style=\"text-align: left;\">11:30 AM - 4:30 PM: Enjoy a 5-hour exploration of Capri Island.<br />Return Journey from Capri</p>\n<p style=\"text-align: left;\">5:15 PM: Departure from Capri to Napoli.<br />Return to Rome</p>\n<p style=\"text-align: left;\">6:30 PM: Departure from Napoli to Rome by bus.<br />Arrival in Rome</p>\n<p style=\"text-align: left;\">9:30 PM: Return to Rome.</p>",
+      "location": null,
+      "lat": 40.552291762478085,
+      "lng": 14.225564026201852,
+      "image": "",
+      "created_at": "2024-02-06T07:16:27.616Z",
+      "updated_at": "2024-06-13T04:10:45.824Z",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 24,
+    "fields": {
+      "cms_content": 55,
+      "title": "Process for Rome to Capri",
+      "description": "<p>7.00 &ndash; (ROME) Process for Rome to Capri.<br />10.00 &ndash; (NAPOLI) After reaching Napoli we will go to the most beautiful CAPRI ISLAND using a cruise.<br />11.30 &ndash; (CAPRI) DURATION- 5 HOURS</p>",
+      "location": null,
+      "lat": 40.560989168486415,
+      "lng": 14.205556232256336,
+      "image": "",
+      "created_at": "2024-06-06T12:09:20.176Z",
+      "updated_at": "2024-06-13T04:10:45.840Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 25,
+    "fields": {
+      "cms_content": 55,
+      "title": "Process from Capri to Rome",
+      "description": "<p>5.15 &ndash; process from Capri to Napoli.<br />6.30 &ndash; Back to Rome by bus.<br />9.30- come back to ROME.</p>",
+      "location": "",
+      "lat": 40.552291762478085,
+      "lng": 14.225564026201852,
+      "image": "",
+      "created_at": "2024-06-06T12:10:22.402Z",
+      "updated_at": "2024-06-13T04:10:45.857Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 26,
+    "fields": {
+      "cms_content": 1,
+      "title": "test",
+      "description": "",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "cms/ContentImage/Screenshot_from_2024-05-21_18-33-30.png",
+      "created_at": "2024-06-11T12:03:04.791Z",
+      "updated_at": "2024-06-11T12:03:04.791Z",
+      "created_by": null,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 27,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 1 : Arrival in Santorini",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Flight from London to Santorini.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Hotel check-in (5-star hotel)</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Afternoon: Enjoy the breathtaking Oia Sunset\r\nView</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Santorini</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\r\n</div>",
+      "location": null,
+      "lat": 36.40341316678613,
+      "lng": 25.48814796239934,
+      "image": "",
+      "created_at": "2024-06-12T11:23:20.155Z",
+      "updated_at": "2025-08-31T06:50:31.552Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 28,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 2 : Santorini Sightseeing",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at Hotel.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Visit Akrotiri (archaeological site).</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Explore the famous Red Beach.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Visit Prophet Elias Monastery.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Free time to explore Oia at leisure.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Santorini (5-star hotel).</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": 36.41690694000925,
+      "lng": 25.43238495974569,
+      "image": "",
+      "created_at": "2024-06-12T11:23:40.564Z",
+      "updated_at": "2025-08-31T06:51:16.647Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 29,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 3 : Transfer to Athens",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at hotel.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Free time for shopping & exploring Oia.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Ferry to Athens (approx. 7 hours).</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Arrival in Athens at 11:30 PM.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Athens (4-star hotel).</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": 36.38290560522265,
+      "lng": 25.449108196441262,
+      "image": "",
+      "created_at": "2024-06-12T11:25:03.217Z",
+      "updated_at": "2025-08-31T06:52:03.246Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 31,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-1: Journey from London to Venice and Venice Island Walking Tour 4 Hours",
+      "description": "<p><span style=\"color: #000000;\">Walking through Venice is a unique and enchanting experience. Venice can get quite crowded, so starting your walk early in the morning can help you enjoy the city's beauty without the rush of tourists. The streets and alleys of Venice are primarily cobblestone, so comfortable walking shoes are a must.</span></p>",
+      "location": "",
+      "lat": 45.439043112101864,
+      "lng": 12.339935951301163,
+      "image": "",
+      "created_at": "2024-06-12T11:27:29.428Z",
+      "updated_at": "2024-06-13T04:10:45.676Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 32,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-2: Innsbruck City Tour and Vaduz City Tour",
+      "description": "<p><span style=\"color: #000000;\">Innsbruck city tour can give you a wonderful glimpse into the charm and history of this beautiful Austrian city. A short walk from the Golden Roof, visit the Hofkirche (Court Church) and see the elaborate tomb of Emperor Maximilian I surrounded by 28 bronze statues. Then, head over to the nearby Imperial Palace, one of the most significant cultural buildings in Austria</span></p>\n<p><span style=\"color: #000000;\">Vaduz, the capital of Liechtenstein, is a small but charming city with a rich cultural and historical heritage. Vaduz Castle, the official residence of the Prince of Liechtenstein. While the castle itself is not open to the public. we can enjoy a walk up to it and take in the stunning panoramic views of the city and the Rhine Valley. Just a short walk away is the Liechtenstein National Museum. This museum offers an excellent overview of the country&rsquo;s history, culture, and natural history</span></p>",
+      "location": "",
+      "lat": 47.26576324452061,
+      "lng": 11.393891357219372,
+      "image": "",
+      "created_at": "2024-06-12T11:27:47.376Z",
+      "updated_at": "2024-06-13T04:10:45.691Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 33,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-3: Zurich Rhine Falls Visit and Interlaken City Tour",
+      "description": "<p><span style=\"color: #000000;\">Visiting the Rhine Falls in Zurich can be an exhilarating experience. Visit the castle, which offers panoramic views of the falls. Required tickets for access to the viewing platforms. Walk down to the various viewing platforms. They provide different perspectives and breathtaking views of the falls. The K&auml;nzeli platform, which offers one of the closest views. The boat ride lasts around 30 minutes and gives you a unique perspective from the water</span></p>\n<p><span style=\"color: #000000;\">Walking is the best way to get around Interlaken given the short distance between most attractions. Accessed via funicular from Interlaken Ost. Take the funicular from Interlaken Ost up to Harder Kulm, which offers breathtaking panoramic views of Interlaken, Lake Thun, and Lake Brienz, as well as the Jungfrau region. The ride itself is quick, around 10 minutes each way, leaving you ample time to soak in the scenery from the viewing platform at the top.</span></p>",
+      "location": "",
+      "lat": 47.67889424229632,
+      "lng": 8.61795956631508,
+      "image": "",
+      "created_at": "2024-06-12T11:28:12.735Z",
+      "updated_at": "2024-06-13T04:10:45.707Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 34,
+    "fields": {
+      "cms_content": 51,
+      "title": "Day-4: Lauterbrunnen, Grindelwald Visit and back to London",
+      "description": "<p><span style=\"text-decoration: underline; color: #000000;\">Top Attractions:</span></p>\n<p><span style=\"color: #000000;\"><strong>First Cliff Walk:</strong>&nbsp;A thrilling cliffside walkway with spectacular views and a glass-bottom lookout point.</span></p>\n<p><span style=\"color: #000000;\"><strong>Bachalpsee Lake:</strong>&nbsp;A beautiful alpine lake accessible by a moderate hike from the First gondola station.</span></p>\n<p><span style=\"color: #000000;\"><strong>Eiger Trail:</strong>&nbsp;A hiking path that runs along the foot of the Eiger's North Face, offering close-up views of this famous mountain.</span></p>\n<p><span style=\"color: #000000;\"><strong>Grindelwald Glacier Canyon:</strong>&nbsp;A dramatic gorge with walkways and a spiderweb net for adventurous visitors.</span></p>",
+      "location": "",
+      "lat": 46.593539497466004,
+      "lng": 7.905914527411871,
+      "image": "",
+      "created_at": "2024-06-12T11:28:59.947Z",
+      "updated_at": "2024-06-13T04:10:45.724Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 35,
+    "fields": {
+      "cms_content": 5,
+      "title": "Colosseum",
+      "description": "<p>Your experience begins at the Colosseum, where one of our friendly hosts will meet you, provide your priority access tickets, and guide you through the entry process, ensuring a smooth and stress-free start to your visit. Once inside, explore the iconic amphitheater at your own pace. Delve into the fascinating stories of gladiators, emperors, and epic battles, and learn about its remarkable construction and historical significance through informative displays and signs.</p>",
+      "location": null,
+      "lat": 41.8902,
+      "lng": 12.4922,
+      "image": "",
+      "created_at": "2024-07-04T12:54:54.463Z",
+      "updated_at": "2024-07-04T12:56:25.404Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 36,
+    "fields": {
+      "cms_content": 5,
+      "title": "Roman Forum",
+      "description": "<p>Next, head to the Roman Forum, the bustling heart of ancient Rome&rsquo;s political, social, and economic life. With your pre-arranged tickets, you'll gain swift entry and can freely wander through the ruins, imagining the grandeur of the surrounding temples and buildings. Experience firsthand the daily lives of Romans and their ceremonies.</p>",
+      "location": null,
+      "lat": 41.8925,
+      "lng": 12.4853,
+      "image": "",
+      "created_at": "2024-07-04T12:55:12.837Z",
+      "updated_at": "2024-07-04T12:56:42.860Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 37,
+    "fields": {
+      "cms_content": 5,
+      "title": "Palatine Hill",
+      "description": "<p>Conclude your tour with a visit to Palatine Hill, the legendary birthplace of Rome. From this vantage point, enjoy breathtaking views of the city and uncover the history of Rome&rsquo;s founding and the opulent residences of its emperors.</p>",
+      "location": null,
+      "lat": 41.8894,
+      "lng": 12.488,
+      "image": "",
+      "created_at": "2024-07-04T12:55:38.707Z",
+      "updated_at": "2024-07-04T12:56:59.459Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 38,
+    "fields": {
+      "cms_content": 7,
+      "title": "Colosseum",
+      "description": "<p>Your experience begins at the Colosseum, where one of our friendly hosts will meet you, provide your priority access tickets, and guide you through the entry process, ensuring a smooth and stress-free start to your visit. Once inside, explore the iconic amphitheater at your own pace. Delve into the fascinating stories of gladiators, emperors, and epic battles, and learn about its remarkable construction and historical significance through informative displays and signs.</p>",
+      "location": null,
+      "lat": 41.8902,
+      "lng": 12.4922,
+      "image": "",
+      "created_at": "2024-07-04T12:57:49.040Z",
+      "updated_at": "2024-07-04T13:26:02.644Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 39,
+    "fields": {
+      "cms_content": 7,
+      "title": "Roman Forum",
+      "description": "<p>Next, head to the Roman Forum, the bustling heart of ancient Rome&rsquo;s political, social, and economic life. With your pre-arranged tickets, you'll gain swift entry and can freely wander through the ruins, imagining the grandeur of the surrounding temples and buildings. Experience firsthand the daily lives of Romans and their ceremonies.</p>",
+      "location": null,
+      "lat": 41.8925,
+      "lng": 12.4853,
+      "image": "",
+      "created_at": "2024-07-04T12:58:02.315Z",
+      "updated_at": "2024-07-04T13:26:24.666Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 40,
+    "fields": {
+      "cms_content": 7,
+      "title": "Palatine Hills",
+      "description": "<p>Conclude your tour with a visit to Palatine Hill, the legendary birthplace of Rome. From this vantage point, enjoy breathtaking views of the city and uncover the history of Rome&rsquo;s founding and the opulent residences of its emperors.</p>",
+      "location": null,
+      "lat": 41.8894,
+      "lng": 12.488,
+      "image": "",
+      "created_at": "2024-07-04T13:25:24.660Z",
+      "updated_at": "2024-07-04T13:26:39.094Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 51,
+    "fields": {
+      "cms_content": 74,
+      "title": "Day 1 : 30 Dec 2024 || Budapest (Hungary)",
+      "description": "<ul>\n<li>Hotel check in</li>\n<li>Sunset &amp; Night view Budapest (Hungary)</li>\n<li>Over night in Budapest</li>\n</ul>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-06T12:18:51.529Z",
+      "updated_at": "2024-11-06T12:18:51.685Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 52,
+    "fields": {
+      "cms_content": 74,
+      "title": "Day 2 : 31 Dec 2024 || Budapest (Hungary)",
+      "description": "<ul>\n<li>Budapest city tour</li>\n<li>31st in Budapest (Celebrate 2025 in Budapest)</li>\n<li>Over night in Budapest</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-06T12:19:22.215Z",
+      "updated_at": "2024-11-06T12:19:22.275Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 53,
+    "fields": {
+      "cms_content": 74,
+      "title": "Day 3 : 01 Jan 2025 || Vienna (Austria)",
+      "description": "<ul>\n<li>Morning process to Vienna (Austria)</li>\n<li>Vienna city tour</li>\n<li>Over night in Vienna</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-06T12:19:42.994Z",
+      "updated_at": "2024-11-06T12:19:43.115Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 54,
+    "fields": {
+      "cms_content": 74,
+      "title": "Day 4 : 02 Jan 2025 || Bratislava (Slovakia)",
+      "description": "<ul>\n<li>Vienna to Bratislava (Slovakia)</li>\n<li>Half day orientation Bratislava &amp; Prague city tour</li>\n<li>Over night in Prague (Czech Republic)</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-06T12:20:05.418Z",
+      "updated_at": "2024-11-06T12:20:05.524Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 55,
+    "fields": {
+      "cms_content": 74,
+      "title": "Day 5 : 03 Jan 2025 || Prague (Czech Republic)",
+      "description": "<ul>\n<li>Visit Prague castle</li>\n<li>Enjoy the panoramic view Prague city</li>\n<li>Process to Prague airport</li>\n<li>Prague to London</li>\n</ul>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2024-11-06T12:20:31.364Z",
+      "updated_at": "2024-11-06T12:20:31.486Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 60,
+    "fields": {
+      "cms_content": 76,
+      "title": "1. Welcome to Reykjavik – The Land of Fire and Ice",
+      "description": "<p><span style=\"font-weight: 400;\">Arrive in Reykjavik from London, greeted by your Dream Tourism Representative. Enjoy a city tour, visiting landmarks like Hallgrimskirkja Church and Harpa Concert Hall. Experience the stunning virtual flight at FlyOver Iceland. Check in to your 3/4* hotel for the night and enjoy a delicious Indian dinner.&nbsp;</span></p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:12:51.556Z",
+      "updated_at": "2025-01-07T10:12:51.675Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 61,
+    "fields": {
+      "cms_content": 76,
+      "title": "2. Explore the Golden Circle and South Coast",
+      "description": "<p><span style=\"font-weight: 400;\">Explore the Golden Circle and South Coast. Visit Thingvellir National Park, Geysir geothermal area, and Gullfoss Waterfall. Continue to the South Coast to see Seljalandsfoss and Skogafoss Waterfalls, then end the day at Black Sand Beach in Vik. Overnight in Vik with an authentic Indian dinner.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:31:48.207Z",
+      "updated_at": "2025-01-07T10:31:48.276Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 62,
+    "fields": {
+      "cms_content": 76,
+      "title": "3. Jokulsarlon Glacier Lagoon, Diamond Beach & Skaftafell National Park",
+      "description": "<p><span style=\"font-weight: 400;\">Visit Jokulsarlon Glacier Lagoon to see floating icebergs and Diamond Beach with sparkling ice chunks. Explore Skaftafell National Park&rsquo;s glaciers and waterfalls, or take a Plane Wreck Shuttle to the DC-3 plane wreck at S&oacute;lheimasandur Beach. Overnight in Hofn with breakfast and Indian dinner.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:32:00.660Z",
+      "updated_at": "2025-01-07T10:32:00.724Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 63,
+    "fields": {
+      "cms_content": 76,
+      "title": "4. Snaefellsnes Peninsula – Iceland in Miniature",
+      "description": "<p><span style=\"font-weight: 400;\">Explore the Snaefellsnes Peninsula, known as \"Iceland in Miniature.\" Visit Kirkjufell Mountain and its waterfall, dramatic lava fields, fishing villages, and volcanic craters. See Hraunfossar and Barnafoss waterfalls. Return to Reykjavik for an overnight stay and Indian dinner.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:32:13.494Z",
+      "updated_at": "2025-01-07T10:32:13.577Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 64,
+    "fields": {
+      "cms_content": 76,
+      "title": "5. Blue Lagoon – Relaxation Like Never Before",
+      "description": "<p><span style=\"font-weight: 400;\">Relax at the luxurious Blue Lagoon, a geothermal spa amidst black lava fields. Enjoy the therapeutic waters and stunning volcanic views. Spend the evening exploring Reykjavik before your final night at the hotel.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:32:26.527Z",
+      "updated_at": "2025-01-07T10:32:26.624Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 65,
+    "fields": {
+      "cms_content": 76,
+      "title": "6. Departure from Reykjavik",
+      "description": "<p><span style=\"font-weight: 400;\">Enjoy a leisurely breakfast before transferring to the airport for your return flight to London. Reflect on your incredible journey through the land of fire and ice, filled with unforgettable landscapes and cherished memories.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:32:37.545Z",
+      "updated_at": "2025-01-07T10:32:37.612Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 66,
+    "fields": {
+      "cms_content": 77,
+      "title": "1. Verdens Ende – Panoramic views at the western tip of Oslofjorden.",
+      "description": "<p><span style=\"font-weight: 400;\">Fly from London to Oslo, Norway. Enjoy a round-trip boat cruise to Verdens Ende. Verdens Ende is a popular recreational area at the west coast of the outer part of Oslofjorden with panoramic views towards the sea in the east and south. Enjoy a peaceful lake Verdens Ende trip nearby before returning to Oslo, a city rich in Viking history and modern architecture. After dinner, stay overnight in Oslo.</span></p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:33:03.902Z",
+      "updated_at": "2025-01-07T10:33:04.006Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 67,
+    "fields": {
+      "cms_content": 77,
+      "title": "2. Vigeland Sculpture Park – Over 200 sculptures illustrating human life and emotions.",
+      "description": "<p><span style=\"font-weight: 400;\">After breakfast, explore Oslo, visiting iconic landmarks such as Vigeland Sculpture Park, home to over 200 unique sculptures that depict the human condition, and the Royal Palace, built in the early 19th century and the residence of Norway&rsquo;s monarchs. Visit Akershus Fortress, a medieval stronghold from the 13th century offering stunning views of the Oslofjord. At 3:30 PM, board a 17-hour cruise to Copenhagen, Denmark. Enjoy dinner onboard, scenic coastal views, and an overnight stay on the ship.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:33:17.384Z",
+      "updated_at": "2025-01-07T10:33:17.461Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 68,
+    "fields": {
+      "cms_content": 77,
+      "title": "3. Nyhavn – A vibrant 17th-century harbor with colorful buildings and historic ships.",
+      "description": "<p><span style=\"font-weight: 400;\">Arrive in Copenhagen, Denmark&rsquo;s vibrant capital, and take a walking tour to explore its iconic attractions. Visit Nyhavn, a picturesque 17th-century harbor lined with colorful buildings and historic ships, and see The Little Mermaid Statue, inspired by Hans Christian Andersen&rsquo;s famous fairy tale. Explore Tivoli Gardens, one of the world&rsquo;s oldest amusement parks, blending nostalgia with modern entertainment. Later, fly to Amsterdam (assumed location) for an overnight stay, experiencing the local charm.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:33:31.938Z",
+      "updated_at": "2025-01-07T10:33:32Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 69,
+    "fields": {
+      "cms_content": 77,
+      "title": "4. Keukenhof Gardens – One of the largest and most beautiful tulip gardens in the world.",
+      "description": "<p><span style=\"font-weight: 400;\">Visit Keukenhof Gardens in the Netherlands, one of the world&rsquo;s largest tulip gardens, originally part of a 15th-century hunting estate. Marvel at millions of blooming flowers in stunning displays. Take a scenic canal cruise in Amsterdam, where the 17th-century canals, a UNESCO World Heritage site, offer picturesque views of historic bridges and elegant townhouses. Conclude your journey with a flight back to London.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:33:44.528Z",
+      "updated_at": "2025-01-07T10:33:44.588Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 74,
+    "fields": {
+      "cms_content": 79,
+      "title": "1. London to Milan to Venice (Overnight stay in Milan)",
+      "description": "<p><span style=\"font-weight: 400;\">Fly from London to Milan in the morning. After a warm welcome, enjoy a delicious breakfast before heading to Venice. Explore the city&rsquo;s iconic canals and landmarks for 2-3 hours. Afterward, enjoy a tasty dinner and check in to your hotel for a restful night in Milan.<br /></span></p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:37:14.258Z",
+      "updated_at": "2025-01-07T10:37:14.352Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 75,
+    "fields": {
+      "cms_content": 79,
+      "title": "2. Milan to Switzerland – Scenic Bernina Express Journey",
+      "description": "<p><span style=\"font-weight: 400;\">After breakfast, take the Bernina Express from Milan to Switzerland, enjoying scenic views of the Alps. Explore St. Moritz for 2-3 hours, then travel to Zurich for dinner and an overnight stay at your hotel.<br /></span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:37:28.356Z",
+      "updated_at": "2025-01-07T10:37:28.384Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 76,
+    "fields": {
+      "cms_content": 79,
+      "title": "3. Interlaken, Grindelwald & Lauterbrunnen – Alpine Wonders",
+      "description": "<p><span style=\"font-weight: 400;\">After breakfast, travel to Interlaken, Grindelwald, and Lauterbrunnen, known for stunning lakes and 72 waterfalls. Enjoy breathtaking mountain views and explore the natural beauty. End the day with dinner in Zurich and an overnight hotel stay.<br /></span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:37:47.015Z",
+      "updated_at": "2025-01-07T10:37:47.050Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 77,
+    "fields": {
+      "cms_content": 79,
+      "title": "4. Zurich, Rhine Falls & Lucerne – Nature and Culture",
+      "description": "<p><span style=\"font-weight: 400;\">After breakfast, visit Rhine Falls and enjoy boat rides and views. Explore Lucerne&rsquo;s old town, Chapel Bridge, and Lion Monument. Return to Zurich for dinner and an overnight stay.<br /></span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:38:01.006Z",
+      "updated_at": "2025-01-07T10:38:01.086Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 78,
+    "fields": {
+      "cms_content": 79,
+      "title": "5. Mount Titlis to London – A Stunning Farewell",
+      "description": "<p><span style=\"font-weight: 400;\">After breakfast, head to Mount Titlis for thrilling views and glacier exploration. Experience panoramic views from the top, enjoy the crisp alpine air, and take in the awe-inspiring landscapes. Return to Zurich and depart for London, ending your unforgettable Swiss adventure.<br /></span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:38:16.985Z",
+      "updated_at": "2025-01-07T10:38:17.125Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 79,
+    "fields": {
+      "cms_content": 80,
+      "title": "1. Verdens Ende – Where the sea meets the sky in stunning, uninterrupted views.",
+      "description": "<p><span style=\"font-weight: 400;\">Begin your unforgettable journey with a flight from London to Oslo, Norway. Then, embark on a scenic trip to Verdens Ende, where breathtaking</span></p>\n<p><span style=\"font-weight: 400;\">panoramic views of the Oslofjorden await. Explore this peaceful area, known for its natural beauty, before returning to Oslo to unwind and enjoy a cozy overnight stay.</span></p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:38:50.576Z",
+      "updated_at": "2025-01-07T10:38:50.696Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 80,
+    "fields": {
+      "cms_content": 80,
+      "title": "2. Oslo – A dynamic mix of Viking heritage, royal history, and modern charm.",
+      "description": "<p><span style=\"font-weight: 400;\">Spend your morning discovering Oslo&rsquo;s iconic landmarks, including the world-famous Vigeland Sculpture Park and the majestic Royal Palace. In the afternoon, travel to the picturesque village of Flam, tucked away in the heart of Norway&rsquo;s fjord country, and settle in for a relaxing overnight stay.</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:39:03.843Z",
+      "updated_at": "2025-01-07T10:39:03.917Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 81,
+    "fields": {
+      "cms_content": 80,
+      "title": "3. Flam Fjord – A breathtaking, serene cruise through Norway’s natural wonders.",
+      "description": "<p><span style=\"font-weight: 400;\">Wake up in Flam, a village surrounded by towering mountains and deep fjords. Explore the village&rsquo;s quaint charm and embark on a stunning Flam fjord cruise, where you&rsquo;ll be captivated by the serene beauty of the fjords and cascading waterfalls. Return to Flam for a peaceful evening.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:39:14.144Z",
+      "updated_at": "2025-01-07T10:39:14.287Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 82,
+    "fields": {
+      "cms_content": 80,
+      "title": "4. Norwegian Waterfalls – Witness the raw power and beauty of nature at its finest.",
+      "description": "<p><span style=\"font-weight: 400;\">Experience the magic of a Norwegian waterfall before making your way back to Oslo. After a final taste of Norway&rsquo;s natural beauty, fly back to London with memories that will last a lifetime.</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>\n<p><span style=\"font-weight: 400;\">&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-01-07T10:39:26.832Z",
+      "updated_at": "2025-01-07T10:39:26.966Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 87,
+    "fields": {
+      "cms_content": 67,
+      "title": "Day- 1: Arrival in Venice",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Meet &amp; greet with tour leader</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Venice Island walking tour</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Dinner</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Verona</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\r\n</div>",
+      "location": null,
+      "lat": 45.438266978438705,
+      "lng": 10.991497858331991,
+      "image": "",
+      "created_at": "2025-02-06T11:42:42.680Z",
+      "updated_at": "2025-09-02T05:48:14.574Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 88,
+    "fields": {
+      "cms_content": 67,
+      "title": "Day-2 : Verona – Dolomites",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at hotel</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Transfer to Dolomites</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Visit Lago di Braies, Cortina d’Ampezzo &amp; Tre Cime di Lavaredo</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Dinner</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Dolomites</span></p>\r\n\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\r\n</div>",
+      "location": ",",
+      "lat": 46.41068411922668,
+      "lng": 11.84588040568351,
+      "image": "",
+      "created_at": "2025-02-06T11:43:42.317Z",
+      "updated_at": "2025-09-02T05:50:04.586Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 89,
+    "fields": {
+      "cms_content": 67,
+      "title": "Day-3: Dolomites – Switzerland (Bernina Express)",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at hotel</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Scenic journey to Switzerland via Bernina Express</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Dinner at an Indian restaurant</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Switzerland</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\r\n</div>",
+      "location": null,
+      "lat": 46.794413000788055,
+      "lng": 7.731916668267172,
+      "image": "",
+      "created_at": "2025-02-06T11:44:40.314Z",
+      "updated_at": "2025-09-02T05:52:23.023Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 90,
+    "fields": {
+      "cms_content": 67,
+      "title": "Day-4: Swiss Highlights",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at hotel</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Explore Grindelwald, Lauterbrunnen &amp; Interlaken</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Photo stop at Lake Lugano</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Dinner at an Indian restaurant</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Overnight stay in Switzerland</span></p>\r\n\r\n\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\r\n</div>",
+      "location": ",",
+      "lat": 46.560754264609386,
+      "lng": 8.563009236514786,
+      "image": "",
+      "created_at": "2025-02-06T11:45:43.165Z",
+      "updated_at": "2025-09-02T05:54:30.054Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 91,
+    "fields": {
+      "cms_content": 67,
+      "title": "Day-5: Zurich & Departure",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at hotel</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Visit Zurich Rhine Falls &amp; enjoy Zurich City Tour</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Proceed to Zurich Airport for return flight to London</span></p>\r\n\r\n\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">&nbsp;</div>\r\n</div>",
+      "location": null,
+      "lat": 47.375087185763064,
+      "lng": 8.548748447595168,
+      "image": "",
+      "created_at": "2025-02-06T11:46:32.521Z",
+      "updated_at": "2025-09-02T05:56:29.492Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 92,
+    "fields": {
+      "cms_content": 78,
+      "title": "Day-1 Arrival in Istanbul & Bosphorus River Cruise",
+      "description": "<p><span style=\"font-weight: 400;\">After a warm welcome in Istanbul, check into your hotel and get ready for an enchanting evening. Embark On a Bosphorus River Cruise, a magical journey betweenEurope and Asia, panoramic views of the city's iconic skyline. Witness famous landmarks like the Dolmabah&ccedil;e Palace and Galata Tower as the city lights twinkle. Enjoy a delightful dinner onboard paired with an energetic belly dance performance, showcasing Turkey&rsquo;s vibrant culture.</span></p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-04-21T11:50:11.567Z",
+      "updated_at": "2025-04-21T11:50:11.632Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 93,
+    "fields": {
+      "cms_content": 78,
+      "title": "2 Exploring the Historic Heart of Istanbul",
+      "description": "<p><span style=\"font-weight: 400;\">Step into the city&rsquo;s rich history with a visit to Hagia Sophia, a UNESCO World Heritage Site blending Byzantine and Ottoman influences. Admire its stunning mosaics and massive dome.Then, explore the magnificent Blue Mosque, renowned for its intricate blue Iznik tiles and breathtaking architecture. Wrap up the day at the Spice Bazaar, a lively marketplace filled with aromatic spices, Turkish delights, and colorful souvenirs. Finally, we will go to Cappadocia by air in the evening. And overnight stay in cappadocia.&nbsp;</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-04-21T11:50:23.146Z",
+      "updated_at": "2025-04-21T11:50:23.245Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 94,
+    "fields": {
+      "cms_content": 78,
+      "title": "3 Hot Air Balloon Ride",
+      "description": "<p><span style=\"font-weight: 400;\">Start your day with an unforgettable hot air balloon ride at sunrise, soaring above Cappadocia's breathtaking valleys and fairy chimneys. Afterward, enjoy a leisurely breakfast at your hotel. Our guided tour will then lead you through the highlights of Northern Cappadocia, including the fascinating rock formations of Love Valley and the iconic Red Tour sites. The evening is yours to savor dinner at your hotel or a local restaurant, with the option to experience a vibrant Turkish night show.</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-04-21T11:50:34.179Z",
+      "updated_at": "2025-04-21T11:50:34.383Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 95,
+    "fields": {
+      "cms_content": 78,
+      "title": "4 South Cappadocia Wonders",
+      "description": "<p><span style=\"font-weight: 400;\">Embark on a captivating morning exploration of South Cappadocia with a guided \"Green Tour,\" delving into the region's unique geological and historical wonders. Following this enriching morning, you will be transferred to the airport in Cappadocia in the afternoon to catch your evening flight back to London.</span></p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-04-21T11:50:52.919Z",
+      "updated_at": "2025-04-21T11:50:53Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 96,
+    "fields": {
+      "cms_content": 53,
+      "title": "Day 4 : Athens Exploration & Return",
+      "description": "<div class=\"space-y-2\">\r\n<div class=\"space-y-2 text-font-p text-sm\">\r\n<div class=\"flex flex-row flex-wrap gap-2 leading-normal\">\r\n<div class=\"sc-bfLWyY OhWeG\">\r\n<p><span style=\"color: #000000;\">&THORN; Breakfast at hotel.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Explore Athens City.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Visit the Prison of Socrates.</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Visit the Acropolis of Athens (tickets not included).</span></p>\r\n<p><span style=\"color: #000000;\">&THORN; Return flight to London.</span></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+      "location": null,
+      "lat": 37.9860947854935,
+      "lng": 23.72649390969385,
+      "image": "",
+      "created_at": "2025-08-31T06:54:54.812Z",
+      "updated_at": "2025-08-31T06:54:54.812Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 97,
+    "fields": {
+      "cms_content": 81,
+      "title": "Day 1: London → Brussels",
+      "description": "<p>Head to Brussels to marvel at the Atomium, explore the Grand Place, and sample delicious Belgian chocolates and waffles. Soak in the city&rsquo;s charm before settling in for an overnight stay.</p>",
+      "location": null,
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-10-08T17:39:21.775Z",
+      "updated_at": "2025-10-08T17:46:08.460Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 98,
+    "fields": {
+      "cms_content": 81,
+      "title": "Day 2: Brussels → Disneyland Paris",
+      "description": "<p>Journey to the magical world of Disneyland Paris, where fairy tales come to life. Enjoy thrilling rides, dazzling parades, and unforgettable shows throughout the day before relaxing at your Paris hotel in the evening.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-10-08T17:39:58.252Z",
+      "updated_at": "2025-10-08T17:39:58.393Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.itinerary",
+    "pk": 99,
+    "fields": {
+      "cms_content": 81,
+      "title": "Day 3: Paris → London",
+      "description": "<p>Discover the romance of Paris on a guided city tour. Admire the Eiffel Tower, cruise along the Seine River, and take in iconic sights like the Champs-&Eacute;lys&eacute;es and Arc de Triomphe. In the evening, return to London with wonderful memories of your European adventure.</p>",
+      "location": "",
+      "lat": null,
+      "lng": null,
+      "image": "",
+      "created_at": "2025-10-08T17:40:16.018Z",
+      "updated_at": "2025-10-08T17:40:16.125Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  }
+]
