@@ -302,10 +302,10 @@ class Tag(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
     company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
 
-    name = models.CharField(max_length=500, unique=True,null=True, blank=True)
+    name = models.CharField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(null=True)
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)

@@ -33,11 +33,7 @@ class EmailAddressAdmin(admin.ModelAdmin):
 
 @admin.register(SendEmail)
 class SendEmailAdmin(admin.ModelAdmin):
-
 	list_display = [field.name for field in SendEmail._meta.fields]
-
-
-
 
 @admin.register(Itinerary)
 class ItineraryAdmin(admin.ModelAdmin):

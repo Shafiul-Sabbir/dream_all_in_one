@@ -21,4 +21,23 @@ urlpatterns = [
     # 5
     path('api/v1/load_Blog/<int:company_id>/', views.load_Blog), #load Blog Category for a company
 
+    # 6
+    path('api/v1/load_EmailAddress/<int:company_id>/', views.load_EmailAddress), #load Email Address for a company
+
+    # 7
+    path('api/v1/load_SendEmail/<int:company_id>/', views.load_SendEmail), #load Send Email for a company
+
+    # 8
+    path('api/v1/load_Review/<int:company_id>/', views.load_Review),
+
+    # 9
+    path('api/v1/load_Itinerary/<int:company_id>/', views.load_Itinerary),
+
+    # 10
+    path('api/v1/load_Tag/<int:company_id>/', views.load_Tag), #load Tag for a company
+    path('api/v1/handle_Tag_created_at/<int:company_id>/', views.handle_Tag_created_at),
+
+    # 11
+    path('api/v1/load_MetaData/<int:company_id>/', views.load_MetaData), #load MetaData for a company
+
 ]

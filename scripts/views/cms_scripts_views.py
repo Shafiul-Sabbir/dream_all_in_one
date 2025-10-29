@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import json
 from authentication.models import Permission, Company, Role
-from cms.models import CMSMenu, CMSMenuContent, MetaData, CMSMenuContentImage, BlogCategory, Blog
+from cms.models import CMSMenu, CMSMenuContent, MetaData, CMSMenuContentImage, BlogCategory, Blog, EmailAddress, SendEmail, Review, Itinerary, Tag, MetaData
 
 @api_view(['POST'])
 def load_CMSMenu(request, company_id):
@@ -140,18 +140,6 @@ def load_CMSMenuContent(request, company_id):
             else:
                 fields['updated_by'] = None
 
-            # handle created_at and updated_at fields
-            created_at_old_id = fields.get('created_at')
-            updated_at_old_id = fields.get('updated_at')
-            if created_at_old_id:
-                fields['created_at'] = created_at_old_id
-            else:
-                fields['created_at'] = None
-            if updated_at_old_id:
-                fields['updated_at'] = updated_at_old_id
-            else:
-                fields['updated_at'] = None
-
             #handle cms_menu foreign key
             cms_menu_old_id = fields.get('cms_menu')
             if cms_menu_old_id:
@@ -213,18 +201,6 @@ def load_CMSMenuContentImage(request, company_id):
                     fields['updated_by'] = None
             else:
                 fields['updated_by'] = None
-
-            # handle created_at and updated_at fields
-            created_at_old_id = fields.get('created_at')
-            updated_at_old_id = fields.get('updated_at')
-            if created_at_old_id:
-                fields['created_at'] = created_at_old_id
-            else:
-                fields['created_at'] = None
-            if updated_at_old_id:
-                fields['updated_at'] = updated_at_old_id
-            else:
-                fields['updated_at'] = None
 
             #handle cms_menu foreign key
             cms_menu_old_id = fields.get('cms_menu')
@@ -288,20 +264,6 @@ def load_BlogCategory(request, company_id):
                     fields['updated_by'] = None
             else:
                 fields['updated_by'] = None
-
-            # handle created_at and updated_at fields
-            created_at_old_id = fields.get('created_at')
-            updated_at_old_id = fields.get('updated_at')
-
-            if created_at_old_id:
-                fields['created_at'] = created_at_old_id
-            else:
-                fields['created_at'] = None
-
-            if updated_at_old_id:
-                fields['updated_at'] = updated_at_old_id
-            else:
-                fields['updated_at'] = None
 
             print("reformed blog category:", fields)
             print("-----")
@@ -380,20 +342,6 @@ def load_Blog(request, company_id):
             else:
                 fields['updated_by'] = None
 
-            # handle created_at and updated_at fields
-            created_at_old_id = fields.get('created_at')
-            updated_at_old_id = fields.get('updated_at')
-
-            if created_at_old_id:
-                fields['created_at'] = created_at_old_id
-            else:
-                fields['created_at'] = None
-
-            if updated_at_old_id:
-                fields['updated_at'] = updated_at_old_id
-            else:
-                fields['updated_at'] = None
-
            #handle cms menu content foreign key
             cms_menu_content_old_id = fields.get('cms_content')
             if cms_menu_content_old_id:
@@ -419,7 +367,7 @@ def load_Blog(request, company_id):
             #handle blog country foreign key
             cms_blog_country_old_id = fields.get('blog_country')
             if cms_blog_country_old_id:
-                cms_blog_country_instance = Country.objects.filter(old_id=cms_blog_country_old_id, company_id=company_instance).first()
+                cms_blog_country_instance = Country.objects.filter(old_id=cms_blog_country_old_id, company_id=company_instance).exists()
                 if cms_blog_country_instance:
                     fields['blog_country'] = cms_blog_country_instance
                 else:
@@ -441,3 +389,338 @@ def load_Blog(request, company_id):
                 print(f"blog with old_id = {fields['old_id']} already exists. Skipping.")
 
     return Response({'message': 'Loading all blog successful.'}, status=200)
+
+@api_view(['POST'])
+def load_EmailAddress(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_EmailAddress_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_EmailAddress_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_email_address_data = json.load(file)
+        company_instance = Company.objects.get(id=company_id)
+
+        for email_address_data in all_email_address_data:
+            fields = email_address_data.get('fields')
+            print("raw email address:", fields)
+            print('\n')
+
+            fields['old_id'] = email_address_data.get('pk')
+            fields['company_id'] = company_instance
+
+            print("reformed email address:", fields)
+            print("-----")
+            print("\n")
+            
+            if not EmailAddress.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+                email_address_obj = EmailAddress.objects.create(**fields)
+
+                print(f"Saved EmailAddress, id = {email_address_obj.id}, old_id = {email_address_obj.old_id}")
+            else:
+                print(f"email address with old_id = {fields['old_id']} already exists. Skipping.")
+    
+    return Response({'message': 'Loading all email address successful.'}, status=200)
+
+@api_view(['POST'])
+def load_SendEmail(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_SendEmail_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_SendEmail_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_send_email_data = json.load(file)
+        company_instance = Company.objects.get(id=company_id)
+
+        for send_email_data in all_send_email_data:
+            fields = send_email_data.get('fields')
+            print("raw send email:", fields)
+            print('\n')
+
+            fields['old_id'] = send_email_data.get('pk')
+            fields['company_id'] = company_instance
+
+            print("reformed send email:", fields)
+            print("-----")
+            print("\n")
+            
+            if not SendEmail.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+                send_email_obj = SendEmail.objects.create(**fields)
+
+                print(f"Saved SendEmail, id = {send_email_obj.id}, old_id = {send_email_obj.old_id}")
+            else:
+                print(f"send email with old_id = {fields['old_id']} already exists. Skipping.")
+    
+    return Response({'message': 'Loading all send email successful.'}, status=200)
+
+@api_view(['POST'])
+def load_Review(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_Review_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_Review_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_review_data = json.load(file)
+        company_instance = Company.objects.get(id=company_id)
+
+        for review_data in all_review_data:
+            fields = review_data.get('fields')
+            print("raw review:", fields)
+            print('\n')
+
+            fields['old_id'] = review_data.get('pk')
+            fields['company_id'] = company_instance
+
+            # handle created_by and updated_by fields
+            created_by_old_id = fields.get('created_by')
+            updated_by_old_id = fields.get('updated_by')
+            if created_by_old_id:
+                try:
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    fields['created_by'] = created_by_user
+                except User.DoesNotExist:
+                    fields['created_by'] = None
+            else:
+                fields['created_by'] = None
+
+            if updated_by_old_id:
+                try:
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    fields['updated_by'] = updated_by_user
+                except User.DoesNotExist:
+                    fields['updated_by'] = None
+            else:
+                fields['updated_by'] = None
+
+            print("reformed review:", fields)
+            print("-----")
+            print("\n")
+            
+            if not Review.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+                review_obj = Review.objects.create(**fields)
+
+                print(f"Saved Review, id = {review_obj.id}, old_id = {review_obj.old_id}")
+            else:
+                print(f"review with old_id = {fields['old_id']} already exists. Skipping.")
+    
+    return Response({'message': 'Loading all review successful.'}, status=200)
+
+@api_view(['POST'])
+def load_Itinerary(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_Itinerary_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_Itinerary_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_itinerary_data = json.load(file)
+        company_instance = Company.objects.get(id=company_id)
+
+        for itinerary_data in all_itinerary_data:
+            fields = itinerary_data.get('fields')
+            print("raw itinerary:", fields)
+            print('\n')
+
+            fields['old_id'] = itinerary_data.get('pk')
+            fields['company_id'] = company_instance
+
+            # handle created_by and updated_by fields
+            created_by_old_id = fields.get('created_by')
+            updated_by_old_id = fields.get('updated_by')
+            if created_by_old_id:
+                try:
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    fields['created_by'] = created_by_user
+                except User.DoesNotExist:
+                    fields['created_by'] = None
+            else:
+                fields['created_by'] = None
+
+            if updated_by_old_id:
+                try:
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    fields['updated_by'] = updated_by_user
+                except User.DoesNotExist:
+                    fields['updated_by'] = None
+            else:
+                fields['updated_by'] = None
+
+            #handle cms menu content foreign key
+            cms_menu_content_old_id = fields.get('cms_content')
+            if cms_menu_content_old_id:
+                cms_menu_content_instance = CMSMenuContent.objects.filter(old_id=cms_menu_content_old_id, company_id=company_instance).first()
+                if cms_menu_content_instance:
+                    fields['cms_content'] = cms_menu_content_instance
+                else:
+                    fields['cms_content'] = None
+            else:
+                fields['cms_content'] = None
+
+            print("reformed itinerary:", fields)
+            print("-----")
+            print("\n")
+            
+            if not Itinerary.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+                itinerary_obj = Itinerary.objects.create(**fields)
+
+                print(f"Saved Itinerary, id = {itinerary_obj.id}, old_id = {itinerary_obj.old_id}")
+            else:
+                print(f"itinerary with old_id = {fields['old_id']} already exists. Skipping.")
+    
+    return Response({'message': 'Loading all itinerary successful.'}, status=200)
+
+@api_view(['POST'])
+def load_Tag(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_Tag_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_Tag_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_tag_data = json.load(file)
+        company_instance = Company.objects.get(id=company_id)
+
+        for tag_data in all_tag_data:
+            fields = tag_data.get('fields')
+            print("raw tag:", fields)
+            print('\n')
+
+            fields['old_id'] = tag_data.get('pk')
+            fields['company_id'] = company_instance
+
+            # handle created_by and updated_by fields
+            created_by_old_id = fields.get('created_by')
+            updated_by_old_id = fields.get('updated_by')
+            if created_by_old_id:
+                try:
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    fields['created_by'] = created_by_user
+                except User.DoesNotExist:
+                    fields['created_by'] = None
+            else:
+                fields['created_by'] = None
+
+            if updated_by_old_id:
+                try:
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    fields['updated_by'] = updated_by_user
+                except User.DoesNotExist:
+                    fields['updated_by'] = None
+            else:
+                fields['updated_by'] = None
+
+            #handle cms menu content foreign key
+            cms_menu_content_old_id = fields.get('cms_content')
+            if cms_menu_content_old_id:
+                cms_menu_content_instance = CMSMenuContent.objects.filter(old_id=cms_menu_content_old_id, company_id=company_instance).first()
+                if cms_menu_content_instance:
+                    fields['cms_content'] = cms_menu_content_instance
+                else:
+                    fields['cms_content'] = None
+            else:
+                fields['cms_content'] = None
+
+
+            print("reformed tag:", fields)
+            print("-----")
+            print("\n")
+            
+            if not Tag.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+                tag_obj = Tag.objects.create(**fields)
+
+                print(f"Saved Tag, id = {tag_obj.id}, old_id = {tag_obj.old_id}")
+            else:
+                print(f"tag with old_id = {fields['old_id']} already exists. Skipping.")
+    
+    return Response({'message': 'Loading all tag successful.'}, status=200)
+
+@api_view(['POST'])
+def handle_Tag_created_at(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_Tag_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_Tag_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_tag_data = json.load(file)
+        for tag_data in all_tag_data:
+            fields = tag_data.get('fields')
+            print("raw tag:", fields)
+            print('\n')
+
+            tag_old_id = tag_data.get('pk')
+            created_at_old_id = fields.get('created_at')
+
+            company_instance = Company.objects.get(id=company_id)
+
+            tag_instance = Tag.objects.filter(old_id = tag_old_id, company_id = company_instance).first()
+            tag_instance.created_at = created_at_old_id
+            tag_instance.save()
+    
+    return Response({'message': 'updateing all tag created at successful.'}, status=200)
+
+@api_view(['POST'])
+def load_MetaData(request, company_id):
+    if company_id == 1:
+        file_path = 'all_json/cms/it/cms_MetaData_it.json'
+    elif company_id == 2:
+        file_path = 'all_json/cms/uk/cms_MetaData_uk.json'
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_meta_data = json.load(file)
+        company_instance = Company.objects.get(id=company_id)
+
+        for meta_data in all_meta_data:
+            fields = meta_data.get('fields')
+            print("raw meta data:", fields)
+            print('\n')
+
+            fields['old_id'] = meta_data.get('pk')
+            fields['company_id'] = company_instance
+
+            # handle created_by and updated_by fields
+            created_by_old_id = fields.get('created_by')
+            updated_by_old_id = fields.get('updated_by')
+            if created_by_old_id:
+                try:
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    fields['created_by'] = created_by_user
+                except User.DoesNotExist:
+                    fields['created_by'] = None
+            else:
+                fields['created_by'] = None
+
+            if updated_by_old_id:
+                try:
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    fields['updated_by'] = updated_by_user
+                except User.DoesNotExist:
+                    fields['updated_by'] = None
+            else:
+                fields['updated_by'] = None
+
+            #handle cms menu content foreign key
+            cms_menu_content_old_id = fields.get('cms_content')
+            if cms_menu_content_old_id:
+                cms_menu_content_instance = CMSMenuContent.objects.filter(old_id=cms_menu_content_old_id, company_id=company_instance).first()
+                if cms_menu_content_instance:
+                    fields['cms_content'] = cms_menu_content_instance
+                else:
+                    fields['cms_content'] = None
+            else:
+                fields['cms_content'] = None
+
+            print("reformed meta data:", fields)
+            print("-----")
+            print("\n")
+            
+            if not MetaData.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+                meta_data_obj = MetaData.objects.create(**fields)
+
+                print(f"Saved MetaData, id = {meta_data_obj.id}, old_id = {meta_data_obj.old_id}")
+            else:
+                print(f"meta data with old_id = {fields['old_id']} already exists. Skipping.")
+    
+    return Response({'message': 'Loading all meta data successful.'}, status=200)
