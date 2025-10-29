@@ -1,0 +1,30 @@
+[
+  {
+    "model": "support.loggeduser",
+    "pk": 2,
+    "fields": {
+      "user": 1
+    }
+  },
+  {
+    "model": "support.loggeduser",
+    "pk": 3,
+    "fields": {
+      "user": 3
+    }
+  },
+  {
+    "model": "support.loggeduser",
+    "pk": 7,
+    "fields": {
+      "user": 4
+    }
+  },
+  {
+    "model": "support.loggeduser",
+    "pk": 8,
+    "fields": {
+      "user": 2
+    }
+  }
+]
