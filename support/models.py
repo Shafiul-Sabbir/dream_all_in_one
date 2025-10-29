@@ -11,9 +11,6 @@ from PIL import Image
 from utils.image_processing import ALL_IMAGE_FORMAT_LIST
 
 
-
-
-
 class LoggedUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

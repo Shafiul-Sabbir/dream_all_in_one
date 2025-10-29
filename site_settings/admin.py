@@ -1,6 +1,5 @@
 from django.contrib import admin
-
-from site_settings.models import *
+from site_settings.models import MenuItem, RoleMenu, GeneralSetting, HomePageSlider, Contact
 
 
 
@@ -25,4 +24,8 @@ class GeneralSettingAdmin(admin.ModelAdmin):
 class HomePageSliderAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in HomePageSlider._meta.fields]
 
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+	list_display = [field.name for field in Contact._meta.fields]
 

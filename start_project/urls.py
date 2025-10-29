@@ -17,7 +17,7 @@ urlpatterns = [
 
     #Scripts module
     path('authentication_scripts/', include('scripts.urls.authentication_scripts_urls')),
-    # path('site_settings_scripts/', include('scripts.urls.site_settings_scripts_urls')),
+    path('site_settings_scripts/', include('scripts.urls.site_settings_scripts_urls')),
     path('cms_scripts/', include('scripts.urls.cms_scripts_urls')),
 
     # Authentication module

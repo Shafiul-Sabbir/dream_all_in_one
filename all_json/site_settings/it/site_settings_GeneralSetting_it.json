@@ -1,0 +1,30 @@
+[
+{
+    "model": "site_settings.generalsetting",
+    "pk": 2,
+    "fields": {
+        "title": "Dream Tourism IT",
+        "site_name": "dreamtourism.it",
+        "site_address": "dreamtourism.it",
+        "email": "sales@dreamtourism.com",
+        "phone": "+966548037409",
+        "favicon": "siteSettings/favicons/Logo_150_px-01.webp",
+        "logo": "siteSettings/companyLogos/Logo_150_px-01.webp",
+        "footer_logo": "siteSettings/companyLogos/Logo_150_px-01_xMVVgb0.webp",
+        "slider": "siteSettings/sliders/Logo_150_px-01.webp",
+        "cloudflare_favicon": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1e42ce40-0487-43fe-077a-39bde5402400/public",
+        "cloudflare_logo": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/5dbac07d-cbd4-4694-9a38-615bf832f800/public",
+        "cloudflare_footer": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/97eb1561-74fa-4ce4-7112-50a7c124a000/public",
+        "cloudflare_slider": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/77f95788-ea38-4360-615d-f47d82d0d300/public",
+        "address": "3893 Ibrahim Al Khalil, Ash Shubaikah 6428, Mecca 24231, Saudi Arabia.",
+        "google_url": null,
+        "facebook_url": "dreamtourism.fb.com",
+        "twitter_url": "twitter.com",
+        "instagram_url": "instagram.com",
+        "created_at": "2024-01-25T12:37:54.297Z",
+        "updated_at": "2024-05-02T11:43:21.068Z",
+        "created_by": 2,
+        "updated_by": 3
+    }
+}
+]
