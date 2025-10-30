@@ -20,7 +20,7 @@ from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 
 from authentication.decorators import has_permissions
-from authentication.models import Permission
+from authentication.models import Permission, Company
 from authentication.serializers import (AdminUserSerializer, PasswordChangeSerializer, AdminUserListSerializer, UserSerializer)
 from authentication.filters import UserFilter
 
@@ -43,14 +43,30 @@ class AdminLoginView(APIView):
     def post(self, request):
         login_input = request.data.get("username")
         password = request.data.get("password")
+        company_id = request.data.get("company_id", None)
 
-        # Q object দিয়ে email OR primary_phone match
-        user = User.objects.filter(
+        if company_id:
+            company = Company.objects.get(id=company_id) 
+        else:
+            return Response({"detail": "Company ID is required for login"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Q object দিয়ে email OR username match
+        users = User.objects.filter(
             Q(email=login_input) | Q(username=login_input)
-        ).first()
+        ).all()
 
+        print("users:", users)
+
+        if not users:
+            return Response({"detail": "You gave Invalid email / username for admin login "}, status=status.HTTP_401_UNAUTHORIZED)
+
+        if users:
+            user = users.filter(
+                company_id=company
+            ).first()
+        print("user:", user)
         if not user:
-            return Response({"detail": "You gave Invalid email / phone number for admin login "}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"detail": "No user found for this company id for admin login "}, status=status.HTTP_401_UNAUTHORIZED)
         try:
             if user.role.name:
                 if not user.role.name == 'ADMIN':
@@ -59,7 +75,7 @@ class AdminLoginView(APIView):
             return Response({"detail": "This user has no role."})
         
         # Authenticate with actual password check
-        user = authenticate(request, login_input=login_input, password=password)
+        user = authenticate(request, login_input=login_input, password=password, company_id=company_id)
         if not user:
             return Response({"detail": "You gave Invalid password for this Admin"}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -71,11 +87,18 @@ class LoginView(APIView):
     def post(self, request):
         login_input = request.data.get("username")
         password = request.data.get("password")
+        company_id = request.data.get("company_id", None)
 
         print("username:", login_input)
         print("password:", password)
+        print("company_id:", company_id)
 
-        user = authenticate(request, login_input=login_input, password=password)
+        if company_id:
+            company = Company.objects.get(id=company_id) 
+        else:
+            return Response({"detail": "Company ID is required for login"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user = authenticate(request, login_input=login_input, password=password, company_id=company_id)
         if user is None:
             return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 

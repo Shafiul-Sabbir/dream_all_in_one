@@ -1,0 +1,65 @@
+[
+{
+    "model": "support.loggeduser",
+    "pk": 1,
+    "fields": {
+        "old_id": 2,
+        "company_id": 1,
+        "user": 2
+    }
+},
+{
+    "model": "support.loggeduser",
+    "pk": 2,
+    "fields": {
+        "old_id": 4,
+        "company_id": 1,
+        "user": 4
+    }
+},
+{
+    "model": "support.loggeduser",
+    "pk": 3,
+    "fields": {
+        "old_id": 5,
+        "company_id": 1,
+        "user": 5
+    }
+},
+{
+    "model": "support.loggeduser",
+    "pk": 4,
+    "fields": {
+        "old_id": 2,
+        "company_id": 2,
+        "user": 6
+    }
+},
+{
+    "model": "support.loggeduser",
+    "pk": 5,
+    "fields": {
+        "old_id": 3,
+        "company_id": 2,
+        "user": 8
+    }
+},
+{
+    "model": "support.loggeduser",
+    "pk": 6,
+    "fields": {
+        "old_id": 7,
+        "company_id": 2,
+        "user": 9
+    }
+},
+{
+    "model": "support.loggeduser",
+    "pk": 7,
+    "fields": {
+        "old_id": 8,
+        "company_id": 2,
+        "user": 7
+    }
+}
+]
