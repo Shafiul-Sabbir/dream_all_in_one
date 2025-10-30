@@ -66,7 +66,7 @@ class AdminLoginView(APIView):
             ).first()
         print("user:", user)
         if not user:
-            return Response({"detail": "No user found for this company id for admin login "}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"detail": "No user found with this credentials for this company id for admin login "}, status=status.HTTP_401_UNAUTHORIZED)
         try:
             if user.role.name:
                 if not user.role.name == 'ADMIN':
@@ -98,9 +98,27 @@ class LoginView(APIView):
         else:
             return Response({"detail": "Company ID is required for login"}, status=status.HTTP_400_BAD_REQUEST)
 
+        # Q object দিয়ে email OR username match
+        users = User.objects.filter(
+            Q(email=login_input) | Q(username=login_input)
+        ).all()
+
+        print("users:", users)
+
+        if not users:
+            return Response({"detail": "You gave Invalid email / username for login "}, status=status.HTTP_401_UNAUTHORIZED)
+
+        if users:
+            user = users.filter(
+                company_id=company
+            ).first()
+        print("user:", user)
+        if not user:
+            return Response({"detail": "No user found ith this credentials for this company id for login "}, status=status.HTTP_401_UNAUTHORIZED)
+        
         user = authenticate(request, login_input=login_input, password=password, company_id=company_id)
         if user is None:
-            return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"detail": "You gave Invalid password for this user"}, status=status.HTTP_401_UNAUTHORIZED)
 
         refresh = RefreshToken.for_user(user)
         return generate_user_response(user, refresh, is_login=True)
