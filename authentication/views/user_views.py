@@ -62,7 +62,7 @@ class AdminLoginView(APIView):
 
         if users:
             user = users.filter(
-                company_id=company
+                company=company
             ).first()
         print("user:", user)
         if not user:
@@ -110,7 +110,7 @@ class LoginView(APIView):
 
         if users:
             user = users.filter(
-                company_id=company
+                company=company
             ).first()
         print("user:", user)
         if not user:

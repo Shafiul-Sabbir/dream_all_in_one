@@ -14,14 +14,14 @@ from django.core.files.base import ContentFile
 
 class CMSMenu(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     parent = models.ForeignKey('self', on_delete=models.PROTECT, related_name='children', null=True, blank=True)
     name = models.CharField(max_length=255)
     position = models.IntegerField(null=True, blank=True)
 
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -31,7 +31,10 @@ class CMSMenu(models.Model):
         ordering = ('-id', )
         indexes = [
         models.Index(fields=['parent']),
-    ]
+        ]
+        constraints = [
+            models.UniqueConstraint(fields=['position', 'company'], name='unique_position_per_company')
+        ]
 
     def __str__(self):
         return self.name
@@ -42,7 +45,7 @@ class CMSMenu(models.Model):
 
 class CMSMenuContent(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     cms_menu = models.ForeignKey(CMSMenu, on_delete=models.PROTECT, related_name='cms_menu_contents', db_index=True)
     name = models.CharField(max_length=1000,null=True,blank=True)
@@ -75,8 +78,8 @@ class CMSMenuContent(models.Model):
     help_center = models.TextField(null=True, blank=True)
     select_bus =models.CharField(max_length=50,null=True, blank=True)
 
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
     
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -87,6 +90,9 @@ class CMSMenuContent(models.Model):
         ordering = ('id',)
         indexes = [
             models.Index(fields=['cms_menu']),  # 👈 index on cms_menu_id
+        ]
+        constraints = [
+            models.UniqueConstraint(fields=['name', 'slug', 'company'], name='unique_name_&_slug_per_company')
         ]
 
     def __str__(self):
@@ -133,15 +139,15 @@ class CMSMenuContent(models.Model):
 
 class CMSMenuContentImage(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     cms_menu = models.ForeignKey(CMSMenu, on_delete=models.PROTECT, related_name='cms_menu_content_images')
     head = models.CharField(max_length=500)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -185,7 +191,7 @@ class CMSMenuContentImage(models.Model):
 #add this
 class Itinerary(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
     title = models.CharField(max_length=255)
@@ -194,8 +200,9 @@ class Itinerary(models.Model):
     lat = models.FloatField(max_length=1000, null=True, blank=True)
     lng = models.FloatField(max_length=1000, null=True, blank=True)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
-    created_at = models.DateTimeField(null=True)
-    updated_at = models.DateTimeField(null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -213,7 +220,7 @@ class Itinerary(models.Model):
 #For Contact
 class EmailAddress(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     full_name = models.CharField(max_length=255,null=True, blank=True)
     email = models.EmailField(null=False, blank=False)
@@ -259,7 +266,7 @@ class EmailAddress(models.Model):
 
 class SendEmail(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
    
     email = models.EmailField(null=False, blank=False)
     class Meta:
@@ -300,12 +307,12 @@ class SendEmail(models.Model):
 #add this
 class Tag(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     name = models.CharField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -313,18 +320,21 @@ class Tag(models.Model):
     class Meta:
         verbose_name_plural = 'Tag'
         ordering = ('-id', )
+        constraints = [
+            models.UniqueConstraint(fields=['name', 'company'], name='unique_tag_name_per_company')
+        ]
 
     def __str__(self):
         return self.name
     
 class BlogCategory(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     name = models.CharField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True)
-    updated_at = models.DateTimeField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -338,7 +348,7 @@ class BlogCategory(models.Model):
 
 class Blog(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_contents')
     title = models.CharField(max_length=500, null=True, blank=True)
@@ -363,8 +373,8 @@ class Blog(models.Model):
     faq_content = models.TextField(null=True,blank=True)
     is_published = models.BooleanField(default=False)
 
-    created_at = models.DateTimeField(null=True)
-    updated_at = models.DateTimeField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -461,7 +471,7 @@ class Blog(models.Model):
 
 class BlogComments(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     blog = models.ForeignKey(Blog,on_delete=models.PROTECT,null=True,blank=True)
     full_name = models.CharField(max_length=255)
@@ -469,8 +479,8 @@ class BlogComments(models.Model):
     comment_des = models.TextField()
     phn_num = models.CharField(blank=True, max_length=50, null=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -488,7 +498,7 @@ class BlogComments(models.Model):
 
 class Review(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     supplier = models.CharField(max_length=500, null=True, blank=True)
     reviewer_name = models.CharField(max_length=500, null=True, blank=True)
@@ -500,8 +510,8 @@ class Review(models.Model):
     publication = models.CharField(max_length=500, null=True, blank=True)
     url = models.URLField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
@@ -545,16 +555,17 @@ class Review(models.Model):
 
 class MetaData(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
     meta_title = models.CharField(max_length=255,null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
     image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
-    slug = models.SlugField(max_length=500, unique=True, null=True, blank=True)
-    created_at = models.DateTimeField(null=True)
-    updated_at = models.DateTimeField(null=True)
+    slug = models.SlugField(max_length=500, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -562,6 +573,9 @@ class MetaData(models.Model):
     class Meta:
         verbose_name_plural = 'MetaData'
         ordering = ('-id', )
+        constraints = [
+            models.UniqueConstraint(fields=['slug', 'company'], name='unique_slug_for_metadata_per_company')
+        ]
 
     def __str__(self):
         return f"{self.meta_title}"

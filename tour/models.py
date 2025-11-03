@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 import requests
 from payments.models import Traveller
-from authentication.models import User
+from authentication.models import User, Company
 from django.contrib.auth import get_user_model
 import re
 
@@ -48,8 +48,10 @@ class Tour(models.Model):
     # Metadata
     meta_title = models.CharField(max_length=500, null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
 
@@ -337,9 +339,10 @@ class TourItinerary(models.Model):
     description = models.TextField(null=True, blank=True)
     location = models.CharField(max_length=1000, null=True, blank=True)
     lat = models.FloatField(max_length=1000, null=True, blank=True)
-    long = models.FloatField(max_length=1000, null=True, blank=True)     
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    long = models.FloatField(max_length=1000, null=True, blank=True)   
+
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -371,8 +374,8 @@ class PenaltyRules(models.Model):
     charge_type = models.CharField(max_length=50, null=True, blank=True)  # percentage, fixed
     percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  # e.g., 50.00
 
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -398,8 +401,8 @@ class CancellationPolicy(models.Model):
     policy_type = models.CharField(max_length=50,choices=POLICY_TYPE_CHOICES,null=True,blank=True)
     simple_cutoff_hours = models.IntegerField(null=True, blank=True, default=0)
 
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -410,3 +413,68 @@ class CancellationPolicy(models.Model):
 
     def __str__(self):
         return f"{self.title or 'Unnamed Policy'} ({self.policy_type})"
+    
+class OldAgentBooking(models.Model):
+    PAYMENT_STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('paid', 'Paid'),
+        ('failed', 'Failed'),
+        ('refunded', 'Refunded'),
+        ('unpaid','Unpaid')
+    ]
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
+    invoice_no = models.CharField(max_length=255, null=True, blank=True)
+    agent = models.TextField(null=True, blank=True)
+    tour = models.CharField(max_length=255, null=True, blank=True)
+    traveller = models.TextField(null=True, blank=True)
+
+    adult_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)  
+    youth_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)
+    child_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)
+    total_price = models.DecimalField(default=0, max_digits=10, decimal_places=2, null=True, blank=True)
+    total_cost  = models.DecimalField(default=0, max_digits=10, decimal_places=2, null=True, blank=True)
+
+    coupon_text = models.CharField(max_length=255, null=True, blank=True)
+    is_coupon_applied = models.BooleanField(default=False, null=True, blank=True)
+    applied_coupon_type = models.CharField(max_length=20, choices=(('percentage', 'Percentage'), ('value', 'Value')), default='percentage', null=True, blank=True)
+    coupon_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    coupon_value = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    
+    coupon_applied_final_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    coupon_discount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    total_discount_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    discount_percent = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    discount_value = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    discount_type = models.CharField(max_length=20, choices=(('percentage', 'Percentage'), ('value', 'Value')), default='percentage', null=True, blank=True)
+    is_cancelled = models.BooleanField(default=False,null=True, blank=True)
+    participants = models.JSONField(null=True, blank=True)
+    selected_date = models.DateField(null=True, blank=True)
+    selected_time = models.TimeField(null=True, blank=True)
+    payWithCash = models.BooleanField(default=False, null=True, blank=True)
+    payWithStripe = models.BooleanField(default=False, null=True, blank=True)
+    duration = models.CharField(max_length=50,null=True, blank=True)
+    is_agent = models.BooleanField(default=False, null=True, blank=True)
+    status = models.CharField(max_length=10, choices=PAYMENT_STATUS_CHOICES, null=True, blank=True)
+    payment = models.TextField(null=True, blank=True)
+    payment_key = models.CharField(max_length=1000, null=True, blank=True)
+    email_pdf = models.CharField(max_length=1000, null=True, blank=True)
+    booking_invoice_pdf = models.CharField(max_length=1000, null=True, blank=True)
+    url = models.CharField(max_length=10000, null=True, blank=True)
+
+    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
+
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
+    updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'OldBooking'
+        ordering = ('-id',)
+
+    def __str__(self):
+        return f"Booking for {self.tour} by {self.agent} -  {self.total_price}"

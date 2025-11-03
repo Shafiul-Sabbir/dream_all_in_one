@@ -18,7 +18,7 @@ def generate_user_response(user, refresh=None, **kwargs):
         user_data = {
             "role": role,
             "user_id": user.id,
-            "company_name": user.company_id.name if user.company_id else None,
+            "company_name": user.company.name if user.company else None,
             "traveller_id": traveller.id,
             "first_name": traveller.user.first_name,
             "last_name": traveller.user.last_name,
@@ -40,7 +40,7 @@ def generate_user_response(user, refresh=None, **kwargs):
         user_data = {
             "role": role,
             "user_id": user.id,
-            "company_name": user.company_id.name if user.company_id else None,
+            "company_name": user.company.name if user.company else None,
             "first_name": user.first_name,
             "last_name": user.last_name,
             "email": user.email,

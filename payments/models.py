@@ -9,6 +9,7 @@ class Traveller(models.Model):
 
     created_by = models.CharField(max_length=255, blank=True, null=True)
     updated_by = models.CharField(max_length=255, blank=True, null=True)
+
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
