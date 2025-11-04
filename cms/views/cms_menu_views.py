@@ -39,10 +39,9 @@ from django.db.models import Prefetch
     responses=CMSMenuListSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenu(request):
-    menus = CMSMenu.objects.all()
+    company_id = request.query_params.get('company_id')
+    menus = CMSMenu.objects.filter(company=company_id).all()
     print('menus: ', menus)
 
     total_elements = menus.count()
@@ -83,13 +82,17 @@ def getAllCMSMenu(request):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenuWithoutPagination(request):
-    menus = CMSMenu.objects.all()
+    company_id = request.query_params.get('company_id')
+    menus = CMSMenu.objects.filter(company=company_id).all()
     print('menus: ', menus)
 
-    serializer = CMSMenuMinimalSerializer(menus, many=True)
+    total_elements = menus.count()
+
+    serializer = CMSMenuListSerializer(menus, many=True)
 
     response = {
         'menus': serializer.data,
+        'total_elements': total_elements
     }
 
     return Response(response, status=status.HTTP_200_OK)
@@ -113,14 +116,17 @@ def getAllNestedCMSMenu(request):
 
     page = request.query_params.get('page')
     size = request.query_params.get('size')
+    company_id = request.query_params.get('company_id')
 
     # menus = CMSMenu.objects.filter(parent__isnull=True).order_by('position')
     # print('menus: ', menus)
 
-    children_qs = CMSMenu.objects.all().order_by('position')
-    menus = CMSMenu.objects.filter(parent__isnull=True).prefetch_related(
+    children_qs = CMSMenu.objects.filter(company=company_id).all().order_by('position')
+    print("children_qs : ", children_qs)
+    menus = CMSMenu.objects.filter(parent__isnull=True, company=company_id).prefetch_related(
         Prefetch('children', queryset=children_qs)
     ).order_by('position')
+    print("menus : ", menus)
 
     total_elements = menus.count()
 

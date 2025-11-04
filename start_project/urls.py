@@ -52,6 +52,7 @@ urlpatterns = [
     path('tour_booking/', include('tour.urls.tour_booking_urls')),
     path('tour_itinerary/', include('tour.urls.tour_itinerary_urls')),
     path('tour_cancellation/', include('tour.urls.tour_cancellation_urls')),
+    path('old_agent_booking/', include('tour.urls.old_agent_booking_urls')),
 
     # payments
     path('payments/', include('payments.urls.payments_urls')),
