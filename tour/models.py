@@ -473,8 +473,9 @@ class OldAgentBooking(models.Model):
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'OldBooking'
+        verbose_name_plural = 'OldAgentBooking'
         ordering = ('-id',)
 
     def __str__(self):
-        return f"Booking for {self.tour} by {self.agent} -  {self.total_price}"
+        # return f"Booking for {self.tour} by {self.agent} -  {self.total_price}"        
+        return f"data from invoice number : {self.invoice_no}"

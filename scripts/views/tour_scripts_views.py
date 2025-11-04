@@ -50,8 +50,9 @@ def load_old_agent_bookings(request, company_id):
 
     for booking_data in all_tour_bookings:
         fields = booking_data.get('fields')
+        booking_id = booking_data.get('pk')
         print('\n')
-        print("booking_id : ", booking_data.get('pk'))
+        print("booking_id : ", booking_id)
         print("raw booking :", fields)
         print('\n')
 
@@ -106,11 +107,26 @@ def load_old_agent_bookings(request, company_id):
                     payment_instance = payment.get('fields')
                     print("payment instance : ", payment_instance)
                     fields['payment'] = payment_instance
+        else:
+            for payment in all_payments:
+                if payment.get('fields')['tour_booking'] == booking_id:
+                    payment_instance = payment.get('fields')
+                    payment_id = payment.get('pk')
+                    print("payment instance : ", payment_instance)
+                    print("payment id : ", payment_id)
+                    fields['payment'] = payment_instance
+        print('\n')
+        
+        json_structure_fields = json.dumps(fields, indent=4, default=str)
+        print("modified booking data : ", json_structure_fields)
 
-            print('\n')
+        if not OldAgentBooking.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
+            old_agent_booking_obj = OldAgentBooking.objects.create(**fields)
 
+            print(f"Saved old agent booking, id = {old_agent_booking_obj.id}, old_id = {old_agent_booking_obj.old_id}")
+        else:
+            print(f"Old Agent Booking with old_id = {fields['old_id']} already exists. Skipping.")
 
-        print("modified booking data : ", fields)
 
                     
     return Response({'message': 'Loading all Old Agent Bookings successful.'}, status=200)
