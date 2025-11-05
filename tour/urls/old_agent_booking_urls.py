@@ -9,9 +9,9 @@ urlpatterns = [
 
 	# path('api/v1/tour_booking/<str:booking_uuid>/', views.getATourBookingByBookingUUID),
 
-	path('api/v1/old_agent_booking/get_all_old_agent_booking_by_company_id/<int:company_id>/', views.getAllOldAgentBookingByCompanyID),
+	path('api/v1/old_agent_booking/get_all_old_agent_booking_by_company_id/', views.getAllOldAgentBookingByCompanyID),
 
-    path('api/v1/old_agent_booking/get_all_old_agent_booking_by_company_id_with_pagination/<int:company_id>/', views.getAllOldAgentBookingByCompanyIDWithPagination),
+    path('api/v1/old_agent_booking/get_all_old_agent_booking_by_company_id_with_pagination/', views.getAllOldAgentBookingByCompanyIDWithPagination),
 
 
 ]

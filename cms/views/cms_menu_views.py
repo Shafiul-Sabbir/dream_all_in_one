@@ -15,10 +15,12 @@ from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
 
-from cms.models import CMSMenu, CMSMenuContent
+from cms.models import CMSMenu, CMSMenuContent, CMSMenuContentImage
 from cms.serializers import CMSMenuNestedSerializer, CMSMenuSerializer, CMSMenuListSerializer, CMSMenuMinimalSerializer
 
 from utils.login_logout import get_all_logged_in_users
+from django.shortcuts import get_object_or_404
+from collections import defaultdict
 
 from commons.pagination import Pagination
 from commons.enums import PermissionEnum
@@ -154,78 +156,122 @@ def getAllNestedCMSMenu(request):
 
 
 
-@extend_schema(
-    parameters=[
-        OpenApiParameter("page"),
-        OpenApiParameter("size"),
-  ],
-    request=CMSMenuListSerializer,
-    responses=CMSMenuListSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenuContentAndImageByMenuId(request, menu_id):
-    # menu_items = CMSMenuContent.objects.filter(cms_menu=cms_menu_id)
-    with connection.cursor() as cursor:
-        cursor.execute('''
-                        select 
-                            cms_menu_id AS cms_menu,
-                            json_object_agg(name, value) AS data
-                            from cms_cmsmenucontent where cms_menu_id=%s
-                            group by cms_menu_id
-                            order by cms_menu_id;
-                        ''', [menu_id])
-        content_row = cursor.fetchone()
-        print('content_row: ', content_row)
-        print('content_row type: ', type(content_row))
+    """
+    ORM-based version of the raw SQL query:
+    Returns all CMSMenuContent (as key-value JSON)
+    and all CMSMenuContentImage (grouped by head)
+    for a given CMSMenu ID.
+    """
 
-    menu_contents = []
-    if type(content_row) == tuple:
-        menu_contents = content_row[1]
-
-    with connection.cursor() as cursor:
-        cursor.execute('''
-            select
-            json_object_agg(
-                head,
-                case
-                when array_length(image,1)=1 then to_json(image[1])
-                else to_json(image)
-                end)
-            from (
-            select head, array_agg(image) as image
-            from cms_cmsmenucontentimage where cms_menu_id=%s
-            group by head) as x;
-                        ''', [menu_id])
-        image_row = cursor.fetchall()
-        print('image_row: ', image_row)
-        print('image_row type: ', type(image_row))
-
-    content_images = []
-    if type(image_row) == tuple:
-        content_images = image_row[0]
+    # Step 1️⃣: Menu existence check
+    menu = get_object_or_404(CMSMenu, id=menu_id)
+    print("menu : ", menu)
 
 
+    # Step 2️⃣: Collect all menu contents (key-value format)
+    contents_qs = CMSMenuContent.objects.filter(cms_menu=menu).values("name", "value")
+    contents_dict = {}
+    for c in contents_qs:
+        if c["name"]:
+            contents_dict[c["name"]] = c["value"]
+    print("contents dicts length : ", len(contents_dict))
+
+    # Step 3️⃣: Collect all related images grouped by "head"
+    images_qs = CMSMenuContentImage.objects.filter(cms_menu=menu).values("head", "cloudflare_image")
+
+    # defaultdict(list) ব্যবহার করে group করা
+    grouped_images = defaultdict(list)
+    for img in images_qs:
+        grouped_images[img["head"]].append(img["cloudflare_image"])
+
+    # যদি কোনো head-এর অধীনে শুধু ১টা ইমেজ থাকে, তাহলে লিস্ট বাদ দিয়ে শুধু string রাখা
+    final_images = {}
+    for head, imgs in grouped_images.items():
+        if len(imgs) == 1:
+            final_images[head] = imgs[0]
+        else:
+            final_images[head] = imgs
+
+    # Step 4️⃣: Final JSON response তৈরি
     response = {
-    'menu_contents': menu_contents,
-    'content_images': content_images,
-
+        "menu_contents": contents_dict,
+        "content_images": final_images,
     }
 
     return Response(response, status=status.HTTP_200_OK)
 
+# @extend_schema(
+#     parameters=[
+#         OpenApiParameter("page"),
+#         OpenApiParameter("size"),
+#   ],
+#     request=CMSMenuListSerializer,
+#     responses=CMSMenuListSerializer
+# )
+# @api_view(['GET'])
+# def getAllCMSMenuContentAndImageByMenuId(request, menu_id):
+#     # menu_items = CMSMenuContent.objects.filter(cms_menu=cms_menu_id)
+#     with connection.cursor() as cursor:
+#         cursor.execute('''
+#                         select 
+#                             cms_menu_id AS cms_menu,
+#                             json_object_agg(name, value) AS data
+#                             from cms_cmsmenucontent where cms_menu_id=%s
+#                             group by cms_menu_id
+#                             order by cms_menu_id;
+#                         ''', [menu_id])
+#         content_row = cursor.fetchone()
+#         print('content_row: ', content_row)
+#         print('content_row type: ', type(content_row))
+
+#     menu_contents = []
+#     if type(content_row) == tuple:
+#         menu_contents = content_row[1]
+
+#     with connection.cursor() as cursor:
+#         cursor.execute('''
+#             select
+#             json_object_agg(
+#                 head,
+#                 case
+#                 when array_length(image,1)=1 then to_json(image[1])
+#                 else to_json(image)
+#                 end)
+#             from (
+#             select head, array_agg(image) as image
+#             from cms_cmsmenucontentimage where cms_menu_id=%s
+#             group by head) as x;
+#                         ''', [menu_id])
+#         image_row = cursor.fetchall()
+#         print('image_row: ', image_row)
+#         print('image_row type: ', type(image_row))
+
+#     content_images = []
+#     if type(image_row) == tuple:
+#         content_images = image_row[0]
+
+
+#     response = {
+#     'menu_contents': menu_contents,
+#     'content_images': content_images,
+
+#     }
+
+#     return Response(response, status=status.HTTP_200_OK)
 
 
 
-@extend_schema(request=CMSMenuSerializer, responses=CMSMenuSerializer)
+
+
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getACMSMenu(request, pk):
     try:
-        menu = CMSMenu.objects.get(pk=pk)
-        serializer = CMSMenuSerializer(menu)
+        print("pk is : ", pk)
+        menu = CMSMenu.objects.get(id=pk)
+        print("meny : ", menu)
+        serializer = CMSMenuListSerializer(instance=menu)
         return Response(serializer.data, status=status.HTTP_200_OK)
     except ObjectDoesNotExist:
         return Response({'detail': f"CMSMenu id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)

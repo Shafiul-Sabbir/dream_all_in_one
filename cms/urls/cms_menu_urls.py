@@ -11,9 +11,9 @@ urlpatterns = [
 	# after using prefetch_related on children, present response time is 22ms and 10 queries.
     # used indexing on 'parent' field for optimizing responses from large datasets.
     
-	path('api/v1/cms_menu/get_all_menu_content_and_image_by_cms_menu_id/<int:menu_id>', views.getAllCMSMenuContentAndImageByMenuId),
+	path('api/v1/cms_menu/get_all_menu_content_and_image_by_cms_menu_id/<int:menu_id>/', views.getAllCMSMenuContentAndImageByMenuId),
 
-	path('api/v1/cms_menu/<int:pk>', views.getACMSMenu),
+	path('api/v1/cms_menu/<int:pk>/', views.getACMSMenu),
 
 	path('api/v1/cms_menu/create/', views.createCMSMenu),
 

@@ -34,7 +34,8 @@ def getAllOldAgentBooking(request):
     return Response(response, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-def getAllOldAgentBookingByCompanyID(request, company_id):
+def getAllOldAgentBookingByCompanyID(request):
+    company_id = request.query_params.get('company_id')
     tour_bookings = OldAgentBooking.objects.filter(company=company_id).all()
     total_elements = tour_bookings.count()
     serializer = OldAgentBookingListSerializer(tour_bookings, many=True)
@@ -46,7 +47,8 @@ def getAllOldAgentBookingByCompanyID(request, company_id):
 
 
 @api_view(['GET'])
-def getAllOldAgentBookingByCompanyIDWithPagination(request, company_id):
+def getAllOldAgentBookingByCompanyIDWithPagination(request):
+    company_id = request.query_params.get('company_id')
     tour_bookings = OldAgentBooking.objects.filter(company=company_id).all()
     total_elements = tour_bookings.count()
 
