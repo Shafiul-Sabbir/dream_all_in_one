@@ -24,8 +24,8 @@ urlpatterns = [
 
 	path('api/v1/cms_menu_content_image/delete/<int:pk>', views.deleteCMSMenuContentImage),
     
-	path('api/v1/get_all_cms_menu_content_image_list_by_menu_name/<str:menu_name>', views.getContentImageListByMenuName),
+	path('api/v1/get_all_cms_menu_content_image_list_by_menu_name/<str:menu_name>/', views.getContentImageListByMenuName),
     
-	path('api/v1/get_content_and_images_by_menu_id/<int:menu_id>/', views.get_content_and_images_by_menu_id, name='get_content_and_images_by_menu_id'),
+	path('api/v1/get_content_and_images_by_menu_id/<int:menu_id>/', views.getContentAndImagesByMenuId, name='get_content_and_images_by_menu_id'),
 
 ]

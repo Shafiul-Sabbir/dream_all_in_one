@@ -260,22 +260,19 @@ def deleteCMSMenuContentImage(request, pk):
         return Response({'detail': f"CMSMenuContentImage id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
+# @extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['GET'])
 def getContentImageListByMenuName(request, menu_name):
     try:
-        
-        matching_menus = CMSMenu.objects.filter(name__icontains=menu_name)
+        company_id = request.query_params.get('company_id')
+        matching_menus = CMSMenu.objects.filter(name__icontains=menu_name, company=company_id).all()
+        print("company_id : ", company_id)
+        print("matching menus : ", matching_menus)
         
         if matching_menus.exists():
-            
             content_images_dict = {}
-            
-            
             for cms_menu in matching_menus:
-                
                 content_images = CMSMenuContentImage.objects.filter(cms_menu=cms_menu)
-                
                 
                 for image in content_images:
                     menu_item_name = image.head
@@ -303,9 +300,11 @@ def getContentImageListByMenuName(request, menu_name):
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
-def get_content_and_images_by_menu_id(request, menu_id):
+def getContentAndImagesByMenuId(request, menu_id):
     try:
-        cms_content_obj = CMSMenuContent.objects.filter(cms_menu=menu_id)
+        company_id = request.query_params.get('company_id')
+        cms_content_obj = CMSMenuContent.objects.filter(cms_menu=menu_id, company=company_id).all()
+        print("cms_content_obj : ", cms_content_obj)
 
         serializer = CMSMenuContentListSerializer(cms_content_obj, many=True)
         
