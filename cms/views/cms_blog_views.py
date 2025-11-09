@@ -42,7 +42,7 @@ import requests
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 
 def getAllBlog(request):
-
+    company_id = request.query_params.get('company_id')
     page = request.query_params.get('page')
     size = request.query_params.get('size')
     things_to_do = request.query_params.get('things_to_do', None)
@@ -53,12 +53,12 @@ def getAllBlog(request):
         # Filter blogs by country if provided
         # print('country: ', country)
         # blogs = Blog.objects.filter(blog_country = country)
-        blogs = Blog.objects.filter(blog_country = country).select_related('cms_content', 'blog_category', 'blog_country', 'created_by', 'updated_by')
+        blogs = Blog.objects.filter(blog_country=country, company=company_id).select_related('cms_content', 'blog_category', 'blog_country', 'created_by', 'updated_by')
         # print('blogs from country handling: ', blogs)
     else:
         # Get all blogs if no country filter is provided
         # blogs = Blog.objects.all()
-        blogs = Blog.objects.select_related('cms_content', 'blog_category', 'blog_country', 'created_by', 'updated_by')
+        blogs = Blog.objects.filter(company=company_id).select_related('cms_content', 'blog_category', 'blog_country', 'created_by', 'updated_by')
     
     # handle things_to_do filter
     if things_to_do == 'true':
@@ -100,10 +100,9 @@ def getAllBlog(request):
     responses=BlogListSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllBlogWithoutPagination(request):
-    blogs = Blog.objects.all()
+    company_id = request.query_params.get('company_id')
+    blogs = Blog.objects.filter(company=company_id).all()
     total_elements = blogs.count()
 
     serializer = BlogListSerializer(blogs, many=True)
@@ -169,8 +168,6 @@ def getAllBlogWithoutPagination(request):
 
 @extend_schema(request=BlogSerializer, responses=BlogSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getBlog(request, pk):
     try:
         menu_item = Blog.objects.get(pk=pk)
@@ -299,7 +296,8 @@ def deleteBlog(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchBlog(request):
-    blogs = BlogFilter(request.GET, queryset=Blog.objects.all())
+    company_id = request.query_params.get('company_id')
+    blogs = BlogFilter(request.GET, queryset=Blog.objects.filter(company=company_id).all())
     blogs = blogs.qs
 
     print('searched_blogs: ', blogs)
@@ -332,19 +330,17 @@ def searchBlog(request):
 
 
 
-@extend_schema(request=BlogSerializer, responses=BlogSerializer)
+
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def getBlogByTitle(request, slug):
+def getBlogByTitleSlug(request, slug):
     try:
+        company_id = request.query_params.get('company_id')
+        print("slug : ", slug)
+        content = Blog.objects.filter(company=company_id, slug=slug).first()
+        print("content : ", content)
         
-        content = Blog.objects.get(slug=slug)
+        serializer = BlogListSerializer(instance=content)
         
-     
-        serializer = BlogSerializer(content)
-        
-       
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     except ObjectDoesNotExist:

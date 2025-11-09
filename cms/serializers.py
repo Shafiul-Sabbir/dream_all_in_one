@@ -114,6 +114,7 @@ class CMSMenuContentListSerializer(serializers.ModelSerializer):
 
 
 class CMSMenuContentMinimalSerializer(serializers.ModelSerializer):
+	cms_menu = CMSMenuListSerializer()
 	class Meta:
 		model = CMSMenuContent
 		fields = ('id', 'cms_menu', 'name', 'order','value',)
@@ -575,7 +576,6 @@ class MetaDataSerializer(serializers.ModelSerializer):
 	
 # Tag serializer
 class TagListSerializer(serializers.ModelSerializer):
-	cms_content = CMSMenuContentMinimalSerializer()
 	created_by = serializers.SerializerMethodField(read_only=True)
 	updated_by = serializers.SerializerMethodField(read_only=True)
 	class Meta:

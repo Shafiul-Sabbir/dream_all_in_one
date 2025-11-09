@@ -30,10 +30,9 @@ from commons.pagination import Pagination
 	responses=TagSerializer
 )
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
 def getAllTag(request):
-	tags = Tag.objects.all()
+	company_id = request.query_params.get('company_id')
+	tags = Tag.objects.filter(company=company_id).all()
 	total_elements = tags.count()
 
 	page = request.query_params.get('page')
@@ -59,20 +58,10 @@ def getAllTag(request):
 
 
 
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=TagSerializer,
-	responses=TagSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
 def getAllTagWithoutPagination(request):
-	tags = Tag.objects.all()
+	company_id = request.query_params.get('company_id')
+	tags = Tag.objects.filter(company=company_id).all()
 
 	serializer = TagListSerializer(tags, many=True)
 
@@ -95,13 +84,10 @@ def getATag(request, pk):
 
 
 
-
-@extend_schema(request=TagSerializer, responses=TagSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchTag(request):
-	tags = TagFilter(request.GET, queryset=Tag.objects.all())
+	company_id = request.query_params.get('company_id')
+	tags = TagFilter(request.GET, queryset=Tag.objects.filter(company=company_id).all())
 	tags = tags.qs
 
 	print('searched_products: ', tags)

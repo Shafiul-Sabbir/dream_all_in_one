@@ -27,50 +27,50 @@ import datetime
 # Create your views here.
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=BlogCommentsListSerializer,
-	responses=BlogCommentsListSerializer
+    request=BlogCommentsListSerializer,
+    responses=BlogCommentsListSerializer
 )
+
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllBlogComments(request):
-	blogs_Comment = BlogComments.objects.all()
-	total_elements = blogs_Comment.count()
+    company_id = request.query_params.get('company_id')
+    blogs_Comment = BlogComments.objects.filter(company=company_id).all()
+    total_elements = blogs_Comment.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	blogs_Comment = pagination.paginate_data(blogs_Comment)
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    blogs_Comment = pagination.paginate_data(blogs_Comment)
 
-	serializer = BlogCommentsListSerializer(blogs_Comment, many=True)
+    serializer = BlogCommentsListSerializer(blogs_Comment, many=True)
 
-	response = {
-		'blogs_Comment': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-	return Response(response, status=status.HTTP_200_OK)
+    response = {
+        'blogs_Comment': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=BlogCommentsListSerializer,
-	responses=BlogCommentsListSerializer
+    request=BlogCommentsListSerializer,
+    responses=BlogCommentsListSerializer
 )
   
 
@@ -79,12 +79,12 @@ def getAllBlogComments(request):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getBlogComments(request, pk):
-	try:
-		menu_item = BlogComments.objects.get(pk=pk)
-		serializer = BlogCommentsSerializer(menu_item)
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"BlogComments id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        menu_item = BlogComments.objects.get(pk=pk)
+        serializer = BlogCommentsSerializer(menu_item)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"BlogComments id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -94,16 +94,16 @@ def getBlogComments(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
 def createBlogComments(request):
-	data = request.data
-	print('data: ', data)
-	
-	serializer = BlogCommentsSerializer(data=data)
+    data = request.data
+    print('data: ', data)
+    
+    serializer = BlogCommentsSerializer(data=data)
 
-	if serializer.is_valid():
-		serializer.save()
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	else:
-		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -167,12 +167,12 @@ def updateBlogComments(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
 def deleteBlogComments(request, pk):
-	try:
-		menu_item = BlogComments.objects.get(pk=pk)
-		menu_item.delete()
-		return Response({'detail': f'BlogComments id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"BlogComments id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        menu_item = BlogComments.objects.get(pk=pk)
+        menu_item.delete()
+        return Response({'detail': f'BlogComments id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"BlogComments id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @extend_schema(request=BlogCommentsSerializer, responses=BlogCommentsSerializer)
@@ -180,36 +180,36 @@ def deleteBlogComments(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchBlogComments(request):
-	blogs_Comment = BlogCommentsFilter(request.GET, queryset=BlogComments.objects.all())
-	blogs_Comment = blogs_Comment.qs
+    blogs_Comment = BlogCommentsFilter(request.GET, queryset=BlogComments.objects.all())
+    blogs_Comment = blogs_Comment.qs
 
-	print('searched_blogs: ', blogs_Comment)
+    print('searched_blogs: ', blogs_Comment)
 
-	total_elements = blogs_Comment.count()
+    total_elements = blogs_Comment.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	blogs_Comment = pagination.paginate_data(blogs_Comment)
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    blogs_Comment = pagination.paginate_data(blogs_Comment)
 
-	serializer = BlogCommentsListSerializer(blogs_Comment, many=True)
+    serializer = BlogCommentsListSerializer(blogs_Comment, many=True)
 
-	response = {
-		'blogs_Comment': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
+    response = {
+        'blogs_Comment': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
 
-	if len(blogs_Comment) > 0:
-		return Response(response, status=status.HTTP_200_OK)
-	else:
-		return Response({'detail': f"There are no blogs matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+    if len(blogs_Comment) > 0:
+        return Response(response, status=status.HTTP_200_OK)
+    else:
+        return Response({'detail': f"There are no blogs matching your search"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -234,7 +234,7 @@ def getBlogCommentsByTitle(request, title):
         return Response({'detail': f"Blog with title '{title}' does not exist"}, 
                         status=status.HTTP_404_NOT_FOUND)
     
-	 
+     
 @extend_schema(request=BlogCommentsSerializer, responses=BlogCommentsSerializer)
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])

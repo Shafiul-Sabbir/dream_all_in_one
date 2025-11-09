@@ -28,108 +28,112 @@ import os
 # Create your views here.
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=MetaDataListSerializer,
-	responses=MetaDataListSerializer
+    request=MetaDataListSerializer,
+    responses=MetaDataListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllMetaData(request):
-	meta_data = MetaData.objects.all()
-	total_elements = meta_data.count()
+    company_id = request.query_params.get('company_id')
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    meta_data = MetaData.objects.filter(company=company_id).all()
+    total_elements = meta_data.count()
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	meta_data = pagination.paginate_data(meta_data)
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	serializer = MetaDataListSerializer(meta_data, many=True)
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    meta_data = pagination.paginate_data(meta_data)
 
-	response = {
-		'meta_data': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
-	return Response(response, status=status.HTTP_200_OK)
+    serializer = MetaDataListSerializer(meta_data, many=True)
+
+    response = {
+        'meta_data': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=MetaDataListSerializer,
-	responses=MetaDataListSerializer
+    request=MetaDataListSerializer,
+    responses=MetaDataListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllMetaDataWithoutPagination(request):
-	meta_data = MetaData.objects.all()
+    company_id = request.query_params.get('company_id')
+    meta_data = MetaData.objects.filter(company=company_id).all()
+    total_elements = meta_data.count()
+    serializer = MetaDataListSerializer(meta_data, many=True)
 
-	serializer = MetaDataListSerializer(meta_data, many=True)
-
-	response = {
-		'meta_data': serializer.data,
-	}
-	return Response(response, status=status.HTTP_200_OK)
+    response = {
+        'total_elements' : total_elements,
+        'meta_data': serializer.data,
+    }
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=MetaDataListSerializer,
-	responses=MetaDataListSerializer
+    request=MetaDataListSerializer,
+    responses=MetaDataListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllMetaDataByCMSMenuId(request, menu_id):
-	meta_data = MetaData.objects.filter(cms_content=menu_id)
+    meta_data = MetaData.objects.filter(cms_content=menu_id)
 
-	serializer = MetaDataListSerializer(meta_data,many=True)
-	return Response(serializer.data, status=status.HTTP_200_OK)
+    serializer = MetaDataListSerializer(meta_data,many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
-	# with connection.cursor() as cursor:
-	# 	cursor.execute('''
-	# 					SELECT
-	# 						cms_menu_id AS cms_menu,
-	# 						jsonb_build_object(
-	# 			             	'title', MAX(title),
+    # with connection.cursor() as cursor:
+    # 	cursor.execute('''
+    # 					SELECT
+    # 						cms_menu_id AS cms_menu,
+    # 						jsonb_build_object(
+    # 			             	'title', MAX(title),
     #                 			'description', MAX(description),
     #                 			'location', MAX(location)
-	# 			            ) AS data
-	# 					FROM cms_MetaData WHERE cms_menu_id=%s
-	# 					GROUP BY cms_menu_id
-	# 					ORDER BY cms_menu_id;
-	# 					''', [menu_id])
+    # 			            ) AS data
+    # 					FROM cms_MetaData WHERE cms_menu_id=%s
+    # 					GROUP BY cms_menu_id
+    # 					ORDER BY cms_menu_id;
+    # 					''', [menu_id])
   
-	# 	row = cursor.fetchall()
-		
-	# if rows:
-	# 		my_data = [{'title': row[0],'description':row[1] } for row in rows]
-			
-	# 		response = {'menu_contents': my_data}
-	# 		return JsonResponse(response, status=status.HTTP_200_OK)
-		
-	# else:
-	# 	return JsonResponse({'detail': "No content found."}, status=status.HTTP_204_NO_CONTENT)
+    # 	row = cursor.fetchall()
+        
+    # if rows:
+    # 		my_data = [{'title': row[0],'description':row[1] } for row in rows]
+            
+    # 		response = {'menu_contents': my_data}
+    # 		return JsonResponse(response, status=status.HTTP_200_OK)
+        
+    # else:
+    # 	return JsonResponse({'detail': "No content found."}, status=status.HTTP_204_NO_CONTENT)
         
         
 
@@ -143,12 +147,12 @@ def getAllMetaDataByCMSMenuId(request, menu_id):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getMetaData(request, pk):
-	try:
-		meta_data = MetaData.objects.get(pk=pk)
-		serializer = MetaDataSerializer(meta_data)
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenuContent id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        meta_data = MetaData.objects.get(pk=pk)
+        serializer = MetaDataSerializer(meta_data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"CMSMenuContent id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -158,16 +162,16 @@ def getMetaData(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
 def createMetaData(request):
-	data = request.data
-	print('data: ', data)
-	
-	serializer = MetaDataSerializer(data=data)
+    data = request.data
+    print('data: ', data)
+    
+    serializer = MetaDataSerializer(data=data)
 
-	if serializer.is_valid():
-		serializer.save()
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	else:
-		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -222,7 +226,7 @@ def updateMetaData(request, pk):
         return Response(serializer.data, status=status.HTTP_200_OK)
     else:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-	
+    
 
 
 
@@ -232,24 +236,20 @@ def updateMetaData(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
 def deleteMetaData(request, pk):
-	try:
-		meta_data = MetaData.objects.get(pk=pk)
-		meta_data.delete()
-		return Response({'detail': f'MetaData id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"MetaData id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        meta_data = MetaData.objects.get(pk=pk)
+        meta_data.delete()
+        return Response({'detail': f'MetaData id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"MetaData id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=MetaDataSerializer, responses=MetaDataSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def getMetaDataByCMSContent(request, slug):
+def getMetaDataByCMSContentSlug(request, slug):
     try:
         # Get CMSMenuContent object by slug
-        cms_menu_content = CMSMenuContent.objects.filter(slug=slug).first()
+        company_id = request.query_params.get('company_id')
+        cms_menu_content = CMSMenuContent.objects.filter(slug=slug, company=company_id).first()
         if cms_menu_content:
             print(cms_menu_content)
         else:
@@ -273,40 +273,39 @@ def getMetaDataByCMSContent(request, slug):
         return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
-@extend_schema(request=MetaDataSerializer, responses=MetaDataSerializer)
+
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchMetaData(request):
-	meta_data = MetaDataFilter(request.GET, queryset=MetaData.objects.all())
-	meta_data = meta_data.qs
+    company_id = request.query_params.get('company_id')
+    meta_data = MetaDataFilter(request.GET, queryset=MetaData.objects.filter(company=company_id).all())
+    meta_data = meta_data.qs
 
-	print('searched_meta_data: ', meta_data)
+    print('searched_meta_data: ', meta_data)
 
-	total_elements = meta_data.count()
+    total_elements = meta_data.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	meta_data = pagination.paginate_data(meta_data)
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    meta_data = pagination.paginate_data(meta_data)
 
-	serializer = MetaDataListSerializer(meta_data, many=True)
+    serializer = MetaDataListSerializer(meta_data, many=True)
 
-	response = {
-		'meta_data': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
+    response = {
+        'meta_data': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
 
-	if len(meta_data) > 0:
-		return Response(response, status=status.HTTP_200_OK)
-	else:
-		return Response({'detail': f"There are no MetaDatas matching your search"}, status=status.HTTP_400_BAD_REQUEST)
+    if len(meta_data) > 0:
+        return Response(response, status=status.HTTP_200_OK)
+    else:
+        return Response({'detail': f"There are no MetaDatas matching your search"}, status=status.HTTP_400_BAD_REQUEST)
 
 

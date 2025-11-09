@@ -41,10 +41,27 @@ urlpatterns = [
     path('city/', include('authentication.urls.city_urls')),
 
 
-	# CMS
+	# CMS menu
 	path('cms_menu/', include('cms.urls.cms_menu_urls')),
 	path('cms_menu_content/', include('cms.urls.cms_menu_content_urls')),
 	path('cms_menu_content_image/', include('cms.urls.cms_menu_content_image_urls')),
+
+    # cms blog
+    path('cms_blog/', include('cms.urls.cms_blog_urls')),
+    path('cms_blog_category/', include('cms.urls.cms_blog_category_urls')),
+    path('cms_blog_comment/', include('cms.urls.cms_blog_comment_urls')),
+
+    # cms itinerary
+    path('cms_itinerary/', include('cms.urls.cms_itinerary_urls')),
+
+    # cms tag
+    path('cms_tag/', include('cms.urls.cms_tag_urls')),
+
+    # cms review
+    path('cms_review/', include('cms.urls.cms_review_urls')),
+
+    # cms meta data
+    path('cms_meta_data/', include('cms.urls.cms_meta_data_urls')),
 
     # tour
     path('tour_content/', include('tour.urls.tour_content_urls')),
@@ -62,9 +79,6 @@ urlpatterns = [
     # adding email
     path('email/', include('cms.urls.email_urls')),
     path('send-email/', include('cms.urls.send_email_urls')),
-    
-    #itinerary
-    path('cms_itinerary/', include('cms.urls.itinerary_urls')),
 
 	# Site Settings module
 	path('general_setting/', include('site_settings.urls.general_setting_urls')),

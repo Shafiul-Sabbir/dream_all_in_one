@@ -1,6 +1,6 @@
 
 from django.urls import path
-from cms.views import blog_category_views as views
+from cms.views import cms_blog_category_views as views
 
 
 urlpatterns = [

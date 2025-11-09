@@ -22,10 +22,12 @@ import os
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 
 def getAllReview(request):
+
+    company_id = request.query_params.get('company_id')
     page = request.query_params.get('page')
     size = request.query_params.get('size')
 
-    reviews = Review.objects.all()
+    reviews = Review.objects.filter(company=company_id).all()
     # reviews = Review.objects.all().select_related('created_by', 'updated_by')
     """
     Ekhane Review model e sudhu 'created_by' ebong 'updated_by' duita ForeignKey field ache. 
@@ -61,11 +63,9 @@ def getAllReview(request):
 
 
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
-
 def getAllReviewWithoutPagination(request):
-    reviews = Review.objects.all()
+    company_id = request.query_params.get('company_id')
+    reviews = Review.objects.filter(company=company_id).all()
     # print("reviews : ", reviews)
     total_elements = reviews.count()
 

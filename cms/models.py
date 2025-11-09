@@ -194,7 +194,7 @@ class Itinerary(models.Model):
     company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     location = models.CharField(max_length=1000, null=True, blank=True)
     lat = models.FloatField(max_length=1000, null=True, blank=True)

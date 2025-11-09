@@ -38,7 +38,8 @@ import datetime
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllItinerary(request):
-	menu_items = Itinerary.objects.all()
+	company_id = request.query_params.get('company_id')
+	menu_items = Itinerary.objects.filter(company=company_id).all()
 	total_elements = menu_items.count()
 
 	page = request.query_params.get('page')
@@ -62,26 +63,18 @@ def getAllItinerary(request):
 	return Response(response, status=status.HTTP_200_OK)
 
 
-
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=ItineraryListSerializer,
-	responses=ItineraryListSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllItineraryWithoutPagination(request):
-	menu_items = CMSMenuContent.objects.all()
+	company_id = request.query_params.get('company_id')
+	itineraries = Itinerary.objects.filter(company=company_id).all()
+	total_elements = itineraries.count()
+	print("menu_items : ", itineraries)
 
-	serializer = ItineraryListSerializer(menu_items, many=True)
+	serializer = ItineraryListSerializer(itineraries, many=True)
 
 	response = {
-		'menu_items': serializer.data,
+		'total_elements' : total_elements,
+		'itineraries': serializer.data,
 	}
 	return Response(response, status=status.HTTP_200_OK)
 

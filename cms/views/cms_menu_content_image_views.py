@@ -304,7 +304,7 @@ def getContentAndImagesByMenuId(request, menu_id):
     try:
         company_id = request.query_params.get('company_id')
         cms_content_obj = CMSMenuContent.objects.filter(cms_menu=menu_id, company=company_id).all()
-        print("cms_content_obj : ", cms_content_obj)
+        # print("cms_content_obj : ", cms_content_obj)
 
         serializer = CMSMenuContentListSerializer(cms_content_obj, many=True)
         

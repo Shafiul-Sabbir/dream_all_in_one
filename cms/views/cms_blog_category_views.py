@@ -33,7 +33,8 @@ import os
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
 def getAllBlogCategory(request):
-	blog_categories = BlogCategory.objects.all()
+	company_id = request.query_params.get('company_id')
+	blog_categories = BlogCategory.objects.filter(company=company_id).all()
 	total_elements = blog_categories.count()
 
 	page = request.query_params.get('page')
@@ -58,26 +59,18 @@ def getAllBlogCategory(request):
 	return Response(response, status=status.HTTP_200_OK)
 
 
-
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=BlogCategorySerializer,
-	responses=BlogCategorySerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
-
 def getAllBlogCategoryWithoutPagination(request):
-	blog_categories = BlogCategory.objects.all()
+	company_id = request.query_params.get('company_id')
+	blog_categories = BlogCategory.objects.filter(company=company_id).all()
+	total_elements = blog_categories.count()
 
 	serializer = BlogCategoryListSerializer(blog_categories, many=True)
 
-	return Response({'blog_categories': serializer.data}, status=status.HTTP_200_OK)
+	return Response({
+		'total_elments' : total_elements,
+		'blog_categories': serializer.data
+		}, status=status.HTTP_200_OK)
 
 
 
@@ -102,7 +95,8 @@ def getABlogCategory(request, pk):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchBlogCategory(request):
-	blog_categories = BlogCategoryFilter(request.GET, queryset=BlogCategory.objects.all())
+	company_id = request.query_params.get('company_id')
+	blog_categories = BlogCategoryFilter(request.GET, queryset=BlogCategory.objects.filter(company=company_id).all())
 	blog_categories = blog_categories.qs
 
 	print('searched_products: ', blog_categories)

@@ -1,7 +1,7 @@
 
 from django.urls import path
 
-from cms.views import itinerary_views as views
+from cms.views import cms_itinerary_views as views
 
 
 urlpatterns = [

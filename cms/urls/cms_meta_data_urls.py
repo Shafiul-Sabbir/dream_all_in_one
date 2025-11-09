@@ -20,8 +20,8 @@ urlpatterns = [
 	
 	path('api/v1/cms_meta_data/delete/<int:pk>', views.deleteMetaData),
 
-	path('api/v1/cms_meta_data/get_meta_data_by_cms_content_name/<str:slug>', views.getMetaDataByCMSContent),
+	path('api/v1/cms_meta_data/get_meta_data_by_cms_content_slug/<str:slug>/', views.getMetaDataByCMSContentSlug),
 
-    path('api/v1/cms_meta_data/search/<str>', views.searchMetaData),
+    path('api/v1/cms_meta_data/search/', views.searchMetaData),
 
 ]
