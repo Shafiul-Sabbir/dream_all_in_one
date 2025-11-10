@@ -11,7 +11,7 @@ from rest_framework.response import Response
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
-
+from authentication.models import  Company
 from site_settings.models import GeneralSetting
 from site_settings.serializers import GeneralSettingSerializer, GeneralSettingListSerializer
 
@@ -24,20 +24,11 @@ import datetime
 
 
 # Create your views here.
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=GeneralSettingListSerializer,
-	responses=GeneralSettingListSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllGeneralSetting(request):
-	general_settings = GeneralSetting.objects.all()
+	company_id = request.query_params.get('company_id')
+	company_instance = Company.objects.filter(id=company_id).first()
+	general_settings = GeneralSetting.objects.filter(company=company_instance).all()
 	total_elements = general_settings.count()
 
 	page = request.query_params.get('page')

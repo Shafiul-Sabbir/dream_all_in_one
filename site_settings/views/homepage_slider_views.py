@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
-
+from authentication.models import Company
 from site_settings.models import HomePageSlider
 from site_settings.serializers import HomePageSliderSerializer, HomePageSliderListSerializer
 
@@ -24,19 +24,11 @@ import datetime
 
 # Create your views here.
 
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=HomePageSliderListSerializer,
-	responses=HomePageSliderListSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllHomePageSlider(request):
-	homepage_sliders = HomePageSlider.objects.all()
+	company_id = request.query_params.get('company_id')
+	company_instance = Company.objects.filter(id=company_id).first()
+	homepage_sliders = HomePageSlider.objects.filter(company=company_instance).all()
 	total_elements = homepage_sliders.count()
 
 	page = request.query_params.get('page')

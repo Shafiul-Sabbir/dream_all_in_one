@@ -76,7 +76,7 @@ class RoleMenu(models.Model):
 
 class GeneralSetting(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     title = models.CharField(max_length=100, null=True, blank=True)
     site_name = models.CharField(max_length=100, null=True, blank=True)
@@ -154,7 +154,7 @@ class GeneralSetting(models.Model):
 
 class HomePageSlider(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     title = models.CharField(max_length=500, null=True, blank=True)
     subtitle = models.CharField(max_length=500, null=True, blank=True)

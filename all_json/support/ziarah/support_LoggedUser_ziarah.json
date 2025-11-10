@@ -1,0 +1,9 @@
+[
+{
+    "model": "support.loggeduser",
+    "pk": 3,
+    "fields": {
+        "user": 2
+    }
+}
+]

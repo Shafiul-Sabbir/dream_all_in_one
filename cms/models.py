@@ -36,7 +36,7 @@ class CMSMenu(models.Model):
         models.Index(fields=['parent']),
         ]
         constraints = [
-            models.UniqueConstraint(fields=['position', 'company'], name='unique_position_per_company')
+            models.UniqueConstraint(fields=['name', 'position', 'company'], name='unique_position_per_company')
         ]
 
     def __str__(self):
@@ -238,7 +238,7 @@ class EmailAddress(models.Model):
     message = models.TextField(null=True, blank=True)
     
     class Meta:
-        verbose_name_plural = 'Contact'
+        verbose_name_plural = 'EmailAddress'
         ordering = ('-id', )
 
     def __str__(self):

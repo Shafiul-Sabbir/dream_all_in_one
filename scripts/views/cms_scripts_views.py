@@ -11,6 +11,8 @@ def load_CMSMenu(request, company_id):
         file_path = 'all_json/cms/it/cms_CMSMenu_it.json'
     elif company_id == 2:
         file_path = 'all_json/cms/uk/cms_CMSMenu_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/cms/ziarah/cms_CMSMenu_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_cms_data = json.load(file)
@@ -21,39 +23,29 @@ def load_CMSMenu(request, company_id):
 
             fields['old_id'] = cms_data.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
             updated_by_old_id = fields.get('updated_by')
+
             if created_by_old_id:
                 try:
-                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company=company_instance)
                     fields['created_by'] = created_by_user
                 except User.DoesNotExist:
                     fields['created_by'] = None
             else:
                 fields['created_by'] = None
+
             if updated_by_old_id:
                 try:
-                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company=company_instance)
                     fields['updated_by'] = updated_by_user
                 except User.DoesNotExist:
                     fields['updated_by'] = None
             else:
                 fields['updated_by'] = None
-
-            # handle created_at and updated_at fields
-            created_at_old_id = fields.get('created_at')
-            updated_at_old_id = fields.get('updated_at')
-            if created_at_old_id:
-                fields['created_at'] = created_at_old_id
-            else:
-                fields['created_at'] = None
-            if updated_at_old_id:
-                fields['updated_at'] = updated_at_old_id
-            else:
-                fields['updated_at'] = None
 
             #we will assign the parent later
             fields.pop('parent', None)
@@ -62,7 +54,7 @@ def load_CMSMenu(request, company_id):
             print("-----")
             print("\n")
             
-            if not CMSMenu.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not CMSMenu.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 cms_menu_obj = CMSMenu.objects.create(**fields)
 
                 print(f"Saved CMSMenu, id = {cms_menu_obj.id}, old_id = {cms_menu_obj.old_id}")
@@ -77,6 +69,8 @@ def handle_CMSMenu_parent(request, company_id):
         file_path = 'all_json/cms/it/cms_CMSMenu_it.json'
     elif company_id == 2:
         file_path = 'all_json/cms/uk/cms_CMSMenu_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/cms/ziarah/cms_CMSMenu_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_file_data = json.load(file)
@@ -84,16 +78,16 @@ def handle_CMSMenu_parent(request, company_id):
             fields = data.get('fields')
             fields['old_id'] = data.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
             print("data:", fields)
 
             # retrieving parent data from file data and assigning them to the db data
             parent_id = fields.get('parent')
             print("parent_id:", parent_id)
             if parent_id is not None:
-                parent = CMSMenu.objects.filter(old_id=parent_id, company_id=company_instance).first()
+                parent = CMSMenu.objects.filter(old_id=parent_id, company=company_instance).first()
                 if parent:
-                    cms_menu_instance = CMSMenu.objects.filter(old_id=fields['old_id'], company_id=company_instance).first()
+                    cms_menu_instance = CMSMenu.objects.filter(old_id=fields['old_id'], company=company_instance).first()
                     if cms_menu_instance:
                         cms_menu_instance.parent = parent
                         cms_menu_instance.save()
@@ -108,6 +102,8 @@ def load_CMSMenuContent(request, company_id):
         file_path = 'all_json/cms/it/cms_CMSMenuContent_it.json'
     elif company_id == 2:
         file_path = 'all_json/cms/uk/cms_CMSMenuContent_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/cms/ziarah/cms_CMSMenuContent_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_cms_menu_content_data = json.load(file)
@@ -118,14 +114,14 @@ def load_CMSMenuContent(request, company_id):
 
             fields['old_id'] = cms_menu_content_data.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
             updated_by_old_id = fields.get('updated_by')
             if created_by_old_id:
                 try:
-                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company=company_instance)
                     fields['created_by'] = created_by_user
                 except User.DoesNotExist:
                     fields['created_by'] = None
@@ -133,7 +129,7 @@ def load_CMSMenuContent(request, company_id):
                 fields['created_by'] = None
             if updated_by_old_id:
                 try:
-                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company=company_instance)
                     fields['updated_by'] = updated_by_user
                 except User.DoesNotExist:
                     fields['updated_by'] = None
@@ -143,7 +139,7 @@ def load_CMSMenuContent(request, company_id):
             #handle cms_menu foreign key
             cms_menu_old_id = fields.get('cms_menu')
             if cms_menu_old_id:
-                cms_menu_instance = CMSMenu.objects.filter(old_id=cms_menu_old_id, company_id=company_instance).first()
+                cms_menu_instance = CMSMenu.objects.filter(old_id=cms_menu_old_id, company=company_instance).first()
                 if cms_menu_instance:
                     fields['cms_menu'] = cms_menu_instance
                 else:
@@ -155,7 +151,7 @@ def load_CMSMenuContent(request, company_id):
             print("-----")
             print("\n")
             
-            if not CMSMenuContent.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not CMSMenuContent.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 cms_menu_content_obj = CMSMenuContent.objects.create(**fields)
 
                 print(f"Saved CMSMenuContent, id = {cms_menu_content_obj.id}, old_id = {cms_menu_content_obj.old_id}")
@@ -170,6 +166,8 @@ def load_CMSMenuContentImage(request, company_id):
         file_path = 'all_json/cms/it/cms_CMSMenuContentImage_it.json'
     elif company_id == 2:
         file_path = 'all_json/cms/uk/cms_CMSMenuContentImage_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/cms/ziarah/cms_CMSMenuContentImage_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_cms_menu_content_image_data = json.load(file)
@@ -180,14 +178,14 @@ def load_CMSMenuContentImage(request, company_id):
 
             fields['old_id'] = cms_menu_content_image_data.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
             updated_by_old_id = fields.get('updated_by')
             if created_by_old_id:
                 try:
-                    created_by_user = User.objects.get(old_id=created_by_old_id, company_id=company_instance)
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company=company_instance)
                     fields['created_by'] = created_by_user
                 except User.DoesNotExist:
                     fields['created_by'] = None
@@ -195,7 +193,7 @@ def load_CMSMenuContentImage(request, company_id):
                 fields['created_by'] = None
             if updated_by_old_id:
                 try:
-                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company_id=company_instance)
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company=company_instance)
                     fields['updated_by'] = updated_by_user
                 except User.DoesNotExist:
                     fields['updated_by'] = None
@@ -205,7 +203,7 @@ def load_CMSMenuContentImage(request, company_id):
             #handle cms_menu foreign key
             cms_menu_old_id = fields.get('cms_menu')
             if cms_menu_old_id:
-                cms_menu_instance = CMSMenu.objects.filter(old_id=cms_menu_old_id, company_id=company_instance).first()
+                cms_menu_instance = CMSMenu.objects.filter(old_id=cms_menu_old_id, company=company_instance).first()
                 if cms_menu_instance:
                     fields['cms_menu'] = cms_menu_instance
                 else:
@@ -217,7 +215,7 @@ def load_CMSMenuContentImage(request, company_id):
             print("-----")
             print("\n")
             
-            if not CMSMenuContentImage.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not CMSMenuContentImage.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 cms_menu_content_image_obj = CMSMenuContentImage.objects.create(**fields)
 
                 print(f"Saved CMSMenuContentImage, id = {cms_menu_content_image_obj.id}, old_id = {cms_menu_content_image_obj.old_id}")
@@ -242,7 +240,7 @@ def load_BlogCategory(request, company_id):
 
             fields['old_id'] = blog_category_data.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
@@ -319,7 +317,7 @@ def load_Blog(request, company_id):
 
             fields['old_id'] = blog_data.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
@@ -396,6 +394,8 @@ def load_EmailAddress(request, company_id):
         file_path = 'all_json/cms/it/cms_EmailAddress_it.json'
     elif company_id == 2:
         file_path = 'all_json/cms/uk/cms_EmailAddress_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/cms/ziarah/cms_EmailAddress_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_email_address_data = json.load(file)
@@ -407,13 +407,13 @@ def load_EmailAddress(request, company_id):
             print('\n')
 
             fields['old_id'] = email_address_data.get('pk')
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             print("reformed email address:", fields)
             print("-----")
             print("\n")
             
-            if not EmailAddress.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not EmailAddress.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 email_address_obj = EmailAddress.objects.create(**fields)
 
                 print(f"Saved EmailAddress, id = {email_address_obj.id}, old_id = {email_address_obj.old_id}")
@@ -428,6 +428,8 @@ def load_SendEmail(request, company_id):
         file_path = 'all_json/cms/it/cms_SendEmail_it.json'
     elif company_id == 2:
         file_path = 'all_json/cms/uk/cms_SendEmail_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/cms/ziarah/cms_SendEmail_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_send_email_data = json.load(file)
@@ -439,13 +441,13 @@ def load_SendEmail(request, company_id):
             print('\n')
 
             fields['old_id'] = send_email_data.get('pk')
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             print("reformed send email:", fields)
             print("-----")
             print("\n")
             
-            if not SendEmail.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not SendEmail.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 send_email_obj = SendEmail.objects.create(**fields)
 
                 print(f"Saved SendEmail, id = {send_email_obj.id}, old_id = {send_email_obj.old_id}")
@@ -471,7 +473,7 @@ def load_Review(request, company_id):
             print('\n')
 
             fields['old_id'] = review_data.get('pk')
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
@@ -524,7 +526,7 @@ def load_Itinerary(request, company_id):
             print('\n')
 
             fields['old_id'] = itinerary_data.get('pk')
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
@@ -588,7 +590,7 @@ def load_Tag(request, company_id):
             print('\n')
 
             fields['old_id'] = tag_data.get('pk')
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')
@@ -678,7 +680,7 @@ def load_MetaData(request, company_id):
             print('\n')
 
             fields['old_id'] = meta_data.get('pk')
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
 
             # handle created_by and updated_by fields
             created_by_old_id = fields.get('created_by')

@@ -13,7 +13,7 @@ from utils.image_processing import ALL_IMAGE_FORMAT_LIST
 
 class LoggedUser(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -46,7 +46,7 @@ class LoggedUser(models.Model):
 # Create your models here.
 class TicketDepartment(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     name = models.CharField(max_length=200)
 
@@ -72,7 +72,7 @@ class TicketDepartment(models.Model):
 
 class TicketPriority(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     name = models.CharField(max_length=200)
 
@@ -98,7 +98,7 @@ class TicketPriority(models.Model):
 
 class TicketStatus(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     name = models.CharField(max_length=200)
 
@@ -124,7 +124,7 @@ class TicketStatus(models.Model):
 
 class Ticket(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     subject = models.CharField(max_length=500, null=True, blank=True)
 
@@ -154,7 +154,7 @@ class Ticket(models.Model):
 
 class TicketDetail(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, null=True, blank=True)
 
@@ -205,7 +205,7 @@ class TicketDetail(models.Model):
 
 class Message(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     sender = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="+")
     receiver = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="+")
@@ -254,7 +254,7 @@ class Message(models.Model):
 
 class TaskType(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     name = models.CharField(max_length=255)
 
@@ -276,7 +276,7 @@ class TaskType(models.Model):
 
 class ToDoTask(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
-    company_id = models.ForeignKey(Company, on_delete= models.CASCADE)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.RESTRICT, related_name='user_todo_tasks')
     task_type = models.ForeignKey(TaskType, on_delete=models.CASCADE, related_name='type_todo_task')

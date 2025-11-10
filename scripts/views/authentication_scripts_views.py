@@ -14,6 +14,8 @@ def load_users(request, company_id):
         file_path = 'all_json/authentication/it/authentication_user_it.json'
     elif company_id == 2:
         file_path = 'all_json/authentication/uk/authentication_user_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/authentication/ziarah/authentication_user_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_user_data = json.load(file)
@@ -21,17 +23,17 @@ def load_users(request, company_id):
             fields = user.get('fields')
             fields['old_id'] = user.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
             print("user:", fields)
 
             #we will assign the created_by and updated_by later
             role_id = fields.pop('role', None)
             if role_id:
-                role_instance = Role.objects.filter(old_id=role_id, company_id=company_instance).first()
+                role_instance = Role.objects.filter(old_id=role_id, company=company_instance).first()
                 fields['role'] = role_instance
             fields.pop('created_by', None)
             fields.pop('updated_by', None)
-            if not User.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not User.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 user_obj = User.objects.create(**fields)
 
                 print(f"Saved user, id = {user_obj.id}, old_id = {user_obj.old_id}")
@@ -46,8 +48,10 @@ def handle_user_metadata(request, company_id):
         file_path = 'all_json/authentication/it/authentication_user_it.json'
     elif company_id == 2:
         file_path = 'all_json/authentication/uk/authentication_user_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/authentication/ziarah/authentication_user_ziarah.json'
 
-    all_db_users = User.objects.filter(company_id=company_id)
+    all_db_users = User.objects.filter(company=company_id)
     with open(file_path, 'r', encoding='utf-8') as file:
         all_user_data = json.load(file)
         user_data_dict = {user.get('pk'): user.get('fields') for user in all_user_data}
@@ -62,12 +66,12 @@ def handle_user_metadata(request, company_id):
                 updated_at_old_id = fields.get('updated_at')
 
                 if created_by_old_id:
-                    created_by_user = User.objects.filter(old_id=created_by_old_id, company_id=company_id).first()
+                    created_by_user = User.objects.filter(old_id=created_by_old_id, company=company_id).first()
                     if created_by_user:
                         user.created_by = created_by_user
 
                 if updated_by_old_id:
-                    updated_by_user = User.objects.filter(old_id=updated_by_old_id, company_id=company_id).first()
+                    updated_by_user = User.objects.filter(old_id=updated_by_old_id, company=company_id).first()
                     if updated_by_user:
                         user.updated_by = updated_by_user
 
@@ -90,6 +94,8 @@ def load_roles(request, company_id):
         file_path = 'all_json/authentication/it/authentication_role_it.json'
     elif company_id == 2:
         file_path = 'all_json/authentication/uk/authentication_role_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/authentication/ziarah/authentication_role_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_role_data = json.load(file)
@@ -97,7 +103,7 @@ def load_roles(request, company_id):
             fields = role.get('fields')
             fields['old_id'] = role.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
             print("role:", fields)
 
             # Extract permission IDs and remove from fields, will assign later
@@ -106,13 +112,17 @@ def load_roles(request, company_id):
             #we will assign the created_by and updated_by later
             fields.pop('created_by', None)
             fields.pop('updated_by', None)
-            if not Role.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            print("updated fields : ", fields)
+
+            if not Role.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
+                print("creating role object")
                 role_obj = Role.objects.create(**fields)
+                print("role object created successfully.")
 
                 if permission_ids:
                     new_permission_ids = []
                     for id in permission_ids:
-                        permission_instance = Permission.objects.filter(old_id=id, company_id=company_instance).first()
+                        permission_instance = Permission.objects.filter(old_id=id, company=company_instance).first()
                         new_permission_ids.append(permission_instance.id)
                     print("new_permission_ids:", new_permission_ids)
                     role_obj.permissions.set(new_permission_ids)
@@ -128,8 +138,10 @@ def handle_role_metadata(request, company_id):
         file_path = 'all_json/authentication/it/authentication_role_it.json'
     elif company_id == 2:
         file_path = 'all_json/authentication/uk/authentication_role_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/authentication/ziarah/authentication_role_ziarah.json'
 
-    all_db_roles = Role.objects.filter(company_id=company_id)
+    all_db_roles = Role.objects.filter(company=company_id)
     with open(file_path, 'r', encoding='utf-8') as file:
         all_role_data = json.load(file)
         role_data_dict = {role.get('pk'): role.get('fields') for role in all_role_data}
@@ -144,12 +156,12 @@ def handle_role_metadata(request, company_id):
                 updated_at_old_id = fields.get('updated_at')
 
                 if created_by_old_id:
-                    created_by_user = User.objects.filter(old_id=created_by_old_id, company_id=company_id).first()
+                    created_by_user = User.objects.filter(old_id=created_by_old_id, company=company_id).first()
                     if created_by_user:
                         role.created_by = created_by_user
 
                 if updated_by_old_id:
-                    updated_by_user = User.objects.filter(old_id=updated_by_old_id, company_id=company_id).first()
+                    updated_by_user = User.objects.filter(old_id=updated_by_old_id, company=company_id).first()
                     if updated_by_user:
                         role.updated_by = updated_by_user
 
@@ -173,6 +185,8 @@ def load_permissions(request, company_id):
         file_path = 'all_json/authentication/it/authentication_permission_it.json'
     elif company_id == 2:
         file_path = 'all_json/authentication/uk/authentication_permission_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/authentication/ziarah/authentication_permission_ziarah.json'
 
     with open(file_path, 'r', encoding='utf-8') as file:
         all_permission_data = json.load(file)
@@ -180,11 +194,11 @@ def load_permissions(request, company_id):
             fields = permission.get('fields')
             fields['old_id'] = permission.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
             print("permission:", fields)
             fields.pop('created_by', None)
             fields.pop('updated_by', None)
-            if not Permission.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not Permission.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 permission_obj = Permission.objects.create(**fields)
                 print(f"Saved permission, id = {permission_obj.id}, old_id = {permission_obj.old_id}")
             else:
@@ -198,8 +212,10 @@ def handle_permission_metadata(request, company_id):
         file_path = 'all_json/authentication/it/authentication_permission_it.json'
     elif company_id == 2:
         file_path = 'all_json/authentication/uk/authentication_permission_uk.json'
+    elif company_id == 3:
+        file_path = 'all_json/authentication/ziarah/authentication_permission_ziarah.json'
 
-    all_db_permissions = Permission.objects.filter(company_id=company_id)
+    all_db_permissions = Permission.objects.filter(company=company_id)
     with open(file_path, 'r', encoding='utf-8') as file:
         all_permission_data = json.load(file)
         permission_data_dict = {permission.get('pk'): permission.get('fields') for permission in all_permission_data}
@@ -214,12 +230,12 @@ def handle_permission_metadata(request, company_id):
                 updated_at_old_id = fields.get('updated_at')
 
                 if created_by_old_id:
-                    created_by_user = User.objects.filter(old_id=created_by_old_id, company_id=company_id).first()
+                    created_by_user = User.objects.filter(old_id=created_by_old_id, company=company_id).first()
                     if created_by_user:
                         permission.created_by = created_by_user
 
                 if updated_by_old_id:
-                    updated_by_user = User.objects.filter(old_id=updated_by_old_id, company_id=company_id).first()
+                    updated_by_user = User.objects.filter(old_id=updated_by_old_id, company=company_id).first()
                     if updated_by_user:
                         permission.updated_by = updated_by_user
 
@@ -253,13 +269,13 @@ def load_countries(request, company_id):
             fields = country.get('fields')
             fields['old_id'] = country.get('pk')
             company_instance = Company.objects.get(id=company_id)
-            fields['company_id'] = company_instance
+            fields['company'] = company_instance
             print("country:", fields)
             #we will assign the created_by and updated_by later
             fields.pop('created_by', None)
             fields.pop('updated_by', None)
             print('\n')
-            if not Country.objects.filter(old_id=fields['old_id'], company_id=company_instance).exists():
+            if not Country.objects.filter(old_id=fields['old_id'], company=company_instance).exists():
                 country_obj = Country.objects.create(**fields)
                 print(f"Saved country, id = {country_obj.id}, old_id = {country_obj.old_id}")
             else:

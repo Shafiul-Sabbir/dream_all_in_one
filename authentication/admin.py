@@ -4,6 +4,10 @@ from django.contrib.auth.models import Group
 from .models import *
 
 
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Company._meta.fields]
+
 
 @admin.register(Designation)
 class DesignationAdmin(admin.ModelAdmin):
