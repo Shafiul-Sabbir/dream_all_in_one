@@ -1,0 +1,723 @@
+[
+{
+    "model": "cms.sendemail",
+    "pk": 1,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 2,
+    "fields": {
+        "email": "dreamziarah@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 3,
+    "fields": {
+        "email": "dreamziarah@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 4,
+    "fields": {
+        "email": "dreamziarah@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 5,
+    "fields": {
+        "email": "abcd@bmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 6,
+    "fields": {
+        "email": "babor@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 7,
+    "fields": {
+        "email": "farhad@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 8,
+    "fields": {
+        "email": "farhad@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 9,
+    "fields": {
+        "email": "abcd@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 10,
+    "fields": {
+        "email": "abcd@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 11,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 12,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 13,
+    "fields": {
+        "email": "rakib1415.acb@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 14,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 15,
+    "fields": {
+        "email": "zufarmallik@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 16,
+    "fields": {
+        "email": "zufarmallik@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 17,
+    "fields": {
+        "email": "babor@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 18,
+    "fields": {
+        "email": "litons74@yahoo.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 19,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 20,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 21,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 22,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 23,
+    "fields": {
+        "email": "mdnour954@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 24,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 25,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 26,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 27,
+    "fields": {
+        "email": "rakibiuaece@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 28,
+    "fields": {
+        "email": "rakibiuaece@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 29,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 30,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 31,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 32,
+    "fields": {
+        "email": "rakibiuaece@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 33,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 34,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 35,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 36,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 37,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 38,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 39,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 40,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 41,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 42,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 43,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 44,
+    "fields": {
+        "email": "farhad@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 45,
+    "fields": {
+        "email": "farhad@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 46,
+    "fields": {
+        "email": "aahamid2003@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 47,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 48,
+    "fields": {
+        "email": "test@demo.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 49,
+    "fields": {
+        "email": "test@demo.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 50,
+    "fields": {
+        "email": "efootball.rakib.boss@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 51,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 52,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 53,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 54,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 55,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 56,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 57,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 58,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 59,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 60,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 61,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 62,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 63,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 64,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 65,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 66,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 67,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 68,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 69,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 70,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 71,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 72,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 73,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 74,
+    "fields": {
+        "email": "ummah@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 75,
+    "fields": {
+        "email": "rakib.islam0000@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 76,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 77,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 78,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 79,
+    "fields": {
+        "email": "farhadkabir1212@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 80,
+    "fields": {
+        "email": "rakib@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 81,
+    "fields": {
+        "email": "testuser20@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 82,
+    "fields": {
+        "email": "kwnihim@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 83,
+    "fields": {
+        "email": "mdsumonislam253854@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 84,
+    "fields": {
+        "email": "md.rezaul.01758151106@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 85,
+    "fields": {
+        "email": "Uniqueheiperbusiness@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 86,
+    "fields": {
+        "email": "Uniqueheiperbusiness@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 87,
+    "fields": {
+        "email": "hridaychakma5500@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 88,
+    "fields": {
+        "email": "anasasadul87@gamil.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 89,
+    "fields": {
+        "email": "abun4588@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 90,
+    "fields": {
+        "email": "abun4588@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 91,
+    "fields": {
+        "email": "abun4588@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 92,
+    "fields": {
+        "email": "sohaghoshin711@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 93,
+    "fields": {
+        "email": "pdbfnar@gmail.xn--com-ei33bjdwja988c4za"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 94,
+    "fields": {
+        "email": "df@outlook.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 95,
+    "fields": {
+        "email": "sksiamf22@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 96,
+    "fields": {
+        "email": "sksiamf22@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 97,
+    "fields": {
+        "email": "mdjibonsaddam6@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 98,
+    "fields": {
+        "email": "hafijulrhaman9@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 99,
+    "fields": {
+        "email": "mitu95532@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 100,
+    "fields": {
+        "email": "mitu95532@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 101,
+    "fields": {
+        "email": "Shirin.khan@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 102,
+    "fields": {
+        "email": "Shirin.khan@gmail.com"
+    }
+},
+{
+    "model": "cms.sendemail",
+    "pk": 103,
+    "fields": {
+        "email": "mdnour954@gmail.com"
+    }
+}
+]

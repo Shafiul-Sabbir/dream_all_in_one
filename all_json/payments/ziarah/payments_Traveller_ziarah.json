@@ -1,0 +1,171 @@
+[
+{
+    "model": "payments.traveller",
+    "pk": 38,
+    "fields": {
+        "user": 45,
+        "phone": "01896296159",
+        "accept_offers": false,
+        "created_by": "aljabernishad",
+        "updated_by": "aljabernishad",
+        "created_at": "2025-09-09T06:48:12.386Z",
+        "updated_at": "2025-09-09T06:48:12.386Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 39,
+    "fields": {
+        "user": 46,
+        "phone": "01914895474",
+        "accept_offers": false,
+        "created_by": "abirahmed",
+        "updated_by": "abirahmed",
+        "created_at": "2025-09-09T06:51:14.062Z",
+        "updated_at": "2025-09-09T06:51:14.062Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 40,
+    "fields": {
+        "user": 47,
+        "phone": "01704404410",
+        "accept_offers": true,
+        "created_by": "morsalinvai",
+        "updated_by": "morsalinvai",
+        "created_at": "2025-09-09T07:30:10.681Z",
+        "updated_at": "2025-09-09T07:30:10.681Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 41,
+    "fields": {
+        "user": 48,
+        "phone": "+39388 774 8015",
+        "accept_offers": false,
+        "created_by": "nasimbiswas",
+        "updated_by": "nasimbiswas",
+        "created_at": "2025-09-09T10:11:32.530Z",
+        "updated_at": "2025-09-09T10:11:32.530Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 42,
+    "fields": {
+        "user": 49,
+        "phone": "01326566733",
+        "accept_offers": false,
+        "created_by": "abirahmed1",
+        "updated_by": "abirahmed1",
+        "created_at": "2025-09-15T12:13:00.314Z",
+        "updated_at": "2025-09-15T12:13:00.314Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 43,
+    "fields": {
+        "user": 50,
+        "phone": "+1 (579) 718-5025",
+        "accept_offers": true,
+        "created_by": "bellrichards",
+        "updated_by": "bellrichards",
+        "created_at": "2025-09-20T17:41:10.235Z",
+        "updated_at": "2025-09-20T17:41:10.235Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 45,
+    "fields": {
+        "user": 57,
+        "phone": "01914895000",
+        "accept_offers": false,
+        "created_by": "abirsahmeds",
+        "updated_by": "abirsahmeds",
+        "created_at": "2025-10-05T05:21:26.332Z",
+        "updated_at": "2025-10-05T05:21:26.332Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 46,
+    "fields": {
+        "user": 58,
+        "phone": "01881652629",
+        "accept_offers": true,
+        "created_by": "shafiulsabbir",
+        "updated_by": "shafiulsabbir",
+        "created_at": "2025-10-07T10:09:44.595Z",
+        "updated_at": "2025-10-07T10:09:44.595Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 47,
+    "fields": {
+        "user": 59,
+        "phone": "01704404416",
+        "accept_offers": true,
+        "created_by": "mdfaisalseo",
+        "updated_by": "mdfaisalseo",
+        "created_at": "2025-10-09T11:36:54.642Z",
+        "updated_at": "2025-10-09T11:36:54.642Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 48,
+    "fields": {
+        "user": 60,
+        "phone": "01704404417",
+        "accept_offers": true,
+        "created_by": "mdrakibislam",
+        "updated_by": "mdrakibislam",
+        "created_at": "2025-10-09T12:39:53.267Z",
+        "updated_at": "2025-10-09T12:39:53.267Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 49,
+    "fields": {
+        "user": 61,
+        "phone": "+96894834916",
+        "accept_offers": true,
+        "created_by": "aamirkhan",
+        "updated_by": "aamirkhan",
+        "created_at": "2025-10-13T10:36:54.817Z",
+        "updated_at": "2025-10-13T10:36:54.817Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 50,
+    "fields": {
+        "user": 62,
+        "phone": "07882524138",
+        "accept_offers": false,
+        "created_by": "azharsacranie",
+        "updated_by": "azharsacranie",
+        "created_at": "2025-10-17T11:24:07.783Z",
+        "updated_at": "2025-10-17T11:24:07.783Z"
+    }
+},
+{
+    "model": "payments.traveller",
+    "pk": 51,
+    "fields": {
+        "user": 63,
+        "phone": "+1 (705) 336-3472",
+        "accept_offers": false,
+        "created_by": "maryamdickson",
+        "updated_by": "maryamdickson",
+        "created_at": "2025-10-22T04:48:58.451Z",
+        "updated_at": "2025-10-22T04:48:58.451Z"
+    }
+}
+]

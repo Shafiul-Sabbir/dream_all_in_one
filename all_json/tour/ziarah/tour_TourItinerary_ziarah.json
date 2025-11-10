@@ -1,0 +1,1538 @@
+[
+{
+    "model": "tour.touritinerary",
+    "pk": 443,
+    "fields": {
+        "tour": 21,
+        "title": "Jabal al Thawr",
+        "description": "<p>Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.</p>",
+        "location": null,
+        "lat": 21.37368955625058,
+        "long": 39.85826159279121,
+        "created_at": "2025-09-18T11:07:53.852Z",
+        "updated_at": "2025-09-18T11:07:53.852Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 444,
+    "fields": {
+        "tour": 21,
+        "title": "Mina",
+        "description": "<p>Visit the holy valley of Mina, where pilgrims participate in symbolic rituals during Hajj.</p>",
+        "location": "",
+        "lat": 21.424419936541714,
+        "long": 39.87282806790779,
+        "created_at": "2025-09-18T11:07:53.863Z",
+        "updated_at": "2025-09-18T11:07:53.864Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 445,
+    "fields": {
+        "tour": 21,
+        "title": "Jamarat",
+        "description": "<p>Reflect at the Jamarat, the symbolic pillars where pilgrims cast stones as part of the Hajj rituals.</p>",
+        "location": "",
+        "lat": 21.421833771854097,
+        "long": 39.87222672397336,
+        "created_at": "2025-09-18T11:07:53.876Z",
+        "updated_at": "2025-09-18T11:07:53.876Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 446,
+    "fields": {
+        "tour": 21,
+        "title": "Arafat",
+        "description": "<p>Experience the sacred plains of Arafat, where the most important Hajj ritual takes place.</p>",
+        "location": "",
+        "lat": 21.354504151215252,
+        "long": 39.98346542556637,
+        "created_at": "2025-09-18T11:07:53.888Z",
+        "updated_at": "2025-09-18T11:07:53.888Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 447,
+    "fields": {
+        "tour": 21,
+        "title": "Jabal ar Rahmah",
+        "description": "<p>Stand where Prophet Muhammad (peace be upon him) delivered his Farewell Sermon.</p>",
+        "location": "",
+        "lat": 21.35507410919486,
+        "long": 39.984075731377615,
+        "created_at": "2025-09-18T11:07:53.899Z",
+        "updated_at": "2025-09-18T11:07:53.899Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 448,
+    "fields": {
+        "tour": 21,
+        "title": "Muzdalifah",
+        "description": "<p>Explore the serene Muzdalifah, a site where pilgrims spend a night during Hajj.</p>",
+        "location": "",
+        "lat": 21.38784728963403,
+        "long": 39.91445434991036,
+        "created_at": "2025-09-18T11:07:53.911Z",
+        "updated_at": "2025-09-18T11:07:53.911Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 449,
+    "fields": {
+        "tour": 21,
+        "title": "Waadi Muhassar",
+        "description": "<p>Discover Waadi Muhassar, a place of historical and spiritual significance.</p>",
+        "location": "",
+        "lat": 21.392693,
+        "long": 39.9082588,
+        "created_at": "2025-09-18T11:07:53.924Z",
+        "updated_at": "2025-09-18T11:07:53.924Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 450,
+    "fields": {
+        "tour": 21,
+        "title": "Masjid Nimrah",
+        "description": "<p>Visit Masjid Nimrah, where the Prophet Muhammad (peace be upon him) delivered his Farewell Sermon during his final pilgrimage.</p>",
+        "location": "",
+        "lat": 21.353844881177626,
+        "long": 39.966266455424986,
+        "created_at": "2025-09-18T11:07:53.939Z",
+        "updated_at": "2025-09-18T11:07:53.939Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 451,
+    "fields": {
+        "tour": 21,
+        "title": "Masjid Aisha",
+        "description": "<p>Explore Masjid Aisha, a site of importance during the Hajj journey.</p>",
+        "location": "",
+        "lat": 21.46809923889013,
+        "long": 39.80127796599816,
+        "created_at": "2025-09-18T11:07:53.952Z",
+        "updated_at": "2025-09-18T11:07:53.952Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 452,
+    "fields": {
+        "tour": 21,
+        "title": "Masjid-Al-Jinn",
+        "description": "<p>Delve into the mysteries of Masjid al-Jin, a mosque mentioned in Islamic tradition.</p>",
+        "location": "",
+        "lat": 21.4336754080969,
+        "long": 39.82899171632335,
+        "created_at": "2025-09-18T11:07:53.965Z",
+        "updated_at": "2025-09-18T11:07:53.965Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 453,
+    "fields": {
+        "tour": 21,
+        "title": "Jabal al-Hira",
+        "description": "<p>The cave where the Prophet Muhammad (peace be upon him) received the first revelation.</p>",
+        "location": "",
+        "lat": 21.45979562105067,
+        "long": 39.86499080573646,
+        "created_at": "2025-09-18T11:07:53.979Z",
+        "updated_at": "2025-09-18T11:07:53.979Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 454,
+    "fields": {
+        "tour": 21,
+        "title": "Jannatul Mualla",
+        "description": "<p>Pay your respects at Jannatul Mualla, the sacred cemetery in Makkah.</p>",
+        "location": "",
+        "lat": 21.434961562621144,
+        "long": 39.8291221639195,
+        "created_at": "2025-09-18T11:07:53.992Z",
+        "updated_at": "2025-09-18T11:07:53.992Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 456,
+    "fields": {
+        "tour": 30,
+        "title": "Al Masjid Al Nabawi (The Prophet's Mosque)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Begin your tour with a visit to the magnificent Al Masjid Al Nabawi, one of the largest mosques in the world. Enter through the King Fahad Gate No. 334 and immerse yourself in the tranquility of this sacred site.</span></p>",
+        "location": null,
+        "lat": 24.467450877571522,
+        "long": 39.61156219101109,
+        "created_at": "2025-09-18T11:07:54.019Z",
+        "updated_at": "2025-09-18T11:07:54.019Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 457,
+    "fields": {
+        "tour": 30,
+        "title": "Al-Baqi'",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Continue to Al-Baqi', the famous cemetery adjacent to the mosque, which serves as the final resting place of many family members of the Prophet (PBUH) and his companions.</span></p>",
+        "location": "",
+        "lat": 24.467335012425984,
+        "long": 39.61684289286279,
+        "created_at": "2025-09-18T11:07:54.032Z",
+        "updated_at": "2025-09-18T11:07:54.032Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 458,
+    "fields": {
+        "tour": 30,
+        "title": "Al Manakhah Square",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Discover Al Manakhah Square, where you can explore the surrounding area including Al Ghamama Mosque and the start of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.465199947314158,
+        "long": 39.607505225865566,
+        "created_at": "2025-09-18T11:07:54.045Z",
+        "updated_at": "2025-09-18T11:07:54.045Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 459,
+    "fields": {
+        "tour": 30,
+        "title": "Al Salam Gate",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Proceed to the Al Salam Gate and take in the view of the Saqeefah Bani Saedah, a notable historical site.</span></p>",
+        "location": "",
+        "lat": 24.469156793427317,
+        "long": 39.605416393337435,
+        "created_at": "2025-09-18T11:07:54.058Z",
+        "updated_at": "2025-09-18T11:07:54.058Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 460,
+    "fields": {
+        "tour": 30,
+        "title": "Uhud Battlefield",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the Uhud Battlefield, where the famous battle took place. Pay your respects at the Mount Uhud and the Graveyard of Martyrs.</span></p>",
+        "location": "",
+        "lat": 24.502031469015225,
+        "long": 39.60699855711036,
+        "created_at": "2025-09-18T11:07:54.072Z",
+        "updated_at": "2025-09-18T11:07:54.072Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 461,
+    "fields": {
+        "tour": 30,
+        "title": "Al-Noor Mall",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">After a morning of historical exploration, enjoy some leisure time at Al-Noor Mall with various dining and shopping options.</span></p>",
+        "location": "",
+        "lat": 24.496532643961604,
+        "long": 39.59437323547138,
+        "created_at": "2025-09-18T11:07:54.089Z",
+        "updated_at": "2025-09-18T11:07:54.089Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 462,
+    "fields": {
+        "tour": 30,
+        "title": "Sultana Road",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Drive along Sultana Road, where you can see the bustling city life with a mix of modernity and tradition.</span></p>",
+        "location": "",
+        "lat": 24.477314367420405,
+        "long": 39.60519546589561,
+        "created_at": "2025-09-18T11:07:54.102Z",
+        "updated_at": "2025-09-18T11:07:54.102Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 463,
+    "fields": {
+        "tour": 30,
+        "title": "Al Qiblatayn Mosque",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Witness the Al Qiblatayn Mosque, famous for being the site where the Qibla was changed from Jerusalem to Mecca.</span></p>",
+        "location": "",
+        "lat": 24.484167599286454,
+        "long": 39.578769858510256,
+        "created_at": "2025-09-18T11:07:54.118Z",
+        "updated_at": "2025-09-18T11:07:54.119Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 464,
+    "fields": {
+        "tour": 30,
+        "title": "The Trench Battlefield (Battle of the Trench)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the site of the Battle of the Trench, an important event in Islamic history.</span></p>",
+        "location": "",
+        "lat": 24.48338231451426,
+        "long": 39.583294364317794,
+        "created_at": "2025-09-18T11:07:54.132Z",
+        "updated_at": "2025-09-18T11:07:54.132Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 465,
+    "fields": {
+        "tour": 30,
+        "title": "Masjid Quba",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Make a stop at Masjid Quba, the first mosque in Islamic history, at the end of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.439455633036477,
+        "long": 39.61753193890599,
+        "created_at": "2025-09-18T11:07:54.148Z",
+        "updated_at": "2025-09-18T11:07:54.148Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 466,
+    "fields": {
+        "tour": 30,
+        "title": "Al Hijaz Railway Station",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Explore the historic Al Hijaz Railway Station and the adjacent Dar Al Qalam Museum.</span></p>",
+        "location": "",
+        "lat": 24.46191848729713,
+        "long": 39.60089276969026,
+        "created_at": "2025-09-18T11:07:54.162Z",
+        "updated_at": "2025-09-18T11:07:54.162Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 467,
+    "fields": {
+        "tour": 30,
+        "title": "Quba Boulevard",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Conclude your tour with a drive along Quba Boulevard, which leads back into the city center.</span></p>",
+        "location": "",
+        "lat": 24.40796096613517,
+        "long": 39.6257298361603,
+        "created_at": "2025-09-18T11:07:54.175Z",
+        "updated_at": "2025-09-18T11:07:54.175Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 468,
+    "fields": {
+        "tour": 28,
+        "title": "Al Masjid Al Nabawi (The Prophet's Mosque)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Begin your tour with a visit to the magnificent Al Masjid Al Nabawi, one of the largest mosques in the world. Enter through the King Fahad Gate No. 334 and immerse yourself in the tranquility of this sacred site.</span></p>",
+        "location": null,
+        "lat": 24.467450877571522,
+        "long": 39.61156219101109,
+        "created_at": "2025-09-18T11:07:54.193Z",
+        "updated_at": "2025-09-18T11:07:54.193Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 469,
+    "fields": {
+        "tour": 28,
+        "title": "Al-Baqi'",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Continue to Al-Baqi', the famous cemetery adjacent to the mosque, which serves as the final resting place of many family members of the Prophet (PBUH) and his companions.</span></p>",
+        "location": "",
+        "lat": 24.467335012425984,
+        "long": 39.61684289286279,
+        "created_at": "2025-09-18T11:07:54.207Z",
+        "updated_at": "2025-09-18T11:07:54.207Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 470,
+    "fields": {
+        "tour": 28,
+        "title": "Al Manakhah Square",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Discover Al Manakhah Square, where you can explore the surrounding area including Al Ghamama Mosque and the start of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.465199947314158,
+        "long": 39.607505225865566,
+        "created_at": "2025-09-18T11:07:54.219Z",
+        "updated_at": "2025-09-18T11:07:54.219Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 471,
+    "fields": {
+        "tour": 28,
+        "title": "Al Salam Gate",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Proceed to the Al Salam Gate and take in the view of the Saqeefah Bani Saedah, a notable historical site.</span></p>",
+        "location": "",
+        "lat": 24.469156793427317,
+        "long": 39.605416393337435,
+        "created_at": "2025-09-18T11:07:54.231Z",
+        "updated_at": "2025-09-18T11:07:54.231Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 472,
+    "fields": {
+        "tour": 28,
+        "title": "Uhud Battlefield",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the Uhud Battlefield, where the famous battle took place. Pay your respects at the Mount Uhud and the Graveyard of Martyrs.</span></p>",
+        "location": "",
+        "lat": 24.502031469015225,
+        "long": 39.60699855711036,
+        "created_at": "2025-09-18T11:07:54.244Z",
+        "updated_at": "2025-09-18T11:07:54.244Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 473,
+    "fields": {
+        "tour": 28,
+        "title": "Al-Noor Mall",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">After a morning of historical exploration, enjoy some leisure time at Al-Noor Mall with various dining and shopping options.</span></p>",
+        "location": "",
+        "lat": 24.496532643961604,
+        "long": 39.59437323547138,
+        "created_at": "2025-09-18T11:07:54.299Z",
+        "updated_at": "2025-09-18T11:07:54.299Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 474,
+    "fields": {
+        "tour": 28,
+        "title": "Sultana Road",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Drive along Sultana Road, where you can see the bustling city life with a mix of modernity and tradition.</span></p>",
+        "location": "",
+        "lat": 24.477314367420405,
+        "long": 39.60519546589561,
+        "created_at": "2025-09-18T11:07:54.340Z",
+        "updated_at": "2025-09-18T11:07:54.340Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 475,
+    "fields": {
+        "tour": 28,
+        "title": "Al Qiblatayn Mosque",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Witness the Al Qiblatayn Mosque, famous for being the site where the Qibla was changed from Jerusalem to Mecca.</span></p>",
+        "location": "",
+        "lat": 24.484167599286454,
+        "long": 39.578769858510256,
+        "created_at": "2025-09-18T11:07:54.404Z",
+        "updated_at": "2025-09-18T11:07:54.405Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 476,
+    "fields": {
+        "tour": 28,
+        "title": "The Trench Battlefield (Battle of the Trench)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the site of the Battle of the Trench, an important event in Islamic history.</span></p>",
+        "location": "",
+        "lat": 24.48338231451426,
+        "long": 39.583294364317794,
+        "created_at": "2025-09-18T11:07:54.459Z",
+        "updated_at": "2025-09-18T11:07:54.459Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 477,
+    "fields": {
+        "tour": 28,
+        "title": "Masjid Quba",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Make a stop at Masjid Quba, the first mosque in Islamic history, at the end of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.439455633036477,
+        "long": 39.61753193890599,
+        "created_at": "2025-09-18T11:07:54.512Z",
+        "updated_at": "2025-09-18T11:07:54.512Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 478,
+    "fields": {
+        "tour": 28,
+        "title": "Al Hijaz Railway Station",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Explore the historic Al Hijaz Railway Station and the adjacent Dar Al Qalam Museum.</span></p>",
+        "location": "",
+        "lat": 24.46191848729713,
+        "long": 39.60089276969026,
+        "created_at": "2025-09-18T11:07:54.557Z",
+        "updated_at": "2025-09-18T11:07:54.557Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 479,
+    "fields": {
+        "tour": 28,
+        "title": "Quba Boulevard",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Conclude your tour with a drive along Quba Boulevard, which leads back into the city center.</span></p>",
+        "location": "",
+        "lat": 24.40796096613517,
+        "long": 39.6257298361603,
+        "created_at": "2025-09-18T11:07:54.600Z",
+        "updated_at": "2025-09-18T11:07:54.600Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 480,
+    "fields": {
+        "tour": 27,
+        "title": "Al Masjid Al Nabawi (The Prophet's Mosque)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Begin your tour with a visit to the magnificent Al Masjid Al Nabawi, one of the largest mosques in the world. Enter through the King Fahad Gate No. 334 and immerse yourself in the tranquility of this sacred site.</span></p>",
+        "location": null,
+        "lat": 24.467450877571522,
+        "long": 39.61156219101109,
+        "created_at": "2025-09-18T11:07:54.639Z",
+        "updated_at": "2025-09-18T11:07:54.639Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 481,
+    "fields": {
+        "tour": 27,
+        "title": "Al-Baqi'",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Continue to Al-Baqi', the famous cemetery adjacent to the mosque, which serves as the final resting place of many family members of the Prophet (PBUH) and his companions.</span></p>",
+        "location": "",
+        "lat": 24.467335012425984,
+        "long": 39.61684289286279,
+        "created_at": "2025-09-18T11:07:54.707Z",
+        "updated_at": "2025-09-18T11:07:54.707Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 482,
+    "fields": {
+        "tour": 27,
+        "title": "Al Manakhah Square",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Discover Al Manakhah Square, where you can explore the surrounding area including Al Ghamama Mosque and the start of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.465199947314158,
+        "long": 39.607505225865566,
+        "created_at": "2025-09-18T11:07:54.733Z",
+        "updated_at": "2025-09-18T11:07:54.733Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 483,
+    "fields": {
+        "tour": 27,
+        "title": "Al Salam Gate",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Proceed to the Al Salam Gate and take in the view of the Saqeefah Bani Saedah, a notable historical site.</span></p>",
+        "location": "",
+        "lat": 24.469156793427317,
+        "long": 39.605416393337435,
+        "created_at": "2025-09-18T11:07:54.747Z",
+        "updated_at": "2025-09-18T11:07:54.747Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 484,
+    "fields": {
+        "tour": 27,
+        "title": "Uhud Battlefield",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the Uhud Battlefield, where the famous battle took place. Pay your respects at the Mount Uhud and the Graveyard of Martyrs.</span></p>",
+        "location": "",
+        "lat": 24.502031469015225,
+        "long": 39.60699855711036,
+        "created_at": "2025-09-18T11:07:54.760Z",
+        "updated_at": "2025-09-18T11:07:54.760Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 485,
+    "fields": {
+        "tour": 27,
+        "title": "Al-Noor Mall",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">After a morning of historical exploration, enjoy some leisure time at Al-Noor Mall with various dining and shopping options.</span></p>",
+        "location": "",
+        "lat": 24.496532643961604,
+        "long": 39.59437323547138,
+        "created_at": "2025-09-18T11:07:54.775Z",
+        "updated_at": "2025-09-18T11:07:54.775Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 486,
+    "fields": {
+        "tour": 27,
+        "title": "Sultana Road",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Drive along Sultana Road, where you can see the bustling city life with a mix of modernity and tradition.</span></p>",
+        "location": "",
+        "lat": 24.477314367420405,
+        "long": 39.60519546589561,
+        "created_at": "2025-09-18T11:07:54.788Z",
+        "updated_at": "2025-09-18T11:07:54.788Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 487,
+    "fields": {
+        "tour": 27,
+        "title": "Al Qiblatayn Mosque",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Witness the Al Qiblatayn Mosque, famous for being the site where the Qibla was changed from Jerusalem to Mecca.</span></p>",
+        "location": "",
+        "lat": 24.484167599286454,
+        "long": 39.578769858510256,
+        "created_at": "2025-09-18T11:07:54.801Z",
+        "updated_at": "2025-09-18T11:07:54.801Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 488,
+    "fields": {
+        "tour": 27,
+        "title": "The Trench Battlefield (Battle of the Trench)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the site of the Battle of the Trench, an important event in Islamic history.</span></p>",
+        "location": "",
+        "lat": 24.48338231451426,
+        "long": 39.583294364317794,
+        "created_at": "2025-09-18T11:07:54.815Z",
+        "updated_at": "2025-09-18T11:07:54.815Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 489,
+    "fields": {
+        "tour": 27,
+        "title": "Masjid Quba",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Make a stop at Masjid Quba, the first mosque in Islamic history, at the end of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.439455633036477,
+        "long": 39.61753193890599,
+        "created_at": "2025-09-18T11:07:54.832Z",
+        "updated_at": "2025-09-18T11:07:54.832Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 490,
+    "fields": {
+        "tour": 27,
+        "title": "Al Hijaz Railway Station",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Explore the historic Al Hijaz Railway Station and the adjacent Dar Al Qalam Museum.</span></p>",
+        "location": "",
+        "lat": 24.46191848729713,
+        "long": 39.60089276969026,
+        "created_at": "2025-09-18T11:07:54.846Z",
+        "updated_at": "2025-09-18T11:07:54.846Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 491,
+    "fields": {
+        "tour": 27,
+        "title": "Quba Boulevard",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Conclude your tour with a drive along Quba Boulevard, which leads back into the city center.</span></p>",
+        "location": "",
+        "lat": 24.40796096613517,
+        "long": 39.6257298361603,
+        "created_at": "2025-09-18T11:07:54.860Z",
+        "updated_at": "2025-09-18T11:07:54.860Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 492,
+    "fields": {
+        "tour": 26,
+        "title": "Al Masjid Al Nabawi (The Prophet's Mosque)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Begin your tour with a visit to the magnificent Al Masjid Al Nabawi, one of the largest mosques in the world. Enter through the King Fahad Gate No. 334 and immerse yourself in the tranquility of this sacred site.</span></p>",
+        "location": null,
+        "lat": 24.467450877571522,
+        "long": 39.61156219101109,
+        "created_at": "2025-09-18T11:07:54.874Z",
+        "updated_at": "2025-09-18T11:07:54.874Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 493,
+    "fields": {
+        "tour": 26,
+        "title": "Al-Baqi'",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Continue to Al-Baqi', the famous cemetery adjacent to the mosque, which serves as the final resting place of many family members of the Prophet (PBUH) and his companions.</span></p>",
+        "location": "",
+        "lat": 24.467335012425984,
+        "long": 39.61684289286279,
+        "created_at": "2025-09-18T11:07:54.887Z",
+        "updated_at": "2025-09-18T11:07:54.887Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 494,
+    "fields": {
+        "tour": 26,
+        "title": "Al Manakhah Square",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Discover Al Manakhah Square, where you can explore the surrounding area including Al Ghamama Mosque and the start of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.465199947314158,
+        "long": 39.607505225865566,
+        "created_at": "2025-09-18T11:07:54.901Z",
+        "updated_at": "2025-09-18T11:07:54.901Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 495,
+    "fields": {
+        "tour": 26,
+        "title": "Al Salam Gate",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Proceed to the Al Salam Gate and take in the view of the Saqeefah Bani Saedah, a notable historical site.</span></p>",
+        "location": "",
+        "lat": 24.469156793427317,
+        "long": 39.605416393337435,
+        "created_at": "2025-09-18T11:07:54.914Z",
+        "updated_at": "2025-09-18T11:07:54.914Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 496,
+    "fields": {
+        "tour": 26,
+        "title": "Uhud Battlefield",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the Uhud Battlefield, where the famous battle took place. Pay your respects at the Mount Uhud and the Graveyard of Martyrs.</span></p>",
+        "location": "",
+        "lat": 24.502031469015225,
+        "long": 39.60699855711036,
+        "created_at": "2025-09-18T11:07:54.928Z",
+        "updated_at": "2025-09-18T11:07:54.928Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 497,
+    "fields": {
+        "tour": 26,
+        "title": "Al-Noor Mall",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">After a morning of historical exploration, enjoy some leisure time at Al-Noor Mall with various dining and shopping options.</span></p>",
+        "location": "",
+        "lat": 24.496532643961604,
+        "long": 39.59437323547138,
+        "created_at": "2025-09-18T11:07:54.942Z",
+        "updated_at": "2025-09-18T11:07:54.942Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 498,
+    "fields": {
+        "tour": 26,
+        "title": "Sultana Road",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Drive along Sultana Road, where you can see the bustling city life with a mix of modernity and tradition.</span></p>",
+        "location": "",
+        "lat": 24.477314367420405,
+        "long": 39.60519546589561,
+        "created_at": "2025-09-18T11:07:54.955Z",
+        "updated_at": "2025-09-18T11:07:54.955Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 499,
+    "fields": {
+        "tour": 26,
+        "title": "Al Qiblatayn Mosque",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Witness the Al Qiblatayn Mosque, famous for being the site where the Qibla was changed from Jerusalem to Mecca.</span></p>",
+        "location": "",
+        "lat": 24.484167599286454,
+        "long": 39.578769858510256,
+        "created_at": "2025-09-18T11:07:54.969Z",
+        "updated_at": "2025-09-18T11:07:54.969Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 500,
+    "fields": {
+        "tour": 26,
+        "title": "The Trench Battlefield (Battle of the Trench)",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Visit the site of the Battle of the Trench, an important event in Islamic history.</span></p>",
+        "location": "",
+        "lat": 24.48338231451426,
+        "long": 39.583294364317794,
+        "created_at": "2025-09-18T11:07:54.987Z",
+        "updated_at": "2025-09-18T11:07:54.987Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 501,
+    "fields": {
+        "tour": 26,
+        "title": "Masjid Quba",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Make a stop at Masjid Quba, the first mosque in Islamic history, at the end of the path of AL Sunnah.</span></p>",
+        "location": "",
+        "lat": 24.439455633036477,
+        "long": 39.61753193890599,
+        "created_at": "2025-09-18T11:07:55Z",
+        "updated_at": "2025-09-18T11:07:55Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 502,
+    "fields": {
+        "tour": 26,
+        "title": "Al Hijaz Railway Station",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Explore the historic Al Hijaz Railway Station and the adjacent Dar Al Qalam Museum.</span></p>",
+        "location": "",
+        "lat": 24.46191848729713,
+        "long": 39.60089276969026,
+        "created_at": "2025-09-18T11:07:55.016Z",
+        "updated_at": "2025-09-18T11:07:55.016Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 503,
+    "fields": {
+        "tour": 26,
+        "title": "Quba Boulevard",
+        "description": "<p><span style=\"font-weight: 400; color: #000000;\">Conclude your tour with a drive along Quba Boulevard, which leads back into the city center.</span></p>",
+        "location": "",
+        "lat": 24.40796096613517,
+        "long": 39.6257298361603,
+        "created_at": "2025-09-18T11:07:55.033Z",
+        "updated_at": "2025-09-18T11:07:55.033Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 504,
+    "fields": {
+        "tour": 22,
+        "title": "Jabal al Thawr",
+        "description": "<p>Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.</p>",
+        "location": null,
+        "lat": 21.37368955625058,
+        "long": 39.85826159279121,
+        "created_at": "2025-09-18T11:07:55.046Z",
+        "updated_at": "2025-09-18T11:07:55.046Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 505,
+    "fields": {
+        "tour": 22,
+        "title": "Mina",
+        "description": "<p>Visit the holy valley of Mina, where pilgrims participate in symbolic rituals during Hajj.</p>",
+        "location": "",
+        "lat": 21.424419936541714,
+        "long": 39.87282806790779,
+        "created_at": "2025-09-18T11:07:55.060Z",
+        "updated_at": "2025-09-18T11:07:55.060Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 506,
+    "fields": {
+        "tour": 22,
+        "title": "Jamarat",
+        "description": "<p>Reflect at the Jamarat, the symbolic pillars where pilgrims cast stones as part of the Hajj rituals.</p>",
+        "location": "",
+        "lat": 21.421833771854097,
+        "long": 39.87222672397336,
+        "created_at": "2025-09-18T11:07:55.072Z",
+        "updated_at": "2025-09-18T11:07:55.072Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 507,
+    "fields": {
+        "tour": 22,
+        "title": "Arafat",
+        "description": "<p>&nbsp;Experience the sacred plains of Arafat, where the most important Hajj ritual takes place.</p>",
+        "location": "",
+        "lat": 21.354504151215252,
+        "long": 39.98346542556637,
+        "created_at": "2025-09-18T11:07:55.086Z",
+        "updated_at": "2025-09-18T11:07:55.086Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 508,
+    "fields": {
+        "tour": 22,
+        "title": "Jabal ar Rahmah",
+        "description": "<p>Stand where Prophet Muhammad (peace be upon him) delivered his Farewell Sermon.</p>",
+        "location": "",
+        "lat": 21.35507410919486,
+        "long": 39.984075731377615,
+        "created_at": "2025-09-18T11:07:55.099Z",
+        "updated_at": "2025-09-18T11:07:55.099Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 509,
+    "fields": {
+        "tour": 22,
+        "title": "Muzdalifah",
+        "description": "<p>Explore the serene Muzdalifah, a site where pilgrims spend a night during Hajj.</p>",
+        "location": "",
+        "lat": 21.38784728963403,
+        "long": 39.91445434991036,
+        "created_at": "2025-09-18T11:07:55.113Z",
+        "updated_at": "2025-09-18T11:07:55.113Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 510,
+    "fields": {
+        "tour": 22,
+        "title": "Waadi Muhassar",
+        "description": "<p>Discover Waadi Muhassar, a place of historical and spiritual significance.</p>",
+        "location": "",
+        "lat": 21.392693,
+        "long": 39.9082588,
+        "created_at": "2025-09-18T11:07:55.126Z",
+        "updated_at": "2025-09-18T11:07:55.126Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 511,
+    "fields": {
+        "tour": 22,
+        "title": "Masjid Nimrah",
+        "description": "<p>Visit Masjid Nimrah, where the Prophet Muhammad (peace be upon him) delivered his Farewell Sermon during his final pilgrimage.</p>",
+        "location": "",
+        "lat": 21.353844881177626,
+        "long": 39.966266455424986,
+        "created_at": "2025-09-18T11:07:55.139Z",
+        "updated_at": "2025-09-18T11:07:55.139Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 512,
+    "fields": {
+        "tour": 22,
+        "title": "Masjid Aisha",
+        "description": "<p>Explore Masjid Aisha, a site of importance during the Hajj journey.</p>",
+        "location": "",
+        "lat": 21.46809923889013,
+        "long": 39.80127796599816,
+        "created_at": "2025-09-18T11:07:55.153Z",
+        "updated_at": "2025-09-18T11:07:55.153Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 513,
+    "fields": {
+        "tour": 22,
+        "title": "Masjid-Al-Jinn",
+        "description": "<p>Delve into the mysteries of Masjid al-Jin, a mosque mentioned in Islamic tradition.</p>\n<p>&nbsp;</p>",
+        "location": "",
+        "lat": 21.4336754080969,
+        "long": 39.82899171632335,
+        "created_at": "2025-09-18T11:07:55.168Z",
+        "updated_at": "2025-09-18T11:07:55.168Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 514,
+    "fields": {
+        "tour": 22,
+        "title": "Jabal al-Hira",
+        "description": "<p>The cave where the Prophet Muhammad (peace be upon him) received the first revelation.</p>\n<p>&nbsp;</p>",
+        "location": "",
+        "lat": 21.45979562105067,
+        "long": 39.86499080573646,
+        "created_at": "2025-09-18T11:07:55.215Z",
+        "updated_at": "2025-09-18T11:07:55.215Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 515,
+    "fields": {
+        "tour": 22,
+        "title": "Jannatul Mualla",
+        "description": "<p>Pay your respects at Jannatul Mualla, the sacred cemetery in Makkah.</p>\n<p>&nbsp;</p>",
+        "location": "",
+        "lat": 21.434961562621144,
+        "long": 39.8291221639195,
+        "created_at": "2025-09-18T11:07:55.268Z",
+        "updated_at": "2025-09-18T11:07:55.268Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 517,
+    "fields": {
+        "tour": 19,
+        "title": "Jabal al Thawr",
+        "description": "<p>Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.</p>",
+        "location": null,
+        "lat": 21.37368955625058,
+        "long": 39.85826159279121,
+        "created_at": "2025-09-18T11:07:55.352Z",
+        "updated_at": "2025-09-18T11:07:55.352Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 518,
+    "fields": {
+        "tour": 19,
+        "title": "Mina",
+        "description": "<p>Visit the holy valley of Mina, where pilgrims participate in symbolic rituals during Hajj.</p>",
+        "location": "",
+        "lat": 21.424419936541714,
+        "long": 39.87282806790779,
+        "created_at": "2025-09-18T11:07:55.392Z",
+        "updated_at": "2025-09-18T11:07:55.392Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 519,
+    "fields": {
+        "tour": 19,
+        "title": "Jamarat",
+        "description": "<p>Reflect at the Jamarat, the symbolic pillars where pilgrims cast stones as part of the Hajj rituals.</p>",
+        "location": "",
+        "lat": 21.421833771854097,
+        "long": 39.87222672397336,
+        "created_at": "2025-09-18T11:07:55.446Z",
+        "updated_at": "2025-09-18T11:07:55.446Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 520,
+    "fields": {
+        "tour": 19,
+        "title": "Arafat",
+        "description": "<p>Experience the sacred plains of Arafat, where the most important Hajj ritual takes place.</p>",
+        "location": "",
+        "lat": 21.354504151215252,
+        "long": 39.98346542556637,
+        "created_at": "2025-09-18T11:07:55.495Z",
+        "updated_at": "2025-09-18T11:07:55.495Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 521,
+    "fields": {
+        "tour": 19,
+        "title": "Jabal ar Rahmah",
+        "description": "<p>Stand where Prophet Muhammad (peace be upon him) delivered his Farewell Sermon.</p>",
+        "location": "",
+        "lat": 21.35507410919486,
+        "long": 39.984075731377615,
+        "created_at": "2025-09-18T11:07:55.540Z",
+        "updated_at": "2025-09-18T11:07:55.540Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 522,
+    "fields": {
+        "tour": 19,
+        "title": "Muzdalifah",
+        "description": "<p>Explore the serene Muzdalifah, a site where pilgrims spend a night during Hajj.</p>",
+        "location": "",
+        "lat": 21.38784728963403,
+        "long": 39.91445434991036,
+        "created_at": "2025-09-18T11:07:55.594Z",
+        "updated_at": "2025-09-18T11:07:55.594Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 523,
+    "fields": {
+        "tour": 19,
+        "title": "Waadi Muhassar",
+        "description": "<p>Discover Waadi Muhassar, a place of historical and spiritual significance.</p>",
+        "location": "",
+        "lat": 21.392693,
+        "long": 39.9082588,
+        "created_at": "2025-09-18T11:07:55.651Z",
+        "updated_at": "2025-09-18T11:07:55.651Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 524,
+    "fields": {
+        "tour": 19,
+        "title": "Masjid Aisha",
+        "description": "<p>Explore Masjid Aisha, a site of importance during the Hajj journey.</p>",
+        "location": "",
+        "lat": 21.46809923889013,
+        "long": 39.80127796599816,
+        "created_at": "2025-09-18T11:07:55.674Z",
+        "updated_at": "2025-09-18T11:07:55.674Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 525,
+    "fields": {
+        "tour": 19,
+        "title": "Masjid-Al-Jinn",
+        "description": "<p>Delve into the mysteries of Masjid al-Jin, a mosque mentioned in Islamic tradition.</p>",
+        "location": "",
+        "lat": 21.4336754080969,
+        "long": 39.82899171632335,
+        "created_at": "2025-09-18T11:07:55.688Z",
+        "updated_at": "2025-09-18T11:07:55.688Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 526,
+    "fields": {
+        "tour": 19,
+        "title": "Jabal al-Hira",
+        "description": "<p>The cave where the Prophet Muhammad (peace be upon him) received the first revelation.</p>",
+        "location": "",
+        "lat": 21.45979562105067,
+        "long": 39.86499080573646,
+        "created_at": "2025-09-18T11:07:55.705Z",
+        "updated_at": "2025-09-18T11:07:55.706Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 527,
+    "fields": {
+        "tour": 19,
+        "title": "Jannatul Mualla",
+        "description": "<p>Pay your respects at Jannatul Mualla, the sacred cemetery in Makkah.</p>",
+        "location": "",
+        "lat": 21.434961562621144,
+        "long": 39.8291221639195,
+        "created_at": "2025-09-18T11:07:55.720Z",
+        "updated_at": "2025-09-18T11:07:55.720Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 529,
+    "fields": {
+        "tour": 19,
+        "title": "Masjid Nimrah",
+        "description": "<p>Visit Masjid Nimrah, where the Prophet Muhammad (peace be upon him) delivered his Farewell Sermon during his final pilgrimage.</p>",
+        "location": "",
+        "lat": 21.353844881177626,
+        "long": 39.966266455424986,
+        "created_at": "2025-09-18T11:07:55.749Z",
+        "updated_at": "2025-09-18T11:07:55.749Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 530,
+    "fields": {
+        "tour": 18,
+        "title": "Jabal al Thawr",
+        "description": "<p>Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.</p>",
+        "location": null,
+        "lat": 21.37368955625058,
+        "long": 39.85826159279121,
+        "created_at": "2025-09-18T11:07:55.776Z",
+        "updated_at": "2025-09-18T11:07:55.776Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 531,
+    "fields": {
+        "tour": 18,
+        "title": "Mina",
+        "description": "<p>Visit the holy valley of Mina, where pilgrims participate in symbolic rituals during Hajj.</p>",
+        "location": "",
+        "lat": 21.424419936541714,
+        "long": 39.87282806790779,
+        "created_at": "2025-09-18T11:07:55.789Z",
+        "updated_at": "2025-09-18T11:07:55.789Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 532,
+    "fields": {
+        "tour": 18,
+        "title": "Jamarat",
+        "description": "<p>Reflect at the Jamarat, the symbolic pillars where pilgrims cast stones as part of the Hajj rituals.</p>",
+        "location": "",
+        "lat": 21.421833771854097,
+        "long": 39.87222672397336,
+        "created_at": "2025-09-18T11:07:55.803Z",
+        "updated_at": "2025-09-18T11:07:55.803Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 533,
+    "fields": {
+        "tour": 18,
+        "title": "Arafat",
+        "description": "<p>Experience the sacred plains of Arafat, where the most important Hajj ritual takes place.</p>",
+        "location": "",
+        "lat": 21.354504151215252,
+        "long": 39.98346542556637,
+        "created_at": "2025-09-18T11:07:55.816Z",
+        "updated_at": "2025-09-18T11:07:55.816Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 534,
+    "fields": {
+        "tour": 18,
+        "title": "Jabal ar Rahmah",
+        "description": "<p>Stand where Prophet Muhammad (peace be upon him) delivered his Farewell Sermon.</p>",
+        "location": "",
+        "lat": 21.35507410919486,
+        "long": 39.984075731377615,
+        "created_at": "2025-09-18T11:07:55.829Z",
+        "updated_at": "2025-09-18T11:07:55.829Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 535,
+    "fields": {
+        "tour": 18,
+        "title": "Muzdalifah",
+        "description": "<p>Explore the serene Muzdalifah, a site where pilgrims spend a night during Hajj.</p>",
+        "location": "",
+        "lat": 21.38784728963403,
+        "long": 39.91445434991036,
+        "created_at": "2025-09-18T11:07:55.844Z",
+        "updated_at": "2025-09-18T11:07:55.844Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 536,
+    "fields": {
+        "tour": 18,
+        "title": "Waadi Muhassar",
+        "description": "<p>Discover Waadi Muhassar, a place of historical and spiritual significance.</p>",
+        "location": "",
+        "lat": 21.392693,
+        "long": 39.9082588,
+        "created_at": "2025-09-18T11:07:55.858Z",
+        "updated_at": "2025-09-18T11:07:55.858Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 537,
+    "fields": {
+        "tour": 18,
+        "title": "Masjid Nimrah",
+        "description": "<p>Visit Masjid Nimrah, where the Prophet Muhammad (peace be upon him) delivered his Farewell Sermon during his final pilgrimage.</p>",
+        "location": "",
+        "lat": 21.353844881177626,
+        "long": 39.966266455424986,
+        "created_at": "2025-09-18T11:07:55.876Z",
+        "updated_at": "2025-09-18T11:07:55.876Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 538,
+    "fields": {
+        "tour": 18,
+        "title": "Masjid Aisha",
+        "description": "<p>Explore Masjid Aisha, a site of importance during the Hajj journey.</p>",
+        "location": "",
+        "lat": 21.46809923889013,
+        "long": 39.80127796599816,
+        "created_at": "2025-09-18T11:07:55.899Z",
+        "updated_at": "2025-09-18T11:07:55.899Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 539,
+    "fields": {
+        "tour": 18,
+        "title": "Masjid-Al-Jinn",
+        "description": "<p>Delve into the mysteries of Masjid al-Jin, a mosque mentioned in Islamic tradition.</p>",
+        "location": "",
+        "lat": 21.4336754080969,
+        "long": 39.82899171632335,
+        "created_at": "2025-09-18T11:07:55.914Z",
+        "updated_at": "2025-09-18T11:07:55.914Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 540,
+    "fields": {
+        "tour": 18,
+        "title": "Jabal al-Hira",
+        "description": "<p>The cave where the Prophet Muhammad (peace be upon him) received the first revelation.</p>",
+        "location": "",
+        "lat": 21.45979562105067,
+        "long": 39.86499080573646,
+        "created_at": "2025-09-18T11:07:55.929Z",
+        "updated_at": "2025-09-18T11:07:55.929Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "tour.touritinerary",
+    "pk": 541,
+    "fields": {
+        "tour": 18,
+        "title": "Jannatul Mualla",
+        "description": "<p>Pay your respects at Jannatul Mualla, the sacred cemetery in Makkah.</p>",
+        "location": "",
+        "lat": 21.434961562621144,
+        "long": 39.8291221639195,
+        "created_at": "2025-09-18T11:07:55.947Z",
+        "updated_at": "2025-09-18T11:07:55.947Z",
+        "created_by": null,
+        "updated_by": null
+    }
+}
+]

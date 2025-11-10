@@ -1,0 +1,272 @@
+[
+{
+    "model": "tour.daytourprice",
+    "pk": 820,
+    "fields": {
+        "tour": 39,
+        "price_per_person": "2164.97",
+        "group_price": "0.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 856,
+    "fields": {
+        "tour": 21,
+        "price_per_person": "0.00",
+        "group_price": "250.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 857,
+    "fields": {
+        "tour": 21,
+        "price_per_person": "0.00",
+        "group_price": "200.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 858,
+    "fields": {
+        "tour": 22,
+        "price_per_person": "0.00",
+        "group_price": "125.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 859,
+    "fields": {
+        "tour": 22,
+        "price_per_person": "0.00",
+        "group_price": "150.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 860,
+    "fields": {
+        "tour": 26,
+        "price_per_person": "0.00",
+        "group_price": "375.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 861,
+    "fields": {
+        "tour": 26,
+        "price_per_person": "0.00",
+        "group_price": "300.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 862,
+    "fields": {
+        "tour": 27,
+        "price_per_person": "0.00",
+        "group_price": "150.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 863,
+    "fields": {
+        "tour": 27,
+        "price_per_person": "0.00",
+        "group_price": "125.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 864,
+    "fields": {
+        "tour": 28,
+        "price_per_person": "0.00",
+        "group_price": "90.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 865,
+    "fields": {
+        "tour": 28,
+        "price_per_person": "0.00",
+        "group_price": "120.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 866,
+    "fields": {
+        "tour": 30,
+        "price_per_person": "0.00",
+        "group_price": "250.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 868,
+    "fields": {
+        "tour": 30,
+        "price_per_person": "0.00",
+        "group_price": "200.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 869,
+    "fields": {
+        "tour": 31,
+        "price_per_person": "0.00",
+        "group_price": "300.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 870,
+    "fields": {
+        "tour": 32,
+        "price_per_person": "0.00",
+        "group_price": "350.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 871,
+    "fields": {
+        "tour": 33,
+        "price_per_person": "0.00",
+        "group_price": "500.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 872,
+    "fields": {
+        "tour": 34,
+        "price_per_person": "0.00",
+        "group_price": "600.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 873,
+    "fields": {
+        "tour": 35,
+        "price_per_person": "0.00",
+        "group_price": "375.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 874,
+    "fields": {
+        "tour": 36,
+        "price_per_person": "0.00",
+        "group_price": "250.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 875,
+    "fields": {
+        "tour": 37,
+        "price_per_person": "0.00",
+        "group_price": "150.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 876,
+    "fields": {
+        "tour": 38,
+        "price_per_person": "0.00",
+        "group_price": "120.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 882,
+    "fields": {
+        "tour": 40,
+        "price_per_person": "7009.82",
+        "group_price": "0.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 885,
+    "fields": {
+        "tour": 18,
+        "price_per_person": "0.00",
+        "group_price": "375.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 886,
+    "fields": {
+        "tour": 18,
+        "price_per_person": "0.00",
+        "group_price": "300.00",
+        "guide": "Without Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 901,
+    "fields": {
+        "tour": 49,
+        "price_per_person": "0.00",
+        "group_price": "0.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 902,
+    "fields": {
+        "tour": 19,
+        "price_per_person": "0.00",
+        "group_price": "120.00",
+        "guide": "With Guide"
+    }
+},
+{
+    "model": "tour.daytourprice",
+    "pk": 903,
+    "fields": {
+        "tour": 19,
+        "price_per_person": "0.00",
+        "group_price": "90.00",
+        "guide": "Without Guide"
+    }
+}
+]

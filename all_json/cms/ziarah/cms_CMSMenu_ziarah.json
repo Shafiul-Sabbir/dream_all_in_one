@@ -1,0 +1,145 @@
+[
+{
+    "model": "cms.cmsmenu",
+    "pk": 1,
+    "fields": {
+        "parent": null,
+        "name": "Home",
+        "position": 1,
+        "created_at": "2023-11-26T11:07:35.895Z",
+        "updated_at": "2025-09-19T18:12:45.734Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 2,
+    "fields": {
+        "parent": null,
+        "name": "Umrah",
+        "position": 2,
+        "created_at": "2023-11-27T05:36:20.100Z",
+        "updated_at": "2024-03-05T03:37:10.730Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 3,
+    "fields": {
+        "parent": null,
+        "name": "Hajj",
+        "position": 3,
+        "created_at": "2023-11-27T05:36:36.953Z",
+        "updated_at": "2023-11-27T05:36:36.955Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 4,
+    "fields": {
+        "parent": null,
+        "name": "Destinations",
+        "position": 4,
+        "created_at": "2023-11-27T05:37:02.214Z",
+        "updated_at": "2023-11-27T05:37:02.217Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 5,
+    "fields": {
+        "parent": null,
+        "name": "Blog",
+        "position": 5,
+        "created_at": "2023-11-27T05:37:17.625Z",
+        "updated_at": "2023-11-27T05:37:17.628Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 7,
+    "fields": {
+        "parent": 4,
+        "name": "Taif",
+        "position": 4,
+        "created_at": "2023-11-27T05:38:34.423Z",
+        "updated_at": "2024-03-05T05:55:38.579Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 8,
+    "fields": {
+        "parent": 4,
+        "name": "Madinah",
+        "position": 2,
+        "created_at": "2023-11-27T05:39:12.994Z",
+        "updated_at": "2025-09-19T19:10:03.812Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 9,
+    "fields": {
+        "parent": 4,
+        "name": "Makkah",
+        "position": 1,
+        "created_at": "2023-11-27T05:39:44.240Z",
+        "updated_at": "2024-03-05T05:54:59.263Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 10,
+    "fields": {
+        "parent": 4,
+        "name": "Jeddah",
+        "position": 3,
+        "created_at": "2023-11-27T05:40:05.335Z",
+        "updated_at": "2025-09-19T19:10:20.213Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 11,
+    "fields": {
+        "parent": null,
+        "name": "Tour",
+        "position": 30,
+        "created_at": "2023-11-30T14:39:14.333Z",
+        "updated_at": "2023-11-30T14:39:14.444Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenu",
+    "pk": 12,
+    "fields": {
+        "parent": null,
+        "name": "Tours",
+        "position": 100,
+        "created_at": "2024-02-28T05:32:21.715Z",
+        "updated_at": "2024-02-28T05:32:21.935Z",
+        "created_by": null,
+        "updated_by": null
+    }
+}
+]

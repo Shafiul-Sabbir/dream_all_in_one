@@ -1,0 +1,36 @@
+[
+{
+    "model": "site_settings.homepageslider",
+    "pk": 1,
+    "fields": {
+        "title": "<h1 class=\"text-60 lg:text-40 md:text-30 text-white aos-init aos-animate\" data-aos=\"fade-up\">Discover Your World</h1>",
+        "subtitle": "Discover amzaing places at exclusive deals",
+        "link": null,
+        "serial_number": null,
+        "image": "",
+        "cloudflare_image_url": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e8c9ea82-4d87-4e1a-5458-9a7348e14400/public",
+        "details": "",
+        "created_at": "2025-10-07T07:04:34.210Z",
+        "updated_at": "2025-10-22T07:21:07.104Z",
+        "created_by": 2,
+        "updated_by": 2
+    }
+},
+{
+    "model": "site_settings.homepageslider",
+    "pk": 2,
+    "fields": {
+        "title": "<h1 class=\"text-60 lg:text-40 md:text-30 text-white aos-init aos-animate\" data-aos=\"fade-up\">Discover Your World</h1>",
+        "subtitle": "Discover amzaing places at exclusive deals",
+        "link": null,
+        "serial_number": null,
+        "image": "",
+        "cloudflare_image_url": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/e8c9ea82-4d87-4e1a-5458-9a7348e14400/public",
+        "details": "",
+        "created_at": "2025-10-07T07:05:03.744Z",
+        "updated_at": "2025-10-07T07:05:03.744Z",
+        "created_by": 2,
+        "updated_by": null
+    }
+}
+]

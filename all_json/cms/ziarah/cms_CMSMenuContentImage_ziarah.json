@@ -1,0 +1,114 @@
+[
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 365,
+    "fields": {
+        "cms_menu": 4,
+        "head": "Makkah",
+        "image": "cms/ContentImage/Makkah-1X1.webp",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/625af5d1-8ab6-4cc9-227e-35932e80b400/public",
+        "created_at": "2025-09-20T09:32:01.258Z",
+        "updated_at": "2025-09-20T09:32:01.258Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 366,
+    "fields": {
+        "cms_menu": 4,
+        "head": "Madinah",
+        "image": "cms/ContentImage/Medina-1X1.webp",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8f03e3f9-2b9b-4e38-2c51-8c54d83bf900/public",
+        "created_at": "2025-09-20T09:33:19.421Z",
+        "updated_at": "2025-09-20T09:33:19.421Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 367,
+    "fields": {
+        "cms_menu": 4,
+        "head": "Jeddah",
+        "image": "cms/ContentImage/Jeddah-1X1.webp",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/840d7b99-2348-43ec-0d40-928b667f7c00/public",
+        "created_at": "2025-09-20T09:33:33.548Z",
+        "updated_at": "2025-09-20T09:33:33.548Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 368,
+    "fields": {
+        "cms_menu": 4,
+        "head": "Taif",
+        "image": "cms/ContentImage/Taif-1X1.webp",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6faca030-1fc0-44a2-806d-854435525600/v1",
+        "created_at": "2025-09-20T09:33:46.942Z",
+        "updated_at": "2025-09-20T09:33:46.942Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 369,
+    "fields": {
+        "cms_menu": 9,
+        "head": "Makkah",
+        "image": "cms/ContentImage/Makkah_IFnmEvw.jpg",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/762521a5-63fb-4f47-d6a8-06c141fbf000/public",
+        "created_at": "2025-09-20T09:40:16.159Z",
+        "updated_at": "2025-09-20T09:40:16.159Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 370,
+    "fields": {
+        "cms_menu": 8,
+        "head": "Madinah",
+        "image": "cms/ContentImage/Madinah.jpg",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c8cf205f-2195-48ed-040a-d2b9f8a54900/v1",
+        "created_at": "2025-09-20T09:59:17.661Z",
+        "updated_at": "2025-09-20T09:59:17.661Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 371,
+    "fields": {
+        "cms_menu": 10,
+        "head": "Jeddah",
+        "image": "cms/ContentImage/Jeddah.jpg",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ed804405-c14f-41b6-c3f4-125446f0d400/v1",
+        "created_at": "2025-09-20T09:59:35.584Z",
+        "updated_at": "2025-09-20T09:59:35.584Z",
+        "created_by": null,
+        "updated_by": null
+    }
+},
+{
+    "model": "cms.cmsmenucontentimage",
+    "pk": 372,
+    "fields": {
+        "cms_menu": 7,
+        "head": "Taif",
+        "image": "cms/ContentImage/Taif1.jpg",
+        "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ea0710cb-3296-45cf-75b5-342e690cd400/public",
+        "created_at": "2025-09-20T09:59:48.225Z",
+        "updated_at": "2025-09-20T09:59:48.225Z",
+        "created_by": null,
+        "updated_by": null
+    }
+}
+]

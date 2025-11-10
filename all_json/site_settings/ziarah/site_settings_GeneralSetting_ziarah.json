@@ -1,0 +1,30 @@
+[
+{
+    "model": "site_settings.generalsetting",
+    "pk": 1,
+    "fields": {
+        "title": "Dream Ziarah",
+        "site_name": "dreamziarah.com",
+        "site_address": "dreamziarah.com",
+        "email": null,
+        "phone": null,
+        "favicon": "",
+        "logo": "siteSettings/companyLogos/public_7.avif",
+        "footer_logo": "",
+        "slider": "",
+        "cloudflare_favicon": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a4f72ded-464b-4d18-c697-ff1352f2b600/public",
+        "cloudflare_logo": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a4f72ded-464b-4d18-c697-ff1352f2b600/public",
+        "cloudflare_footer": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a4f72ded-464b-4d18-c697-ff1352f2b600/public",
+        "cloudflare_slider": null,
+        "address": "",
+        "google_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "created_at": "2025-10-07T07:02:04.258Z",
+        "updated_at": "2025-10-07T12:05:24.394Z",
+        "created_by": 2,
+        "updated_by": 2
+    }
+}
+]
