@@ -12,6 +12,9 @@ from utils.utils import generate_slug, upload_to_cloudflare
 # Create your models here.
 class Tour(models.Model):
     # Basic Info
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255, null=True, blank=True )
     description = models.TextField(null=True, blank=True)
     overview = models.TextField(null=True, blank=True)
@@ -65,42 +68,44 @@ class Tour(models.Model):
     def __str__(self):
         return self.name
     
-    def save(self, *args, **kwargs):
-        # when we try to update an existing object. process of updating the thumbnail image to the cloudflare
-        if self.pk:
-            print("entering save method for update")
-            #checking wheather we have sent any new thumbnail_image or not
-            if self.update_thumbnail_image: 
-                print("update_thumbnail_image flag is True, uploading thumbnail image to Cloudflare...")
-                # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
-                if self.thumbnail_image:
-                    try:
-                        print("Uploading thumbnail image to Cloudflare from 'update' part of save method...")
-                        self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
-                        print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
-                        self.update_thumbnail_image = False  # Reset the flag after upload
-                        print(f"update_thumbnail_image flag reset to {self.update_thumbnail_image}")
-                    except Exception as e:
-                        print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
-                else:
-                    print("No thumbnail image provided for upload.")
-            else:
-                print("update_thumbnail_image flag is False, skipping Cloudflare upload for thumbnail image.")
-                pass
+    # we will uncomment after running the script
 
-        # when we try to create new object
-        else:
-            print("entering save method for create")
-            if self.thumbnail_image:
-                try:
-                    print("Uploading thumbnail image to Cloudflare from 'create' part of save method...")
-                    self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
-                    print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
-                except Exception as e:
-                    print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
-            else :
-                print("No thumbnail image provided for upload.")
-                pass
+    # def save(self, *args, **kwargs):
+    #     # when we try to update an existing object. process of updating the thumbnail image to the cloudflare
+    #     if self.pk:
+    #         print("entering save method for update")
+    #         #checking wheather we have sent any new thumbnail_image or not
+    #         if self.update_thumbnail_image: 
+    #             print("update_thumbnail_image flag is True, uploading thumbnail image to Cloudflare...")
+    #             # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
+    #             if self.thumbnail_image:
+    #                 try:
+    #                     print("Uploading thumbnail image to Cloudflare from 'update' part of save method...")
+    #                     self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
+    #                     print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
+    #                     self.update_thumbnail_image = False  # Reset the flag after upload
+    #                     print(f"update_thumbnail_image flag reset to {self.update_thumbnail_image}")
+    #                 except Exception as e:
+    #                     print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
+    #             else:
+    #                 print("No thumbnail image provided for upload.")
+    #         else:
+    #             print("update_thumbnail_image flag is False, skipping Cloudflare upload for thumbnail image.")
+    #             pass
+
+    #     # when we try to create new object
+    #     else:
+    #         print("entering save method for create")
+    #         if self.thumbnail_image:
+    #             try:
+    #                 print("Uploading thumbnail image to Cloudflare from 'create' part of save method...")
+    #                 self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
+    #                 print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
+    #             except Exception as e:
+    #                 print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
+    #         else :
+    #             print("No thumbnail image provided for upload.")
+    #             pass
 
 
 
@@ -119,9 +124,10 @@ class Tour(models.Model):
 
         super().save(*args, **kwargs)
 
-
-
 class TourContentImage(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='tour_images',null=True, blank=True)
     head = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to='tour/ContentImage/',null=True, blank=True, unique=True)
@@ -145,54 +151,59 @@ class TourContentImage(models.Model):
     def __str__(self):
         return f"Image {self.id}"
         
-    def save(self, *args, **kwargs):
-        skip_cloudflare = getattr(self, "_skip_cloudflare", False)
-        print("skip_cloudflare is : ", skip_cloudflare)
+    # we will uncomment after running the script
 
-        if not skip_cloudflare:  
+    # def save(self, *args, **kwargs):
+    #     skip_cloudflare = getattr(self, "_skip_cloudflare", False)
+    #     print("skip_cloudflare is : ", skip_cloudflare)
 
-            if self.pk:
-                print("entering save method for update")
-                #checking wheather we have sent any new image or not
-                if self.update_image: 
-                    print("update_image flag is True, uploading image to Cloudflare...")
-                    # If update_image is True, upload the image to Cloudflare
-                    if self.image:
-                        try:
-                            print("Uploading image to Cloudflare from 'update' part of save method...")
-                            self.cloudflare_image_url = upload_to_cloudflare(self.image)
-                            print("Cloudflare image URL:", self.cloudflare_image_url)
-                            self.update_image = False  # Reset the flag after upload
-                            print(f"update_image flag reset to {self.update_image}")
-                        except Exception as e:
-                            print(f"Error uploading image to Cloudflare: {str(e)}")
-                    else:
-                        print("No image provided for upload.")
-                else:
-                    print("update_image flag is False, skipping Cloudflare upload for image.")
-                    pass
+    #     if not skip_cloudflare:  
 
-            # when we try to create new object
-            else:
-                print("entering save method for create")
-                if self.image:
-                    try:
-                        print("Uploading image to Cloudflare from 'create' part of save method...")
-                        self.cloudflare_image_url = upload_to_cloudflare(self.image)
-                        print("Cloudflare image URL:", self.cloudflare_image_url)
-                    except Exception as e:
-                        print(f"Error uploading image to Cloudflare: {str(e)}")
-                else :
-                    print("No image provided for upload.")
-                    pass
+    #         if self.pk:
+    #             print("entering save method for update")
+    #             #checking wheather we have sent any new image or not
+    #             if self.update_image: 
+    #                 print("update_image flag is True, uploading image to Cloudflare...")
+    #                 # If update_image is True, upload the image to Cloudflare
+    #                 if self.image:
+    #                     try:
+    #                         print("Uploading image to Cloudflare from 'update' part of save method...")
+    #                         self.cloudflare_image_url = upload_to_cloudflare(self.image)
+    #                         print("Cloudflare image URL:", self.cloudflare_image_url)
+    #                         self.update_image = False  # Reset the flag after upload
+    #                         print(f"update_image flag reset to {self.update_image}")
+    #                     except Exception as e:
+    #                         print(f"Error uploading image to Cloudflare: {str(e)}")
+    #                 else:
+    #                     print("No image provided for upload.")
+    #             else:
+    #                 print("update_image flag is False, skipping Cloudflare upload for image.")
+    #                 pass
 
-        super().save(*args, **kwargs)
+    #         # when we try to create new object
+    #         else:
+    #             print("entering save method for create")
+    #             if self.image:
+    #                 try:
+    #                     print("Uploading image to Cloudflare from 'create' part of save method...")
+    #                     self.cloudflare_image_url = upload_to_cloudflare(self.image)
+    #                     print("Cloudflare image URL:", self.cloudflare_image_url)
+    #                 except Exception as e:
+    #                     print(f"Error uploading image to Cloudflare: {str(e)}")
+    #             else :
+    #                 print("No image provided for upload.")
+    #                 pass
+
+    #     super().save(*args, **kwargs)
   
 class DayTourPrice(models.Model):
     GUIDE_CHOICES = [
         ('With Guide', 'With Guide'),
         ('Without Guide', 'Without Guide'),
     ]
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='day_tour_price_list')
     price_per_person = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     group_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
@@ -206,12 +217,18 @@ class DayTourPrice(models.Model):
         return f"{self.tour.name} - {self.price_per_person} USD per person - {self.group_price} USD group price - {self.guide} "
     
 class AvailableDate(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     day_tour_price = models.ForeignKey(DayTourPrice, on_delete=models.CASCADE, related_name='available_dates')
     date = models.DateField(null=True, blank=True)
     def __str__(self):
         return f"{self.day_tour_price.tour.name} - {self.date}"
 
 class AvailableTime(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     day_tour_price = models.ForeignKey(DayTourPrice, on_delete=models.CASCADE, related_name='available_times')
     time = models.TimeField(null=True, blank=True)
 
@@ -245,6 +262,8 @@ class TourBooking(models.Model):
         ('approved', 'Approved'),  # cancellation request is accepted
         ('denied', 'Denied'), # if cancellation request has been denied by admin
     ]
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     booking_id = models.CharField(max_length=20, null=True, blank=True)
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="tour_bookings", null=True, blank=True)
@@ -343,6 +362,9 @@ class TourBooking(models.Model):
         return f"Booking for {tour_name} by {traveller_name} -  {self.total_price}"
     
 class TourItinerary(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="itineraries_list", null=True, blank=True)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
@@ -379,6 +401,9 @@ class TourItinerary(models.Model):
 
 
 class PenaltyRules(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cancellation_policy_list = models.ForeignKey('tour.CancellationPolicy',on_delete=models.CASCADE,related_name="penalty_rules")
     days_before = models.IntegerField(null=True, blank=True)  # e.g., 0, 1, 2
     hours_before = models.IntegerField(null=True, blank=True)  # e.g., 0, 24, 48
@@ -409,7 +434,9 @@ class CancellationPolicy(models.Model):
         ('full_refund', 'FULL_REFUND'),
         ('non_refundable', 'NON_REFUNDABLE'),
     ]
-
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+    
     tour = models.ForeignKey("tour.Tour",on_delete=models.CASCADE,related_name="cancellation_policies_list")
     title = models.CharField(max_length=255, null=True, blank=True)
     default_policy = models.BooleanField(default=False, null=True, blank=True)

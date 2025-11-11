@@ -21,6 +21,7 @@ urlpatterns = [
     path('cms_scripts/', include('scripts.urls.cms_scripts_urls')),
     path('support_scripts/', include('scripts.urls.support_scripts_urls')),
     path('tour_scripts/', include('scripts.urls.tour_scripts_urls')),
+    path('payments_scripts/', include('scripts.urls.payments_scripts_urls')),
 
     # Authentication module
     path('user/', include('authentication.urls.user_urls')),

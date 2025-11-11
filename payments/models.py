@@ -1,8 +1,11 @@
 from django.db import models
 from django.conf import settings
 
-from authentication.models import User
+from authentication.models import User, Company
 class Traveller(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='traveller_profile')
     phone = models.CharField(max_length=50, blank=True, null=True)
     accept_offers = models.BooleanField(default=False)
@@ -25,6 +28,9 @@ class Traveller(models.Model):
 
 
 class Payment(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     invoice_id = models.CharField(max_length=255, null=True, blank=True)
     tour_booking = models.ForeignKey("tour.TourBooking", on_delete=models.SET_NULL, related_name="tour_booking", null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='payments', null=True, blank=True)
