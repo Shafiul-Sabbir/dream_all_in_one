@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 import requests
-
+from utils.utils import upload_to_cloudflare, get_image_upload_folder
 from authentication.models import Country, Company
 from .signals import image_upload_signal,contact_created,subscription_created
 import re
@@ -362,7 +362,7 @@ class Blog(models.Model):
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_contents')
     title = models.CharField(max_length=500, null=True, blank=True)
     slug = models.SlugField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to='cms/BlogImage/',null=True, blank=True)
+    image = models.ImageField(upload_to=get_image_upload_folder('cms/BlogImage/'), null=True, blank=True)
     image_alt = models.TextField(null=True, blank=True)
     cloudflare_image = models.URLField(max_length=5000, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -371,11 +371,11 @@ class Blog(models.Model):
     blog_country = models.ForeignKey(Country, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_country')
     meta_title = models.TextField(null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
-    meta_image = models.ImageField(upload_to='cms/MetaImage/', null=True, blank=True)
+    meta_image = models.ImageField(upload_to=get_image_upload_folder('cms/MetaImage/') , null=True, blank=True)
     meta_image_cloudflare = models.URLField(max_length=5000, null=True, blank=True)
     fb_meta_title = models.TextField(null=True, blank=True)
     fb_meta_description = models.TextField(null=True, blank=True)
-    fb_meta_image = models.ImageField(upload_to='cms/MetaImage/', null=True, blank=True)
+    fb_meta_image = models.ImageField(upload_to=get_image_upload_folder('cms/MetaImage/') , null=True, blank=True)
     fb_meta_image_cloudflare = models.URLField(max_length=5000, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     is_featured = models.BooleanField(default=False,null=True, blank=True)
@@ -395,87 +395,10 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
-    # def save(self, *args, **kwargs):
-    #     # Auto-generate slug from title, but now its commenting out for new requirements.
-    #     # if self.title:
-    #     #     # Replace special characters (except hyphens) with hyphens
-    #     #     clean_title = re.sub(r'[^\w\s-]', '-', self.title)
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
-    #     #     # Replace spaces with hyphens
-    #     #     clean_title = re.sub(r'\s+', '-', clean_title)
 
-    #     #     # Convert to lowercase
-    #     #     clean_title = clean_title.lower()
-
-    #     #     # Replace multiple consecutive hyphens with a single hyphen
-    #     #     clean_title = re.sub(r'-{2,}', '-', clean_title)
-
-    #     #     # Strip leading and trailing hyphens
-    #     #     clean_title = clean_title.strip('-')
-
-    #     #     slug = clean_title
-    #     #     counter = 1
-
-    #     #     # Ensure slug uniqueness
-    #     #     while Blog.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-    #     #         slug = f"{clean_title}-{counter}"
-    #     #         counter += 1
-
-    #     #     self.slug = slug
-
-    #     # Handle updated_by and created_by fields
-    #     if not self.pk:  # If it's a new record
-    #         self.created_by = kwargs.pop('user', None)
-    #     else:
-    #         self.updated_by = kwargs.pop('user', None)
-
-    #     if self.image:
-    #         try:
-    #             self.cloudflare_image = self.upload_to_cloudflare(self.image)
-    #             print("Cloudflare image URL:", self.cloudflare_image)
-    #         except Exception as e:
-    #             print(f"Error uploading image to Cloudflare: {str(e)}")
-
-    #     # Upload meta image to Cloudflare
-    #     if self.meta_image:
-    #         try:
-    #             self.meta_image_cloudflare = self.upload_to_cloudflare(self.meta_image)
-    #             print("Cloudflare meta image URL:", self.meta_image_cloudflare)
-    #         except Exception as e:
-    #             print(f"Error uploading meta image to Cloudflare: {str(e)}")
-
-    #     if self.fb_meta_image:
-    #         try:
-    #             self.fb_meta_image_cloudflare = self.upload_to_cloudflare(self.fb_meta_image)
-    #             print("Cloudflare fb_meta image URL:", self.fb_meta_image_cloudflare)
-    #         except Exception as e:
-    #             print(f"Error uploading fb_meta image to Cloudflare: {str(e)}")
-
-    #     # Save the instance
-    #     super().save(*args, **kwargs)
-
-    # def upload_to_cloudflare(self, image_field):
-    #     """
-    #     Upload an image to Cloudflare and return the URL of the uploaded image.
-    #     """
-    #     endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
-    #     headers = {
-    #         'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
-    #     }
-    #     files = {
-    #         'file': image_field.file
-    #     }
-    #     response = requests.post(endpoint, headers=headers, files=files)
-    #     response.raise_for_status()
-    #     json_data = response.json()
-    #     variants = json_data.get('result', {}).get('variants', [])
-    #     if variants:
-    #         cloudflare_image_url = variants[0]  # Use the first variant URL
-    #         print("Cloudflare image URL from response:", cloudflare_image_url)
-    #         return cloudflare_image_url
-    #     else:
-    #         print("No variants found in the Cloudflare response")
-    #         return None
 
 
 class BlogComments(models.Model):

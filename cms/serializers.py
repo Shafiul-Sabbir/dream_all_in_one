@@ -1,12 +1,9 @@
 from django.conf import settings
-
 from rest_framework import serializers
 from rest_framework_recursive.fields import RecursiveField
-
 from django_currentuser.middleware import get_current_authenticated_user
-
 from authentication.serializers import AdminUserMinimalListSerializer
-
+from utils.utils import upload_to_cloudflare
 from cms.models import *
 
 class SerializerForCMSMenuParent(serializers.ModelSerializer):
@@ -373,26 +370,81 @@ class BlogListSerializer(serializers.ModelSerializer):
 
 
 class BlogSerializer(serializers.ModelSerializer):
-	
-	class Meta:
-		model = Blog
-		fields = '__all__'
+    
+    class Meta:
+        model = Blog
+        fields = '__all__'
 
-	def create(self, validated_data):
-		modelObject = super().create(validated_data=validated_data)
-		user = get_current_authenticated_user()
-		if user is not None:
-			modelObject.created_by = user
-		modelObject.save()
-		return modelObject
-	
-	def update(self, instance, validated_data):
-		modelObject = super().update(instance=instance, validated_data=validated_data)
-		user = get_current_authenticated_user()
-		if user is not None:
-			modelObject.updated_by = user
-		modelObject.save()
-		return modelObject
+    def create(self, validated_data):
+        user = get_current_authenticated_user()
+
+        # Handle Cloudflare uploads only for fields that are present
+        if 'image' in validated_data and validated_data['image']:
+            print('\n')
+            print("image found in validated data at create method, so going to upload.")
+            validated_data['cloudflare_image'] = upload_to_cloudflare(validated_data['image'])
+
+        if 'meta_image' in validated_data and validated_data['meta_image']:
+            print('\n')
+            print("meta_image found in validated data at create method, so going to upload.")
+            validated_data['meta_image_cloudflare'] = upload_to_cloudflare(validated_data['meta_image'])
+
+        if 'fb_meta_image' in validated_data and validated_data['fb_meta_image']:
+            print('\n')
+            print("fb_meta_image found in validated data at create method, so going to upload.")
+            validated_data['fb_meta_image_cloudflare'] = upload_to_cloudflare(validated_data['fb_meta_image'])
+
+        modelObject = super().create(validated_data=validated_data)
+
+        if user is not None:
+            modelObject.created_by = user
+            modelObject.save(update_fields=['created_by'])
+
+        return modelObject
+    
+    def update(self, instance, validated_data):
+        user = get_current_authenticated_user()
+
+        # ✅ Image field update: only upload if new image provided
+        if 'image' in validated_data:
+            print('\n')
+            print("image found in validated data at update method, so going to upload.")
+            if validated_data['image'] and validated_data['image'] != instance.image:
+                validated_data['cloudflare_image'] = upload_to_cloudflare(validated_data['image'])
+            else:
+                print('\n')
+                print("no new image provided or same image, so keeping the old one.")
+                validated_data.pop('image', None)  # keep old image untouched
+
+        # ✅ Meta image update
+        if 'meta_image' in validated_data:
+            print('\n')
+            print("meta_image found in validated data at update method, so going to upload.")
+            if validated_data['meta_image'] and validated_data['meta_image'] != instance.meta_image:
+                validated_data['meta_image_cloudflare'] = upload_to_cloudflare(validated_data['meta_image'])
+            else:
+                print('\n')
+                print("no new meta_image provided or same image, so keeping the old one.")
+                validated_data.pop('meta_image', None)
+
+        # ✅ Facebook meta image update
+        if 'fb_meta_image' in validated_data:
+            print('\n')
+            print("fb_meta_image found in validated data at update method, so going to upload.")
+            if validated_data['fb_meta_image'] and validated_data['fb_meta_image'] != instance.fb_meta_image:
+                validated_data['fb_meta_image_cloudflare'] = upload_to_cloudflare(validated_data['fb_meta_image'])
+            else:
+                print('\n')
+                print("no new fb_meta_image provided or same image, so keeping the old one.")
+                validated_data.pop('fb_meta_image', None)
+
+        modelObject = super().update(instance=instance, validated_data=validated_data)
+
+        if user is not None:
+            modelObject.updated_by = user
+            modelObject.save(update_fields=['updated_by'])
+
+        return modelObject
 
 class BlogMinimaListSerializer(serializers.ModelSerializer):
 

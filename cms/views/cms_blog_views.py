@@ -177,12 +177,8 @@ def getBlog(request, pk):
         return Response({'detail': f"Blog id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=BlogSerializer, responses=BlogSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createBlog(request):
     data = request.data
     print('data: ', data)
@@ -196,12 +192,8 @@ def createBlog(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=BlogSerializer, responses=BlogSerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
+@permission_classes([IsAuthenticated])
 def updateBlog(request, pk):
     data = request.data
     print('data:', data)
@@ -256,16 +248,12 @@ def updateBlog(request, pk):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=BlogSerializer, responses=BlogSerializer)
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteBlog(request, pk):
     try:
-        menu_item = Blog.objects.get(pk=pk)
-        menu_item.delete()
+        blog_instance = Blog.objects.get(pk=pk)
+        blog_instance.delete()
         return Response({'detail': f'Blog id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
     except ObjectDoesNotExist:
         return Response({'detail': f"Blog id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
@@ -287,14 +275,8 @@ def deleteBlog(request, pk):
 # 		return Response({'detail': f"Blog id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-
-
-@extend_schema(request=BlogSerializer, responses=BlogSerializer)
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchBlog(request):
     company_id = request.query_params.get('company_id')
     blogs = BlogFilter(request.GET, queryset=Blog.objects.filter(company=company_id).all())

@@ -11,7 +11,7 @@ from authentication.decorators import has_permissions
 from cms.models import BlogCategory
 from cms.serializers import BlogCategorySerializer, BlogCategoryListSerializer
 from cms.filters import BlogCategoryFilter
-
+from authentication.models import Company
 from commons.enums import PermissionEnum
 from commons.pagination import Pagination
 import os
@@ -19,19 +19,7 @@ import os
 
 
 # Create your views here.
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		
-		OpenApiParameter("size"),
-  ],
-	request=BlogCategorySerializer,
-	responses=BlogCategorySerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
 def getAllBlogCategory(request):
 	company_id = request.query_params.get('company_id')
 	blog_categories = BlogCategory.objects.filter(company=company_id).all()
@@ -73,12 +61,7 @@ def getAllBlogCategoryWithoutPagination(request):
 		}, status=status.HTTP_200_OK)
 
 
-
-
-@extend_schema(request=BlogCategorySerializer, responses=BlogCategorySerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def getABlogCategory(request, pk):
 	try:
 		blog_categories = BlogCategory.objects.get(pk=pk)
@@ -88,12 +71,7 @@ def getABlogCategory(request, pk):
 		return Response({'detail': f"BlogCategory id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=BlogCategorySerializer, responses=BlogCategorySerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
 def searchBlogCategory(request):
 	company_id = request.query_params.get('company_id')
 	blog_categories = BlogCategoryFilter(request.GET, queryset=BlogCategory.objects.filter(company=company_id).all())
@@ -128,21 +106,17 @@ def searchBlogCategory(request):
 		return Response({'detail': f"There are no blog_categories matching your search"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=BlogCategorySerializer, responses=BlogCategorySerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_CREATE.name])
 def createBlogCategory(request):
 	data = request.data
-	filtered_data = {}
+	company_id = request.query_params.get('company_id')
+	company_instance = Company.objects.filter(id=company_id).first()
+	if company_instance is None:
+		return Response({'detail': f"Company with this Company id - {company_id} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+	data['company'] = company_id
 
-	for key, value in data.items():
-		if value != '' and value != '0':
-			filtered_data[key] = value
-
-	serializer = BlogCategorySerializer(data=filtered_data)
+	serializer = BlogCategorySerializer(data=data)
 
 	if serializer.is_valid():
 		serializer.save()
@@ -151,17 +125,21 @@ def createBlogCategory(request):
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=BlogCategorySerializer, responses=BlogCategorySerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_UPDATE.name, PermissionEnum.PERMISSION_PARTIAL_UPDATE.name])
 def updateBlogCategory(request,pk):
 	try:
-		blog_categories = BlogCategory.objects.get(pk=pk)
+		company_id = request.query_params.get('company_id')
+		blog_category = BlogCategory.objects.get(pk=pk)
 		data = request.data
-		serializer = BlogCategorySerializer(blog_categories, data=data)
+		company_id = request.query_params.get('company_id')
+		company_instance = Company.objects.filter(id=company_id).first()
+
+		if company_instance is None:
+			return Response({'detail': f"Company with this Company id - {company_id} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+		data['company'] = company_id
+
+		serializer = BlogCategorySerializer(blog_category, data=data)
 		if serializer.is_valid():
 			serializer.save()
 			return Response(serializer.data, status=status.HTTP_200_OK)
@@ -172,11 +150,8 @@ def updateBlogCategory(request,pk):
 
 
 
-
-@extend_schema(request=BlogCategorySerializer, responses=BlogCategorySerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DELETE.name])
 def deleteBlogCategory(request, pk):
 	try:
 		blog_categories = BlogCategory.objects.get(pk=pk)

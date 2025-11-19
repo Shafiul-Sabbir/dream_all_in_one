@@ -16,9 +16,9 @@ urlpatterns = [
 
 	path('api/v1/blog_category/create/', views.createBlogCategory),
 
-	path('api/v1/blog_category/update/<int:pk>', views.updateBlogCategory),
+	path('api/v1/blog_category/update/<int:pk>/', views.updateBlogCategory),
 
-	path('api/v1/blog_category/delete/<int:pk>', views.deleteBlogCategory),
+	path('api/v1/blog_category/delete/<int:pk>/', views.deleteBlogCategory),
 
 
 

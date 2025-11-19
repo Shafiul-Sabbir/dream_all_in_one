@@ -19,9 +19,9 @@ urlpatterns = [
 
 	path('api/v1/cms_blog/create/', views.createBlog),
 
-	path('api/v1/cms_blog/update/<int:pk>', views.updateBlog),
+	path('api/v1/cms_blog/update/<int:pk>/', views.updateBlog),
 	
-	path('api/v1/cms_blog/delete/<int:pk>', views.deleteBlog),
+	path('api/v1/cms_blog/delete/<int:pk>/', views.deleteBlog),
     
 	path('api/v1/cms_blog/get_blog_By_blog_title_slug/<slug>/', views.getBlogByTitleSlug),
 
