@@ -60,18 +60,6 @@ def reformed_head_or_name(given_string):
 
     return cleaned
 
-def get_image_upload_folder(subfolder):
-    def wrapper(instance, filename):
-        # Company: 1 = IT, 2 = UK, 3 = Ziarah
-        # folder_map = {
-        #     1: 'IT',
-        #     2: 'UK',
-        #     3: 'Ziarah'
-        # }
-
-        company_name = getattr(instance, "company", None)
-        print("Company name:", company_name)
-        folder_name = company_name
-
-        return f'{folder_name}/{subfolder}/{filename}'
-    return wrapper
+def get_image_upload_folder(instance, filename, subfolder):
+    company_name = getattr(instance, "company", None)
+    return f"{company_name}/{subfolder}/{filename}"

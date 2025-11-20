@@ -14,11 +14,11 @@ urlpatterns = [
 
 	path('api/v1/Itinerary/<int:pk>', views.getItinerary),
 
-	path('api/v1/cms_menu_content/create/', views.createItinerary),
+	path('api/v1/Itinerary/create/', views.createItinerary),
 
-	path('api/v1/Itinerary/update/<int:pk>', views.updateItinerary),
+	path('api/v1/Itinerary/update/<int:pk>/', views.updateItinerary),
 	
-	path('api/v1/Itinerary/delete/<int:pk>', views.deleteItinerary),
+	path('api/v1/Itinerary/delete/<int:pk>/', views.deleteItinerary),
 
 	path('api/v1/Itinerary/get_Itinerary_by_cms_content_id/<int:pk>', views.getItineraryByCMSContent),
 

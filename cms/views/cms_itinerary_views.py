@@ -143,12 +143,8 @@ def getItinerary(request, pk):
 		return Response({'detail': f"CMSMenuContent id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=ItinerarySerializer, responses=ItinerarySerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createItinerary(request):
 	data = request.data
 	print('data: ', data)
@@ -161,15 +157,11 @@ def createItinerary(request):
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-
-
-@extend_schema(request=ItinerarySerializer, responses=ItinerarySerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
+@permission_classes([IsAuthenticated])
 def updateItinerary(request, pk):
 	data = request.data
+	print('data: ', data)
 
 	try:
 		menu_item = Itinerary.objects.get(pk=pk)
@@ -184,13 +176,8 @@ def updateItinerary(request, pk):
 		return Response(serializer.errors)
 	
 
-
-
-
-@extend_schema(request=ItinerarySerializer, responses=ItinerarySerializer)
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteItinerary(request, pk):
 	try:
 		menu_item = Itinerary.objects.get(pk=pk)

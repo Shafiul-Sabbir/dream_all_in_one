@@ -17,7 +17,7 @@ urlpatterns = [
 
 	path('api/v1/cms_menu/create/', views.createCMSMenu),
 
-	path('api/v1/cms_menu/update/<int:pk>', views.updateCMSMenu),
+	path('api/v1/cms_menu/update/<int:pk>/', views.updateCMSMenu),
 	
-	path('api/v1/cms_menu/delete/<int:pk>', views.deleteCMSMenu),
+	path('api/v1/cms_menu/delete/<int:pk>/', views.deleteCMSMenu),
 ]

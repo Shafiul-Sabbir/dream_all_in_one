@@ -146,13 +146,8 @@ def getACMSMenuContent(request,pk):
     except ObjectDoesNotExist:
         return Response({'detail': f"CMSMenuContent name - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
-
-
-
-@extend_schema(request=CMSMenuContentSerializer, responses=CMSMenuContentSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createCMSMenuContent(request):
     data = request.data
     print('data: ', data)
@@ -166,12 +161,8 @@ def createCMSMenuContent(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=CMSMenuContentSerializer, responses=CMSMenuContentSerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
+@permission_classes([IsAuthenticated])
 def updateCMSMenuContent(request, pk):
     data = request.data
 
@@ -188,11 +179,8 @@ def updateCMSMenuContent(request, pk):
         return Response(serializer.errors)
     
 
-
-@extend_schema(request=CMSMenuContentSerializer, responses=CMSMenuContentSerializer)
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteCMSMenuContent(request, pk):
     try:
         menu_item = CMSMenuContent.objects.get(pk=pk)

@@ -10,6 +10,8 @@ from .signals import image_upload_signal,contact_created,subscription_created
 import re
 from django.utils.text import slugify
 from django.core.files.base import ContentFile
+from functools import partial
+
 # Create your models here.
 
 class CMSMenu(models.Model):
@@ -20,11 +22,11 @@ class CMSMenu(models.Model):
     name = models.CharField(max_length=255)
     position = models.IntegerField(null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -81,11 +83,11 @@ class CMSMenuContent(models.Model):
     help_center = models.TextField(null=True, blank=True)
     select_bus =models.CharField(max_length=50,null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
     
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -134,10 +136,6 @@ class CMSMenuContent(models.Model):
                 self.slug = slug
 
         # Handle updated_by and created_by fields
-        if not self.pk:  # If it's a new record
-            self.created_by = kwargs.pop('user', None)
-        else:
-            self.updated_by = kwargs.pop('user', None)
 
         # Call the parent class save method
         super().save(*args, **kwargs)
@@ -149,14 +147,14 @@ class CMSMenuContentImage(models.Model):
 
     cms_menu = models.ForeignKey(CMSMenu, on_delete=models.PROTECT, related_name='cms_menu_content_images')
     head = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ContentImage/"), null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -169,33 +167,8 @@ class CMSMenuContentImage(models.Model):
     def __str__(self):
         return self.head
         
-    # def save(self, *args, **kwargs):
-    #     if self.image:
-    #         try:
-    #             self.cloudflare_image = self.upload_cloudflare()
-    #             print("Cloudflare image URL:", self.cloudflare_image)
-    #         except Exception as e:
-    #             print(f"Error uploading image to Cloudflare: {str(e)}")
-    #     super().save(*args, **kwargs)
-    # def upload_cloudflare(self):
-    #     endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
-    #     headers = {
-    #         'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
-    #     }
-    #     files = {
-    #         'file': self.image.file
-    #     }
-    #     response = requests.post(endpoint, headers=headers, files=files)
-    #     response.raise_for_status()
-    #     json_data = response.json()
-    #     variants = json_data.get('result', {}).get('variants', [])
-    #     if variants:
-    #         cloudflare_image = variants[0]  # Use the first variant URL
-    #         print("Cloudflare image URL from response:", cloudflare_image)
-    #         return cloudflare_image
-    #     else:
-    #         print("No variants found in the Cloudflare response")
-    #         return None
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
  
 #add this
 class Itinerary(models.Model):
@@ -208,7 +181,7 @@ class Itinerary(models.Model):
     location = models.CharField(max_length=1000, null=True, blank=True)
     lat = models.FloatField(max_length=1000, null=True, blank=True)
     lng = models.FloatField(max_length=1000, null=True, blank=True)
-    image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ContentImage/"), null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
@@ -362,7 +335,7 @@ class Blog(models.Model):
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_contents')
     title = models.CharField(max_length=500, null=True, blank=True)
     slug = models.SlugField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to=get_image_upload_folder('cms/BlogImage/'), null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/BlogImage/"), null=True, blank=True)
     image_alt = models.TextField(null=True, blank=True)
     cloudflare_image = models.URLField(max_length=5000, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -371,11 +344,11 @@ class Blog(models.Model):
     blog_country = models.ForeignKey(Country, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_country')
     meta_title = models.TextField(null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
-    meta_image = models.ImageField(upload_to=get_image_upload_folder('cms/MetaImage/') , null=True, blank=True)
+    meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/MetaImage/"), null=True, blank=True)
     meta_image_cloudflare = models.URLField(max_length=5000, null=True, blank=True)
     fb_meta_title = models.TextField(null=True, blank=True)
     fb_meta_description = models.TextField(null=True, blank=True)
-    fb_meta_image = models.ImageField(upload_to=get_image_upload_folder('cms/MetaImage/') , null=True, blank=True)
+    fb_meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/MetaImage/"), null=True, blank=True)
     fb_meta_image_cloudflare = models.URLField(max_length=5000, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     is_featured = models.BooleanField(default=False,null=True, blank=True)
@@ -434,7 +407,7 @@ class Review(models.Model):
 
     supplier = models.CharField(max_length=500, null=True, blank=True)
     reviewer_name = models.CharField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to='cms/ReviewImage/', null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ReviewImage/"), null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
     rating = models.IntegerField(null=True, blank=True)
     text = models.TextField(null=True, blank=True)
@@ -492,8 +465,8 @@ class MetaData(models.Model):
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
     meta_title = models.CharField(max_length=255,null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ContentImage/"), null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to='cms/ContentImage/',null=True, blank=True)
     slug = models.SlugField(max_length=500, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)

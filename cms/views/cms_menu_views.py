@@ -277,12 +277,8 @@ def getACMSMenu(request, pk):
         return Response({'detail': f"CMSMenu id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=CMSMenuSerializer, responses=CMSMenuSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createCMSMenu(request):
     data = request.data
     sender_id = request.user.id
@@ -307,13 +303,8 @@ def createCMSMenu(request):
     else:
         return Response(serializer.errors)
 
-
-
-
-@extend_schema(request=CMSMenuSerializer, responses=CMSMenuSerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
+@permission_classes([IsAuthenticated])
 def updateCMSMenu(request, pk):
     data = request.data
     print('data :', data)
@@ -329,14 +320,6 @@ def updateCMSMenu(request, pk):
             filtered_data[key] = value
 
     print('filtered_data: ', filtered_data)
-        
-    logo = filtered_data.get('logo', None)
-    favicon = filtered_data.get('favicon', None)
-
-    if logo is not None and type(logo) == str:
-        popped_logo = filtered_data.pop('logo')
-    if favicon is not None and type(favicon) == str:
-        popped_favicon = filtered_data.pop('favicon')
 
     serializer = CMSMenuSerializer(menu_obj, data=filtered_data)
     if serializer.is_valid():
@@ -345,13 +328,8 @@ def updateCMSMenu(request, pk):
     else:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-
-
-@extend_schema(request=CMSMenuSerializer, responses=CMSMenuSerializer)
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteCMSMenu(request, pk):
     try:
         menu = CMSMenu.objects.get(pk=pk)

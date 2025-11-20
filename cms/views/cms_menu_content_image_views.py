@@ -16,7 +16,7 @@ from rest_framework.response import Response
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
-
+from authentication.models import Company
 from cms.models import CMSMenu, CMSMenuContent,CMSMenuContentImage, CMSMenuContentImage
 from cms.serializers import CMSMenuContentImageSerializer, CMSMenuContentImageListSerializer, CMSMenuContentImageMinimalSerializer,CMSMenuContentListSerializer
 
@@ -167,11 +167,8 @@ def getACMSMenuContentImageByContentTitle(request, image_name):
         return Response({'detail': f"CMSMenuContentImage with image_name '{image_name}' does not exist"}, 
                         status=status.HTTP_404_NOT_FOUND)
 
-
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createCMSMenuContentImage(request):
     data = request.data
     print('data: ', data)
@@ -182,9 +179,11 @@ def createCMSMenuContentImage(request):
     for key, value in data.items():
         if value != '' and value != 0 and value != '0':
             filtered_data[key] = value
-
+    print('\n')
     print('filtered_data: ', filtered_data)
-    
+    print('\n')
+
+    company_id = data.get('company')
     menu_id = data.get('cms_menu')
     head = data.get('head')
     
@@ -192,16 +191,27 @@ def createCMSMenuContentImage(request):
         cms_menu_obj = CMSMenu.objects.get(pk=menu_id)
     except CMSMenu.DoesNotExist:
         return Response({'detail': "CMSMenu id {menu_id} doesn't exist."}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        company = Company.objects.get(id=company_id)
+    except Company.DoesNotExist:
+        return Response({'detail': "Company id {company_id} doesn't exist."}, status=status.HTTP_400_BAD_REQUEST)
 
     for i in range(len(filtered_data) - 2):
         try:
             image = filtered_data[f'images[0][{i}]']
             print('image: ', image)
             print('image type: ', type(image))
-            CMSMenuContentImage.objects.create(cms_menu=cms_menu_obj, head=head, image=image)
+            print('\n')
+            filtered_data['image'] = image
+            serializer = CMSMenuContentImageSerializer(data=filtered_data)
+            if serializer.is_valid():
+                serializer.save()
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            # CMSMenuContentImage.objects.create(cms_menu=cms_menu_obj, head=head, image=image)
         except KeyError:
             pass
-    content_images = CMSMenuContentImage.objects.filter(cms_menu=cms_menu_obj)
+    content_images = CMSMenuContentImage.objects.filter(cms_menu=cms_menu_obj, company=company).all()
     serializer = CMSMenuContentImageListSerializer(content_images, many=True)
     if content_images.count() > 0:
         return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -209,13 +219,8 @@ def createCMSMenuContentImage(request):
         return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
 
-
-
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
-# @parser_classes([MultiPartParser, FormParser])
+@permission_classes([IsAuthenticated])
 def updateCMSMenuContentImage(request, pk):
     data = request.data
     print('data :', data)
@@ -246,11 +251,8 @@ def updateCMSMenuContentImage(request, pk):
 
 
 
-
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteCMSMenuContentImage(request, pk):
     try:
         content_images = CMSMenuContentImage.objects.get(pk=pk)
