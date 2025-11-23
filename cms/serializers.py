@@ -535,41 +535,34 @@ class BlogCommentsSerializer(serializers.ModelSerializer):
         modelObject.save()
         return modelObject
 
-#Review serializer
 class ReviewListSerializer(serializers.ModelSerializer):
     # cms_content = CMSMenuContentMinimalSerializer()
-    created_by = serializers.SerializerMethodField(read_only=True)
-    updated_by = serializers.SerializerMethodField(read_only=True)
+    # created_by = serializers.SerializerMethodField(read_only=True)
+    # updated_by = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = Review
         fields = '__all__'
-        extra_kwargs = {
-            'created_at':{
-                'read_only': True,
-            },
-            'updated_at':{
-                'read_only': True,
-            },
-            'created_by':{
-                'read_only': True,
-            },
-            'updated_by':{
-                'read_only': True,
-            },
-        }
+        # extra_kwargs = {
+        #     'created_at':{
+        #         'read_only': True,
+        #     },
+        #     'updated_at':{
+        #         'read_only': True,
+        #     },
+        #     'created_by':{
+        #         'read_only': True,
+        #     },
+        #     'updated_by':{
+        #         'read_only': True,
+        #     },
+        # }
 
-    def get_created_by(self, obj):
-        return obj.created_by.email if obj.created_by else obj.created_by
+    # def get_created_by(self, obj):
+    #     return obj.created_by.email if obj.created_by else obj.created_by
         
-    def get_updated_by(self, obj):
-        return obj.updated_by.email if obj.updated_by else obj.updated_by
+    # def get_updated_by(self, obj):
+    #     return obj.updated_by.email if obj.updated_by else obj.updated_by
 
-
-
-class ReviewMinimalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Review
-        fields = '__all__'
 
 
 class ReviewSerializer(serializers.ModelSerializer):
@@ -578,22 +571,44 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        modelObject = super().create(validated_data=validated_data)
         user = get_current_authenticated_user()
+
+        # Handle Cloudflare uploads only for fields that are present
+        if 'image' in validated_data and validated_data['image']:
+            print('\n')
+            print("image found in validated data at create method, so going to upload.")
+            validated_data['cloudflare_image'] = upload_to_cloudflare(validated_data['image'])
+        
+        modelObject = super().create(validated_data=validated_data)
+
         if user is not None:
             modelObject.created_by = user
-        modelObject.save()
+            modelObject.save(update_fields=['created_by'])
+
         return modelObject
     
     def update(self, instance, validated_data):
-        modelObject = super().update(instance=instance, validated_data=validated_data)
         user = get_current_authenticated_user()
+
+        # ✅ Image field update: only upload if new image provided
+        if 'image' in validated_data:
+            print('\n')
+            print("image found in validated data at update method, so going to upload.")
+            if validated_data['image'] and validated_data['image'] != instance.image:
+                validated_data['cloudflare_image'] = upload_to_cloudflare(validated_data['image'])
+            else:
+                print('\n')
+                print("no new image provided or same image, so keeping the old one.")
+                validated_data.pop('image', None)  # keep old image untouched
+        
+        modelObject = super().update(instance=instance, validated_data=validated_data)
+
         if user is not None:
             modelObject.updated_by = user
-        modelObject.save()
+            modelObject.save(update_fields=['updated_by'])
+
         return modelObject
 
-# MetaData serializer
 class MetaDataListSerializer(serializers.ModelSerializer):
     cms_content = CMSMenuContentMinimalSerializer()
     created_by = serializers.SerializerMethodField(read_only=True)
@@ -623,30 +638,48 @@ class MetaDataListSerializer(serializers.ModelSerializer):
         return obj.updated_by.email if obj.updated_by else obj.updated_by
 
 
-class MetaDataMinimalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MetaData
-        fields = ('id', 'title', 'description',)
-
 class MetaDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = MetaData
         fields = '__all__'
 
     def create(self, validated_data):
-        modelObject = super().create(validated_data=validated_data)
         user = get_current_authenticated_user()
+
+        # Handle Cloudflare uploads only for fields that are present
+        if 'image' in validated_data and validated_data['image']:
+            print('\n')
+            print("image found in validated data at create method, so going to upload.")
+            validated_data['cloudflare_image'] = upload_to_cloudflare(validated_data['image'])
+        
+        modelObject = super().create(validated_data=validated_data)
+
         if user is not None:
             modelObject.created_by = user
-        modelObject.save()
+            modelObject.save(update_fields=['created_by'])
+
         return modelObject
     
     def update(self, instance, validated_data):
-        modelObject = super().update(instance=instance, validated_data=validated_data)
         user = get_current_authenticated_user()
+
+        # ✅ Image field update: only upload if new image provided
+        if 'image' in validated_data:
+            print('\n')
+            print("image found in validated data at update method, so going to upload.")
+            if validated_data['image'] and validated_data['image'] != instance.image:
+                validated_data['cloudflare_image'] = upload_to_cloudflare(validated_data['image'])
+            else:
+                print('\n')
+                print("no new image provided or same image, so keeping the old one.")
+                validated_data.pop('image', None)  # keep old image untouched
+        
+        modelObject = super().update(instance=instance, validated_data=validated_data)
+
         if user is not None:
             modelObject.updated_by = user
-        modelObject.save()
+            modelObject.save(update_fields=['updated_by'])
+
         return modelObject
     
 # Tag serializer

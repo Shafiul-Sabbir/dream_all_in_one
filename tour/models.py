@@ -5,8 +5,8 @@ from payments.models import Traveller
 from authentication.models import User, Company
 from django.contrib.auth import get_user_model
 import re
-
-from utils.utils import generate_slug, upload_to_cloudflare
+from utils.utils import generate_slug, upload_to_cloudflare, get_image_upload_folder
+from functools import partial
 
 
 # Create your models here.
@@ -44,7 +44,7 @@ class Tour(models.Model):
     is_bokun_url = models.BooleanField(default=True, null=True, blank=True)
 
     # Image Info
-    thumbnail_image = models.ImageField(upload_to='tour/ThumbnailImage/', null=True, blank=True)
+    thumbnail_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/thumbnail_image/"), null=True, blank=True)
     update_thumbnail_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_thumbnail_image_url = models.URLField(max_length=500, null=True, blank=True)
 
@@ -52,11 +52,11 @@ class Tour(models.Model):
     meta_title = models.CharField(max_length=500, null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -130,15 +130,15 @@ class TourContentImage(models.Model):
 
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='tour_images',null=True, blank=True)
     head = models.CharField(max_length=255, null=True, blank=True)
-    image = models.ImageField(upload_to='tour/ContentImage/',null=True, blank=True, unique=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/content_image/"), null=True, blank=True)
     update_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_image_url = models.URLField(max_length=500, null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -331,22 +331,22 @@ class TourBooking(models.Model):
     cancellation_denied_count = models.IntegerField(default=0, null=True, blank=True)  # Track how many times cancellation was denied
 
     # QR code 
-    qr_code = models.ImageField(upload_to="booking_qr/", null=True, blank=True)
+    qr_code = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/booking_qr/"), null=True, blank=True)
     qr_url = models.URLField(max_length=2000, null=True, blank=True)
 
     # booking_ticket & payment_invoice
-    booking_ticket = models.FileField(upload_to='tour_booking_ticket/', null=True, blank=True)
-    payment_invoice = models.FileField(upload_to='payment_invoice/', null=True, blank=True)
+    booking_ticket = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/tour_booking_ticket/"), null=True, blank=True)
+    payment_invoice = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/payment_invoice/"), null=True, blank=True)
 
     # booking uuid 
     booking_uuid = models.CharField(max_length=100, unique=True, null=True, blank=True)
 
     # Metadata
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.CharField(max_length=50, null=True, blank=True)
     updated_by = models.CharField(max_length=50, null=True, blank=True)
@@ -372,11 +372,11 @@ class TourItinerary(models.Model):
     lat = models.FloatField(max_length=1000, null=True, blank=True)
     long = models.FloatField(max_length=1000, null=True, blank=True)   
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -411,11 +411,11 @@ class PenaltyRules(models.Model):
     charge_type = models.CharField(max_length=50, null=True, blank=True)  # percentage, fixed
     percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  # e.g., 50.00
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -443,11 +443,11 @@ class CancellationPolicy(models.Model):
     policy_type = models.CharField(max_length=50,choices=POLICY_TYPE_CHOICES,null=True,blank=True)
     simple_cutoff_hours = models.IntegerField(null=True, blank=True, default=0)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
     
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -508,11 +508,11 @@ class OldAgentBooking(models.Model):
     booking_invoice_pdf = models.CharField(max_length=1000, null=True, blank=True)
     url = models.CharField(max_length=10000, null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)

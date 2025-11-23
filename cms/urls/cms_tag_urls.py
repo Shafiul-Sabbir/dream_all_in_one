@@ -14,9 +14,9 @@ urlpatterns = [
 
 	path('api/v1/tag/create/', views.createTag),
 
-	path('api/v1/tag/update/<int:pk>', views.updateTag),
+	path('api/v1/tag/update/<int:pk>/', views.updateTag),
 
-	path('api/v1/tag/delete/<int:pk>', views.deleteTag),
+	path('api/v1/tag/delete/<int:pk>/', views.deleteTag),
 
 
 

@@ -119,12 +119,8 @@ def searchTag(request):
 		return Response({'detail': f"There are no tags matching your search"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=TagSerializer, responses=TagSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_CREATE.name])
 def createTag(request):
 	data = request.data
 	filtered_data = {}
@@ -142,12 +138,8 @@ def createTag(request):
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=TagSerializer, responses=TagSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_UPDATE.name, PermissionEnum.PERMISSION_PARTIAL_UPDATE.name])
 def updateTag(request,pk):
 	try:
 		tags = Tag.objects.get(pk=pk)
@@ -162,12 +154,8 @@ def updateTag(request,pk):
 		return Response({'detail': f"Tag id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=TagSerializer, responses=TagSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.PERMISSION_DELETE.name])
 def deleteTag(request, pk):
 	try:
 		tags = Tag.objects.get(pk=pk)

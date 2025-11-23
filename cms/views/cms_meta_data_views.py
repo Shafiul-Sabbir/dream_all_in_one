@@ -155,12 +155,8 @@ def getMetaData(request, pk):
         return Response({'detail': f"CMSMenuContent id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=MetaDataSerializer, responses=MetaDataSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createMetaData(request):
     data = request.data
     print('data: ', data)
@@ -174,12 +170,8 @@ def createMetaData(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-extend_schema(request=MetaDataSerializer, responses=MetaDataSerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
+@permission_classes([IsAuthenticated])
 def updateMetaData(request, pk):
     data = request.data
     print('data:', data)
@@ -229,12 +221,8 @@ def updateMetaData(request, pk):
     
 
 
-
-
-@extend_schema(request=MetaDataSerializer, responses=MetaDataSerializer)
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteMetaData(request, pk):
     try:
         meta_data = MetaData.objects.get(pk=pk)

@@ -1,28 +1,18 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
 from rest_framework.response import Response
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 from cms.models import Review
-from cms.serializers import  ReviewListSerializer
+from cms.serializers import  ReviewListSerializer, ReviewSerializer
 from cms.filters import *
 from commons.pagination import Pagination
 import os
 
 # Create your views here.
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=ReviewListSerializer,
-	responses=ReviewListSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
-
 def getAllReview(request):
-
     company_id = request.query_params.get('company_id')
     page = request.query_params.get('page')
     size = request.query_params.get('size')
@@ -77,6 +67,49 @@ def getAllReviewWithoutPagination(request):
     }
     return Response(response, status=status.HTTP_200_OK)
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def createReview(request):
+    data = request.data
+    print('data: ', data)
+    
+    serializer = ReviewSerializer(data=data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def updateReview(request, pk):
+    data = request.data
+    print('data: ', data)
+
+    try:
+        review = Review.objects.get(pk=pk)
+    except Review.DoesNotExist:
+        return Response({'error': 'Review not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ReviewSerializer(review, data=data, partial=True)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def deleteReview(request, pk):
+    try:
+        review = Review.objects.get(pk=pk)
+    except Review.DoesNotExist:
+        return Response({'error': 'Review not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    review.delete()
+    return Response({'message': 'Review deleted successfully'}, status=status.HTTP_200_OK)  
 
 
 

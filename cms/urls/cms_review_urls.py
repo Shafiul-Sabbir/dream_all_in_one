@@ -10,6 +10,13 @@ urlpatterns = [
 	# after using pagination present response time is 10ms and 4 queries.
     
 	path('api/v1/cms_review/without_pagination/all/', views.getAllReviewWithoutPagination),
+    
+	path('api/v1/cms_review/create/', views.createReview),
+
+	path('api/v1/cms_review/update/<int:pk>/', views.updateReview),
+
+	path('api/v1/cms_review/delete/<int:pk>/', views.deleteReview),
+
 
     
 

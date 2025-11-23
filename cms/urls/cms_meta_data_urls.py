@@ -16,9 +16,9 @@ urlpatterns = [
 
 	path('api/v1/cms_meta_data/create/', views.createMetaData),
 
-	path('api/v1/cms_meta_data/update/<int:pk>', views.updateMetaData),
+	path('api/v1/cms_meta_data/update/<int:pk>/', views.updateMetaData),
 	
-	path('api/v1/cms_meta_data/delete/<int:pk>', views.deleteMetaData),
+	path('api/v1/cms_meta_data/delete/<int:pk>/', views.deleteMetaData),
 
 	path('api/v1/cms_meta_data/get_meta_data_by_cms_content_slug/<str:slug>/', views.getMetaDataByCMSContentSlug),
 

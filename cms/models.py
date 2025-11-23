@@ -428,33 +428,8 @@ class Review(models.Model):
     def __str__(self):
         return self.title
         
-    # def save(self, *args, **kwargs):
-    #     if self.image:
-    #         try:
-    #             self.cloudflare_image = self.upload_cloudflare()
-    #             print("Cloudflare image URL:", self.cloudflare_image)
-    #         except Exception as e:
-    #             print(f"Error uploading image to Cloudflare: {str(e)}")
-    #     super().save(*args, **kwargs)
-    # def upload_cloudflare(self):
-    #     endpoint = 'https://api.cloudflare.com/client/v4/accounts/f8b413899d5239382d13a2665326b04e/images/v1'
-    #     headers = {
-    #         'Authorization': 'Bearer Ook1HC9KydDm4YfqkmVH5KnoNsSugDDqgLFj4QHi',
-    #     }
-    #     files = {
-    #         'file': self.image.file
-    #     }
-    #     response = requests.post(endpoint, headers=headers, files=files)
-    #     response.raise_for_status()
-    #     json_data = response.json()
-    #     variants = json_data.get('result', {}).get('variants', [])
-    #     if variants:
-    #         cloudflare_image = variants[0]  # Use the first variant URL
-    #         print("Cloudflare image URL from response:", cloudflare_image)
-    #         return cloudflare_image
-    #     else:
-    #         print("No variants found in the Cloudflare response")
-    #         return None
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
 
 
@@ -485,46 +460,38 @@ class MetaData(models.Model):
     def __str__(self):
         return f"{self.meta_title}"
     
-    # def save(self, *args, **kwargs):
-    #     # Auto-generate slug from meta_title
-    #     if self.meta_title:
-    #         # Replace special characters (except hyphens) with hyphens
-    #         clean_title = re.sub(r'[^\w\s-]', '-', self.meta_title)
+    def save(self, *args, **kwargs):
+        # Auto-generate slug from meta_title
+        if self.pk is None and self.meta_title:
+            # Replace special characters (except hyphens) with hyphens
+            clean_title = re.sub(r'[^\w\s-]', '-', self.meta_title)
 
-    #         # Replace spaces with hyphens
-    #         clean_title = re.sub(r'\s+', '-', clean_title)
+            # Replace spaces with hyphens
+            clean_title = re.sub(r'\s+', '-', clean_title)
 
-    #         # Convert to lowercase
-    #         clean_title = clean_title.lower()
+            # Convert to lowercase
+            clean_title = clean_title.lower()
 
-    #         # Replace multiple consecutive hyphens with a single hyphen
-    #         clean_title = re.sub(r'-{2,}', '-', clean_title)
+            # Replace multiple consecutive hyphens with a single hyphen
+            clean_title = re.sub(r'-{2,}', '-', clean_title)
 
-    #         # Strip leading and trailing hyphens
-    #         clean_title = clean_title.strip('-')
+            # Strip leading and trailing hyphens
+            clean_title = clean_title.strip('-')
 
-    #         slug = clean_title
-    #         counter = 1
+            slug = clean_title
+            counter = 1
 
-    #         # Ensure slug uniqueness
-    #         while MetaData.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-    #             slug = f"{clean_title}-{counter}"
-    #             counter += 1
+            # Ensure slug uniqueness
+            while MetaData.objects.filter(slug=slug).exclude(pk=self.pk).exists():
+                slug = f"{clean_title}-{counter}"
+                counter += 1
 
-    #         self.slug = slug
+            self.slug = slug
 
-    #     # Handle updated_by and created_by fields
-    #     if not self.pk:  # If it's a new record
-    #         self.created_by = kwargs.pop('user', None)
-    #     else:
-    #         self.updated_by = kwargs.pop('user', None)
 
-    #     # Call the parent class save method
-    #     super().save(*args, **kwargs)
+        # Call the parent class save method
+        super().save(*args, **kwargs)
 
-    #     # Signal to handle image upload (if any)
-    #     if self.image:
-    #         image_upload_signal.send(sender=self.__class__, instance=self)
 
 
 agent = None
