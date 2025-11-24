@@ -60,13 +60,15 @@ class DayTourPriceSerializer(serializers.ModelSerializer):
     available_dates = AvailableDateSerializer(many=True, write_only=True)
     available_times = AvailableTimeSerializer(many=True, write_only=True)
     tour = serializers.PrimaryKeyRelatedField(read_only=True)
+    company = serializers.PrimaryKeyRelatedField(read_only=True)
 
     # available_dates_list = serializers.SerializerMethodField()
     # available_times_list = serializers.SerializerMethodField()
 
     class Meta:
         model = DayTourPrice
-        fields = ['id','tour', 'price_per_person', 'group_price', 'guide','available_dates', 'available_times']
+        fields = '__all__'
+        # fields = ['id','tour', 'price_per_person', 'group_price', 'guide','available_dates', 'available_times']
 
     # def get_available_dates_list(self, obj):
     #     return [str(date.date.strftime("%m/%d/%Y")) for date in obj.available_dates.all()]
@@ -75,18 +77,20 @@ class DayTourPriceSerializer(serializers.ModelSerializer):
     #     return [str(time.time.strftime("%I:%M %p")) for time in obj.available_times.all()]
 
     def create(self, validated_data):
+        print("validated_data from create method of DayTourPriceSerializer: ", validated_data)
         available_dates = validated_data.pop('available_dates', [])
         available_times = validated_data.pop('available_times', [])
         tour = self.context.get('tour')
-        day_tour_price = DayTourPrice.objects.create(tour=tour, **validated_data)
+        company = self.context.get('company')
+        day_tour_price = DayTourPrice.objects.create(tour=tour, company=company, **validated_data)
 
         # Parse & create AvailableDate objects
         for item in available_dates:
-            AvailableDate.objects.create(day_tour_price=day_tour_price, date=item['date'])
+            AvailableDate.objects.create(day_tour_price=day_tour_price, company=company, date=item['date'])
 
         # Parse & create AvailableTime objects
         for item in available_times:
-            AvailableTime.objects.create(day_tour_price=day_tour_price, time=item['time'])
+            AvailableTime.objects.create(day_tour_price=day_tour_price, company=company, time=item['time'])
 
         return day_tour_price
 
@@ -162,7 +166,7 @@ class TourContentImageListSerializer(serializers.ModelSerializer):
 
 class PenaltyRulesSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)  # add this
-
+    company = serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = PenaltyRules
         fields = '__all__'
@@ -180,6 +184,8 @@ class PenaltyRulesListSerializer(serializers.ModelSerializer):
 class CancellationPolicySerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)  # writable id
     penalty_rules = PenaltyRulesSerializer(many=True)
+    company = serializers.PrimaryKeyRelatedField(read_only=True)
+
 
     class Meta:
         model = CancellationPolicy
@@ -188,7 +194,10 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
         tour = self.context.get('tour')
+        company = self.context.get('company')
         validated_data['tour'] = tour
+        validated_data['company'] = company
+        print("company from create method of CancellationPolicySerializer : ", company)
         print('\n')
         print("validated_data from create method of CancellationPolicySerializer: ", validated_data)
         penalty_rules = validated_data.pop('penalty_rules', [])
@@ -208,6 +217,7 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
                 hours_before = rule_data.get('hours_before', 0)
                 cutoff_hours = (days_before * 24) + hours_before
                 rule_data['cutoff_hours'] = cutoff_hours
+                rule_data['company'] = company
                 print("rule data after calculating cutoff_hours:", rule_data)
                 penalty_rule = PenaltyRules.objects.create(**rule_data)
                 print("Penalty Rule created:", penalty_rule)
@@ -325,6 +335,11 @@ class TourSerializer(serializers.ModelSerializer):
         print("validated data from create method of TourSerializer : ", validated_data)
         print('\n')
 
+        # finding company id from validated data
+        company = validated_data.get('company', None)
+        print("company from create method of TourSerializer : ", company)
+        print('\n')
+
         # handle day tour price list
         day_tour_price_list = validated_data.pop('day_tour_price_list', [])
         print("day_tour_price_list from create method of Tourserializer : ", day_tour_price_list)
@@ -360,8 +375,7 @@ class TourSerializer(serializers.ModelSerializer):
         # creating Day tour Price List
         print("creating DayTourPrices.")
         for day_price_data in day_tour_price_list:
-            # day_price_data['tour'] = tour
-            serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': tour})
+            serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': tour, 'company': company})
             serializer.is_valid(raise_exception=True)
             serializer.save()
             print("DayTourPrice created:", serializer.instance)
@@ -371,7 +385,7 @@ class TourSerializer(serializers.ModelSerializer):
         print("creating Itineraries")
         for itinerary_data in itineraries_list:
             itinerary_data['tour'] = tour.id
-            serializer = TourItinerarySerializer(data=itinerary_data)
+            serializer = TourItinerarySerializer(data=itinerary_data, context={'company': company})
             serializer.is_valid(raise_exception=True)
             serializer.save()
             print("Itinerary created:", serializer.instance)
@@ -380,9 +394,8 @@ class TourSerializer(serializers.ModelSerializer):
         # creating cancellation policies list
         print("creating Cancellation Policies")
         for policy_data in cancellation_policies_list:
-            policy_data['tour'] = tour.id
             print("policy data is :",policy_data)
-            serializer = CancellationPolicySerializer(data=policy_data, context={'tour': tour})
+            serializer = CancellationPolicySerializer(data=policy_data, context={'tour': tour, 'company': company})
             serializer.is_valid(raise_exception=True)
             serializer.save()
             print("Cancellation Policy created:", serializer.instance)
@@ -395,9 +408,10 @@ class TourSerializer(serializers.ModelSerializer):
             image_data["tour"] = tour.id
             image_data["head"] = str(value)
             image_data["image"] = value
+            image_data["company"] = company
             print("image data is :",image_data)
-            serializer = TourContentImageSerializer(data=image_data)
-            print("TourContentImageSerializer is : ", serializer)
+            serializer = TourContentImageSerializer(data=image_data, context={'company': company})
+            # print("TourContentImageSerializer is : ", serializer)
 
             if serializer.is_valid():
                 serializer.save()
@@ -406,6 +420,15 @@ class TourSerializer(serializers.ModelSerializer):
                 print("errors : ", serializer.errors)
         print('\n')
 
+        # handle created_by field
+        user = get_current_authenticated_user()
+        print("current authenticated user in TourSerializer created method:", user)
+        if user is not None:
+            tour.created_by = user
+            tour.save(update_fields=["created_by"])  # <--- only save this field
+        print("Tour creation completed.")
+        print("created by : ", tour.created_by)
+        print('\n')
         return tour
 
     def update(self, instance, validated_data):
@@ -414,7 +437,12 @@ class TourSerializer(serializers.ModelSerializer):
         files = request.FILES
         print("files : ", files)
 
-        # print("validated data from update method of TourSerializer : ", validated_data)
+        # finding company id from validated data
+        company = validated_data.get('company', None)
+        print("company from update method of TourSerializer : ", company)
+        print('\n')
+
+        print("validated data from update method of TourSerializer : ", validated_data)
 
         # instance এর ফিল্ড update করতে ছোট্ট trick:
         for attr, value in validated_data.items():
@@ -522,7 +550,7 @@ class TourSerializer(serializers.ModelSerializer):
             image_data["head"] = str(value)
             image_data["image"] = value
             print("image data is :",image_data)
-            serializer = TourContentImageSerializer(data=image_data)
+            serializer = TourContentImageSerializer(data=image_data, context={'company': instance.company})
             print("TourContentImageSerializer is : ", serializer)
 
             if serializer.is_valid():
@@ -531,18 +559,29 @@ class TourSerializer(serializers.ModelSerializer):
             else:
                 print("errors : ", serializer.errors)
 
-
+        # handle updated_by field
+        user = get_current_authenticated_user()
+        print("current authenticated user in TourSerializer update method:", user)
+        if user is not None:
+            instance.updated_by = user
+            instance.save(update_fields=["updated_by"])  # <--- only save this field
         return instance
         
 
 
 class TourContentImageSerializer(serializers.ModelSerializer):
+    company = serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = TourContentImage
         fields = '__all__'
 
     def create(self, validated_data):
         image = validated_data.get('image', None)
+        company = self.context.get('company')
+        validated_data['company'] = company
+        print('\n')
+        print('requested data for create from TourContentImageSerializer: ', validated_data)
+        print('\n')
         if image is not None:
             print("image from TourContentImageSerializer create method:", image)
             print('\n')

@@ -19,7 +19,7 @@ class Tour(models.Model):
     description = models.TextField(null=True, blank=True)
     overview = models.TextField(null=True, blank=True)
     order = models.IntegerField(default=0, null=True, blank=True)
-    slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    slug = models.SlugField(max_length=255, null=True, blank=True)
     published = models.BooleanField(default=True, null=True, blank=True)
 
     # Additional Info
@@ -64,48 +64,51 @@ class Tour(models.Model):
     class Meta:
         verbose_name_plural = 'Tours'
         ordering = ['-id' ]
+        constraints = [
+            models.UniqueConstraint(fields=['slug', 'company'], name='unique_slug_of_each_Tour_for_per_company')
+        ]
 
     def __str__(self):
         return self.name
     
     # we will uncomment after running the script
 
-    # def save(self, *args, **kwargs):
-    #     # when we try to update an existing object. process of updating the thumbnail image to the cloudflare
-    #     if self.pk:
-    #         print("entering save method for update")
-    #         #checking wheather we have sent any new thumbnail_image or not
-    #         if self.update_thumbnail_image: 
-    #             print("update_thumbnail_image flag is True, uploading thumbnail image to Cloudflare...")
-    #             # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
-    #             if self.thumbnail_image:
-    #                 try:
-    #                     print("Uploading thumbnail image to Cloudflare from 'update' part of save method...")
-    #                     self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
-    #                     print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
-    #                     self.update_thumbnail_image = False  # Reset the flag after upload
-    #                     print(f"update_thumbnail_image flag reset to {self.update_thumbnail_image}")
-    #                 except Exception as e:
-    #                     print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
-    #             else:
-    #                 print("No thumbnail image provided for upload.")
-    #         else:
-    #             print("update_thumbnail_image flag is False, skipping Cloudflare upload for thumbnail image.")
-    #             pass
+    def save(self, *args, **kwargs):
+        # when we try to update an existing object. process of updating the thumbnail image to the cloudflare
+        if self.pk:
+            print("entering save method for update")
+            #checking wheather we have sent any new thumbnail_image or not
+            if self.update_thumbnail_image: 
+                print("update_thumbnail_image flag is True, uploading thumbnail image to Cloudflare...")
+                # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
+                if self.thumbnail_image:
+                    try:
+                        print("Uploading thumbnail image to Cloudflare from 'update' part of save method...")
+                        self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
+                        print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
+                        self.update_thumbnail_image = False  # Reset the flag after upload
+                        print(f"update_thumbnail_image flag reset to {self.update_thumbnail_image}")
+                    except Exception as e:
+                        print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
+                else:
+                    print("No thumbnail image provided for upload.")
+            else:
+                print("update_thumbnail_image flag is False, skipping Cloudflare upload for thumbnail image.")
+                pass
 
-    #     # when we try to create new object
-    #     else:
-    #         print("entering save method for create")
-    #         if self.thumbnail_image:
-    #             try:
-    #                 print("Uploading thumbnail image to Cloudflare from 'create' part of save method...")
-    #                 self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
-    #                 print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
-    #             except Exception as e:
-    #                 print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
-    #         else :
-    #             print("No thumbnail image provided for upload.")
-    #             pass
+        # when we try to create new object
+        else:
+            print("entering save method for create")
+            if self.thumbnail_image:
+                try:
+                    print("Uploading thumbnail image to Cloudflare from 'create' part of save method...")
+                    self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
+                    print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
+                except Exception as e:
+                    print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
+            else :
+                print("No thumbnail image provided for upload.")
+                pass
 
 
 
@@ -153,48 +156,48 @@ class TourContentImage(models.Model):
         
     # we will uncomment after running the script
 
-    # def save(self, *args, **kwargs):
-    #     skip_cloudflare = getattr(self, "_skip_cloudflare", False)
-    #     print("skip_cloudflare is : ", skip_cloudflare)
+    def save(self, *args, **kwargs):
+        skip_cloudflare = getattr(self, "_skip_cloudflare", False)
+        print("skip_cloudflare is : ", skip_cloudflare)
 
-    #     if not skip_cloudflare:  
+        if not skip_cloudflare:  
 
-    #         if self.pk:
-    #             print("entering save method for update")
-    #             #checking wheather we have sent any new image or not
-    #             if self.update_image: 
-    #                 print("update_image flag is True, uploading image to Cloudflare...")
-    #                 # If update_image is True, upload the image to Cloudflare
-    #                 if self.image:
-    #                     try:
-    #                         print("Uploading image to Cloudflare from 'update' part of save method...")
-    #                         self.cloudflare_image_url = upload_to_cloudflare(self.image)
-    #                         print("Cloudflare image URL:", self.cloudflare_image_url)
-    #                         self.update_image = False  # Reset the flag after upload
-    #                         print(f"update_image flag reset to {self.update_image}")
-    #                     except Exception as e:
-    #                         print(f"Error uploading image to Cloudflare: {str(e)}")
-    #                 else:
-    #                     print("No image provided for upload.")
-    #             else:
-    #                 print("update_image flag is False, skipping Cloudflare upload for image.")
-    #                 pass
+            if self.pk:
+                print("entering save method for update")
+                #checking wheather we have sent any new image or not
+                if self.update_image: 
+                    print("update_image flag is True, uploading image to Cloudflare...")
+                    # If update_image is True, upload the image to Cloudflare
+                    if self.image:
+                        try:
+                            print("Uploading image to Cloudflare from 'update' part of save method...")
+                            self.cloudflare_image_url = upload_to_cloudflare(self.image)
+                            print("Cloudflare image URL:", self.cloudflare_image_url)
+                            self.update_image = False  # Reset the flag after upload
+                            print(f"update_image flag reset to {self.update_image}")
+                        except Exception as e:
+                            print(f"Error uploading image to Cloudflare: {str(e)}")
+                    else:
+                        print("No image provided for upload.")
+                else:
+                    print("update_image flag is False, skipping Cloudflare upload for image.")
+                    pass
 
-    #         # when we try to create new object
-    #         else:
-    #             print("entering save method for create")
-    #             if self.image:
-    #                 try:
-    #                     print("Uploading image to Cloudflare from 'create' part of save method...")
-    #                     self.cloudflare_image_url = upload_to_cloudflare(self.image)
-    #                     print("Cloudflare image URL:", self.cloudflare_image_url)
-    #                 except Exception as e:
-    #                     print(f"Error uploading image to Cloudflare: {str(e)}")
-    #             else :
-    #                 print("No image provided for upload.")
-    #                 pass
+            # when we try to create new object
+            else:
+                print("entering save method for create")
+                if self.image:
+                    try:
+                        print("Uploading image to Cloudflare from 'create' part of save method...")
+                        self.cloudflare_image_url = upload_to_cloudflare(self.image)
+                        print("Cloudflare image URL:", self.cloudflare_image_url)
+                    except Exception as e:
+                        print(f"Error uploading image to Cloudflare: {str(e)}")
+                else :
+                    print("No image provided for upload.")
+                    pass
 
-    #     super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
   
 class DayTourPrice(models.Model):
     GUIDE_CHOICES = [

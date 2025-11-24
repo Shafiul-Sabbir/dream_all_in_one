@@ -212,6 +212,9 @@ USE_TZ = True
 WHITENOISE_USE_FINDERS = True
 CORS_ALLOW_ALL_ORIGINS=True
 
+# for avoiding warning for custom user model (email as username, but email is not globally unique)
+SILENCED_SYSTEM_CHECKS = ["auth.W004"]
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 

@@ -147,7 +147,7 @@ class CMSMenuContentImage(models.Model):
 
     cms_menu = models.ForeignKey(CMSMenu, on_delete=models.PROTECT, related_name='cms_menu_content_images')
     head = models.CharField(max_length=500)
-    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ContentImage/"), null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/content_image/"), null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
@@ -181,7 +181,7 @@ class Itinerary(models.Model):
     location = models.CharField(max_length=1000, null=True, blank=True)
     lat = models.FloatField(max_length=1000, null=True, blank=True)
     lng = models.FloatField(max_length=1000, null=True, blank=True)
-    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ContentImage/"), null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/content_image/"), null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
@@ -335,7 +335,7 @@ class Blog(models.Model):
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_contents')
     title = models.CharField(max_length=500, null=True, blank=True)
     slug = models.SlugField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/BlogImage/"), null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/blog_image/"), null=True, blank=True)
     image_alt = models.TextField(null=True, blank=True)
     cloudflare_image = models.URLField(max_length=5000, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -344,11 +344,11 @@ class Blog(models.Model):
     blog_country = models.ForeignKey(Country, on_delete=models.PROTECT,null=True,blank=True,related_name='cms_blog_country')
     meta_title = models.TextField(null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
-    meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/MetaImage/"), null=True, blank=True)
+    meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/meta_image/"), null=True, blank=True)
     meta_image_cloudflare = models.URLField(max_length=5000, null=True, blank=True)
     fb_meta_title = models.TextField(null=True, blank=True)
     fb_meta_description = models.TextField(null=True, blank=True)
-    fb_meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/MetaImage/"), null=True, blank=True)
+    fb_meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/meta_image/"), null=True, blank=True)
     fb_meta_image_cloudflare = models.URLField(max_length=5000, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     is_featured = models.BooleanField(default=False,null=True, blank=True)
@@ -407,7 +407,7 @@ class Review(models.Model):
 
     supplier = models.CharField(max_length=500, null=True, blank=True)
     reviewer_name = models.CharField(max_length=500, null=True, blank=True)
-    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ReviewImage/"), null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/review_image/"), null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
     rating = models.IntegerField(null=True, blank=True)
     text = models.TextField(null=True, blank=True)
@@ -440,7 +440,7 @@ class MetaData(models.Model):
     cms_content = models.ForeignKey(CMSMenuContent, on_delete=models.PROTECT,null=True,blank=True)
     meta_title = models.CharField(max_length=255,null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
-    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/ContentImage/"), null=True, blank=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="cms/content_image/"), null=True, blank=True)
     cloudflare_image = models.URLField(max_length=500, null=True, blank=True)
     slug = models.SlugField(max_length=500, null=True, blank=True)
 

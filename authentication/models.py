@@ -8,11 +8,11 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.conf import settings
-
+from functools import partial
 from phonenumber_field.modelfields import PhoneNumberField
-
 from PIL import Image
 from rest_framework.serializers import BaseSerializer
+from utils.utils import get_image_upload_folder
 
 
 class Company(models.Model):
@@ -362,8 +362,8 @@ class User(AbstractBaseUser):
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True, blank=True)
     postal_code = models.CharField(max_length=50, null=True, blank=True)
-
-    image = models.ImageField(upload_to="users/", null=True, blank=True)
+    
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="authentication/users/"), null=True, blank=True)
     nid = models.CharField(max_length=32, null=True, blank=True)
 
     cloudflare_image_url = models.URLField(max_length=1000, null=True, blank=True)

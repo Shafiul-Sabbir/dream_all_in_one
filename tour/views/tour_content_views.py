@@ -79,32 +79,8 @@ def createTour(request):
     print('\n')
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # return Response({"message": "Create functionality is not implemented yet."}, status=status.HTTP_501_NOT_IMPLEMENTED)
 
-@api_view(['GET'])
-def getAllTour(request):
-    """
-    Retrieve all tours.
-    """
-    print("Fetching all tours...")
-    tours = Tour.objects.all()
-    serializer = TourListSerializer(tours, many=True)
-    # print("All tours retrieved:", serializer.data)
-    return Response(serializer.data, status=status.HTTP_200_OK)
-
-@api_view(['GET'])
-def getATour(request, pk):
-    """
-    Retrieve a specific tour by its primary key.
-    """
-    print(f"Fetching tour with ID: {pk}")
-    try:
-        tour = Tour.objects.get(pk=pk)
-    except Tour.DoesNotExist:
-        print("Tour not found.")
-        return Response({"error": "Tour not found"}, status=status.HTTP_404_NOT_FOUND)
-    serializer = TourListSerializer(tour)
-    # print("Tour retrieved successfully:", serializer.data)
-    return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['PUT'])
 def updateTour(request, pk):
@@ -189,6 +165,39 @@ def updateTour(request, pk):
     print("Tour update failed:", serializer.errors)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     # return Response({"message": "Update functionality is not implemented yet."}, status=status.HTTP_501_NOT_IMPLEMENTED)
+
+@api_view(['GET'])
+def getAllTour(request):
+    """
+    Retrieve all tours.
+    """
+    print("Fetching all tours...")
+    company_id = request.query_params.get('company_id', None)
+    if company_id is not None:
+        print(f"Filtering tours by company_id: {company_id}")
+        tours = Tour.objects.filter(company=company_id).all()
+    else:
+        return Response({"error": "company_id query parameter is required"}, status=status.HTTP_400_BAD_REQUEST)
+    
+    serializer = TourListSerializer(tours, many=True)
+    # print("All tours retrieved:", serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def getATour(request, pk):
+    """
+    Retrieve a specific tour by its primary key.
+    """
+    print(f"Fetching tour with ID: {pk}")
+    try:
+        tour = Tour.objects.get(pk=pk)
+    except Tour.DoesNotExist:
+        print("Tour not found.")
+        return Response({"error": "Tour not found"}, status=status.HTTP_404_NOT_FOUND)
+    serializer = TourListSerializer(tour)
+    # print("Tour retrieved successfully:", serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 @api_view(['DELETE'])
 def deleteTour(request, pk):
