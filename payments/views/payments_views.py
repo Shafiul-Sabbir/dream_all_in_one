@@ -27,7 +27,7 @@ def createCheckout(request):
     traveller_info = checkout_data.get('traveller_info')
     tour_details = checkout_data.get('tour_details')
 
-    required = ['first_name', 'last_name', 'email', 'phone', 'acceptOffers']
+    required = ['company','first_name', 'last_name', 'email', 'phone', 'acceptOffers']
     if not all(field in traveller_info for field in required):
         return Response({"error": "Missing traveller data."}, status=400)
     
@@ -92,7 +92,7 @@ def checkAvailability(request):
     selected_date = data.get('selected_date', None)
     selected_time = data.get('selected_time', None)
     total_participants = data.get('total_participants')
-    total_price = data.get('total_price')
+    total_price = Decimal(data.get('total_price')).quantize(Decimal('0.01'))
     guide = data.get('guide')
 
     errors = {}
@@ -125,6 +125,7 @@ def checkAvailability(request):
     guidance_tour_prices = tour.day_tour_price_list.filter(
         guide=guide,
     )
+    print('\n')
     print("guidance_tour_prices: ", guidance_tour_prices)
     if selected_time is not None:
         target_tour_price = guidance_tour_prices.filter(
@@ -137,6 +138,7 @@ def checkAvailability(request):
             available_dates__date=selected_date
         ).first()
         print("target_tour_price without selected_time: ", target_tour_price)
+    print('\n')
 
     if target_tour_price is None:
         # If no guided tour found, check for any available date and time
@@ -184,6 +186,8 @@ def checkAvailability(request):
     if tour.price_by_passenger:
         expected_price = target_tour_price.price_per_person * total_participants
         if total_price != expected_price:
+            print(f"total_price : {total_price}, type {type(total_price)}")
+            print(f"expected_price : {expected_price}, type : {type(expected_price)}")
             errors['price_by_passenger'] = True
             errors['total_price'] = f"Incorrect total price. Expected {expected_price}."
     elif tour.price_by_vehicle:

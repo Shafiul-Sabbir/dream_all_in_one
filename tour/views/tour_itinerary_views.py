@@ -6,7 +6,7 @@ from tour.models import TourItinerary, Tour
 from cms.models import CMSMenu, Itinerary
 from tour.serializers.tour_itinerary_serializers import TourItinerarySerializer, TourItineraryListSerializer
 from utils.utils import reformed_head_or_name
-
+from authentication.models import Company
 @api_view(['POST'])
 def createItinerary(request):
     data = request.data
@@ -55,9 +55,11 @@ def updateItinerary(request, pk):
     
     data = request.data
     validated_data = data.get("itinerary", [])
-    print("itinerary : ",  itinerary)
+    print("itinerary : ",  validated_data)
+    company = validated_data.get('company')
+    company = Company.objects.get(id=company)
     
-    serializer = TourItinerarySerializer(instance=itinerary, data=validated_data)
+    serializer = TourItinerarySerializer(instance=itinerary, data=validated_data, context={'company': company}, partial=True)
     if serializer.is_valid():
         serializer.save()
     

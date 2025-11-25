@@ -57,8 +57,8 @@ class DayTourPriceSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
     # available_dates = serializers.ListField(child=serializers.CharField(), write_only=True)
     # available_times = serializers.ListField(child=serializers.CharField(), write_only=True)
-    available_dates = AvailableDateSerializer(many=True, write_only=True)
-    available_times = AvailableTimeSerializer(many=True, write_only=True)
+    available_dates = AvailableDateSerializer(many=True)
+    available_times = AvailableTimeSerializer(many=True)
     tour = serializers.PrimaryKeyRelatedField(read_only=True)
     company = serializers.PrimaryKeyRelatedField(read_only=True)
 
@@ -104,7 +104,11 @@ class DayTourPriceSerializer(serializers.ModelSerializer):
         existing_time_ids = [item['id'] for item in available_times if 'id' in item]
         instance.available_times.exclude(id__in=existing_time_ids).delete()
 
+        company = self.context.get('company')
+
+
         # Update basic fields
+        instance.company = self.context.get('company', instance.company)
         instance.price_per_person = validated_data.get('price_per_person', instance.price_per_person)
         instance.group_price = validated_data.get('group_price', instance.group_price)
         instance.guide = validated_data.get('guide', instance.guide)
@@ -117,10 +121,11 @@ class DayTourPriceSerializer(serializers.ModelSerializer):
         for item in available_dates:
             if 'id' in item:
                 date_obj = AvailableDate.objects.get(id=item['id'])
+                date_obj.company = company
                 date_obj.date = item['date']  # already a datetime.date object
                 date_obj.save()
             else:
-                AvailableDate.objects.create(day_tour_price=instance, date=item['date'])
+                AvailableDate.objects.create(company=company, day_tour_price=instance, date=item['date'])
                 
         # -------------------------
         # ⏰ Handle Available Times
@@ -129,10 +134,11 @@ class DayTourPriceSerializer(serializers.ModelSerializer):
         for item in available_times:
             if 'id' in item:
                 time_obj = AvailableTime.objects.get(id=item['id'])
+                time_obj.company = company
                 time_obj.time = item['time']  # already a datetime.time object
                 time_obj.save()
             else:
-                AvailableTime.objects.create(day_tour_price=instance, time=item['time'])
+                AvailableTime.objects.create(company=company, day_tour_price=instance, time=item['time'])
         
         return instance
 
@@ -201,6 +207,7 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
         print('\n')
         print("validated_data from create method of CancellationPolicySerializer: ", validated_data)
         penalty_rules = validated_data.pop('penalty_rules', [])
+        print('\n')
         print("penalty_rules_data from create method of CancellationPolicySerializer: ", penalty_rules)
         print('\n')
         print("after popping penalty_rules from validated_data: ", validated_data)
@@ -225,6 +232,8 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
         return cancellation_policy
     
     def update(self, instance, validated_data):
+        company = self.context.get('company')
+        validated_data['company'] = company
         # pop penalty_rules data
         penalty_rules = validated_data.pop('penalty_rules', [])
         print('\n')
@@ -234,7 +243,7 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
             setattr(instance, attr, value)
         instance.save()
         print('\n')
-        print(f"Cancellation Policy of id {instance.id} is updated.")
+        print(f"Cancellation Policy of id {instance.id} is updating its fields except rule_data.")
 
         # step 2: Handle PenaltyRules update
         existing_rules = {rule.id : rule for rule in instance.penalty_rules.all()}
@@ -248,6 +257,8 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
             if rule_id and rule_id in existing_rules:
                 # Update existing rule
                 penalty_rule = existing_rules[rule_id]
+                company = self.context.get('company')
+                rule_data['company'] = company
                 days_before = rule_data.get('days_before', 0)
                 hours_before = rule_data.get('hours_before', 0)
                 rule_data['cutoff_hours'] = (days_before * 24) + hours_before
@@ -258,6 +269,8 @@ class CancellationPolicySerializer(serializers.ModelSerializer):
                 print(f"Updated penalty rule id is : {rule_id}")
             else:
                 # create new rule
+                company = self.context.get('company')
+                rule_data['company'] = company
                 days_before = rule_data.get('days_before', 0)
                 hours_before = rule_data.get('hours_before', 0)
                 rule_data['cutoff_hours'] = (days_before * 24) + hours_before
@@ -310,7 +323,7 @@ class TourListSerializer(serializers.ModelSerializer):
 
 class TourSerializer(serializers.ModelSerializer):
     day_tour_price_list = DayTourPriceSerializer(many=True)
-    day_tour_price_list_read = DayTourPriceListSerializer(many=True, read_only=True, source='day_tour_price_list')
+    # day_tour_price_list_read = DayTourPriceListSerializer(many=True, read_only=True, source='day_tour_price_list')
     itineraries_list = TourItinerarySerializer(many=True)
     cancellation_policies_list = CancellationPolicySerializer(many=True) 
 
@@ -321,11 +334,11 @@ class TourSerializer(serializers.ModelSerializer):
         # fields = ['id', 'name', 'description', 'day_tour_price_list', 'day_tour_price_list_read', 'created_at', 'updated_at']
         fields = '__all__'
 
-    def to_representation(self, instance):
-        rep = super().to_representation(instance)
-        # replace write-only field with read-only field in output
-        rep['day_tour_price_list'] = rep.pop('day_tour_price_list_read')
-        return rep
+    # def to_representation(self, instance):
+    #     rep = super().to_representation(instance)
+    #     # replace write-only field with read-only field in output
+    #     rep['day_tour_price_list'] = rep.pop('day_tour_price_list_read')
+    #     return rep
     
     def create(self, validated_data):
         request = self.context.get("request")
@@ -458,16 +471,26 @@ class TourSerializer(serializers.ModelSerializer):
         for day_price_data in new_day_prices:
             # updating the existing DayTourPrice from create part of Tour as existing id is given
             if 'id' in day_price_data:
+                print('\n')
                 print("updating the existing DayTourPrice from update part of TourSerializer as existing id is given")
-                obj = DayTourPrice.objects.get(id=day_price_data['id'], tour=instance)
-                serializer = DayTourPriceSerializer(obj, data=day_price_data)
+                print("day_price_data :", day_price_data)
+                print("id is :", day_price_data['id'])
+                print("instance :", instance)
+                print('\n')
+                obj = DayTourPrice.objects.filter(id=day_price_data['id']).first()
+                if obj is None:
+                    print(f"DayTourPrice with id {day_price_data['id']} not found.")
+                print("fetched DayTourPrice object is :", obj)
+                print('\n')
+                serializer = DayTourPriceSerializer(obj, data=day_price_data, context={'company': company})
                 serializer.is_valid(raise_exception=True)
                 serializer.save()
 
             # creating new DayTourPrice from update part of Tour as id is absent
             else:
                 print("creating new DayTourPrice from update part of TourSerializer as id is absent")
-                serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': instance})
+                print("day_price_data from update method if id is not provided :", day_price_data)
+                serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': instance, 'company': company})
                 serializer.is_valid(raise_exception=True)
                 serializer.save()
         print("day_tour_price updated successfully")
@@ -476,7 +499,10 @@ class TourSerializer(serializers.ModelSerializer):
         cancellation_policies_data = validated_data.pop('cancellation_policies_list', [])
         existing_policies = {cp.id: cp for cp in instance.cancellation_policies_list.all()}
         print('\n')
-        print("existing policies data : ", cancellation_policies_data)
+        print("given policies data : ", cancellation_policies_data)
+        print('\n')
+        print("instance is : ", instance)
+        print("all existing policies queryset : ", instance.cancellation_policies_list.all())
         print('\n')
         print("existing policies in db : ", existing_policies)
         print('\n')
@@ -494,17 +520,20 @@ class TourSerializer(serializers.ModelSerializer):
 
             if policy_id and policy_id in existing_policies:
                 policy_instance = existing_policies[policy_id]
-                print(f"Updating cancellation Policy ID : {policy_id} with its data : ", policy_data)
-                serializer = CancellationPolicySerializer(policy_instance, data=policy_data, partial=True, context={'tour': instance})
+                print('\n')
+                print(f"Updating cancellation Policy ID : {policy_id} with its data as policy id is given : ", policy_data)
+                serializer = CancellationPolicySerializer(policy_instance, data=policy_data, partial=True, context={'tour': instance, 'company': company})
                 if serializer.is_valid():
                     serializer.save()
                     sent_policy_ids.append(policy_id)
                     print(f"Updated cancellation Policy ID : {policy_id}")
                 else:
                     print("validation errors:", serializer.errors)
-            else:
+            elif not policy_id:
                 policy_data['tour'] = instance.id
-                serializer = CancellationPolicySerializer(data=policy_data, context={'tour': instance})
+                print('\n')
+                print("Creating new cancellation Policy as policy id is not given : ", policy_data)
+                serializer = CancellationPolicySerializer(data=policy_data, context={'tour': instance, 'company': company})
                 if serializer.is_valid():
                     serializer.save()
                     print(f"Created new cancellation Policy ID : {serializer.instance.id}")
@@ -515,6 +544,8 @@ class TourSerializer(serializers.ModelSerializer):
             if policy_id not in sent_policy_ids:
                 policy.delete()
         print("cancellation policies updated successfully.")
+        print('\n')
+
 
 
         # Itineraries Update Part

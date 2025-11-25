@@ -289,6 +289,7 @@ def stripe_webhook(request):
         print("invoice_id is :", invoice_id )
 
         payment_data = {
+            "company": tour_booking.company.id,
             "invoice_id": invoice_id,
             "tour_booking": tour_booking.id,
             "user": user.id,
