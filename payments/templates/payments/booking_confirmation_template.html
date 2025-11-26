@@ -8,13 +8,28 @@
   </head>
   <body style="margin: 0; padding: 0; background-color: #f9f9f9; font-family: Arial, sans-serif; color: #555;">
     <div style="max-width: 600px; background: #ffffff; margin: 40px auto; padding: 20px 25px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      {% if tour_booking.company.name|upper == "IT" %}
+        <p style="color:#333; text-align:center; font-weight:800; font-size:22px;">🏟️ Greetings From Dream IT SRLS !!!</p>
 
-      <p style="color:#333; text-align:center; font-weight:800; font-size:22px;">🕋 Greetings From Dream Ziarah !!!</p>
+        <p>Dear {{ traveller.user.first_name }} {{ traveller.user.last_name|default:"" }},</p>
 
+        <p>Your booking with <strong>Dream IT</strong> has been successfully confirmed! We are honoured to serve you on your enjoyable journey.</p>
 
-      <p>Dear {{ traveller.user.first_name }} {{ traveller.user.last_name|default:"" }},</p>
+      {% elif tour_booking.company.name|upper == "UK" %}
+        <p style="color:#333; text-align:center; font-weight:800; font-size:22px;">🏰 Greetings From Dream UK SRLS !!!</p>
 
-      <p>Your booking with <strong>DreamZiarah</strong> has been successfully confirmed! We are honoured to serve you on your spiritual journey.</p>
+        <p>Dear {{ traveller.user.first_name }} {{ traveller.user.last_name|default:"" }},</p>
+
+        <p>Your booking with <strong>Dream UK</strong> has been successfully confirmed! We are honoured to serve you on your enjoyable journey.</p>
+
+      {% elif tour_booking.company.name|upper == "ZIARAH" %}
+        <p style="color:#333; text-align:center; font-weight:800; font-size:22px;">🕋 Greetings From Dream Ziarah !!!</p>
+
+        <p>Dear {{ traveller.user.first_name }} {{ traveller.user.last_name|default:"" }},</p>
+
+        <p>Your booking with <strong>Dream Ziarah</strong> has been successfully confirmed! We are honoured to serve you on your spiritual journey.</p>
+      {% endif %}
+
 
       <div style="background-color: #f3f7ff; padding: 12px 16px; border-radius: 8px; margin: 20px 0;">
         <p style="margin-top: 0;"><strong>Here are your Booking Details:</strong></p>
@@ -34,7 +49,7 @@
         </ul>
       </div>
 
-      <p>You can now view your booking and manage all your details directly from your <strong>Traveler Dashboard</strong>.</p>
+      <p>You can now view your booking and manage all your details directly from your <strong>Traveller Dashboard</strong>.</p>
 
       <p style="text-align: center; margin: 25px 0;">
         <a href="{{ dashboard_url }}" target="_blank" style="background-color: #1a73e8; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; display: inline-block;">
@@ -44,16 +59,31 @@
 
       <p>We recommend that you log in immediately and change your password for security purposes.</p>
       <p>If you have any questions or require assistance, please do not hesitate to contact us. Our team is here to support you every step of the way.</p>
-      <p>May Allah accept your Ziarah and grant you ease and blessings in your travels.</p>
-
-      <br>
-      <!-- <p>JazakAllahu Khairan,​</p> -->
+      
+      {% if tour_booking.company.name|upper == "IT" %}
+        <p>We hope your upcoming Attraction and Day Tours in Italy will bring you joy, unforgettable memories, and a smooth, blessed travel experience.</p>
+        <br>
         <p style="margin:20px 0 6px 0; color: #333; font-size:15px; font-weight:600; font-style:normal;">
-          JazakAllahu Khairan,
+          Warm Regards,            
         </p>
+      
+      {% elif tour_booking.company.name|upper == "UK" %}
+        <p>We hope your upcoming Attraction and Day Tours in UK will bring you joy, unforgettable memories, and a smooth, blessed travel experience.</p>
+        <br>
+        <p style="margin:20px 0 6px 0; color: #333; font-size:15px; font-weight:600; font-style:normal;">
+          Warm Regards,            
+        </p>
+      
+      {% elif tour_booking.company.name|upper == "ZIARAH" %}
+        <p>May Allah accept your Ziarah and grant you ease and blessings in your travels.</p>
+        <br>
+        <p style="margin:20px 0 6px 0; color: #333; font-size:15px; font-weight:600; font-style:normal;">
+          JazakAllahu Khairan,            
+        </p>
+      {% endif %}
 
         <div style="background:#f9fbff; padding:15px; border-radius:8px; margin-top:25px; font-size:14px; color:#333; line-height:1.6; border-top:2px solid #1a73e8;">
-          <p style="margin:5px 0; font-weight:bold; font-size:15px;">Dream Tourism SLRS</p>
+          <p style="margin:5px 0; font-weight:bold; font-size:15px;">Dream Tourism SRLS</p>
           <p style="margin:5px 0;">Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
           <p style="margin:5px 0;">📧 Email: 
             <a href="mailto:info@dreamtourism.it" style="color:#1a73e8; text-decoration:none;">info@dreamtourism.it</a>
@@ -61,9 +91,22 @@
           <p style="margin:5px 0;">📞 Phone: 
             <a href="tel:+390645259865" style="color:#1a73e8; text-decoration:none;">+39 06 4525 9865</a>
           </p>
+
+          {% if tour_booking.company.name|upper == "IT" %}
+          <p style="margin:5px 0;">🌐 Website:
+            <a href="https://dreamtourism.it/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamtourism.it</a>
+          </p>
+
+        {% elif tour_booking.company.name|upper == "UK" %}
+          <p style="margin:5px 0;">🌐 Website:  
+            <a href="https://dreamtourism.co.uk/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamtourism.co.uk</a>
+          </p>
+
+        {% elif tour_booking.company.name|upper == "ZIARAH" %}
           <p style="margin:5px 0;">🌐 Website: 
             <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
           </p>
+        {% endif %}
         </div>
 
         <hr style="border:none; border-top:1px solid #eee; margin:20px 0;" />
@@ -74,118 +117,3 @@
     </div>
   </body>
 </html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Congratulations, You Have Booked Your Tour !!!</title>
-  </head>
-  <body style="font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0;">
-    <div class="container" style="max-width: 600px; background-color: #ffffff; margin: 40px auto; border-radius: 8px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); color: #555;">
-      
-      <h1 style="color: #1a73e8; text-align: center; border-bottom: 3px solid #1a73e8; padding-bottom: 10px;">Greetings From Dream Ziarah !!!</h1>
-      
-      <p>Dear {{ traveller.user.first_name }} {{ traveller.user.last_name|default:"" }},</p>
-
-      <p>Your booking with <strong>DreamZiarah</strong> has been placed successfully confirmed !!! We are honoured to serve you on your spritual journey.</p>
-
-      <div style="background-color: #f3f7ff; padding: 12px 16px; border-radius: 8px; margin: 20px 0;">
-        <p style="margin-top: 0;"><strong>Here are your Booking details:</strong></p>
-        <ul style="margin: 0; padding-left: 20px;">
-          <li><strong>Tour Package:</strong> {{ payment.tour.name }}</li>
-          <li><strong>Traveller Name:</strong> {{ traveller.user.first_name }} {{ traveller.user.last_name }} </li>
-          {% if tour_booking.selected_time is not none %}
-            <li><strong>Selected Date & Time:</strong> {{ tour_booking.selected_date }} at {{ tour_booking.selected_time }}</li>
-          {% else %}
-            <li><strong>Selected Date:</strong> {{ tour_booking.selected_date }}</li>
-          {% endif %}
-          <li><strong>Number of Travellers:</strong> {{ tour_booking.total_participants }}</li>
-          <li><strong>Contact:</strong> {{ traveller.user.email|default:traveller.phone }}</li>
-          <li><strong>Total Price:</strong> {{ payment.tour_booking.total_price }} USD</li>
-          <li><strong>Guidance Type:</strong> {{ payment.tour_booking.guide }}</li>
-          <li><strong>Booking Reference:</strong> {{ tour_booking.booking_id}}</li>
-        </ul>
-      </div>
-
-      <p>You can now view your booking and manage all your details directly from your <strong>Traveler Dashboard</strong>.</p>
-
-      <p style="text-align: center; margin: 20px 0;">
-        <a href="{{ dashboard_url }}" target="_blank" style="display: inline-block; background-color: #1a73e8; color: #ffffff; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: bold;">
-          👉 Login to your Dashboard
-        </a>
-      </p>
-
-      <p>We recommend you log in immediately and change your password for security purposes.</p>
-      <p>If you have any questions or require assistance, please do not hesitate to contact us. Our team is here to support you every step of the way.</p>
-      <p>May Allah accept your Ziarah and grant you ease and blessings in your travels.</p>
-      <br>
-      <p><strong>JazakAllahu Khairan,​</strong></p>
-
-      <div style="background-color: #f9fbff; border-top: 3px solid #1a73e8; margin-top: 30px; padding: 15px; border-radius: 0 0 8px 8px; font-size: 14px; color: #777;">
-        <p style="margin: 0;"><strong>DreamZiarah Team</strong></p>
-        <p style="margin: 2px 0;">Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
-        <p style="margin: 2px 0;">Email: <a href="mailto:info@dreamziarah.com" style="color: #1a73e8; text-decoration: none;">info@dreamziarah.com</a></p>
-        <p style="margin: 2px 0;">Phone: +39 06 4525 9865</p>
-        <p style="margin: 2px 0;">Website: <a href="https://dreamziarah.com" style="color: #1a73e8; text-decoration: none;">https://dreamziarah.com</a></p>
-      </div>
-    </div>
-  </body>
-</html> -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Congratulations, You Have Booked Your Tour !!!</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Greetings From Dream Ziarah !!!</h1>
-      <p>Dear {{ traveller.user.first_name }} {{ traveller.user.last_name|default:"" }},</p>
-      <p>Your booking with <strong>DreamZiarah</strong> has been placed successfully confirmed !!! We are honoured to serve you on your spritual journey.</p>
-      <p><strong>Here are your Booking details:</strong></p>
-      <ul>
-        <li><strong>Tour Package:</strong> {{ payment.tour.name }}</li>
-        <li><strong>Traveller Name:</strong> {{ traveller.user.first_name }} {{ traveller.user.last_name }} </li>
-        {% if tour_booking.selected_time is not none %}
-          <li><strong>Selected Date & Time:</strong> {{ tour_booking.selected_date }} at {{ tour_booking.selected_time }}</li>
-        {% else %}
-          <li><strong>Selected Date:</strong> {{ tour_booking.selected_date }}</li>
-        {% endif %}
-
-        <li><strong>Number of Travellers:</strong> {{ tour_booking.total_participants }}</li>
-        <li><strong>Contact:</strong>{{ traveller.user.email|default:traveller.phone }}</li>
-        <li><strong>Total Price:</strong> {{ payment.tour_booking.total_price }} USD</li>
-
-        <li><strong>Guidance Type:</strong> {{ payment.tour_booking.guide }}</li>
-        <li><strong>Booking Reference:</strong> {{ tour_booking.booking_id}}</li>
-        
-      </ul>
-
-      <p>You can now view your booking and manage all your details directly from your <strong>Traveler Dashboard</strong>.</p>
-
-      <p>
-        <a href="{{ dashboard_url }}" target="_blank" style="color:#1a73e8; text-decoration:underline;">
-          👉 Login to your Dashboard
-        </a>
-      </p>
-      <p>We recommend you log in immediately and change your password for security purposes.</p>
-      <p>If you have any questions or require assistance, please do not hesitate to contact us. Our team is here to support you every step of the way.</p>
-      <p>May Allah accept your Ziarah and grant you ease and blessings in your travels.</p>
-      <br>
-      <p><strong>JazakAllahu Khairan,​</strong></p>
-      <p><strong>DreamZiarah Team</strong></p>
-      <p>Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
-      <p>Email: info@dreamziarah.com</p>
-      <p>Phone: +39 06 4525 9865</p>
-      <p>Website: <a href="https://dreamziarah.com">https://dreamziarah.com</a></p>
-    </div>
-  </body>
-</html> -->

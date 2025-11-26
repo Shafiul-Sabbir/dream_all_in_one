@@ -9,25 +9,68 @@
   <body style="font-family: Arial, sans-serif; background-color:#f9f9f9; margin:0; padding:0;">
     <div style="max-width:600px; margin:20px auto; background:#ffffff; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:20px;">
       
-      <h1 style="color:#333; text-align:center;">🎉 Welcome to Dream Ziarah !!!</h1>
-      
-      <p style="color:#555; font-size:15px;">
-        Dear {{ traveller_data.first_name }} {{ traveller_data.last_name|default:"" }},
-      </p>
+      {% if traveller_data.company|upper == "IT" %}
+          <h1 style="color:#333; text-align:center;">🎉 Welcome to Dream IT SRLS !!!</h1>
 
-      <p style="color:#555; font-size:15px; line-height:1.6;">
-        Your account with <strong>DreamZiarah</strong> has been successfully created.  
-        We are delighted to welcome you to our family of travellers preparing for their blessed journeys of Umrah, Hajj and Ziarah.
-      </p>
+          <p style="color:#555; font-size:15px;">
+            Dear {{ traveller_data.first_name }} {{ traveller_data.last_name|default:"" }},
+          </p>
 
-      <p style="color:#555; font-size:15px; line-height:1.6;">
-        With your new account, you can:
-      </p>
-      <ul style="color:#555; font-size:15px; line-height:1.6; margin-left:20px;">
-        <li>Browse and book Umrah, Hajj, and Ziarah tour packages.</li>
-        <li>View your booking history and details anytime.</li>
-        <li>Access your personalized traveller Dashboard.</li>
-      </ul>
+          <p style="color:#555; font-size:15px; line-height:1.6;">
+            Your account with <strong>Dream IT</strong> has been successfully created.  
+            We are delighted to welcome you to our family of travellers, preparing for their exciting journeys of Attraction tours & Day tours.
+          </p>
+
+          <p style="color:#555; font-size:15px; line-height:1.6;">
+            With your new account, you can:
+          </p>
+          <ul style="color:#555; font-size:15px; line-height:1.6; margin-left:20px;">
+            <li>Browse and book all of our tour packages.</li>
+            <li>View your booking history and details anytime.</li>
+            <li>Access your personalized traveller Dashboard.</li>
+          </ul>
+
+      {% elif traveller_data.company|upper == "UK" %}
+          <h1 style="color:#333; text-align:center;">🎉 Welcome to Dream UK SRLS !!!</h1>
+          
+          <p style="color:#555; font-size:15px;">
+            Dear {{ traveller_data.first_name }} {{ traveller_data.last_name|default:"" }},
+          </p>
+
+          <p style="color:#555; font-size:15px; line-height:1.6;">
+            Your account with <strong>Dream UK</strong> has been successfully created.  
+            We are delighted to welcome you to our family of travellers, preparing for their blessed journeys of Attraction tours & Day tours.
+          </p>
+
+          <p style="color:#555; font-size:15px; line-height:1.6;">
+            With your new account, you can:
+          </p>
+          <ul style="color:#555; font-size:15px; line-height:1.6; margin-left:20px;">
+            <li>Browse and book all of our tour packages.</li>
+            <li>View your booking history and details anytime.</li>
+            <li>Access your personalized traveller Dashboard.</li>
+          </ul>
+      {% elif traveller_data.company|upper == "ZIARAH" %}
+        <h1 style="color:#333; text-align:center;">🎉 Welcome to Dream Ziarah !!!</h1>
+
+        <p style="color:#555; font-size:15px;">
+          Dear {{ traveller_data.first_name }} {{ traveller_data.last_name|default:"" }},
+        </p>
+
+        <p style="color:#555; font-size:15px; line-height:1.6;">
+          Your account with <strong>Dream Ziarah</strong> has been successfully created.  
+          We are delighted to welcome you to our family of travellers, preparing for their blessed journeys of Umrah, Hajj and Ziarah.
+        </p>
+
+        <p style="color:#555; font-size:15px; line-height:1.6;">
+          With your new account, you can:
+        </p>
+        <ul style="color:#555; font-size:15px; line-height:1.6; margin-left:20px;">
+          <li>Browse and book Umrah, Hajj, and Ziarah tour packages.</li>
+          <li>View your booking history and details anytime.</li>
+          <li>Access your personalized traveller Dashboard.</li>
+        </ul>
+      {% endif %}
 
       <div style="background:#f3f7ff; padding:15px; border-radius:6px; margin:20px 0;">
         <p style="margin:5px 0; font-size:15px; color:#333;"><strong>Here are your Account Details:</strong></p>
@@ -49,9 +92,40 @@
         For security reasons, we strongly recommend that you update your password after your first login.
       </p>
 
+      {% if traveller_data.company|upper == "IT" %}
+        <p style="color:#555; font-size:15px; line-height:1.6;">
+          If you have any questions or need assistance on your journey to Italy or beyond, feel free to contact us anytime.
+        </p>
+
       <p style="color:#555; font-size:15px; line-height:1.6;">
-        If you have any questions or need assistance on your journey to Makkah, Madinah, or beyond, feel free to contact us anytime.
+        Thank you for joining Dream Tourism IT. We look forward to making your travel memorable!
       </p>
+
+      <br />
+
+        <p style="margin:20px 0 6px 0; color: #333; font-size:15px; font-weight:600; font-style:normal;">
+          Warm Regards,
+        </p>
+
+      {% elif traveller_data.company|upper == "UK" %}
+        <p style="color:#555; font-size:15px; line-height:1.6;">
+          If you have any questions or need assistance on your journey to UK or beyond, feel free to contact us anytime.
+        </p>
+
+      <p style="color:#555; font-size:15px; line-height:1.6;">
+        Thank you for joining Dream Tourism UK. We look forward to making your travel memorable!
+      </p>
+
+      <br />
+
+        <p style="margin:20px 0 6px 0; color: #333; font-size:15px; font-weight:600; font-style:normal;">
+          Warm Regards,
+        </p>
+
+      {% elif traveller_data.company|upper == "ZIARAH" %}
+        <p style="color:#555; font-size:15px; line-height:1.6;">
+          If you have any questions or need assistance on your journey to Makkah, Madinah, or beyond, feel free to contact us anytime.
+        </p>
 
       <p style="color:#555; font-size:15px; line-height:1.6;">
         Thank you for joining Dream Ziarah. We look forward to making your travel memorable!
@@ -62,9 +136,10 @@
         <p style="margin:20px 0 6px 0; color: #333; font-size:15px; font-weight:600; font-style:normal;">
           JazakAllahu Khairan,
         </p>
+      {% endif %}
 
       <div style="background:#f9fbff; padding:15px; border-radius:8px; margin-top:25px; font-size:14px; color:#333; line-height:1.6; border-top:2px solid #1a73e8;">
-        <p style="margin:5px 0; font-weight:bold; font-size:15px;">Dream Tourism SLRS</p>
+        <p style="margin:5px 0; font-weight:bold; font-size:15px;">Dream Tourism SRLS</p>
         <p style="margin:5px 0;">Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
         <p style="margin:5px 0;">📧 Email: 
           <a href="mailto:info@dreamtourism.it" style="color:#1a73e8; text-decoration:none;">info@dreamtourism.it</a>
@@ -72,9 +147,20 @@
         <p style="margin:5px 0;">📞 Phone: 
           <a href="tel:+390645259865" style="color:#1a73e8; text-decoration:none;">+39 06 4525 9865</a>
         </p>
-        <p style="margin:5px 0;">🌐 Website: 
-          <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
-        </p>
+        {% if traveller_data.company|upper == "IT" %}
+          <p style="margin:5px 0;">🌐 Website:
+            <a href="https://dreamtourism.it/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamtourism.it</a>
+          </p>
+        {% elif traveller_data.company|upper == "UK" %}
+          <p style="margin:5px 0;">🌐 Website:  
+            <a href="https://dreamtourism.co.uk/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamtourism.co.uk</a>
+          </p>
+        {% elif traveller_data.company|upper == "ZIARAH" %}
+          <p style="margin:5px 0;">🌐 Website: 
+            <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
+          </p>
+        {% endif %}
+
       </div>
 
       <hr style="border:none; border-top:1px solid #eee; margin:20px 0;" />
@@ -85,52 +171,4 @@
     </div>
   </body>
 </html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome Email</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Welcome to Dream Ziarah !!!</h1>
-      <p>Dear {{ traveller_data.first_name }} {{ traveller_data.last_name|default:"" }},</p>
-      <p>Your account with <strong>DreamZiarah</strong> has been successfully created. We are delighted to welcome you to our family of travellers preparing for their blessed journeys of Umrah, Hajj and Ziarah.</p>
-      <p>With your new account, you can: <br>
-      <ul>
-        <li>Browse and book Umrah, Hajj, and Ziarah tour packages.</li>
-        <li>View your booking history and deatails anytime.</li>
-        <li>Access your personalized traveller Dashboard.</li>
-      </ul>
-      </p>
-      <p><strong>Here are your Account Details:</strong></p>
-      <ul>
-        <li><strong>Username:</strong> {{ traveller_data.username }}</li>
-        <li><strong>Email / Phone:</strong> {{ traveller_data.email|default:traveller_data.phone }}</li>
-        <li><strong>Password:</strong> {{ traveller_data.password }}</li>
-      </ul>
-      <p>
-        <a href="{{ traveller_data.dashboard_url }}" target="_blank" style="color:#1a73e8; text-decoration:underline;">
-          👉 Login to your Dashboard
-        </a>
-      </p>
-
-      <p>You can now log in to your account using the credentials(Email & Password)  above. For security reasons, we strongly recommend that you update your password after your first login.</p>
-      <p>If you have any questions or need assistance on your journey to Makkah, Madinah, or beyond, feel free to contact us anytime.</p>
-      <p>Thank you for joining Dream Ziarah. We look forward to making your travel memorable!</p>
-      <br>
-      <p>JazakAllahu Khairan,</p>
-      <p><strong>Dream Tourism SLRS</strong></p>
-      <p>Via Principe Eugenio, 95, 00185 Roma RM, Italy</p>
-      <p>Email: info@dreamtourism.it</p>
-      <p>Phone: +39 06 4525 9865</p>
-      <p>Website: <a href="https://dreamziarah.com/">https://dreamziarah.com</a></p>
-    </div>
-  </body>
-</html> -->
 

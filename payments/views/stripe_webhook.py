@@ -208,6 +208,7 @@ def stripe_webhook(request):
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE', None)
     try:
+        print('\n')
         print("Constructing event from payload and signature header.")
         event = stripe.Webhook.construct_event(
             payload, sig_header, settings.STRIPE_ENDPOINT_SECRET
@@ -218,6 +219,7 @@ def stripe_webhook(request):
         return HttpResponse(status=400)
 
     # ✅ Safe event handling
+    print('\n')
     event_type = event.get("type")
     print(f"Stripe event type: {event_type}")
 
@@ -252,6 +254,7 @@ def stripe_webhook(request):
             stripe.PaymentIntent.modify(
                 payment_intent_id,
                 metadata={
+                    'company' : tour_booking.company.name,
                     'tour_booking_id': booking_id,
                     'tour_name': tour_name,
                     'traveller_email': traveller_email,
@@ -263,6 +266,7 @@ def stripe_webhook(request):
                     "payment_intent_id": payment_intent_id
                 }
             )
+            print('\n')
             print("✅ PaymentIntent metadata updated successfully.")
         except Exception as e:
             print("❌ Failed to update PaymentIntent metadata:", str(e))
@@ -270,6 +274,7 @@ def stripe_webhook(request):
         # ========== Handle Booking & Payment ==========
         try:
             tour_booking = TourBooking.objects.get(id=tour_booking_id)
+            print('\n')
             print("✅ tour booking found.")
         except TourBooking.DoesNotExist:
             return Response({"error": "Booking not found"}, status=404)
@@ -315,6 +320,7 @@ def stripe_webhook(request):
 
         if existing_payment:
             payment = existing_payment
+            print('\n')
             print("Payment already exists for key=%s", payment_key)
             # Ensure booking linked
             print("already in existing payment")
@@ -331,6 +337,7 @@ def stripe_webhook(request):
                     payment_serializer = PaymentSerializer(data=payment_data)
                     if payment_serializer.is_valid():
                         payment = payment_serializer.save()
+                        print('\n')
                         print("Payment created for booking id", tour_booking_id)
                         # Update booking
                         tour_booking.payment = payment
@@ -354,8 +361,8 @@ def stripe_webhook(request):
         # --- Celery tasks (safe)
         try:
             tour_booking_id = tour_booking.id
-            print("tour booking id : ", tour_booking_id)
-            print(type(tour_booking_id))
+            print('\n')
+            print("Inside celery tasks, tour booking id is : ", tour_booking_id)
             payment_id = payment.id
             traveller_id = traveller.id
 
@@ -364,9 +371,13 @@ def stripe_webhook(request):
                 send_booking_confirmation_email_to_traveller_task.delay(
                     tour_booking_id, payment_id, traveller_id, dashboard_url
                 )
+                print('\n')
+                print("booking confirmation email task has been scheduled.")
                 send_payment_confirmation_email_to_traveller_task.delay(
                     tour_booking_id, payment_id, traveller_id, dashboard_url
                 )
+                print('\n')
+                print("payment confirmation email task has been scheduled.")
                 print("✅ Celery tasks scheduled after commit for booking:", tour_booking_id)
 
             transaction.on_commit(trigger_tasks)

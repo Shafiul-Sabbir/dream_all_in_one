@@ -27,11 +27,9 @@ IS_LOCAL = os.environ.get("IS_LOCAL", "False").strip().lower() == "true"
 
 if IS_LOCAL:
     TRAVELLER_DASHBOARD_URL = "http://192.168.68.111:3000/dashboard"
-    API_SITE_URL = "http://0.0.0.0:8004"
+    API_SITE_URL = "http://0.0.0.0:8010"
     ADMIN_ALL_BOOKING_PAGE = "http://192.168.68.111:3010/apps/booking-management/bookings"
 else:
-    # TRAVELLER_DASHBOARD_URL = "https://dreamziarah.com/dashboard"
-    # API_SITE_URL = "https://dreamziarah.com"
     TRAVELLER_DASHBOARD_URL = "https://dreamziarah.com/dashboard"
     API_SITE_URL = "https://api.dreamziarah.com"
     ADMIN_ALL_BOOKING_PAGE = "https://admin.dreamziarah.com/apps/booking-management/bookings"
