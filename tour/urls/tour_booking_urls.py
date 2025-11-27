@@ -34,8 +34,9 @@ urlpatterns = [
 
 	path('api/v1/tour_booking/cancel_request/<int:pk>/', views.requestToCancelTourBooking),
     
-	# if admion wants to approve a cancellation request he will use this endpoint
-    #     path('api/v1/payments/refund_balance_from_stripe_to_traveller/<int:pk>/', views.refundBalanceFromStripeToTraveller)
+	# if admin wants to approve a cancellation request he will use this endpoint
+    # by entering booking id admin can refund balance from stripe to traveller account
+    path('api/v1/tour_booking/approve_booking_cancellation_request_and_refund_balance_from_stripe_to_traveller/<int:pk>/', views.approveBookingCancellationRequest),
 
     path('api/v1/tour_booking/deny_cancellation_request/<int:pk>/', views.denyCancellationRequest),
     

@@ -52,7 +52,7 @@ def send_date_change_request_email_to_admin(tour_booking, admin_all_booking_page
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc, connection=connection)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Date Change Request sent from sales to sales")
+    print(f"✅ Date Change Request sent from {from_email} to {to}")
 
 
 # ----------------------------
@@ -99,7 +99,7 @@ def send_date_change_request_approval_email_from_admin_to_traveller(tour_booking
     email.attach_alternative(html_content, "text/html")
     email.attach(pdf_filename, ticket_pdf_bytes, 'application/pdf')
     email.send()
-    print("✅ Changed date's Booking confirmation sent from sales to", tour_booking.user.email)
+    print(f"✅ Changed date's Booking confirmation sent from {from_email} to {tour_booking.user.email}" )
 
 
 # ----------------------------
@@ -129,7 +129,7 @@ def send_date_change_request_deny_email_to_traveller(tour_booking, requested_sel
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc, connection=connection)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Booking date change request denied email sent from sales to", tour_booking.user.email)
+    print(f"✅ Booking date change request denied email sent from {from_email} to {tour_booking.user.email}" )
 
 
 
@@ -159,7 +159,7 @@ def send_booking_cancellation_request_email_to_admin(tour_booking, admin_all_boo
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc, connection=connection)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Booking Cancellation Request sent from sales to sales")
+    print(f"✅ Booking Cancellation Request sent from {from_email} to {to}")
 
 
 
@@ -189,7 +189,7 @@ def booking_cancellation_request_approval_email_from_admin_to_traveller(tour_boo
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc, connection=connection)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Booking cancellation Request approval email sent from sales to", tour_booking.user.email)
+    print(f"✅ Booking cancellation Request approval email sent from {from_email} to {tour_booking.user.email}")
 
 # ----------------------------
 # 6. Booking Cancellation Request Deny (sales SMTP)
@@ -217,14 +217,14 @@ def send_booking_cancellation_request_deny_email_to_traveller(tour_booking, trav
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc, connection=connection)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Booking cancellation request denied email sent from sales to", tour_booking.user.email)
+    print(f"✅ Booking cancellation request denied email sent from {from_email} to {tour_booking.user.email}" )
 
 
 # ----------------------------
 # 7. Manual Cancellation of Booking by Admin (sales SMTP)
 # ----------------------------
 def send_email_from_admin_to_traveller_when_manually_cancelled_booking_by_admin(tour_booking, traveller_dashboard_url):
-    subject = f"Booking Manually Cancelled by Admin - {tour_booking.booking_id}"
+    subject = f"Booking Manually Cancelled by Admin - {tour_booking.booking_id}."
     to = [tour_booking.user.email]
     if IS_LOCAL:
         bcc = ["sabbirvai82@gmail.com"]
@@ -243,4 +243,4 @@ def send_email_from_admin_to_traveller_when_manually_cancelled_booking_by_admin(
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc, connection=connection)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Manual cancellation of booking by admin email sent from sales to", tour_booking.user.email)
+    print(f"✅ Manual cancellation of booking by admin email sent from {from_email} to {tour_booking.user.email}")

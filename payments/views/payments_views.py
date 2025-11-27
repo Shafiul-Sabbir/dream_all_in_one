@@ -201,3 +201,105 @@ def checkAvailability(request):
 
     return Response({"available": True}, status=200)
 
+from tour.models import TourBooking
+from payments.resend_emails import (
+    Resend_welcome_email_to_traveller,
+    Resend_booking_confirmation_email_to_traveller,
+    Resend_payment_confirmation_email_to_traveller
+)
+@api_view(['POST'])
+def resendEmail(request):
+    """
+    Resend welcome email to the traveller based on email and phone.
+    """
+    data = request.data
+    booking_id = data.get('booking_id')
+    with_welcome_email = data.get('with_welcome_email', False)
+
+    if booking_id is None:
+        return Response({"error": "Booking ID is required."}, status=400)
+    else:
+        try:
+            booking_id = int(booking_id)
+        except ValueError:
+            return Response({"error": "Booking ID must be an integer."}, status=400)
+        
+    # Fetch booking instance
+    booking = TourBooking.objects.filter(id=booking_id).first()
+    if not booking:
+        return Response({"error": "Booking not found."}, status=404)
+    tour_booking_id = booking.id
+    
+    # finding user instance from booking
+    user = booking.user
+    if not user:
+        return Response({"error": "User not found for the given booking."}, status=404) 
+    
+    # finding traveller from booking
+    traveller = booking.traveller
+    if not traveller:
+        return Response({"error": "Traveller not found for the given booking."}, status=404)    
+    traveller_id = traveller.id
+    
+    # finding payment from booking
+    payment = booking.payment
+    if not payment:
+        return Response({"error": "Payment not found for the given booking."}, status=404)
+    payment_id = payment.id
+
+    company = booking.company
+    print("company : ", company)
+
+    email = user.email
+    username = user.username
+    print("email : ", email)
+    print("username : ", username)
+
+    dashboard_url = settings.TRAVELLER_DASHBOARD_URL
+
+
+    # # generate new password as the previous one has not been received
+    if with_welcome_email:
+        new_password = generate_password()
+        print("new_password : ", new_password)
+        user.set_password(new_password)
+        user.save()
+
+        # Send welcome email asynchronously
+        traveller_data = {
+            "company": company.name,
+            "traveller_id": traveller.id,
+            "user_id": user.id,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "username": username,
+            "password": new_password,
+            "email": user.email,
+            "phone": traveller.phone,
+            "acceptOffers": traveller.accept_offers,
+            "created_by": traveller.created_by,
+            "updated_by": traveller.updated_by,
+            "created_at": traveller.created_at,
+            "updated_at": traveller.updated_at,
+        }
+
+        # Step : Send welcome email without using celery task
+        traveller_data['dashboard_url'] = dashboard_url
+
+        Resend_welcome_email_to_traveller(traveller_data)
+        print("✅ Welcome email succesfully Re-sent to traveller.\n")
+
+    Resend_booking_confirmation_email_to_traveller(
+        tour_booking_id, payment_id, traveller_id, dashboard_url
+    )
+    print("✅ Booking confirmation email has Re-sent to traveller.\n")
+
+    Resend_payment_confirmation_email_to_traveller(
+        tour_booking_id, payment_id, traveller_id, dashboard_url
+    )
+    print("✅ Payment confirmation email has Re-sent to traveller.\n")
+
+    return Response({
+        "status": "success", 
+        "message": "Booking & Payment confirmation email has re-sent successfully..."}, status=200
+        )

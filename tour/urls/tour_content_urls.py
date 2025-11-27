@@ -7,7 +7,7 @@ urlpatterns = [
     path('api/v1/tour/create/', views.createTour),
     path('api/v1/tour/update/<int:pk>/', views.updateTour),
     path('api/v1/tour/delete/<int:pk>/', views.deleteTour),
-    # path('api/v1/tour/get_by_name/<str:name>/', views.getTourByName),
+    path('api/v1/tour/get_by_slug/<str:slug>/', views.getATourBySlug),
     # path('api/v1/tour/get_by_date/<str:date>/', views.getTourByDate),
     # path('api/v1/tour/get_by_location/<str:location>/', views.getTourByLocation),
     # path('api/v1/tour/get_by_status/<str:status>/', views.getTourByStatus),

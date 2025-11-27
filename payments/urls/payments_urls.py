@@ -8,4 +8,7 @@ urlpatterns = [
     # path('api/v1/payments/update/<int:pk>/', views.updatePayment),
     # path('api/v1/payments/delete/<int:pk>/', views.deletePayment),
     path('api/v1/payments/availability/check/', views.checkAvailability),
+
+    path('api/v1/resend_email/', views.resendEmail),
+
 ]

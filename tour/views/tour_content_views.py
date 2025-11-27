@@ -198,6 +198,20 @@ def getATour(request, pk):
     # print("Tour retrieved successfully:", serializer.data)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
+@api_view(['GET'])
+def getATourBySlug(request, slug):
+    """
+    Retrieve a specific tour by its slug.
+    """
+    print(f"Fetching tour with slug: {slug}")
+    try:
+        tour = Tour.objects.get(slug=slug)
+    except Tour.DoesNotExist:
+        print("Tour not found.")
+        return Response({"error": "Tour not found"}, status=status.HTTP_404_NOT_FOUND)
+    serializer = TourListSerializer(tour)
+    # print("Tour retrieved successfully:", serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['DELETE'])
 def deleteTour(request, pk):

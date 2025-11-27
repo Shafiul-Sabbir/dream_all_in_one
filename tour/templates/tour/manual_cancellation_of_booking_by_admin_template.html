@@ -65,9 +65,21 @@
         <p style="margin:5px 0;">📞 Phone: 
           <a href="tel:+390645259865" style="color:#1a73e8; text-decoration:none;">+39 06 4525 9865</a>
         </p>
-        <p style="margin:5px 0;">🌐 Website: 
-          <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
-        </p>
+        {% if tour_booking.company.name|upper == "IT" %}
+          <p style="margin:5px 0;">🌐 Website:
+            <a href="https://dreamtourism.it/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamtourism.it</a>
+          </p>
+
+        {% elif tour_booking.company.name|upper == "UK" %}
+          <p style="margin:5px 0;">🌐 Website:  
+            <a href="https://dreamtourism.co.uk/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamtourism.co.uk</a>
+          </p>
+
+        {% elif tour_booking.company.name|upper == "ZIARAH" %}
+          <p style="margin:5px 0;">🌐 Website: 
+            <a href="https://dreamziarah.com/" target="_blank" style="color:#1a73e8; text-decoration:none;">dreamziarah.com</a>
+          </p>
+        {% endif %}
       </div>
 
       <hr style="border:none; border-top:1px solid #eee; margin:25px 0;" />
