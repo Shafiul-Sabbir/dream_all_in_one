@@ -57,6 +57,9 @@ def createTour(request):
     # file fields (image etc.)
     if "thumbnail_image" in request.FILES:
         processed_data["thumbnail_image"] = request.FILES["thumbnail_image"]
+
+    if "meta_image" in request.FILES:
+        processed_data["meta_image"] = request.FILES["meta_image"]
     
     for key, value in processed_data.items():
         i = 0
@@ -148,6 +151,11 @@ def updateTour(request, pk):
     if "thumbnail_image" in request.FILES:
         processed_data["update_thumbnail_image"] = True
         processed_data["thumbnail_image"] = request.FILES["thumbnail_image"]
+    
+    # handle meta image
+    if "meta_image" in request.FILES:
+        processed_data["update_meta_image"] = True
+        processed_data["meta_image"] = request.FILES["meta_image"]
 
     # handle images
     for key, value in processed_data.items():

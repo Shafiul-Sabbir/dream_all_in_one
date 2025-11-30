@@ -69,11 +69,8 @@ def getAHomePageSlider(request, pk):
 
 
 
-
-@extend_schema(request=HomePageSliderSerializer, responses=HomePageSliderSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
 def createHomePageSlider(request):
 	data = request.data
 	print('data: ', data)
@@ -96,12 +93,8 @@ def createHomePageSlider(request):
 		return Response(serializer.errors)
 
 
-
-
-@extend_schema(request=HomePageSliderSerializer, responses=HomePageSliderSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
 def updateHomePageSlider(request, pk):
 	data = request.data
 	filtered_data = {}

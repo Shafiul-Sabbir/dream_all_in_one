@@ -122,8 +122,8 @@ def generate_user_response(user, refresh=None, **kwargs):
                 path="/",
                 max_age = 15 * 60,
             )
-            print("type of response : ", type(response))
+            # print("type of response : ", type(response))
             response['refreshToken']=str(refresh)
             response['accessToken']=str(refresh.access_token)
-
+    print("Log in operation Successfully completed.")
     return response
