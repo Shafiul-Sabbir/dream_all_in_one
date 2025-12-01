@@ -34,10 +34,6 @@ staticfiles/
 # !static/js/
 # !static/images/
 
-# Project-specific
-baira-data/
-data/
-
 # Zip and compressed files
 *.zip
 *.tar.gz
