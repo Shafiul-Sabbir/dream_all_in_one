@@ -1,0 +1,23 @@
+[
+  {
+    "model": "cms.tag",
+    "pk": 1,
+    "fields": {
+      "name": "pabna"
+    }
+  },
+  {
+    "model": "cms.tag",
+    "pk": 2,
+    "fields": {
+      "name": "rajshahi"
+    }
+  },
+  {
+    "model": "cms.tag",
+    "pk": 3,
+    "fields": {
+      "name": "rakib"
+    }
+  }
+]

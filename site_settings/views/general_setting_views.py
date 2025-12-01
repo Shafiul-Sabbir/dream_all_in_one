@@ -11,7 +11,7 @@ from rest_framework.response import Response
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
-
+from authentication.models import  Company
 from site_settings.models import GeneralSetting
 from site_settings.serializers import GeneralSettingSerializer, GeneralSettingListSerializer
 
@@ -24,20 +24,11 @@ import datetime
 
 
 # Create your views here.
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=GeneralSettingListSerializer,
-	responses=GeneralSettingListSerializer
-)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllGeneralSetting(request):
-	general_settings = GeneralSetting.objects.all()
+	company_id = request.query_params.get('company_id')
+	company_instance = Company.objects.filter(id=company_id).first()
+	general_settings = GeneralSetting.objects.filter(company=company_instance).all()
 	total_elements = general_settings.count()
 
 	page = request.query_params.get('page')
@@ -63,11 +54,7 @@ def getAllGeneralSetting(request):
 
 
 
-
-@extend_schema(request=GeneralSettingSerializer, responses=GeneralSettingSerializer)
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getAGeneralSetting(request, pk):
 	try:
 		general_setting = GeneralSetting.objects.get(pk=pk)
@@ -78,11 +65,8 @@ def getAGeneralSetting(request, pk):
 
 
 
-
-@extend_schema(request=GeneralSettingSerializer, responses=GeneralSettingSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
 def createGeneralSetting(request):
 	data = request.data
 	print('data: ', data)
@@ -101,17 +85,16 @@ def createGeneralSetting(request):
 
 	if serializer.is_valid():
 		serializer.save()
+		print('\n')
+		print("serializer data: ", serializer.data)
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
-
-@extend_schema(request=GeneralSettingSerializer, responses=GeneralSettingSerializer)
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
 def updateGeneralSetting(request, pk):
 	data = request.data
 	filtered_data = {}
@@ -149,12 +132,8 @@ def updateGeneralSetting(request, pk):
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(request=GeneralSettingSerializer, responses=GeneralSettingSerializer)
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
 def deleteGeneralSetting(request, pk):
 	try:
 		general_setting = GeneralSetting.objects.get(pk=pk)

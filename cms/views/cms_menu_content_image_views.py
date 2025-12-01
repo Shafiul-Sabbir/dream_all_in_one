@@ -1,4 +1,6 @@
+import os
 from random import randrange
+from time import process_time_ns
 from urllib import response
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import connection
@@ -14,9 +16,9 @@ from rest_framework.response import Response
 from drf_spectacular.utils import  extend_schema, OpenApiParameter
 
 from authentication.decorators import has_permissions
-
-from cms.models import CMSMenu, CMSMenuContentImage, CMSMenuContentImage,CMSMenuContent
-from cms.serializers import *
+from authentication.models import Company
+from cms.models import CMSMenu, CMSMenuContent,CMSMenuContentImage, CMSMenuContentImage
+from cms.serializers import CMSMenuContentImageSerializer, CMSMenuContentImageListSerializer, CMSMenuContentImageMinimalSerializer,CMSMenuContentListSerializer
 
 from commons.pagination import Pagination
 from commons.enums import PermissionEnum
@@ -24,73 +26,73 @@ from commons.enums import PermissionEnum
 import datetime
 
 
-
-
 # Create your views here.
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=CMSMenuContentImageSerializer,
-	responses=CMSMenuContentImageListSerializer
+    request=CMSMenuContentImageSerializer,
+    responses=CMSMenuContentImageListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllCMSMenuContentImage(request):
-	content_images = CMSMenuContentImage.objects.all()
-	print('content_images: ', content_images)
+    company_id = request.query_params.get('company_id')
+    content_images = CMSMenuContentImage.objects.filter(company=company_id).all()
+    print('content_images: ', content_images)
 
-	total_elements = content_images.count()
+    total_elements = content_images.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	content_images = pagination.paginate_data(content_images)
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    content_images = pagination.paginate_data(content_images)
 
-	serializer = CMSMenuContentImageListSerializer(content_images, many=True)
+    serializer = CMSMenuContentImageListSerializer(content_images, many=True)
 
-	response = {
-		'content_images': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
+    response = {
+        'content_images': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
 
-	return Response(response, status=status.HTTP_200_OK)
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
 
 @extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
+    parameters=[
+        OpenApiParameter("page"),
+        OpenApiParameter("size"),
   ],
-	request=CMSMenuContentImageSerializer,
-	responses=CMSMenuContentImageListSerializer
+    request=CMSMenuContentImageSerializer,
+    responses=CMSMenuContentImageListSerializer
 )
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
 def getAllContentImageWP(request):
-	content_images = CMSMenuContentImage.objects.all()
-	print('content_images: ', content_images)
+    company_id = request.query_params.get('company_id')
+    content_images = CMSMenuContentImage.objects.filter(company=company_id).all()
+    print('content_images: ', content_images)
 
-	serializer = CMSMenuContentImageMinimalSerializer(content_images, many=True)
+    serializer = CMSMenuContentImageMinimalSerializer(content_images, many=True)
 
-	response = {
-		'content_images': serializer.data,
-	}
+    response = {
+        'content_images': serializer.data,
+    }
 
-	return Response(response, status=status.HTTP_200_OK)
+    return Response(response, status=status.HTTP_200_OK)
 
 
 
@@ -101,211 +103,178 @@ def getAllContentImageWP(request):
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
 def getAllContentImageByMenuId(request, menu_id):
-	content_images = CMSMenuContentImage.objects.filter(cms_menu=menu_id)
-	serializer = CMSMenuContentImageListSerializer(content_images, many=True)
+    content_images = CMSMenuContentImage.objects.filter(cms_menu=menu_id)
+    total_elements = len(content_images)
+    serializer = CMSMenuContentImageListSerializer(content_images, many=True)
 
-	if content_images.count() > 0:
-		response = {
-			'content_images': serializer.data,
-		}
-		return Response(response, status=status.HTTP_200_OK)
-	else:
-		return Response({'detail': f"CMSMenuContentImage with menu {menu_id} does't exist"}, status=status.HTTP_400_BAD_REQUEST)
+    if content_images.count() > 0:
+        response = {
+            'total_elements' : total_elements,
+            'content_images': serializer.data,
+        }
+        return Response(response, status=status.HTTP_200_OK)
+    else:
+        return Response({'detail': f"CMSMenuContentImage with menu {menu_id} does't exist"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=CMSMenuContentImageSerializer,
-	responses=CMSMenuContentImageListSerializer
-)
-# @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
-# def getAllContentImageListByMenuId(request, menu_id):
-#     with connection.cursor() as cursor:
-#         cursor.execute('''
-#             SELECT
-#                 head AS menu_item_name,
-#                 json_agg(
-#                     CASE
-#                         WHEN cloudflare_image IS NOT NULL THEN cloudflare_image
-#                         ELSE image
-#                     END
-#                 ) AS images
-#             FROM cms_cmsmenucontentimage
-#             WHERE cms_menu_id = %s
-#             GROUP BY head;
-#         ''', [menu_id])
-#         rows = cursor.fetchall()
-
-#     content_images = {}
-#     for row in rows:
-#         content_images[row[0]] = row[1]
-
-#     if content_images:
-#         return Response({'content_images': content_images}, status=status.HTTP_200_OK)
-#     else:
-#         return Response({'detail': "No content found."}, status=status.HTTP_204_NO_CONTENT)
 @api_view(['GET'])
 def getAllContentImageListByMenuId(request, menu_id):
     try:
-        menu_obj = CMSMenu.objects.get(pk=menu_id)
-    except CMSMenu.DoesNotExist:
-        return Response({'detail': f"Menu id {menu_id} not found."}, status=status.HTTP_404_NOT_FOUND)
+        # Filter all CMSMenuContentImage by menu_id
+        images_qs = CMSMenuContentImage.objects.filter(cms_menu_id=menu_id)
 
-    # Menu-এর সাথে যুক্ত সব images আনলাম
-    content_images_qs = CMSMenuContentImage.objects.filter(cms_menu=menu_obj)
+        if not images_qs.exists():
+            return Response(
+                {'detail': "No content found."},
+                status=status.HTTP_204_NO_CONTENT
+            )
 
-    if not content_images_qs.exists():
-        return Response({'detail': "No content found."}, status=status.HTTP_204_NO_CONTENT)
+        # Prepare dictionary: { head: [images...] }
+        content_images = {}
 
-    # Group by head → প্রতিটি head এর নিচে multiple images list
-    grouped_data = {}
-    for img in content_images_qs:
-        image_url = img.cloudflare_image or (img.image.url if img.image else None)
-        if not image_url:
-            continue
+        for image in images_qs:
+            # যদি cloudflare_image থাকে তাহলে ওটাই নাও, না থাকলে image.url
+            image_url = image.cloudflare_image or (image.image.url if image.image else None)
 
-        if img.head not in grouped_data:
-            grouped_data[img.head] = []
-        grouped_data[img.head].append(image_url)
+            if not image_url:
+                continue
 
-    response = {
-        "menu_id": menu_obj.id,
-        "menu_name": getattr(menu_obj, "name", None),  # যদি CMSMenu model এ name থাকে
-        "content_images": grouped_data
-    }
+            if image.head not in content_images:
+                content_images[image.head] = []
+            content_images[image.head].append(image_url)
 
-    return Response(response, status=status.HTTP_200_OK)
+        return Response(
+            {'content_images': content_images},
+            status=status.HTTP_200_OK
+        )
 
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
+    except Exception as e:
+        return Response(
+            {'detail': str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DETAILS.name])
-def getACMSMenuContentImage(request, pk):
-	try:
-		content_images = CMSMenuContentImage.objects.get(pk=pk)
-		serializer = CMSMenuContentImageSerializer(content_images)
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenuContentImage id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+def getACMSMenuContentImageByContentTitle(request, image_name):
+    try:
+        company_id = request.query_params.get('company_id')
+        content_image = CMSMenuContentImage.objects.filter(head=image_name, company=company_id).first()
+        serializer = CMSMenuContentImageSerializer(content_image)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    except ObjectDoesNotExist:
+        return Response({'detail': f"CMSMenuContentImage with image_name '{image_name}' does not exist"}, 
+                        status=status.HTTP_404_NOT_FOUND)
 
-
-
-
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
+@permission_classes([IsAuthenticated])
 def createCMSMenuContentImage(request):
-	data = request.data
-	print('data: ', data)
-	print('content_type: ', request.content_type)
+    data = request.data
+    print('data: ', data)
+    print('content_type: ', request.content_type)
 
-	filtered_data = {}
+    filtered_data = {}
 
-	for key, value in data.items():
-		if value != '' and value != 0 and value != '0':
-			filtered_data[key] = value
+    for key, value in data.items():
+        if value != '' and value != 0 and value != '0':
+            filtered_data[key] = value
+    print('\n')
+    print('filtered_data: ', filtered_data)
+    print('\n')
 
-	print('filtered_data: ', filtered_data)
-	
-	menu_id = data.get('cms_menu')
-	head = data.get('head')
-	
-	try:
-		cms_menu_obj = CMSMenu.objects.get(pk=menu_id)
-	except CMSMenu.DoesNotExist:
-		return Response({'detail': "CMSMenu id {menu_id} doesn't exist."}, status=status.HTTP_400_BAD_REQUEST)
+    company_id = data.get('company')
+    menu_id = data.get('cms_menu')
+    head = data.get('head')
+    
+    try:
+        cms_menu_obj = CMSMenu.objects.get(pk=menu_id)
+    except CMSMenu.DoesNotExist:
+        return Response({'detail': "CMSMenu id {menu_id} doesn't exist."}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        company = Company.objects.get(id=company_id)
+    except Company.DoesNotExist:
+        return Response({'detail': "Company id {company_id} doesn't exist."}, status=status.HTTP_400_BAD_REQUEST)
 
-	for i in range(len(filtered_data) - 2):
-		try:
-			image = filtered_data[f'images[0][{i}]']
-			print('image: ', image)
-			print('image type: ', type(image))
-			CMSMenuContentImage.objects.create(cms_menu=cms_menu_obj, head=head, image=image)
-		except KeyError:
-			pass
-	content_images = CMSMenuContentImage.objects.filter(cms_menu=cms_menu_obj)
-	serializer = CMSMenuContentImageListSerializer(content_images, many=True)
-	if content_images.count() > 0:
-		return Response(serializer.data, status=status.HTTP_201_CREATED)
-	else:
-		return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+    for i in range(len(filtered_data) - 2):
+        try:
+            image = filtered_data[f'images[0][{i}]']
+            print('image: ', image)
+            print('image type: ', type(image))
+            print('\n')
+            filtered_data['image'] = image
+            serializer = CMSMenuContentImageSerializer(data=filtered_data)
+            if serializer.is_valid():
+                serializer.save()
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            # CMSMenuContentImage.objects.create(cms_menu=cms_menu_obj, head=head, image=image)
+        except KeyError:
+            pass
+    content_images = CMSMenuContentImage.objects.filter(cms_menu=cms_menu_obj, company=company).all()
+    serializer = CMSMenuContentImageListSerializer(content_images, many=True)
+    if content_images.count() > 0:
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    else:
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
 
-
-
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['PUT'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_UPDATE.name])
-# @parser_classes([MultiPartParser, FormParser])
+@permission_classes([IsAuthenticated])
 def updateCMSMenuContentImage(request, pk):
-	data = request.data
-	print('data :', data)
-	filtered_data = {}
+    data = request.data
+    print('data :', data)
+    filtered_data = {}
 
-	try:
-		menu_obj = CMSMenuContentImage.objects.get(pk=pk)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"Product id - {pk} doesn't exists"})
+    try:
+        menu_obj = CMSMenuContentImage.objects.get(pk=pk)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"Product id - {pk} doesn't exists"})
 
-	for key, value in data.items():
-		if value != '' and value != '0':
-			filtered_data[key] = value
+    for key, value in data.items():
+        if value != '' and value != '0':
+            filtered_data[key] = value
 
-	print('filtered_data: ', filtered_data)
+    print('filtered_data: ', filtered_data)
 
-	image = filtered_data.get('image', None)
+    image = filtered_data.get('image', None)
 
-	if image is not None and type(image) == str:
-		popped_image = filtered_data.pop('image')
+    if image is not None and type(image) == str:
+        popped_image = filtered_data.pop('image')
 
-	serializer = CMSMenuContentImageSerializer(menu_obj, data=filtered_data)
-	if serializer.is_valid():
-		serializer.save()
-		return Response(serializer.data, status=status.HTTP_200_OK)
-	else:
-		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
+    serializer = CMSMenuContentImageSerializer(menu_obj, data=filtered_data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
+
 @api_view(['DELETE'])
-# @permission_classes([IsAuthenticated])
-# @has_permissions([PermissionEnum.ATTRIBUTE_DELETE.name])
+@permission_classes([IsAuthenticated])
 def deleteCMSMenuContentImage(request, pk):
-	try:
-		content_images = CMSMenuContentImage.objects.get(pk=pk)
-		content_images.delete()
-		return Response({'detail': f'CMSMenuContentImage id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
-	except ObjectDoesNotExist:
-		return Response({'detail': f"CMSMenuContentImage id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    try:
+        content_images = CMSMenuContentImage.objects.get(pk=pk)
+        content_images.delete()
+        return Response({'detail': f'CMSMenuContentImage id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"CMSMenuContentImage id - {pk} does't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-@extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
+# @extend_schema(request=CMSMenuContentImageSerializer, responses=CMSMenuContentImageSerializer)
 @api_view(['GET'])
 def getContentImageListByMenuName(request, menu_name):
     try:
-        
-        matching_menus = CMSMenu.objects.filter(name__icontains=menu_name)
+        company_id = request.query_params.get('company_id')
+        matching_menus = CMSMenu.objects.filter(name__icontains=menu_name, company=company_id).all()
+        print("company_id : ", company_id)
+        print("matching menus : ", matching_menus)
         
         if matching_menus.exists():
-            
             content_images_dict = {}
-            
-            
             for cms_menu in matching_menus:
-                
                 content_images = CMSMenuContentImage.objects.filter(cms_menu=cms_menu)
-                
                 
                 for image in content_images:
                     menu_item_name = image.head
@@ -328,25 +297,19 @@ def getContentImageListByMenuName(request, menu_name):
     except ObjectDoesNotExist:
         
         return Response({'detail': f"No content images found for menu '{menu_name}'"}, status=status.HTTP_404_NOT_FOUND)
-	
+    
 
-@extend_schema(
-	parameters=[
-		OpenApiParameter("page"),
-		OpenApiParameter("size"),
-  ],
-	request=CMSMenuContentImageSerializer,
-	responses=CMSMenuContentImageListSerializer
-)
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_LIST.name])
-def get_content_and_images_by_menu_id(request, menu_id):
+def getContentAndImagesByMenuId(request, menu_id):
     try:
-        cms_content_obj = CMSMenuContent.objects.filter(cms_menu=menu_id)
+        company_id = request.query_params.get('company_id')
+        cms_content_obj = CMSMenuContent.objects.filter(cms_menu=menu_id, company=company_id).all()
+        # print("cms_content_obj : ", cms_content_obj)
 
         serializer = CMSMenuContentListSerializer(cms_content_obj, many=True)
-		
+        
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     except CMSMenuContent.DoesNotExist:

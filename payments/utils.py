@@ -11,7 +11,7 @@ from rest_framework import status
 from django.conf import settings
 from rest_framework.response import Response
 import stripe
-from authentication.models import Role, User
+from authentication.models import Role, User, Company
 from payments.models import Traveller
 from payments.tasks import send_welcome_email_to_traveller_task
 from tour.models import AvailableDate, AvailableTime, Tour, TourBooking
@@ -155,41 +155,103 @@ def generate_invoice_id(selected_date, booking_id):
     
 
 def get_or_create_traveller_data(traveller_info, errors):
+    """
+    Retrieves or creates traveller and user data based on unique email.
+    Steps:
+      1. Check if user with the email exists.
+      2. If exists:
+            - Check if traveller for that user exists.
+            - If traveller exists → return traveller data.
+            - Else → create traveller for that user.
+      3. If user doesn’t exist → create both user and traveller.
+    """
 
-    email = traveller_info['email']
-    phone = traveller_info['phone']
-
-    # step : 1
-    # Check if a traveller with the same email and phone already exists
-    try:
-        traveller = Traveller.objects.get(phone=phone)
-        user = traveller.user
-        traveller_data = {
-            "traveller_id": traveller.id,
-            "user_id": user.id,
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "username": user.username,
-            "password": "********",
-            "email": user.email,
-            "phone": traveller.phone,
-            "acceptOffers": traveller.accept_offers,
-            "created_by": traveller.created_by,
-            "updated_by": traveller.updated_by,
-            "created_at": traveller.created_at,
-            "updated_at": traveller.updated_at,
+    email = traveller_info.get('email')
+    phone = traveller_info.get('phone')
+    company = traveller_info.get('company')
+    company = Company.objects.get(id=company)
+    traveller_data = {}
+    if '@' not in email:
+        errors.append("Invalid email address provided.")
+        return {
+            "errors": errors,
+            "traveller_data": traveller_data if not errors else None,
         }
-    
-    # step : 2
-    # If traveller does not exist, create a new user and traveller
-    except Traveller.DoesNotExist:
-        try:
+
+    try:
+        # Step 1: Check if user with this email already exists
+        user = User.objects.filter(email=email, company=company).first()
+
+        if user:
+            # Step 2: If user exists, check for Traveller
+            traveller = Traveller.objects.filter(user=user, company=company).first()
+
+            if traveller:
+                # Traveller already exists
+                traveller_data = {
+                    "company": company.name,
+                    "traveller_id": traveller.id,
+                    "user_id": user.id,
+                    "first_name": user.first_name,
+                    "last_name": user.last_name,
+                    "username": user.username,
+                    "password": "********",  # Hide real password
+                    "email": user.email,
+                    "phone": traveller.phone,
+                    "acceptOffers": traveller.accept_offers,
+                    "created_by": traveller.created_by,
+                    "updated_by": traveller.updated_by,
+                    "created_at": traveller.created_at,
+                    "updated_at": traveller.updated_at,
+                }
+
+            else:
+                # Step 2.1: Traveller doesn’t exist → create traveller for this user
+                username = user.username or get_unique_username(user.first_name, user.last_name)
+                role = user.role or Role.objects.get_or_create(name="TRAVELLER")
+
+                # checks to update user info if username or role is missing
+                if not user.username or user.role is None:
+                    user.username = username
+                    user.role = role
+                    user.save()
+
+                # Create Traveller for existing user
+                traveller = Traveller.objects.create(
+                    company=company,
+                    user=user,
+                    phone=phone,
+                    accept_offers=traveller_info.get('acceptOffers', False),
+                    created_by=username,
+                    updated_by=username,
+                )
+
+                traveller_data = {
+                    "company": company.name,
+                    "traveller_id": traveller.id,
+                    "user_id": user.id,
+                    "first_name": user.first_name,
+                    "last_name": user.last_name,
+                    "username": username,
+                    "password": "********",
+                    "email": email,
+                    "phone": traveller.phone,
+                    "acceptOffers": traveller.accept_offers,
+                    "created_by": traveller.created_by,
+                    "updated_by": traveller.updated_by,
+                    "created_at": traveller.created_at,
+                    "updated_at": traveller.updated_at,
+                }
+
+        else:
+            # Step 3: User doesn’t exist → create new user & traveller
             username = get_unique_username(traveller_info['first_name'], traveller_info['last_name'])
             password = generate_password()
             role, _ = Role.objects.get_or_create(name="TRAVELLER")
 
-            # creating new user
+            # Create New User
             user = User.objects.create_user(
+                company=company,
                 first_name=traveller_info['first_name'],
                 last_name=traveller_info['last_name'],
                 email=email,
@@ -201,16 +263,18 @@ def get_or_create_traveller_data(traveller_info, errors):
             user.role = role
             user.save()
 
-            # creating new traveller
+            # Create New Traveller
             traveller = Traveller.objects.create(
+                company=company,
                 user=user,
                 phone=phone,
-                accept_offers=traveller_info['acceptOffers'],
+                accept_offers=traveller_info.get('acceptOffers', False),
                 created_by=username,
-                updated_by=username
+                updated_by=username,
             )
 
             traveller_data = {
+                "company": company.name,
                 "traveller_id": traveller.id,
                 "user_id": user.id,
                 "first_name": user.first_name,
@@ -223,28 +287,25 @@ def get_or_create_traveller_data(traveller_info, errors):
                 "created_by": traveller.created_by,
                 "updated_by": traveller.updated_by,
                 "created_at": traveller.created_at,
-                "updated_at": traveller.updated_at
+                "updated_at": traveller.updated_at,
             }
 
-
-            # step : 2.1
-            # Send welcome email to the traveller asynchronously through Celery
+            # Step 3.1: Send welcome email asynchronously via Celery
             dashboard_url = settings.TRAVELLER_DASHBOARD_URL
             traveller_data['dashboard_url'] = dashboard_url
-            # print("traveller_data", traveller_data)
             send_welcome_email_to_traveller_task.delay(traveller_data)
-            print("welcome email sent to traveller.")
-            print('/n')
-        except Exception as e:
-            errors.append(f"Traveller creation failed: {str(e)}")
-            return {
+            print("✅ Welcome email sent to traveller.\n")
+
+    except Exception as e:
+        errors.append(f"Traveller creation failed: {str(e)}")
+        return {
             "errors": errors,
             "traveller_data": None
-            }
+        }
 
     return {
-        "errors" : errors,
-        "traveller_data" : traveller_data if not errors else None,
+        "errors": errors,
+        "traveller_data": traveller_data if not errors else None,
     }
 
 def checking_tour_and_creating_booking(tour_details, traveller_data):
@@ -255,6 +316,9 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
     selected_date = tour_details.get('selected_date', None)
     selected_time = tour_details.get('selected_time', None)
     guide = tour_details.get('guide')
+    company = traveller_data.get('company')
+    company = Company.objects.get(name=company)
+
 
     print("selected date is :", selected_date)
     print("selected time is :", selected_time)
@@ -341,7 +405,7 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
         errors.append(f"Total participants must be between 0 to {tour.group_size}")
         return {"errors": errors}
 
-    given_total_price = tour_details.get('total_price')
+    given_total_price = Decimal(tour_details.get('total_price')).quantize(Decimal('0.01'))
     if tour.price_by_passenger:
         total_price = total_participants * price_per_person
     elif tour.price_by_vehicle:
@@ -366,7 +430,8 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
             selected_time = None
 
         tour_booking_data = {
-            "tour":tour.id,        
+            "company": company.id,
+            "tour": tour.id,        
             "guide": guide,
             "traveller": traveller_data['traveller_id'],
             "user": traveller_data['user_id'],

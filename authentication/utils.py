@@ -18,6 +18,7 @@ def generate_user_response(user, refresh=None, **kwargs):
         user_data = {
             "role": role,
             "user_id": user.id,
+            "company_name": user.company.name if user.company else None,
             "traveller_id": traveller.id,
             "first_name": traveller.user.first_name,
             "last_name": traveller.user.last_name,
@@ -39,6 +40,7 @@ def generate_user_response(user, refresh=None, **kwargs):
         user_data = {
             "role": role,
             "user_id": user.id,
+            "company_name": user.company.name if user.company else None,
             "first_name": user.first_name,
             "last_name": user.last_name,
             "email": user.email,
@@ -120,8 +122,8 @@ def generate_user_response(user, refresh=None, **kwargs):
                 path="/",
                 max_age = 15 * 60,
             )
-            print("type of response : ", type(response))
+            # print("type of response : ", type(response))
             response['refreshToken']=str(refresh)
             response['accessToken']=str(refresh.access_token)
-
+    print("Log in operation Successfully completed.")
     return response

@@ -9,7 +9,7 @@ source $VENV
 
 # Run Django server in a new terminal
 echo "🚀 Starting Django server in a separate terminal..."
-gnome-terminal -- bash -c "source $VENV && python3 $PROJECT_DIR/manage.py runserver 0.0.0.0:8006; exec bash"
+gnome-terminal -- bash -c "source $VENV && python3 $PROJECT_DIR/manage.py runserver 0.0.0.0:8010; exec bash"
 
 # Run Celery worker
 echo "⚡ Starting Celery worker..."
@@ -18,12 +18,12 @@ CELERY_PID=$!
 
 # Run ngrok
 echo "🌐 Starting ngrok tunnel..."
-ngrok http 8006 &
+ngrok http 8010 &
 NGROK_PID=$!
 
 # Run Stripe listener
 echo "💳 Starting Stripe webhook listener..."
-stripe listen --forward-to localhost:8006/stripe_payments/api/v1/payments/stripe-webhook/ &
+stripe listen --forward-to localhost:8010/stripe_payments/api/v1/payments/stripe-webhook/ &
 STRIPE_PID=$!
 
 echo "✅ All services are running!"

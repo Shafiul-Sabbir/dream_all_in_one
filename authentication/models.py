@@ -8,20 +8,41 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.conf import settings
-
+from functools import partial
 from phonenumber_field.modelfields import PhoneNumberField
-
 from PIL import Image
 from rest_framework.serializers import BaseSerializer
+from utils.utils import get_image_upload_folder
 
 
+class Company(models.Model):
+    name = models.CharField(max_length=255)
+
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+    updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
+
+    class Meta:
+        ordering = ('id',)
+
+    def __str__(self):
+        return self.name
+    
 
 
 class Permission(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -40,14 +61,19 @@ class Permission(models.Model):
 
 
 class Role(models.Model):
+    old_id = models.IntegerField(null=True, blank=True) # Removed to avoid confusion with global roles
+    company = models.ForeignKey(Company, on_delete= models.CASCADE) # Removed to make roles global across companies    
+
     name = models.CharField(max_length=255)
     permissions = models.ManyToManyField(Permission, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
-
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     
     class Meta:
@@ -64,10 +90,13 @@ class Role(models.Model):
 
 
 class Designation(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
     
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -86,6 +115,9 @@ class Designation(models.Model):
 
 
 class Country(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE) 
+
     name = models.CharField(max_length=255)
     capital_name = models.CharField(max_length=255, null=True, blank=True)
     country_code = models.CharField(max_length=255, null=True, blank=True)
@@ -95,8 +127,8 @@ class Country(models.Model):
     continent_name = models.CharField(max_length=255, null=True, blank=True)
     continent_code = models.CharField(max_length=255, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -112,6 +144,9 @@ class Country(models.Model):
 
 
 class City(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
     bn_name = models.CharField(max_length=50, null=True, blank=True)
 
@@ -122,8 +157,8 @@ class City(models.Model):
 
     country = models.ForeignKey(Country, on_delete= models.RESTRICT, related_name='cities')
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -143,6 +178,9 @@ class City(models.Model):
 
 
 class Thana(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
     bn_name = models.CharField(max_length=50, null=True, blank=True)
 
@@ -150,8 +188,8 @@ class Thana(models.Model):
 
     city = models.ForeignKey(City, on_delete= models.RESTRICT, related_name='thanas')
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -170,6 +208,9 @@ class Thana(models.Model):
 
 
 class Area(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
 
     short_desc = models.TextField(blank=True, null=True)
@@ -179,8 +220,8 @@ class Area(models.Model):
     city = models.ForeignKey(City, on_delete= models.RESTRICT, null=True, blank=True)
     country = models.ForeignKey(Country, on_delete= models.RESTRICT, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -199,6 +240,9 @@ class Area(models.Model):
 
 
 class Branch(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=50)
     
     short_desc = models.TextField(blank=True, null=True)
@@ -214,8 +258,8 @@ class Branch(models.Model):
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True, blank=True)
     postal_code = models.CharField(max_length=50, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -235,19 +279,23 @@ class Branch(models.Model):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, first_name, last_name, email, gender, password=None, primary_phone=None):
+    def create_user(self, first_name, last_name, email, gender, password=None, primary_phone=None, company=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
         """
         if not email:
             raise ValueError('Users must have an email address')
+        
+        if isinstance(company, int):
+            company = Company.objects.filter(id=company).first()
 
         user = self.model(
             first_name= first_name,
             last_name = last_name,
             email=self.normalize_email(email),
-            gender = gender
+            gender = gender,
+            company = company,
         )
 
         user.set_password(password)
@@ -257,11 +305,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, first_name, last_name, email, gender, password=None, primary_phone=None):
+    def create_superuser(self, first_name, last_name, email, gender, password=None, primary_phone=None, company=None):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
+
         user = self.create_user(
             email= email,
             password=password,
@@ -269,6 +318,7 @@ class UserManager(BaseUserManager):
             last_name = last_name,
             gender = gender, 
             primary_phone = primary_phone,
+            company = company,
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -282,16 +332,19 @@ class User(AbstractBaseUser):
         MALE = 'male', _('Male')
         FEMALE = 'female', _('Female')
         OTHERS = 'others', _('Others')
+    
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100, null=True, blank=True, unique=True)
-    email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
+    email = models.EmailField(verbose_name='email address', max_length=255)
 
     gender = models.CharField(max_length=6, choices=Gender.choices, default=Gender.MALE)
 
-    primary_phone = models.CharField(max_length=30, null=True, blank=True, unique=True)
-    secondary_phone = models.CharField(max_length=30, null=True, blank=True, unique=True)
+    primary_phone = models.CharField(max_length=30, null=True, blank=True)
+    secondary_phone = models.CharField(max_length=30, null=True, blank=True)
 
     user_type = models.CharField(max_length=255, null=True, blank=True)
 
@@ -309,25 +362,31 @@ class User(AbstractBaseUser):
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True, blank=True)
     postal_code = models.CharField(max_length=50, null=True, blank=True)
-
-    image = models.ImageField(upload_to="users/", null=True, blank=True)
+    
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="authentication/users/"), null=True, blank=True)
     nid = models.CharField(max_length=32, null=True, blank=True)
 
     cloudflare_image_url = models.URLField(max_length=1000, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
+    
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'primary_phone']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'primary_phone', 'company']
 
     class Meta:
         ordering = ('first_name', '-created_at',)
+        constraints = [
+            models.UniqueConstraint(fields=['email', 'company'], name='unique_email_per_company')
+        ]
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -389,10 +448,13 @@ class User(AbstractBaseUser):
 
 
 class Department(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -411,6 +473,9 @@ class Department(models.Model):
 
 
 class Employee(User):
+    # old_id = models.IntegerField(null=True, blank=True)
+    # company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     emp_id_no = models.CharField(max_length=100, null=True, blank=True)
@@ -444,6 +509,9 @@ class Employee(User):
 
 
 class Vendor(User):
+    # old_id = models.IntegerField(null=True, blank=True)
+    # company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     is_online = models.BooleanField(default=True)
     customer_credit_limit = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
@@ -471,10 +539,13 @@ class Vendor(User):
 
 
 class CustomerType(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=20)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -492,6 +563,9 @@ class CustomerType(models.Model):
 
 
 class Customer(User):
+    # old_id = models.IntegerField(null=True, blank=True)
+    # company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     is_online = models.BooleanField(default=True)
     cusotmer_type = models.ForeignKey(CustomerType, on_delete=models.SET_NULL, null=True, blank=True)
@@ -516,6 +590,9 @@ class Customer(User):
 
 
 class Qualification(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     employee_id = models.ForeignKey(Employee, on_delete=models.CASCADE)
     degree_name = models.CharField(max_length=64)
     passign_year = models.CharField(max_length=4)
@@ -528,8 +605,8 @@ class Qualification(models.Model):
     image_doc_three = models.ImageField(upload_to="qulification/", null=True, blank=True)
     image_doc_four = models.ImageField(upload_to="qulification/", null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -569,6 +646,9 @@ class Qualification(models.Model):
 
 
 class LoginHistory(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.RESTRICT)
 
     ip_address = models.CharField(max_length=255, null=True, blank=True)
@@ -581,8 +661,8 @@ class LoginHistory(models.Model):
 
     status = models.CharField(max_length=255, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)

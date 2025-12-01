@@ -9,7 +9,6 @@ env/
 
 # Django-related
 db.sqlite3
-db/
 media/
 
 # Migrations (ignore all except __init__.py)

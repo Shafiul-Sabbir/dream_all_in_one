@@ -1,0 +1,110 @@
+[
+  {
+    "model": "authentication.country",
+    "pk": 1,
+    "fields": {
+      "name": "Switzerland",
+      "capital_name": null,
+      "country_code": null,
+      "country_code2": null,
+      "phone_code": null,
+      "currency_code": null,
+      "continent_name": null,
+      "continent_code": null,
+      "created_at": "2025-05-08T09:56:13.816Z",
+      "updated_at": "2025-05-10T05:36:44.628Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "authentication.country",
+    "pk": 2,
+    "fields": {
+      "name": "Netherlands",
+      "capital_name": null,
+      "country_code": null,
+      "country_code2": null,
+      "phone_code": null,
+      "currency_code": null,
+      "continent_name": null,
+      "continent_code": null,
+      "created_at": "2025-05-08T09:56:27.512Z",
+      "updated_at": "2025-05-10T05:35:59.444Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "authentication.country",
+    "pk": 3,
+    "fields": {
+      "name": "Italy",
+      "capital_name": null,
+      "country_code": null,
+      "country_code2": null,
+      "phone_code": null,
+      "currency_code": null,
+      "continent_name": null,
+      "continent_code": null,
+      "created_at": "2025-05-08T09:56:40.444Z",
+      "updated_at": "2025-05-10T05:38:23.563Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "authentication.country",
+    "pk": 6,
+    "fields": {
+      "name": "Germany",
+      "capital_name": null,
+      "country_code": null,
+      "country_code2": null,
+      "phone_code": null,
+      "currency_code": null,
+      "continent_name": null,
+      "continent_code": null,
+      "created_at": "2025-05-08T10:13:33.204Z",
+      "updated_at": "2025-05-10T05:37:13.947Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "authentication.country",
+    "pk": 8,
+    "fields": {
+      "name": "France",
+      "capital_name": null,
+      "country_code": null,
+      "country_code2": null,
+      "phone_code": null,
+      "currency_code": null,
+      "continent_name": null,
+      "continent_code": null,
+      "created_at": "2025-05-08T10:14:07.888Z",
+      "updated_at": "2025-05-10T05:50:07.118Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "authentication.country",
+    "pk": 9,
+    "fields": {
+      "name": "Belgium",
+      "capital_name": null,
+      "country_code": null,
+      "country_code2": null,
+      "phone_code": null,
+      "currency_code": null,
+      "continent_name": null,
+      "continent_code": null,
+      "created_at": "2025-05-08T10:14:20.851Z",
+      "updated_at": "2025-05-10T05:38:03.267Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  }
+]

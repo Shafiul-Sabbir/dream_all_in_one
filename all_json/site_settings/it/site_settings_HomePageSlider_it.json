@@ -1,0 +1,19 @@
+[
+{
+    "model": "site_settings.homepageslider",
+    "pk": 1,
+    "fields": {
+        "title": "<p>fdgdg</p>",
+        "subtitle": "fdfdfdfdf",
+        "link": null,
+        "serial_number": null,
+        "image": "siteSettings/homePageSlider/Dream-Tourism-Banner.jpg",
+        "cloudflare_image_url": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2dc04686-968f-42e3-27b7-efe20bb64300/v1",
+        "details": "",
+        "created_at": "2023-12-24T09:58:56.642Z",
+        "updated_at": "2024-05-09T05:11:09.754Z",
+        "created_by": 1,
+        "updated_by": 3
+    }
+}
+]

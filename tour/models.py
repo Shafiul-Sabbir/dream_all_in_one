@@ -2,21 +2,24 @@ from django.db import models
 from django.conf import settings
 import requests
 from payments.models import Traveller
-from authentication.models import User
+from authentication.models import User, Company
 from django.contrib.auth import get_user_model
 import re
-
-from utils.utils import generate_slug, upload_to_cloudflare
+from utils.utils import generate_slug, upload_to_cloudflare, get_image_upload_folder
+from functools import partial
 
 
 # Create your models here.
 class Tour(models.Model):
     # Basic Info
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     name = models.CharField(max_length=255, null=True, blank=True )
     description = models.TextField(null=True, blank=True)
     overview = models.TextField(null=True, blank=True)
     order = models.IntegerField(default=0, null=True, blank=True)
-    slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    slug = models.SlugField(max_length=255, null=True, blank=True)
     published = models.BooleanField(default=True, null=True, blank=True)
 
     # Additional Info
@@ -41,25 +44,40 @@ class Tour(models.Model):
     is_bokun_url = models.BooleanField(default=True, null=True, blank=True)
 
     # Image Info
-    thumbnail_image = models.ImageField(upload_to='tour/ThumbnailImage/', null=True, blank=True)
+    thumbnail_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/thumbnail_image/"), null=True, blank=True)
     update_thumbnail_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_thumbnail_image_url = models.URLField(max_length=500, null=True, blank=True)
 
     # Metadata
+    meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/meta_image/"), null=True, blank=True)
+    update_meta_image = models.BooleanField(default=False, null=True, blank=True)
+    cloudflare_meta_image_url = models.URLField(max_length=500, null=True, blank=True)
     meta_title = models.CharField(max_length=500, null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
+
+    tour_faq = models.TextField(null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
+
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'Tours'
         ordering = ['-id' ]
+        constraints = [
+            models.UniqueConstraint(fields=['slug', 'company'], name='unique_slug_of_each_Tour_for_per_company')
+        ]
 
     def __str__(self):
         return self.name
     
+    # we will uncomment after running the script
+
     def save(self, *args, **kwargs):
         # when we try to update an existing object. process of updating the thumbnail image to the cloudflare
         if self.pk:
@@ -82,6 +100,24 @@ class Tour(models.Model):
             else:
                 print("update_thumbnail_image flag is False, skipping Cloudflare upload for thumbnail image.")
                 pass
+        
+            if self.update_meta_image: 
+                print("update_meta_image flag is True, uploading meta image to Cloudflare...")
+                # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
+                if self.meta_image:
+                    try:
+                        print("Uploading meta image to Cloudflare from 'update' part of save method...")
+                        self.cloudflare_meta_image_url = upload_to_cloudflare(self.meta_image)
+                        print("Cloudflare meta image URL:", self.cloudflare_meta_image_url)
+                        self.update_meta_image = False  # Reset the flag after upload
+                        print(f"update_meta_image flag reset to {self.update_meta_image}")
+                    except Exception as e:
+                        print(f"Error uploading meta image to Cloudflare: {str(e)}")
+                else:
+                    print("No meta image provided for upload.")
+            else:
+                print("update_thumbnail_image or update_meta_image flag is False, skipping Cloudflare upload for thumbnail or meta image.")
+                pass
 
         # when we try to create new object
         else:
@@ -95,6 +131,17 @@ class Tour(models.Model):
                     print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
             else :
                 print("No thumbnail image provided for upload.")
+                pass
+
+            if self.meta_image:
+                try:
+                    print("Uploading meta image to Cloudflare from 'create' part of save method...")
+                    self.cloudflare_meta_image_url = upload_to_cloudflare(self.meta_image)
+                    print("Cloudflare meta image URL:", self.cloudflare_meta_image_url)
+                except Exception as e:
+                    print(f"Error uploading meta image to Cloudflare: {str(e)}")
+            else :
+                print("No meta image provided for upload.")
                 pass
 
 
@@ -114,17 +161,21 @@ class Tour(models.Model):
 
         super().save(*args, **kwargs)
 
-
-
 class TourContentImage(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='tour_images',null=True, blank=True)
     head = models.CharField(max_length=255, null=True, blank=True)
-    image = models.ImageField(upload_to='tour/ContentImage/',null=True, blank=True, unique=True)
+    image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/content_image/"), null=True, blank=True)
     update_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_image_url = models.URLField(max_length=500, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -137,6 +188,8 @@ class TourContentImage(models.Model):
     def __str__(self):
         return f"Image {self.id}"
         
+    # we will uncomment after running the script
+
     def save(self, *args, **kwargs):
         skip_cloudflare = getattr(self, "_skip_cloudflare", False)
         print("skip_cloudflare is : ", skip_cloudflare)
@@ -185,6 +238,9 @@ class DayTourPrice(models.Model):
         ('With Guide', 'With Guide'),
         ('Without Guide', 'Without Guide'),
     ]
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='day_tour_price_list')
     price_per_person = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     group_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
@@ -198,12 +254,18 @@ class DayTourPrice(models.Model):
         return f"{self.tour.name} - {self.price_per_person} USD per person - {self.group_price} USD group price - {self.guide} "
     
 class AvailableDate(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     day_tour_price = models.ForeignKey(DayTourPrice, on_delete=models.CASCADE, related_name='available_dates')
     date = models.DateField(null=True, blank=True)
     def __str__(self):
         return f"{self.day_tour_price.tour.name} - {self.date}"
 
 class AvailableTime(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     day_tour_price = models.ForeignKey(DayTourPrice, on_delete=models.CASCADE, related_name='available_times')
     time = models.TimeField(null=True, blank=True)
 
@@ -237,6 +299,8 @@ class TourBooking(models.Model):
         ('approved', 'Approved'),  # cancellation request is accepted
         ('denied', 'Denied'), # if cancellation request has been denied by admin
     ]
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
     booking_id = models.CharField(max_length=20, null=True, blank=True)
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="tour_bookings", null=True, blank=True)
@@ -304,19 +368,22 @@ class TourBooking(models.Model):
     cancellation_denied_count = models.IntegerField(default=0, null=True, blank=True)  # Track how many times cancellation was denied
 
     # QR code 
-    qr_code = models.ImageField(upload_to="booking_qr/", null=True, blank=True)
+    qr_code = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/booking_qr/"), null=True, blank=True)
     qr_url = models.URLField(max_length=2000, null=True, blank=True)
 
     # booking_ticket & payment_invoice
-    booking_ticket = models.FileField(upload_to='tour_booking_ticket/', null=True, blank=True)
-    payment_invoice = models.FileField(upload_to='payment_invoice/', null=True, blank=True)
+    booking_ticket = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/tour_booking_ticket/"), null=True, blank=True)
+    payment_invoice = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/payment_invoice/"), null=True, blank=True)
 
     # booking uuid 
     booking_uuid = models.CharField(max_length=100, unique=True, null=True, blank=True)
 
     # Metadata
-    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.CharField(max_length=50, null=True, blank=True)
     updated_by = models.CharField(max_length=50, null=True, blank=True)
@@ -332,14 +399,21 @@ class TourBooking(models.Model):
         return f"Booking for {tour_name} by {traveller_name} -  {self.total_price}"
     
 class TourItinerary(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="itineraries_list", null=True, blank=True)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     location = models.CharField(max_length=1000, null=True, blank=True)
     lat = models.FloatField(max_length=1000, null=True, blank=True)
-    long = models.FloatField(max_length=1000, null=True, blank=True)     
-    created_at = models.DateTimeField(auto_now_add=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True)
+    long = models.FloatField(max_length=1000, null=True, blank=True)   
+
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -364,6 +438,9 @@ class TourItinerary(models.Model):
 
 
 class PenaltyRules(models.Model):
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
     cancellation_policy_list = models.ForeignKey('tour.CancellationPolicy',on_delete=models.CASCADE,related_name="penalty_rules")
     days_before = models.IntegerField(null=True, blank=True)  # e.g., 0, 1, 2
     hours_before = models.IntegerField(null=True, blank=True)  # e.g., 0, 24, 48
@@ -371,8 +448,11 @@ class PenaltyRules(models.Model):
     charge_type = models.CharField(max_length=50, null=True, blank=True)  # percentage, fixed
     percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  # e.g., 50.00
 
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -391,16 +471,21 @@ class CancellationPolicy(models.Model):
         ('full_refund', 'FULL_REFUND'),
         ('non_refundable', 'NON_REFUNDABLE'),
     ]
-
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+    
     tour = models.ForeignKey("tour.Tour",on_delete=models.CASCADE,related_name="cancellation_policies_list")
     title = models.CharField(max_length=255, null=True, blank=True)
     default_policy = models.BooleanField(default=False, null=True, blank=True)
     policy_type = models.CharField(max_length=50,choices=POLICY_TYPE_CHOICES,null=True,blank=True)
     simple_cutoff_hours = models.IntegerField(null=True, blank=True, default=0)
 
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
+    
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
 
@@ -410,3 +495,69 @@ class CancellationPolicy(models.Model):
 
     def __str__(self):
         return f"{self.title or 'Unnamed Policy'} ({self.policy_type})"
+    
+class OldAgentBooking(models.Model):
+    PAYMENT_STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('paid', 'Paid'),
+        ('failed', 'Failed'),
+        ('refunded', 'Refunded'),
+        ('unpaid','Unpaid')
+    ]
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
+    invoice_no = models.CharField(max_length=255, null=True, blank=True)
+    agent = models.TextField(null=True, blank=True)
+    tour = models.CharField(max_length=255, null=True, blank=True)
+    traveller = models.TextField(null=True, blank=True)
+
+    adult_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)  
+    youth_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)
+    child_price = models.DecimalField(default=0, max_digits=20, decimal_places=2, null=True, blank=True)
+    total_price = models.DecimalField(default=0, max_digits=10, decimal_places=2, null=True, blank=True)
+    total_cost  = models.DecimalField(default=0, max_digits=10, decimal_places=2, null=True, blank=True)
+
+    coupon_text = models.CharField(max_length=255, null=True, blank=True)
+    is_coupon_applied = models.BooleanField(default=False, null=True, blank=True)
+    applied_coupon_type = models.CharField(max_length=20, choices=(('percentage', 'Percentage'), ('value', 'Value')), default='percentage', null=True, blank=True)
+    coupon_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    coupon_value = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    
+    coupon_applied_final_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    coupon_discount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    total_discount_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    discount_percent = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    discount_value = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    discount_type = models.CharField(max_length=20, choices=(('percentage', 'Percentage'), ('value', 'Value')), default='percentage', null=True, blank=True)
+    is_cancelled = models.BooleanField(default=False,null=True, blank=True)
+    participants = models.JSONField(null=True, blank=True)
+    selected_date = models.DateField(null=True, blank=True)
+    selected_time = models.TimeField(null=True, blank=True)
+    payWithCash = models.BooleanField(default=False, null=True, blank=True)
+    payWithStripe = models.BooleanField(default=False, null=True, blank=True)
+    duration = models.CharField(max_length=50,null=True, blank=True)
+    is_agent = models.BooleanField(default=False, null=True, blank=True)
+    status = models.CharField(max_length=10, choices=PAYMENT_STATUS_CHOICES, null=True, blank=True)
+    payment = models.TextField(null=True, blank=True)
+    payment_key = models.CharField(max_length=1000, null=True, blank=True)
+    email_pdf = models.CharField(max_length=1000, null=True, blank=True)
+    booking_invoice_pdf = models.CharField(max_length=1000, null=True, blank=True)
+    url = models.CharField(max_length=10000, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
+
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
+    updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name="+", null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'OldAgentBooking'
+        ordering = ('-id',)
+
+    def __str__(self):
+        # return f"Booking for {self.tour} by {self.agent} -  {self.total_price}"        
+        return f"data from invoice number : {self.invoice_no}"

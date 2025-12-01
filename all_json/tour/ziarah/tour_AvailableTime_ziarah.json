@@ -1,0 +1,922 @@
+[
+{
+    "model": "tour.availabletime",
+    "pk": 3111,
+    "fields": {
+        "day_tour_price": 856,
+        "time": "07:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3112,
+    "fields": {
+        "day_tour_price": 856,
+        "time": "08:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3113,
+    "fields": {
+        "day_tour_price": 856,
+        "time": "09:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3114,
+    "fields": {
+        "day_tour_price": 856,
+        "time": "14:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3115,
+    "fields": {
+        "day_tour_price": 856,
+        "time": "15:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3116,
+    "fields": {
+        "day_tour_price": 857,
+        "time": "07:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3117,
+    "fields": {
+        "day_tour_price": 857,
+        "time": "08:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3118,
+    "fields": {
+        "day_tour_price": 857,
+        "time": "09:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3119,
+    "fields": {
+        "day_tour_price": 857,
+        "time": "14:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3120,
+    "fields": {
+        "day_tour_price": 857,
+        "time": "15:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3121,
+    "fields": {
+        "day_tour_price": 858,
+        "time": "07:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3122,
+    "fields": {
+        "day_tour_price": 858,
+        "time": "08:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3123,
+    "fields": {
+        "day_tour_price": 858,
+        "time": "09:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3124,
+    "fields": {
+        "day_tour_price": 858,
+        "time": "10:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3125,
+    "fields": {
+        "day_tour_price": 858,
+        "time": "14:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3126,
+    "fields": {
+        "day_tour_price": 858,
+        "time": "15:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3127,
+    "fields": {
+        "day_tour_price": 859,
+        "time": "07:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3128,
+    "fields": {
+        "day_tour_price": 859,
+        "time": "08:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3129,
+    "fields": {
+        "day_tour_price": 859,
+        "time": "09:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3130,
+    "fields": {
+        "day_tour_price": 859,
+        "time": "10:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3131,
+    "fields": {
+        "day_tour_price": 859,
+        "time": "14:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3132,
+    "fields": {
+        "day_tour_price": 859,
+        "time": "15:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3133,
+    "fields": {
+        "day_tour_price": 860,
+        "time": "07:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3134,
+    "fields": {
+        "day_tour_price": 860,
+        "time": "08:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3135,
+    "fields": {
+        "day_tour_price": 860,
+        "time": "09:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3136,
+    "fields": {
+        "day_tour_price": 860,
+        "time": "14:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3137,
+    "fields": {
+        "day_tour_price": 860,
+        "time": "15:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3138,
+    "fields": {
+        "day_tour_price": 861,
+        "time": "07:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3139,
+    "fields": {
+        "day_tour_price": 861,
+        "time": "08:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3140,
+    "fields": {
+        "day_tour_price": 861,
+        "time": "09:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3141,
+    "fields": {
+        "day_tour_price": 861,
+        "time": "14:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3142,
+    "fields": {
+        "day_tour_price": 861,
+        "time": "15:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3143,
+    "fields": {
+        "day_tour_price": 862,
+        "time": "07:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3144,
+    "fields": {
+        "day_tour_price": 862,
+        "time": "08:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3145,
+    "fields": {
+        "day_tour_price": 862,
+        "time": "09:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3146,
+    "fields": {
+        "day_tour_price": 862,
+        "time": "14:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3147,
+    "fields": {
+        "day_tour_price": 862,
+        "time": "15:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3148,
+    "fields": {
+        "day_tour_price": 863,
+        "time": "07:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3149,
+    "fields": {
+        "day_tour_price": 863,
+        "time": "08:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3150,
+    "fields": {
+        "day_tour_price": 863,
+        "time": "09:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3151,
+    "fields": {
+        "day_tour_price": 863,
+        "time": "14:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3152,
+    "fields": {
+        "day_tour_price": 863,
+        "time": "15:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3153,
+    "fields": {
+        "day_tour_price": 864,
+        "time": "07:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3154,
+    "fields": {
+        "day_tour_price": 864,
+        "time": "08:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3155,
+    "fields": {
+        "day_tour_price": 864,
+        "time": "09:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3156,
+    "fields": {
+        "day_tour_price": 864,
+        "time": "14:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3157,
+    "fields": {
+        "day_tour_price": 864,
+        "time": "15:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3158,
+    "fields": {
+        "day_tour_price": 865,
+        "time": "07:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3159,
+    "fields": {
+        "day_tour_price": 865,
+        "time": "08:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3160,
+    "fields": {
+        "day_tour_price": 865,
+        "time": "09:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3161,
+    "fields": {
+        "day_tour_price": 865,
+        "time": "14:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3162,
+    "fields": {
+        "day_tour_price": 865,
+        "time": "15:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3163,
+    "fields": {
+        "day_tour_price": 866,
+        "time": "07:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3164,
+    "fields": {
+        "day_tour_price": 866,
+        "time": "08:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3165,
+    "fields": {
+        "day_tour_price": 866,
+        "time": "09:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3166,
+    "fields": {
+        "day_tour_price": 866,
+        "time": "14:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3167,
+    "fields": {
+        "day_tour_price": 866,
+        "time": "15:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3168,
+    "fields": {
+        "day_tour_price": 868,
+        "time": "07:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3169,
+    "fields": {
+        "day_tour_price": 868,
+        "time": "08:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3170,
+    "fields": {
+        "day_tour_price": 868,
+        "time": "09:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3171,
+    "fields": {
+        "day_tour_price": 868,
+        "time": "14:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3172,
+    "fields": {
+        "day_tour_price": 868,
+        "time": "15:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3173,
+    "fields": {
+        "day_tour_price": 870,
+        "time": "02:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3174,
+    "fields": {
+        "day_tour_price": 870,
+        "time": "07:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3175,
+    "fields": {
+        "day_tour_price": 870,
+        "time": "08:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3176,
+    "fields": {
+        "day_tour_price": 870,
+        "time": "09:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3177,
+    "fields": {
+        "day_tour_price": 871,
+        "time": "02:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3178,
+    "fields": {
+        "day_tour_price": 871,
+        "time": "07:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3179,
+    "fields": {
+        "day_tour_price": 871,
+        "time": "08:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3180,
+    "fields": {
+        "day_tour_price": 871,
+        "time": "09:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3181,
+    "fields": {
+        "day_tour_price": 872,
+        "time": "07:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3182,
+    "fields": {
+        "day_tour_price": 872,
+        "time": "08:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3183,
+    "fields": {
+        "day_tour_price": 872,
+        "time": "09:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3184,
+    "fields": {
+        "day_tour_price": 872,
+        "time": "14:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3185,
+    "fields": {
+        "day_tour_price": 873,
+        "time": "07:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3186,
+    "fields": {
+        "day_tour_price": 873,
+        "time": "08:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3187,
+    "fields": {
+        "day_tour_price": 873,
+        "time": "09:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3188,
+    "fields": {
+        "day_tour_price": 873,
+        "time": "14:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3189,
+    "fields": {
+        "day_tour_price": 873,
+        "time": "15:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3190,
+    "fields": {
+        "day_tour_price": 874,
+        "time": "07:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3191,
+    "fields": {
+        "day_tour_price": 874,
+        "time": "08:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3192,
+    "fields": {
+        "day_tour_price": 874,
+        "time": "09:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3193,
+    "fields": {
+        "day_tour_price": 874,
+        "time": "14:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3194,
+    "fields": {
+        "day_tour_price": 874,
+        "time": "15:20:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3195,
+    "fields": {
+        "day_tour_price": 875,
+        "time": "07:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3196,
+    "fields": {
+        "day_tour_price": 875,
+        "time": "08:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3197,
+    "fields": {
+        "day_tour_price": 875,
+        "time": "09:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3198,
+    "fields": {
+        "day_tour_price": 875,
+        "time": "14:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3199,
+    "fields": {
+        "day_tour_price": 875,
+        "time": "15:10:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3200,
+    "fields": {
+        "day_tour_price": 876,
+        "time": "07:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3201,
+    "fields": {
+        "day_tour_price": 876,
+        "time": "08:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3202,
+    "fields": {
+        "day_tour_price": 876,
+        "time": "09:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3203,
+    "fields": {
+        "day_tour_price": 876,
+        "time": "14:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3204,
+    "fields": {
+        "day_tour_price": 876,
+        "time": "15:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3231,
+    "fields": {
+        "day_tour_price": 882,
+        "time": "10:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3245,
+    "fields": {
+        "day_tour_price": 885,
+        "time": "07:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3246,
+    "fields": {
+        "day_tour_price": 885,
+        "time": "08:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3247,
+    "fields": {
+        "day_tour_price": 885,
+        "time": "09:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3248,
+    "fields": {
+        "day_tour_price": 885,
+        "time": "14:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3249,
+    "fields": {
+        "day_tour_price": 885,
+        "time": "15:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3250,
+    "fields": {
+        "day_tour_price": 886,
+        "time": "07:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3251,
+    "fields": {
+        "day_tour_price": 886,
+        "time": "08:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3252,
+    "fields": {
+        "day_tour_price": 886,
+        "time": "09:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3253,
+    "fields": {
+        "day_tour_price": 886,
+        "time": "14:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3254,
+    "fields": {
+        "day_tour_price": 886,
+        "time": "15:30:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3314,
+    "fields": {
+        "day_tour_price": 902,
+        "time": "07:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3315,
+    "fields": {
+        "day_tour_price": 902,
+        "time": "08:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3316,
+    "fields": {
+        "day_tour_price": 902,
+        "time": "09:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3318,
+    "fields": {
+        "day_tour_price": 902,
+        "time": "14:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3319,
+    "fields": {
+        "day_tour_price": 902,
+        "time": "15:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3321,
+    "fields": {
+        "day_tour_price": 903,
+        "time": "09:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3322,
+    "fields": {
+        "day_tour_price": 903,
+        "time": "07:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3323,
+    "fields": {
+        "day_tour_price": 903,
+        "time": "08:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3324,
+    "fields": {
+        "day_tour_price": 903,
+        "time": "14:00:00"
+    }
+},
+{
+    "model": "tour.availabletime",
+    "pk": 3325,
+    "fields": {
+        "day_tour_price": 903,
+        "time": "15:00:00"
+    }
+}
+]

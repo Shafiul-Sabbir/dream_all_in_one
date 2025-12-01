@@ -26,17 +26,39 @@
 
             <!-- Right Side: Company Info -->
             <div style="flex: 1; text-align: right;">
-                <img src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6b57d815-7bad-4da4-7018-a62079a28600/public" alt="Dream Ziarah logo with a stylized mosque dome and crescent moon" style="width: 100px; height: auto; margin-bottom: 10px;">
-                <p style="margin: 0; font-size: 14px; font-weight: bold;">Dream Ziarah</p>
-                <p style="margin: 5px 0; font-size: 14px;">+39 3887748015</p>
-                <p style="margin: 5px 0; font-size: 14px;"><a href="mailto:dreamziarah@gmail.com" style="color: #0066cc; text-decoration: none;">dreamziarah@gmail.com</a></p>
-                <p style="margin: 5px 0 20px 0; font-size: 14px;"><a href="https://dreamziarah.com/" style="color: #0066cc; text-decoration: none;">https://dreamziarah.com/</a></p>
-                
+                {% if tour_booking.company.name|upper == "IT" %}
+                    <img src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1e42ce40-0487-43fe-077a-39bde5402400/public" alt="Dream IT logo with some tourist spots over the word 'Dream' in script font and 'Tourism' underneath." style="width: 100px; height: auto; margin-bottom: 10px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: bold;">Dream IT</p>
+                    <p style="margin: 5px 0; font-size: 14px;">+39 3887748015</p>
+                    <p style="margin: 5px 0; font-size: 14px;"><a href="mailto:info@dreamtourism.it" style="color: #0066cc; text-decoration: none;">info@dreamtourism.it</a></p>
+                    <p style="margin: 5px 0 20px 0; font-size: 14px;"><a href="https://dreamtourism.it/" style="color: #0066cc; text-decoration: none;">https://dreamtourism.it</a></p>
+
+                {% elif tour_booking.company.name|upper == "UK" %}
+                    <img src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1e42ce40-0487-43fe-077a-39bde5402400/public" alt="Dream UK logo with some tourist spots over the word 'Dream' in script font and 'Tourism' underneath." style="width: 100px; height: auto; margin-bottom: 10px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: bold;">Dream UK</p>
+                    <p style="margin: 5px 0; font-size: 14px;">+39 3887748015</p>
+                    <p style="margin: 5px 0; font-size: 14px;"><a href="mailto:info@dreamtourism.it" style="color: #0066cc; text-decoration: none;">info@dreamtourism.it</a></p>
+                    <p style="margin: 5px 0 20px 0; font-size: 14px;"><a href="https://dreamtourism.co.uk/" style="color: #0066cc; text-decoration: none;">https://dreamtourism.co.uk</a></p>
+
+                {% elif tour_booking.company.name|upper == "ZIARAH" %}
+                    <img src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6b57d815-7bad-4da4-7018-a62079a28600/public" alt="Dream Ziarah logo with a stylized mosque dome and crescent moon" style="width: 100px; height: auto; margin-bottom: 10px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: bold;">Dream Ziarah</p>
+                    <p style="margin: 5px 0; font-size: 14px;">+39 3887748015</p>
+                    <p style="margin: 5px 0; font-size: 14px;"><a href="mailto:dreamziarah@gmail.com" style="color: #0066cc; text-decoration: none;">dreamziarah@gmail.com</a></p>
+                    <p style="margin: 5px 0 20px 0; font-size: 14px;"><a href="https://dreamziarah.com/" style="color: #0066cc; text-decoration: none;">https://dreamziarah.com/</a></p>
+                {% endif %}
+
                 <table style="width: 280px; border: 1px solid #000; border-collapse: collapse; font-size: 12px; margin-left: auto;">
                     <tbody>
                         <tr>
                             <td style="border: 1px solid #000; padding: 5px 8px; background-color: #f2f2f2; font-weight: bold;">Booking channel</td>
-                            <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">Dream Ziarah</td>
+                            {% if tour_booking.company.name|upper == "IT" %}
+                                <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">Dream IT</td>
+                            {% elif tour_booking.company.name|upper == "UK" %}
+                                <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">Dream UK</td>
+                            {% elif tour_booking.company.name|upper == "ZIARAH" %}
+                                <td style="border: 1px solid #000; padding: 5px 8px; text-align: right;">Dream Ziarah</td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td style="border: 1px solid #000; padding: 5px 8px; background-color: #f2f2f2; font-weight: bold;">Created</td>

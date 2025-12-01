@@ -1,0 +1,514 @@
+[
+  {
+    "model": "cms.metadata",
+    "pk": 11,
+    "fields": {
+      "cms_content": 56,
+      "meta_title": "Best Tour Deals in Italy – Colosseum, Vatican & More",
+      "meta_description": "Plan your perfect Italy adventure with Dream Tourism IT. Skip lines at the Colosseum & Vatican, enjoy small-group tours & book Italy tours online today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/531f9a59-f82e-4889-030d-a6c391454100/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_nJCpJs9.png",
+      "slug": "best-tour-deals-in-italy-colosseum-vatican-more",
+      "created_at": "2024-06-26T05:14:36.931Z",
+      "updated_at": "2025-03-23T06:54:28.586Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 12,
+    "fields": {
+      "cms_content": 58,
+      "meta_title": "404 | Dream Tourism IT",
+      "meta_description": "404 | Start your dream vacation with Dream Tourism IT. Explore fantastic destinations and enjoy unforgettable adventures.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1293ea79-3f27-496e-1322-040d5ec6f100/public",
+      "image": "cms/ContentImage/Logo_150_px-01_hTmoxe0.webp",
+      "slug": "404-dream-tourism-it",
+      "created_at": "2024-06-26T05:31:03.237Z",
+      "updated_at": "2025-03-23T08:56:08.849Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 15,
+    "fields": {
+      "cms_content": 4,
+      "meta_title": "Capri Island Day Tour from Rome - Explore Paradise",
+      "meta_description": "Escape to Capri Island from Rome on a full-day tour. Discover the Blue Grotto and breathtaking island views. Book your day trip to this Italian gem now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c50550b8-4a17-4528-57f0-6d22a5b93600/v1",
+      "image": "cms/ContentImage/Capri_1.jpg",
+      "slug": "capri-island-day-tour-from-rome-explore-paradise",
+      "created_at": "2024-06-26T05:47:17.783Z",
+      "updated_at": "2025-03-23T08:44:06.390Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 16,
+    "fields": {
+      "cms_content": 60,
+      "meta_title": "Explore with Dream Tourism IT | Skip-the-Line Tours & More",
+      "meta_description": "Experience top attractions without the wait. Dream Tourism IT provides skip-the-line access and well-organized tours, ensuring a smooth and memorable journey every time.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/456697b3-e282-43b7-f33f-e62f6e019100/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_46vIsYj.webp",
+      "slug": "explore-with-dream-tourism-it-skip-the-line-tours-more",
+      "created_at": "2024-06-26T05:56:03.936Z",
+      "updated_at": "2025-03-23T08:55:44.117Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 17,
+    "fields": {
+      "cms_content": 61,
+      "meta_title": "Get in Touch with Dream Tourism IT - Book Your Dream Tour Today",
+      "meta_description": "Connect with Dream Tourism IT to plan your next unforgettable tour. Our team is ready to answer your questions and help with all your tour needs. Reach out today",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2ace3b42-29a8-4d0c-26a8-bddd694f7000/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_aB3AN9h.webp",
+      "slug": "get-in-touch-with-dream-tourism-it-book-your-dream-tour-today",
+      "created_at": "2024-06-26T06:00:59.451Z",
+      "updated_at": "2025-03-23T08:55:25.460Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 18,
+    "fields": {
+      "cms_content": 11,
+      "meta_title": "Unforgettable Italy Experiences – 2025 Travel Guide",
+      "meta_description": "Roam ruins, sail coasts & taste real Italian cuisine. Dream Tourism IT offers the ultimate Italy Travel Guide for your best vacation in 2025.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8cde71cf-406b-4641-86b8-b451fe2f1d00/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_AV780fi.png",
+      "slug": "unforgettable-italy-experiences-2025-travel-guide",
+      "created_at": "2024-06-26T06:20:57.855Z",
+      "updated_at": "2025-04-30T06:01:47.202Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 19,
+    "fields": {
+      "cms_content": 62,
+      "meta_title": "Terms & Conditions - Dream Tourism IT - Know Your Rights",
+      "meta_description": "Read the Terms & Conditions of Dream Tourism IT to understand your rights, booking policies, and responsibilities when using our services.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f60f6a3f-9182-46b0-66bf-461b7638de00/public",
+      "image": "cms/ContentImage/Logo_150_px-01_Ji8eWam.webp",
+      "slug": "terms-conditions-dream-tourism-it-know-your-rights",
+      "created_at": "2024-06-26T06:26:57.479Z",
+      "updated_at": "2025-03-23T08:55:04.768Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 20,
+    "fields": {
+      "cms_content": 63,
+      "meta_title": "Dream Tourism IT Privacy Policy - Secure & Transparent",
+      "meta_description": "We value your trust. Read our Privacy Policy to understand how we collect, use, and safeguard your data while providing the best tour booking experience.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/10114b18-622f-4e20-1ce5-a09ffb5e1a00/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_PmN4xIP.webp",
+      "slug": "dream-tourism-it-privacy-policy-secure-transparent",
+      "created_at": "2024-06-26T06:28:54.620Z",
+      "updated_at": "2025-03-23T08:54:44.387Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 21,
+    "fields": {
+      "cms_content": 8,
+      "meta_title": "Switzerland’s Most Scenic Routes – 2025 Travel Guide",
+      "meta_description": "Ride alpine trains, visit villages & explore stunning sights with Dream Tourism IT. Get the full Switzerland Travel Guide for your perfect trip.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/cb30ee22-2111-4c44-229b-212e67c27100/public",
+      "image": "cms/ContentImage/Logo_150_px-01_FCUms4J.png",
+      "slug": "switzerland-s-most-scenic-routes-2025-travel-guide",
+      "created_at": "2024-06-26T06:46:19.790Z",
+      "updated_at": "2025-04-30T05:59:27.711Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 22,
+    "fields": {
+      "cms_content": 9,
+      "meta_title": "Explore the Best of the Netherlands – 2025 Travel Guide",
+      "meta_description": "Discover top places, tips & itineraries with the Netherlands Travel Guide by Dream Tourism IT. See windmills, canals & cities in comfort this year.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b9d4dc5e-ff45-42f4-4473-dbbfdb19db00/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_wMsn0iF.png",
+      "slug": "explore-the-best-of-the-netherlands-2025-travel-guide",
+      "created_at": "2024-06-26T06:47:07.967Z",
+      "updated_at": "2025-04-30T05:38:05.108Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 23,
+    "fields": {
+      "cms_content": 12,
+      "meta_title": "Belgium’s Historic & Royal Spots – 2025 Travel Guide",
+      "meta_description": "Visit palaces, squares, breweries & more. Plan your dream Belgium trip with the Belgium Travel Guide by Dream Tourism IT for 2025.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ea133d1b-bec8-4d76-b3e9-ce5217d3fa00/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_rVJetof.png",
+      "slug": "belgium-s-historic-royal-spots-2025-travel-guide",
+      "created_at": "2024-06-26T06:49:37.707Z",
+      "updated_at": "2025-04-30T06:02:36.294Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 24,
+    "fields": {
+      "cms_content": 1,
+      "meta_title": "Explore Germany’s Top Sites – 2025 Travel Guide",
+      "meta_description": "From castles to forests and cities—plan the ideal Germany trip with Dream Tourism IT. Your go-to Germany Travel Guide for history, routes & tips.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/2285a66f-779e-40b7-2098-9bf554d74500/public",
+      "image": "cms/ContentImage/Logo_150_px-01_DDyivv4.png",
+      "slug": "explore-germany-s-top-sites-2025-travel-guide",
+      "created_at": "2024-06-26T06:54:47.539Z",
+      "updated_at": "2025-04-30T06:01:10.852Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 25,
+    "fields": {
+      "cms_content": 2,
+      "meta_title": "New Year in Paris - 3 Nights from London Tour",
+      "meta_description": "Celebrate in style with a 3-night Paris tour from London. Explore famous landmarks and enjoy the holiday spirit in the City of Lights. Book your tour now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/6098f8d8-8b72-42a5-b283-676fb124c100/v1",
+      "image": "cms/ContentImage/Celebrate_New_Year_In_Paris.jpg",
+      "slug": "new-year-in-paris-3-nights-from-london-tour",
+      "created_at": "2024-06-26T07:16:07.415Z",
+      "updated_at": "2025-03-23T08:44:35.917Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 30,
+    "fields": {
+      "cms_content": 53,
+      "meta_title": "Santorini’s Best Views: A Magical Greek Island Escape",
+      "meta_description": "Discover Santorini’s incredible views of the Aegean Sea. Take a day trip to explore the iconic blue-domed churches, ancient ruins, and more.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1e813a7b-78e7-4982-f5b2-9d7fcd8fcc00/public",
+      "image": "cms/ContentImage/Santorini_G1XLZBi.jpg",
+      "slug": "santorini-s-best-views-a-magical-greek-island-escape",
+      "created_at": "2024-06-26T11:39:38.281Z",
+      "updated_at": "2025-03-23T08:40:24.047Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 31,
+    "fields": {
+      "cms_content": 51,
+      "meta_title": "Summer Holiday in Switzerland, Venice, Austria & Liechtenstein",
+      "meta_description": "Travel through Switzerland, Venice, Austria, and Liechtenstein on a perfect summer holiday. Explore picturesque towns and famous attractions. Book now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1513ddc3-737e-4cb3-389d-17b3b3d42b00/v1",
+      "image": "cms/ContentImage/Switzerland-Italy-Austria-Licehtenstine_6vBVfnt.jpg",
+      "slug": "summer-holiday-in-switzerland-venice-austria-liechtenstein",
+      "created_at": "2024-06-26T11:40:09.211Z",
+      "updated_at": "2025-03-23T08:41:21.940Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 32,
+    "fields": {
+      "cms_content": 7,
+      "meta_title": "Colosseum Arena & Forum Ticket – Skip the Line",
+      "meta_description": "Get priority access to the Colosseum arena, Roman Forum, and Palatine Hill. Avoid crowds and explore ancient Rome’s greatest landmarks with ease.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/176b0330-ecf9-42c7-a2a4-e194d1571300/public",
+      "image": "cms/ContentImage/Colosseum-Inside_Htfr6Mz.jpg",
+      "slug": "colosseum-arena-forum-ticket-skip-the-line",
+      "created_at": "2024-06-26T11:40:40.146Z",
+      "updated_at": "2025-03-23T08:38:28.620Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 33,
+    "fields": {
+      "cms_content": 55,
+      "meta_title": "Capri Island & Blue Grotto Tour: A Must-See from Rome",
+      "meta_description": "Experience the beauty of Capri Island on this unforgettable day trip from Rome. Explore the famous Blue Grotto and relax by the coast. Book now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/0e3b6944-4ad2-46bf-59ae-cce7a47a1300/v1",
+      "image": "cms/ContentImage/blue-grotto-capri_LdkMkEJ.jpg",
+      "slug": "capri-island-blue-grotto-tour-a-must-see-from-rome",
+      "created_at": "2024-06-26T11:41:06.470Z",
+      "updated_at": "2025-03-23T08:40:52.497Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 34,
+    "fields": {
+      "cms_content": 35,
+      "meta_title": "Romantic Venice & Bernina Express Trip for Valentine’s",
+      "meta_description": "Celebrate love in Venice & ride the Bernina Express to Switzerland. Enjoy gondola rides, scenic trains & unforgettable moments on this trip.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/95fc48ec-46bd-4c31-1adf-229715162b00/public",
+      "image": "cms/ContentImage/Valentine_s-Day-In-Venice-And-Bernina-Express-Journey-To-Switzerland_mHWBv7H.jpg",
+      "slug": "romantic-venice-bernina-express-trip-for-valentine-s",
+      "created_at": "2024-06-26T11:41:45.215Z",
+      "updated_at": "2025-03-23T08:39:54.916Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 35,
+    "fields": {
+      "cms_content": 36,
+      "meta_title": "Explore Tulip Gardens in the Netherlands from London",
+      "meta_description": "Take a trip from London to see the stunning tulip gardens in the Netherlands. Travel by Eurostar and immerse yourself in spring’s vibrant beauty. Book now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3ae73be0-b4db-41b8-7294-70e200a70d00/public",
+      "image": "cms/ContentImage/Tulip-Garden_oF7bZHp.jpg",
+      "slug": "explore-tulip-gardens-in-the-netherlands-from-london",
+      "created_at": "2024-06-26T11:42:07.036Z",
+      "updated_at": "2025-03-23T08:42:29.502Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 36,
+    "fields": {
+      "cms_content": 5,
+      "meta_title": "Colosseum & Roman Forum Ticket – Hosted Entry",
+      "meta_description": "Skip the lines and explore the Colosseum, Roman Forum, and Palatine Hill with ease. Enjoy fast-track entry and discover ancient Rome’s history today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/c614c6b0-4c98-475c-af6d-1ee69459bf00/public",
+      "image": "cms/ContentImage/Colosseum_9ODg9gV.jpg",
+      "slug": "colosseum-roman-forum-ticket-hosted-entry",
+      "created_at": "2024-06-26T11:42:36.919Z",
+      "updated_at": "2025-03-23T08:37:54.841Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 37,
+    "fields": {
+      "cms_content": 64,
+      "meta_title": "Skip-the-Line Vatican & Sistine Chapel Ticket",
+      "meta_description": "Avoid long lines at the Vatican Museums and Sistine Chapel. Fast-track entry lets you explore Michelangelo’s frescoes and art treasures stress-free.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d7a918fa-8a2f-4559-6a3b-899660a81b00/public",
+      "image": "cms/ContentImage/Vatican_Museum_and_Sistine_Chapel_Admission_Ticket_DT_y23uuZM.jpg",
+      "slug": "skip-the-line-vatican-sistine-chapel-ticket",
+      "created_at": "2024-10-07T09:03:50.465Z",
+      "updated_at": "2025-03-23T08:38:59.923Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 38,
+    "fields": {
+      "cms_content": 66,
+      "meta_title": "Best Florence Day Tour: Art & Architecture Highlights",
+      "meta_description": "Enjoy a full day in Florence exploring art, architecture, and culture. Visit the Uffizi Gallery, Duomo, and more on this top-rated tour. Book your tour today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/108423ce-eb84-47f5-c69c-618b7f9e4a00/v1",
+      "image": "cms/ContentImage/Florence-Day-Tour_4iAWSmJ.jpg",
+      "slug": "best-florence-day-tour-art-architecture-highlights",
+      "created_at": "2024-10-28T06:41:11.482Z",
+      "updated_at": "2025-03-23T08:45:12.289Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 39,
+    "fields": {
+      "cms_content": 57,
+      "meta_title": "Italy’s Best Tours & Ticket Booking - Dream Tourism IT",
+      "meta_description": "Explore Rome, Florence, and the Amalfi Coast wits. Book skip-the-line tickets and tours across Italy and other European countries.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/732cd47e-b841-4f1d-6260-aab133ebd900/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_M4djKsc.png",
+      "slug": "italy-s-best-tours-ticket-booking-dream-tourism-it",
+      "created_at": "2025-01-05T10:10:00.502Z",
+      "updated_at": "2025-03-23T08:54:21.737Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 40,
+    "fields": {
+      "cms_content": 13,
+      "meta_title": "France’s Best Cities & Views – 2025 Travel Guide",
+      "meta_description": "Tour Paris to Provence with the France Travel Guide by Dream Tourism IT. Plan your 2025 trip with top views, castles, food & experience tips.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/a1669a27-d15a-4cf8-05d4-d3efd873a500/public",
+      "image": "cms/ContentImage/Logo_150_px-01_fyl4WZs.png",
+      "slug": "france-s-best-cities-views-2025-travel-guide",
+      "created_at": "2025-02-13T10:20:04.920Z",
+      "updated_at": "2025-04-30T06:03:02.788Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 41,
+    "fields": {
+      "cms_content": 80,
+      "meta_title": "Your Place for Amazing Travel Adventure - Dream Tourism IT",
+      "meta_description": "Ready for the vacation of a lifetime? Start your dream getaway with Dream Tourism IT! Explore incredible destinations, enjoy skip-the-line tours, and create unforgettable memories—your perfect trip is just a click away",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3dc164b3-0169-4c61-fb94-4af43c535800/v1",
+      "image": "cms/ContentImage/Logo_150_px-01.png",
+      "slug": "your-place-for-amazing-travel-adventure-dream-tourism-it",
+      "created_at": "2025-02-13T10:24:00.839Z",
+      "updated_at": "2025-03-23T08:53:30.128Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 42,
+    "fields": {
+      "cms_content": 73,
+      "meta_title": "Sorrento & Positano: Amalfi Coast Tour from Rome",
+      "meta_description": "Escape Rome & visit the stunning Amalfi Coast. Wander through Sorrento & Positano, enjoy coastal views & experience Italy’s seaside charm.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ea3cc88f-99b0-4525-b3b5-a4b233264100/public",
+      "image": "cms/ContentImage/Sorrento-Positano-and-Amalfi-Coast_67CxNfC.jpg",
+      "slug": "sorrento-positano-amalfi-coast-tour-from-rome",
+      "created_at": "2025-03-10T08:53:14.062Z",
+      "updated_at": "2025-03-23T08:39:29.907Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 43,
+    "fields": {
+      "cms_content": 68,
+      "meta_title": "Full-Day Civita Di Bagnoregio & Bolsena Lake Tour",
+      "meta_description": "Explore the charming village of Civita Di Bagnoregio and the scenic Bolsena Lake on a full-day tour. Enjoy stunning views and rich history. Reserve your spot now!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/544593d1-cbf9-40e6-7a08-e608de68fb00/public",
+      "image": "cms/ContentImage/CIVITA-DI-BAGNOREGIO-and-BOLSENA-LAKE_MweUQx7_rCPPEBa.jpg",
+      "slug": "full-day-civita-di-bagnoregio-bolsena-lake-tour",
+      "created_at": "2025-03-10T09:02:34.084Z",
+      "updated_at": "2025-03-23T08:47:25.983Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 44,
+    "fields": {
+      "cms_content": 69,
+      "meta_title": "Assisi & Orvieto Day Trip – From Rome to Historic Gems",
+      "meta_description": "Visit Assisi and Orvieto on a day trip from Rome. Explore historical sites and enjoy the stunning scenery. Reserve your spot for this amazing experience!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/4df6272f-cfd9-46ee-ab17-dc143f046200/v1",
+      "image": "cms/ContentImage/Assisi-and-Orvieto_kSy19ZU.jpg",
+      "slug": "assisi-orvieto-day-trip-from-rome-to-historic-gems",
+      "created_at": "2025-03-10T09:04:30.649Z",
+      "updated_at": "2025-03-23T08:48:36.573Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 45,
+    "fields": {
+      "cms_content": 70,
+      "meta_title": "Rome to Naples & Pompeii: Luxury Minivan Tour",
+      "meta_description": "Take a luxury minivan day trip from Rome to Naples and Pompeii. Visit historic sites in comfort and style. Secure your spot for this unforgettable tour!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/3470ed16-7f85-4482-4cd1-02553bca2800/public",
+      "image": "cms/ContentImage/Naples-and-Pompeii_BU7ahdE.jpg",
+      "slug": "rome-to-naples-pompeii-luxury-minivan-tour",
+      "created_at": "2025-03-10T09:13:51.115Z",
+      "updated_at": "2025-03-23T08:49:14.433Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 46,
+    "fields": {
+      "cms_content": 71,
+      "meta_title": "Wonders of Florence & Pisa Day Trip from Rome",
+      "meta_description": "Discover the wonders of Florence and Pisa on a day trip from Rome. Explore historic landmarks, including the Leaning Tower. Reserve your tour today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/adb45540-236b-40c2-0bdf-b992e1636f00/v1",
+      "image": "cms/ContentImage/Florence-and-Pisa_87GMjyb_gQ1gz3d.jpg",
+      "slug": "wonders-of-florence-pisa-day-trip-from-rome",
+      "created_at": "2025-03-10T09:15:18.785Z",
+      "updated_at": "2025-03-23T08:49:38.738Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 47,
+    "fields": {
+      "cms_content": 72,
+      "meta_title": "Explore Tuscany & Siena: Day Trip from Rome",
+      "meta_description": "Visit Tuscany and Siena’s top attractions on a day trip from Rome. Enjoy scenic landscapes, wine tasting, and local culture. Book your tour today!",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/8e5c5718-8f24-44fa-b880-ee98c7cbe600/v1",
+      "image": "cms/ContentImage/Tuscany-and-Siena_u20JsYK.jpg",
+      "slug": "explore-tuscany-siena-day-trip-from-rome",
+      "created_at": "2025-03-10T09:16:40.369Z",
+      "updated_at": "2025-03-23T08:51:08.446Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "cms.metadata",
+    "pk": 48,
+    "fields": {
+      "cms_content": 81,
+      "meta_title": "Things to Do in Italy & Europe | Dream Tourism IT",
+      "meta_description": "Explore the top things to do in Italy and beyond. Book skip-the-line tours and exclusive activities in Rome, Venice and more with Dream Tourism IT.",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/1b5b3751-5a5c-4719-6f21-2c9d8a775e00/v1",
+      "image": "cms/ContentImage/Logo_150_px-01_14AWf9x.png",
+      "slug": "things-to-do-in-italy-europe-dream-tourism-it",
+      "created_at": "2025-03-23T08:16:48.110Z",
+      "updated_at": "2025-03-23T08:16:50.304Z",
+      "created_by": 3,
+      "updated_by": null
+    }
+  }
+]

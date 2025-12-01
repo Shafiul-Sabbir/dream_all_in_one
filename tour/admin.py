@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TourItinerary, TourBooking, Tour, DayTourPrice, AvailableDate, AvailableTime, TourContentImage, CancellationPolicy, PenaltyRules
+from .models import TourItinerary, TourBooking, Tour, DayTourPrice, AvailableDate, AvailableTime, TourContentImage, CancellationPolicy, PenaltyRules, OldAgentBooking
 # Register your models here.
 
 @admin.register(Tour)
@@ -47,4 +47,9 @@ class CancellationPolicyAdmin(admin.ModelAdmin):
 class PenaltyRulesAdmin(admin.ModelAdmin):
     list_display = [field.name for field in PenaltyRules._meta.fields]
     list_filter = ('cancellation_policy_list',)
+
+@admin.register(OldAgentBooking)
+class OldAgentBookingAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in OldAgentBooking._meta.fields]
+    
     

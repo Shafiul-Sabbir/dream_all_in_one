@@ -27,11 +27,9 @@ IS_LOCAL = os.environ.get("IS_LOCAL", "False").strip().lower() == "true"
 
 if IS_LOCAL:
     TRAVELLER_DASHBOARD_URL = "http://192.168.68.111:3000/dashboard"
-    API_SITE_URL = "http://0.0.0.0:8004"
+    API_SITE_URL = "http://0.0.0.0:8010"
     ADMIN_ALL_BOOKING_PAGE = "http://192.168.68.111:3010/apps/booking-management/bookings"
 else:
-    # TRAVELLER_DASHBOARD_URL = "https://dreamziarah.com/dashboard"
-    # API_SITE_URL = "https://dreamziarah.com"
     TRAVELLER_DASHBOARD_URL = "https://dreamziarah.com/dashboard"
     API_SITE_URL = "https://api.dreamziarah.com"
     ADMIN_ALL_BOOKING_PAGE = "https://admin.dreamziarah.com/apps/booking-management/bookings"
@@ -64,6 +62,7 @@ INSTALLED_APPS = [
     'support.apps.SupportConfig',
     'tour.apps.TourConfig',
     'payments.apps.PaymentsConfig',
+    'scripts.apps.ScriptsConfig',
 ]	
 
 INSTALLED_APPS += ['sequences.apps.SequencesConfig']
@@ -185,8 +184,8 @@ CORS_ALLOWED_ORIGINS = [
 # CSRF_COOKIE_SECURE = not DEBUG
 
 AUTHENTICATION_BACKENDS = [
-    'authentication.backends.EmailOrPhoneBackend',
-    'django.contrib.auth.backends.ModelBackend',  # keep default as fallback
+    'authentication.backends.EmailOrUsernameBackend',  # your app name may differ
+    'django.contrib.auth.backends.ModelBackend', # keep default as fallback
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -210,6 +209,9 @@ USE_TZ = True
 
 WHITENOISE_USE_FINDERS = True
 CORS_ALLOW_ALL_ORIGINS=True
+
+# for avoiding warning for custom user model (email as username, but email is not globally unique)
+SILENCED_SYSTEM_CHECKS = ["auth.W004"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

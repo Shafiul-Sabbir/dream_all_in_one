@@ -15,6 +15,14 @@ urlpatterns = [
 
     # path('silk/', include('silk.urls', namespace='silk')),
 
+    #Scripts module
+    path('authentication_scripts/', include('scripts.urls.authentication_scripts_urls')),
+    path('site_settings_scripts/', include('scripts.urls.site_settings_scripts_urls')),
+    path('cms_scripts/', include('scripts.urls.cms_scripts_urls')),
+    path('support_scripts/', include('scripts.urls.support_scripts_urls')),
+    path('tour_scripts/', include('scripts.urls.tour_scripts_urls')),
+    path('payments_scripts/', include('scripts.urls.payments_scripts_urls')),
+
     # Authentication module
     path('user/', include('authentication.urls.user_urls')),
     path('employee/', include('authentication.urls.employee_urls')),
@@ -34,10 +42,27 @@ urlpatterns = [
     path('city/', include('authentication.urls.city_urls')),
 
 
-	# CMS
+	# CMS menu
 	path('cms_menu/', include('cms.urls.cms_menu_urls')),
 	path('cms_menu_content/', include('cms.urls.cms_menu_content_urls')),
 	path('cms_menu_content_image/', include('cms.urls.cms_menu_content_image_urls')),
+
+    # cms blog
+    path('cms_blog/', include('cms.urls.cms_blog_urls')),
+    path('cms_blog_category/', include('cms.urls.cms_blog_category_urls')),
+    path('cms_blog_comment/', include('cms.urls.cms_blog_comment_urls')),
+
+    # cms itinerary
+    path('cms_itinerary/', include('cms.urls.cms_itinerary_urls')),
+
+    # cms tag
+    path('cms_tag/', include('cms.urls.cms_tag_urls')),
+
+    # cms review
+    path('cms_review/', include('cms.urls.cms_review_urls')),
+
+    # cms meta data
+    path('cms_meta_data/', include('cms.urls.cms_meta_data_urls')),
 
     # tour
     path('tour_content/', include('tour.urls.tour_content_urls')),
@@ -45,6 +70,7 @@ urlpatterns = [
     path('tour_booking/', include('tour.urls.tour_booking_urls')),
     path('tour_itinerary/', include('tour.urls.tour_itinerary_urls')),
     path('tour_cancellation/', include('tour.urls.tour_cancellation_urls')),
+    path('old_agent_booking/', include('tour.urls.old_agent_booking_urls')),
 
     # payments
     path('payments/', include('payments.urls.payments_urls')),
@@ -54,9 +80,6 @@ urlpatterns = [
     # adding email
     path('email/', include('cms.urls.email_urls')),
     path('send-email/', include('cms.urls.send_email_urls')),
-    
-    #itinerary
-    path('cms_itinerary/', include('cms.urls.itinerary_urls')),
 
 	# Site Settings module
 	path('general_setting/', include('site_settings.urls.general_setting_urls')),

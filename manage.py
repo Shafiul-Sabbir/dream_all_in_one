@@ -3,6 +3,10 @@
 import os
 import sys
 
+from dotenv import load_dotenv
+
+load_dotenv()   # ← THIS IS WHAT FIXES THE WARNING
+
 
 def main():
     """Run administrative tasks."""

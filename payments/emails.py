@@ -30,7 +30,14 @@ def get_sales_connection():
 # 1. Welcome Email (default noreply SMTP)
 # ----------------------------
 def send_welcome_email_to_traveller(traveller_data):
-    subject = "Account Confirmation - DreamZiarah"
+    if traveller_data['company'] == "IT":
+        subject = "Account Confirmation - Dream IT SRLS."
+    elif traveller_data['company'] == "UK":
+        subject = "Account Confirmation - Dream UK SRLS."
+    elif traveller_data['company'] == "ZIARAH":
+        subject = "Account Confirmation - Dream Ziarah."
+    else:
+        subject = "Account Confirmation - Dream Tourism."
     from_email = settings.DEFAULT_FROM_EMAIL   # noreply
     to = [traveller_data['email']]
     if IS_LOCAL:
@@ -46,14 +53,22 @@ def send_welcome_email_to_traveller(traveller_data):
     email = EmailMultiAlternatives(subject, html_content, from_email, to, bcc=bcc)
     email.attach_alternative(html_content, "text/html")
     email.send()
-    print("✅ Welcome email sent from noreply to", traveller_data['email'])
+    print(f"✅ Welcome email sent from {from_email} to {traveller_data['email']}" )
 
 
 # ----------------------------
 # 2. Booking Confirmation (sales SMTP)
 # ----------------------------
 def send_booking_confirmation_email_to_traveller(tour_booking, payment, traveller, dashboard_url):
-    subject = f"Booking Confirmed - {tour_booking.tour.name} | DreamZiarah"
+    if tour_booking.company.name == "IT":
+        subject = f"Booking Confirmed - {tour_booking.tour.name} | Dream IT SRLS."
+    elif tour_booking.company.name == "UK":
+        subject = f"Booking Confirmed - {tour_booking.tour.name} | Dream UK SRLS."
+    elif tour_booking.company.name == "ZIARAH":
+        subject = f"Booking Confirmed - {tour_booking.tour.name} | Dream Ziarah"
+    else:
+        subject = f"Booking Confirmed - {tour_booking.tour.name} | Dream Tourism"
+
     to = [traveller.user.email]
     if IS_LOCAL:
         bcc = ["sabbirvai82@gmail.com"]
@@ -95,14 +110,21 @@ def send_booking_confirmation_email_to_traveller(tour_booking, payment, travelle
     email.attach_alternative(html_content, "text/html")
     email.attach(pdf_filename, ticket_pdf_bytes, 'application/pdf')
     email.send()
-    print("✅ Booking confirmation sent from sales to", traveller.user.email)
+    print(f"✅ Booking confirmation sent from {from_email} to {traveller.user.email}" )
 
 
 # ----------------------------
 # 3. Payment Confirmation (sales SMTP)
 # ----------------------------
 def send_payment_confirmation_email_to_traveller(tour_booking, payment, traveller, dashboard_url):
-    subject = f"Payment Confirmed - {tour_booking.booking_id} | DreamZiarah"
+    if tour_booking.company.name == "IT":
+        subject = f"Payment Confirmed - {tour_booking.booking_id} | Dream IT SRLS."
+    elif tour_booking.company.name == "UK":
+        subject = f"Payment Confirmed - {tour_booking.booking_id} | Dream UK SRLS."
+    elif tour_booking.company.name == "ZIARAH":
+        subject = f"Payment Confirmed - {tour_booking.booking_id} | Dream Ziarah"
+    else:
+        subject = f"Payment Confirmed - {tour_booking.booking_id} | Dream Tourism"
     # from_email = settings.SALES_EMAIL_CONFIG["EMAIL_HOST_USER"]   # sales
     to = [traveller.user.email]
     if IS_LOCAL:
@@ -144,5 +166,5 @@ def send_payment_confirmation_email_to_traveller(tour_booking, payment, travelle
     email.attach_alternative(html_content, "text/html")
     email.attach(pdf_filename, invoice_pdf_bytes, 'application/pdf')
     email.send()
-    print("✅ Payment confirmation sent from sales to", traveller.user.email)
+    print(f"✅ Payment confirmation sent from {from_email} to {traveller.user.email}" )
 
