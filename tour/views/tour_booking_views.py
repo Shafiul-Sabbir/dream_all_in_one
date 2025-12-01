@@ -16,6 +16,7 @@ from payments.utils import generate_booking_qr
 import stripe
 import uuid
 from urllib.parse import urlparse
+from django.db.models import Q
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # from silk.profiling.profiler import silk_profile
@@ -108,7 +109,52 @@ def getAllTourBookingByTravellerID(request, pk):
 
     return Response(response, status=status.HTTP_200_OK)
 
+@api_view(['GET'])
+def getAllTourBookingByGivenKeyword(request, keyword):
+    compnay_id = request.query_params.get('company_id')
+    if compnay_id:
+        tour_bookings = TourBooking.objects.filter(company=compnay_id).all()
+        # print("tour bookings :", tour_bookings)
+        for booking in tour_bookings:
+            print("company id :", booking.company.id)
+    else:
+        tour_bookings = None
+    
+    print("keyword :", keyword)
+    print("company_id :", compnay_id)
+    if tour_bookings is None:
+        return Response({"error": "company_id query parameter is required"}, status=status.HTTP_400_BAD_REQUEST)
+    tour_bookings = (TourBooking.objects.filter(
+        Q(booking_id__icontains=keyword) |
+        Q(tour__name__icontains=keyword) |
+        Q(booking_uuid__icontains=keyword) |
+        Q(created_by__icontains=keyword) 
+    )
+    .select_related('tour', 'traveller', 'user', 'payment')
+).all()
 
+    total_elements = tour_bookings.count()
+
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
+
+    # Pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    tour_bookings = pagination.paginate_data(tour_bookings)
+
+    serializer = TourBookingListSerializer(tour_bookings, many=True)
+
+    response = {
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+        'tour_bookings': serializer.data,
+    }
+
+    return Response(response, status=status.HTTP_200_OK)
 @api_view(['GET'])
 def getAllTourBookingWithoutPagination(request):
     company_id = request.query_params.get('company_id')
@@ -141,8 +187,16 @@ def getATourBookingByBookingUUID(request, booking_uuid):
     except ObjectDoesNotExist:
         return Response({'detail': f"Tour Booking with booking_uuid - {booking_uuid} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
 
-
-
+@api_view(['GET'])
+def getATourBookingByBookingID(request, booking_id):
+    print("booking_id :", booking_id)
+    try:
+        tour_booking = TourBooking.objects.get(booking_id=booking_id)
+        serializer = TourBookingListSerializer(tour_booking)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except ObjectDoesNotExist:
+        return Response({'detail': f"Tour Booking with booking_id - {booking_id} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+    
 @api_view(['PUT'])
 def updateTourBooking(request,pk):
     try:

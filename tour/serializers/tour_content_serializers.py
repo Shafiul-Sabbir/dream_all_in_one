@@ -552,12 +552,36 @@ class TourSerializer(serializers.ModelSerializer):
         itineraries_list = validated_data.pop('itineraries_list', [])
         print("itinerary_list data from create method of TourSerializer:", itineraries_list)
         print('\n')
+
         for itinerary_data in itineraries_list:
-            itinerary_data['tour'] = instance.id
-            serializer = TourItinerarySerializer(data=itinerary_data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            print("Itinerary created:", serializer.instance)
+            itinerary_id = itinerary_data.get("id", None)
+            print('\n')
+            print("itinerary data is : ", itinerary_data)
+            print("itinerary id is : ", itinerary_id)
+            print('\n')
+            if itinerary_id:
+                print(f"Updating Itinerary ID : {itinerary_id} with its data as itinerary id is given : ", itinerary_data)
+                itinerary_instance = TourItinerary.objects.filter(id=itinerary_id).first()
+                if not itinerary_instance:
+                    print(f"Itinerary with ID {itinerary_id} not found for this tour.")
+                    continue
+                serializer = TourItinerarySerializer(itinerary_instance, data=itinerary_data, partial=True, context={'company': company})
+                if serializer.is_valid():
+                    serializer.save()
+                    print(f"Updated Itinerary ID : {itinerary_id}")
+                else:
+                    print("validation errors:", serializer.errors)
+            else:
+                itinerary_data['tour'] = instance.id
+                print("Creating new Itinerary as itinerary id is not given : ", itinerary_data)
+                serializer = TourItinerarySerializer(data=itinerary_data, context={'company': company})
+                if serializer.is_valid():
+                    serializer.save()
+                    print(f"Created new Itinerary ID : {serializer.instance.id}")
+                else:
+                    print("validation errors:", serializer.errors)
+        print("itineraries updated successfully.")
+        print('\n')
 
         
 

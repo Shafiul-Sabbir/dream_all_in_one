@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from tour.models import TourItinerary
 class TourItinerarySerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(required=False)
     company = serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = TourItinerary
