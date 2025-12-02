@@ -124,7 +124,7 @@ def getAllNestedCMSMenu(request):
     # print('menus: ', menus)
 
     children_qs = CMSMenu.objects.filter(company=company_id).all().order_by('position')
-    print("children_qs : ", children_qs)
+    # print("children_qs : ", children_qs)
     menus = CMSMenu.objects.filter(parent__isnull=True, company=company_id).prefetch_related(
         Prefetch('children', queryset=children_qs)
     ).order_by('position')

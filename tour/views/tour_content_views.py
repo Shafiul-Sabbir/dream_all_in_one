@@ -146,16 +146,6 @@ def updateTour(request, pk):
             return Response(
                 {"error": "Invalid JSON in cancellation_policies_list"},
                 status=status.HTTP_400_BAD_REQUEST)
-            
-    # handle thumbnail image
-    if "thumbnail_image" in request.FILES:
-        processed_data["update_thumbnail_image"] = True
-        processed_data["thumbnail_image"] = request.FILES["thumbnail_image"]
-    
-    # handle meta image
-    if "meta_image" in request.FILES:
-        processed_data["update_meta_image"] = True
-        processed_data["meta_image"] = request.FILES["meta_image"]
 
     # handle images
     for key, value in processed_data.items():
@@ -168,7 +158,8 @@ def updateTour(request, pk):
     serializer = TourSerializer(instance=tour, data=processed_data, partial=True, context={'request': request})
     if serializer.is_valid():
         serializer.save()
-        print("Tour updated successfully:", serializer.data)
+        print("tour updated succesfully !!!")
+        # print("Tour updated successfully:", serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
     print("Tour update failed:", serializer.errors)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

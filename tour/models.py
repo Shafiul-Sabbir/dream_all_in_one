@@ -45,12 +45,10 @@ class Tour(models.Model):
 
     # Image Info
     thumbnail_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/thumbnail_image/"), null=True, blank=True)
-    update_thumbnail_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_thumbnail_image_url = models.URLField(max_length=500, null=True, blank=True)
 
     # Metadata
     meta_image = models.ImageField(upload_to=partial(get_image_upload_folder, subfolder="tour/meta_image/"), null=True, blank=True)
-    update_meta_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_meta_image_url = models.URLField(max_length=500, null=True, blank=True)
     meta_title = models.CharField(max_length=500, null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
@@ -79,86 +77,6 @@ class Tour(models.Model):
     # we will uncomment after running the script
 
     def save(self, *args, **kwargs):
-        # when we try to update an existing object. process of updating the thumbnail image to the cloudflare
-        if self.pk:
-            print("entering save method for update")
-            #checking wheather we have sent any new thumbnail_image or not
-            if self.update_thumbnail_image: 
-                print("update_thumbnail_image flag is True, uploading thumbnail image to Cloudflare...")
-                # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
-                if self.thumbnail_image:
-                    try:
-                        print("Uploading thumbnail image to Cloudflare from 'update' part of save method...")
-                        self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
-                        print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
-                        self.update_thumbnail_image = False  # Reset the flag after upload
-                        print(f"update_thumbnail_image flag reset to {self.update_thumbnail_image}")
-                    except Exception as e:
-                        print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
-                else:
-                    print("No thumbnail image provided for upload.")
-            else:
-                print("update_thumbnail_image flag is False, skipping Cloudflare upload for thumbnail image.")
-                pass
-        
-            if self.update_meta_image: 
-                print("update_meta_image flag is True, uploading meta image to Cloudflare...")
-                # If update_thumbnail_image is True, upload the thumbnail image to Cloudflare
-                if self.meta_image:
-                    try:
-                        print("Uploading meta image to Cloudflare from 'update' part of save method...")
-                        self.cloudflare_meta_image_url = upload_to_cloudflare(self.meta_image)
-                        print("Cloudflare meta image URL:", self.cloudflare_meta_image_url)
-                        self.update_meta_image = False  # Reset the flag after upload
-                        print(f"update_meta_image flag reset to {self.update_meta_image}")
-                    except Exception as e:
-                        print(f"Error uploading meta image to Cloudflare: {str(e)}")
-                else:
-                    print("No meta image provided for upload.")
-            else:
-                print("update_thumbnail_image or update_meta_image flag is False, skipping Cloudflare upload for thumbnail or meta image.")
-                pass
-
-        # when we try to create new object
-        else:
-            print("entering save method for create")
-            if self.thumbnail_image:
-                try:
-                    print("Uploading thumbnail image to Cloudflare from 'create' part of save method...")
-                    self.cloudflare_thumbnail_image_url = upload_to_cloudflare(self.thumbnail_image)
-                    print("Cloudflare thumbnail image URL:", self.cloudflare_thumbnail_image_url)
-                except Exception as e:
-                    print(f"Error uploading thumbnail image to Cloudflare: {str(e)}")
-            else :
-                print("No thumbnail image provided for upload.")
-                pass
-
-            if self.meta_image:
-                try:
-                    print("Uploading meta image to Cloudflare from 'create' part of save method...")
-                    self.cloudflare_meta_image_url = upload_to_cloudflare(self.meta_image)
-                    print("Cloudflare meta image URL:", self.cloudflare_meta_image_url)
-                except Exception as e:
-                    print(f"Error uploading meta image to Cloudflare: {str(e)}")
-            else :
-                print("No meta image provided for upload.")
-                pass
-
-
-
-        # Generate slug from name
-        # if self.name:
-        #     # Replace special characters (including underscore) with hyphens
-        #     clean_name = generate_slug(self.name)
-        #     slug = clean_name
-        #     counter = 1
-
-        #     while Tour.objects.filter(slug = slug).exclude(id=self.id).exists():
-        #         slug = f"{clean_name}-{counter}"
-        #         counter += 1
-
-        #     self.slug = slug
-
         super().save(*args, **kwargs)
 
 class TourContentImage(models.Model):

@@ -3,7 +3,7 @@ from rest_framework import serializers
 from tour.models import CancellationPolicy, PenaltyRules, TourItinerary, Tour, DayTourPrice, AvailableDate, AvailableTime, TourContentImage
 from datetime import datetime
 from django_currentuser.middleware import get_current_authenticated_user
-
+from utils.utils import upload_to_cloudflare
 from tour.serializers.tour_itinerary_serializers import TourItineraryListSerializer, TourItinerarySerializer
 
 class AvailableDateSerializer(serializers.ModelSerializer):
@@ -322,10 +322,10 @@ class TourListSerializer(serializers.ModelSerializer):
 
 
 class TourSerializer(serializers.ModelSerializer):
-    day_tour_price_list = DayTourPriceSerializer(many=True)
+    day_tour_price_list = DayTourPriceSerializer(many=True, required=False, allow_null=True)
     # day_tour_price_list_read = DayTourPriceListSerializer(many=True, read_only=True, source='day_tour_price_list')
-    itineraries_list = TourItinerarySerializer(many=True)
-    cancellation_policies_list = CancellationPolicySerializer(many=True) 
+    itineraries_list = TourItinerarySerializer(many=True, required=False, allow_null=True)
+    cancellation_policies_list = CancellationPolicySerializer(many=True, required=False, allow_null=True) 
 
 
 
@@ -333,12 +333,6 @@ class TourSerializer(serializers.ModelSerializer):
         model = Tour
         # fields = ['id', 'name', 'description', 'day_tour_price_list', 'day_tour_price_list_read', 'created_at', 'updated_at']
         fields = '__all__'
-
-    # def to_representation(self, instance):
-    #     rep = super().to_representation(instance)
-    #     # replace write-only field with read-only field in output
-    #     rep['day_tour_price_list'] = rep.pop('day_tour_price_list_read')
-    #     return rep
     
     def create(self, validated_data):
         request = self.context.get("request")
@@ -354,19 +348,25 @@ class TourSerializer(serializers.ModelSerializer):
         print('\n')
 
         # handle day tour price list
-        day_tour_price_list = validated_data.pop('day_tour_price_list', [])
-        print("day_tour_price_list from create method of Tourserializer : ", day_tour_price_list)
-        print('\n')
+        day_tour_price_list = validated_data.get('day_tour_price_list', None)
+        if day_tour_price_list is not None:
+            day_tour_price_list = validated_data.pop('day_tour_price_list', [])
+            print("day_tour_price_list from create method of Tourserializer : ", day_tour_price_list)
+            print('\n')
 
         # handle itinerary list
-        itineraries_list = validated_data.pop('itineraries_list', [])
-        print("itinerary_list data from create method of TourSerializer:", itineraries_list)
-        print('\n')
+        itineraries_list = validated_data.get('itineraries_list', None)
+        if itineraries_list is not None:
+            itineraries_list = validated_data.pop('itineraries_list', [])
+            print("itinerary_list data from create method of TourSerializer:", itineraries_list)
+            print('\n')
 
         # handle cancellation policies list
-        cancellation_policies_list = validated_data.pop('cancellation_policies_list', [])
-        print("cancellation_policies_list data from create method of TourSerializer:", cancellation_policies_list)
-        print('\n')
+        cancellation_policies_list = validated_data.get('cancellation_policies_list', None)
+        if cancellation_policies_list is not None:
+            cancellation_policies_list = validated_data.pop('cancellation_policies_list', [])
+            print("cancellation_policies_list data from create method of TourSerializer:", cancellation_policies_list)
+            print('\n')
 
         # handle images
         print("start working with images from create method, clearing images from tour creation data.")
@@ -380,39 +380,60 @@ class TourSerializer(serializers.ModelSerializer):
         print("images dictionary from create mehod of TourSerializer is : ", images)
         print('\n')
 
+        # handle thumbnail image
+        thumbnail_image = files.get('thumbnail_image', None)
+        if thumbnail_image is not None:
+            validated_data['thumbnail_image'] = thumbnail_image
+            validated_data['cloudflare_thumbnail_image_url'] = upload_to_cloudflare(thumbnail_image)
+            print("thumbnail_image from create method of TourSerializer:", thumbnail_image)
+            print("cloudflare_thumbnail_image_url from create method of TourSerializer:", validated_data['cloudflare_thumbnail_image_url'])
+        print('\n')
+
+        # handle meta_image
+        meta_image = files.get('meta_image', None)
+        if meta_image is not None:
+            validated_data['meta_image'] = meta_image
+            validated_data['cloudflare_meta_image_url'] = upload_to_cloudflare(meta_image)
+            print("meta_image from create method of TourSerializer:", meta_image)
+            print("cloudflare_meta_image_url from create method of TourSerializer:", validated_data['cloudflare_meta_image_url'])
+        print('\n')
+
         print("validated data from create method of TourSerializer:", validated_data)
         tour = Tour.objects.create(
             **validated_data)
         print("Tour created:", tour)
 
         # creating Day tour Price List
-        print("creating DayTourPrices.")
-        for day_price_data in day_tour_price_list:
-            serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': tour, 'company': company})
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            print("DayTourPrice created:", serializer.instance)
-        print('\n')
+        if day_tour_price_list is not None:
+            print("creating DayTourPrices.")
+            for day_price_data in day_tour_price_list:
+                serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': tour, 'company': company})
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
+                print("DayTourPrice created:", serializer.instance)
+            print('\n')
 
         # creating  itinerary list 
-        print("creating Itineraries")
-        for itinerary_data in itineraries_list:
-            itinerary_data['tour'] = tour.id
-            serializer = TourItinerarySerializer(data=itinerary_data, context={'company': company})
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            print("Itinerary created:", serializer.instance)
-        print('\n')
+        if itineraries_list is not None:
+            print("creating Itineraries")
+            for itinerary_data in itineraries_list:
+                itinerary_data['tour'] = tour.id
+                serializer = TourItinerarySerializer(data=itinerary_data, context={'company': company})
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
+                print("Itinerary created:", serializer.instance)
+            print('\n')
 
         # creating cancellation policies list
-        print("creating Cancellation Policies")
-        for policy_data in cancellation_policies_list:
-            print("policy data is :",policy_data)
-            serializer = CancellationPolicySerializer(data=policy_data, context={'tour': tour, 'company': company})
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            print("Cancellation Policy created:", serializer.instance)
-        print('\n')
+        if cancellation_policies_list is not None:
+            print("creating Cancellation Policies")
+            for policy_data in cancellation_policies_list:
+                print("policy data is :",policy_data)
+                serializer = CancellationPolicySerializer(data=policy_data, context={'tour': tour, 'company': company})
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
+                print("Cancellation Policy created:", serializer.instance)
+            print('\n')
 
         # creating tour content images
         print("creating images")
@@ -446,6 +467,7 @@ class TourSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         print(f"tour of id {instance.id} is updating.")
+        print('\n')
         request = self.context.get("request")
         files = request.FILES
         print("files : ", files)
@@ -464,128 +486,137 @@ class TourSerializer(serializers.ModelSerializer):
         instance.save()
 
         # day_tour_price_list update part:
-        new_day_prices = validated_data.pop('day_tour_price_list', [])
-        existing_ids = [item['id'] for item in new_day_prices if 'id' in item]
-        instance.day_tour_price_list.exclude(id__in=existing_ids).delete()
+        day_tour_price_list = validated_data.get('day_tour_price_list', None)
+        if day_tour_price_list is not None:
+            print("day_tour_price_list data from update method of TourSerializer:", day_tour_price_list)
+            print('\n')
+            new_day_prices = validated_data.pop('day_tour_price_list', [])
+            existing_ids = [item['id'] for item in new_day_prices if 'id' in item]
+            instance.day_tour_price_list.exclude(id__in=existing_ids).delete()
 
-        for day_price_data in new_day_prices:
-            # updating the existing DayTourPrice from create part of Tour as existing id is given
-            if 'id' in day_price_data:
-                print('\n')
-                print("updating the existing DayTourPrice from update part of TourSerializer as existing id is given")
-                print("day_price_data :", day_price_data)
-                print("id is :", day_price_data['id'])
-                print("instance :", instance)
-                print('\n')
-                obj = DayTourPrice.objects.filter(id=day_price_data['id']).first()
-                if obj is None:
-                    print(f"DayTourPrice with id {day_price_data['id']} not found.")
-                print("fetched DayTourPrice object is :", obj)
-                print('\n')
-                serializer = DayTourPriceSerializer(obj, data=day_price_data, context={'company': company})
-                serializer.is_valid(raise_exception=True)
-                serializer.save()
+            for day_price_data in new_day_prices:
+                # updating the existing DayTourPrice from create part of Tour as existing id is given
+                if 'id' in day_price_data:
+                    print('\n')
+                    print("updating the existing DayTourPrice from update part of TourSerializer as existing id is given")
+                    print("day_price_data :", day_price_data)
+                    print("id is :", day_price_data['id'])
+                    print("instance :", instance)
+                    print('\n')
+                    obj = DayTourPrice.objects.filter(id=day_price_data['id']).first()
+                    if obj is None:
+                        print(f"DayTourPrice with id {day_price_data['id']} not found.")
+                    print("fetched DayTourPrice object is :", obj)
+                    print('\n')
+                    serializer = DayTourPriceSerializer(obj, data=day_price_data, context={'company': company})
+                    serializer.is_valid(raise_exception=True)
+                    serializer.save()
 
-            # creating new DayTourPrice from update part of Tour as id is absent
-            else:
-                print("creating new DayTourPrice from update part of TourSerializer as id is absent")
-                print("day_price_data from update method if id is not provided :", day_price_data)
-                serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': instance, 'company': company})
-                serializer.is_valid(raise_exception=True)
-                serializer.save()
-        print("day_tour_price updated successfully")
+                # creating new DayTourPrice from update part of Tour as id is absent
+                else:
+                    print("creating new DayTourPrice from update part of TourSerializer as id is absent")
+                    print("day_price_data from update method if id is not provided :", day_price_data)
+                    serializer = DayTourPriceSerializer(data=day_price_data, context={'tour': instance, 'company': company})
+                    serializer.is_valid(raise_exception=True)
+                    serializer.save()
+            print("day_tour_price updated successfully")
 
         # cancellation policies update part
-        cancellation_policies_data = validated_data.pop('cancellation_policies_list', [])
-        existing_policies = {cp.id: cp for cp in instance.cancellation_policies_list.all()}
-        print('\n')
-        print("given policies data : ", cancellation_policies_data)
-        print('\n')
-        print("instance is : ", instance)
-        print("all existing policies queryset : ", instance.cancellation_policies_list.all())
-        print('\n')
-        print("existing policies in db : ", existing_policies)
-        print('\n')
-
-        sent_policy_ids = []
-        for policy_data in cancellation_policies_data:
+        cancellation_policies_list = validated_data.get('cancellation_policies_list', None)
+        if cancellation_policies_list is not None:
+            print("cancellation_policies_list data from update method of TourSerializer:", cancellation_policies_list)
             print('\n')
-            policy_id = policy_data.get('id', None)
-            if policy_id is not None:
-                print(f"for policy id {policy_data['id']} -> policy data : {policy_data}")
-            else:
-                print(f"for policy id None -> policy data : {policy_data}")
-
+            cancellation_policies_data = validated_data.pop('cancellation_policies_list', [])
+            existing_policies = {cp.id: cp for cp in instance.cancellation_policies_list.all()}
+            print('\n')
+            print("given policies data : ", cancellation_policies_data)
+            print('\n')
+            print("instance is : ", instance)
+            print("all existing policies queryset : ", instance.cancellation_policies_list.all())
+            print('\n')
+            print("existing policies in db : ", existing_policies)
             print('\n')
 
-            if policy_id and policy_id in existing_policies:
-                policy_instance = existing_policies[policy_id]
+            sent_policy_ids = []
+            for policy_data in cancellation_policies_data:
                 print('\n')
-                print(f"Updating cancellation Policy ID : {policy_id} with its data as policy id is given : ", policy_data)
-                serializer = CancellationPolicySerializer(policy_instance, data=policy_data, partial=True, context={'tour': instance, 'company': company})
-                if serializer.is_valid():
-                    serializer.save()
-                    sent_policy_ids.append(policy_id)
-                    print(f"Updated cancellation Policy ID : {policy_id}")
+                policy_id = policy_data.get('id', None)
+                if policy_id is not None:
+                    print(f"for policy id {policy_data['id']} -> policy data : {policy_data}")
                 else:
-                    print("validation errors:", serializer.errors)
-            elif not policy_id:
-                policy_data['tour'] = instance.id
+                    print(f"for policy id None -> policy data : {policy_data}")
+
                 print('\n')
-                print("Creating new cancellation Policy as policy id is not given : ", policy_data)
-                serializer = CancellationPolicySerializer(data=policy_data, context={'tour': instance, 'company': company})
-                if serializer.is_valid():
-                    serializer.save()
-                    print(f"Created new cancellation Policy ID : {serializer.instance.id}")
-                else:
-                    print("validation errors:", serializer.errors)
-        # Delete policies not in the update request
-        for policy_id, policy in existing_policies.items():
-            if policy_id not in sent_policy_ids:
-                policy.delete()
-        print("cancellation policies updated successfully.")
-        print('\n')
 
-
+                if policy_id and policy_id in existing_policies:
+                    policy_instance = existing_policies[policy_id]
+                    print('\n')
+                    print(f"Updating cancellation Policy ID : {policy_id} with its data as policy id is given : ", policy_data)
+                    serializer = CancellationPolicySerializer(policy_instance, data=policy_data, partial=True, context={'tour': instance, 'company': company})
+                    if serializer.is_valid():
+                        serializer.save()
+                        sent_policy_ids.append(policy_id)
+                        print(f"Updated cancellation Policy ID : {policy_id}")
+                    else:
+                        print("validation errors:", serializer.errors)
+                elif not policy_id:
+                    policy_data['tour'] = instance.id
+                    print('\n')
+                    print("Creating new cancellation Policy as policy id is not given : ", policy_data)
+                    serializer = CancellationPolicySerializer(data=policy_data, context={'tour': instance, 'company': company})
+                    if serializer.is_valid():
+                        serializer.save()
+                        print(f"Created new cancellation Policy ID : {serializer.instance.id}")
+                    else:
+                        print("validation errors:", serializer.errors)
+            # Delete policies not in the update request
+            for policy_id, policy in existing_policies.items():
+                if policy_id not in sent_policy_ids:
+                    policy.delete()
+            print("cancellation policies updated successfully.")
+            print('\n')
 
         # Itineraries Update Part
-        itineraries_list = validated_data.pop('itineraries_list', [])
-        print("itinerary_list data from create method of TourSerializer:", itineraries_list)
-        print('\n')
+        itineraries_list = validated_data.get('itineraries_list', None)
+        if itineraries_list is not None:
+            itineraries_list = validated_data.pop('itineraries_list', [])
+            print("itinerary_list data from create method of TourSerializer:", itineraries_list)
+            print('\n')
 
-        for itinerary_data in itineraries_list:
-            itinerary_id = itinerary_data.get("id", None)
-            print('\n')
-            print("itinerary data is : ", itinerary_data)
-            print("itinerary id is : ", itinerary_id)
-            print('\n')
-            if itinerary_id:
-                print(f"Updating Itinerary ID : {itinerary_id} with its data as itinerary id is given : ", itinerary_data)
-                itinerary_instance = TourItinerary.objects.filter(id=itinerary_id).first()
-                if not itinerary_instance:
-                    print(f"Itinerary with ID {itinerary_id} not found for this tour.")
-                    continue
-                serializer = TourItinerarySerializer(itinerary_instance, data=itinerary_data, partial=True, context={'company': company})
-                if serializer.is_valid():
-                    serializer.save()
-                    print(f"Updated Itinerary ID : {itinerary_id}")
+            for itinerary_data in itineraries_list:
+                itinerary_id = itinerary_data.get("id", None)
+                print('\n')
+                print("itinerary data is : ", itinerary_data)
+                print("itinerary id is : ", itinerary_id)
+                print('\n')
+                if itinerary_id:
+                    print(f"Updating Itinerary ID : {itinerary_id} with its data as itinerary id is given : ", itinerary_data)
+                    itinerary_instance = TourItinerary.objects.filter(id=itinerary_id).first()
+                    if not itinerary_instance:
+                        print(f"Itinerary with ID {itinerary_id} not found for this tour.")
+                        continue
+                    serializer = TourItinerarySerializer(itinerary_instance, data=itinerary_data, partial=True, context={'company': company})
+                    if serializer.is_valid():
+                        serializer.save()
+                        print(f"Updated Itinerary ID : {itinerary_id}")
+                    else:
+                        print("validation errors:", serializer.errors)
                 else:
-                    print("validation errors:", serializer.errors)
-            else:
-                itinerary_data['tour'] = instance.id
-                print("Creating new Itinerary as itinerary id is not given : ", itinerary_data)
-                serializer = TourItinerarySerializer(data=itinerary_data, context={'company': company})
-                if serializer.is_valid():
-                    serializer.save()
-                    print(f"Created new Itinerary ID : {serializer.instance.id}")
-                else:
-                    print("validation errors:", serializer.errors)
-        print("itineraries updated successfully.")
-        print('\n')
+                    itinerary_data['tour'] = instance.id
+                    print("Creating new Itinerary as itinerary id is not given : ", itinerary_data)
+                    serializer = TourItinerarySerializer(data=itinerary_data, context={'company': company})
+                    if serializer.is_valid():
+                        serializer.save()
+                        print(f"Created new Itinerary ID : {serializer.instance.id}")
+                    else:
+                        print("validation errors:", serializer.errors)
+            print("itineraries updated successfully.")
+            print('\n')
 
         
 
         # handle images
+        print('\n')
         print("start working with images from update method.")
         images = {}
         image_keys = [key for key in files.keys() if key.startswith("images[0]")]
@@ -613,6 +644,33 @@ class TourSerializer(serializers.ModelSerializer):
                 print(f"image {value} is saved successfully")
             else:
                 print("errors : ", serializer.errors)
+        print('\n')
+
+        # handle thumbnail image
+        thumbnail_image = files.get('thumbnail_image', None)
+        if thumbnail_image:
+            try:
+                instance.thumbnail_image = thumbnail_image
+                instance.cloudflare_thumbnail_image_url = upload_to_cloudflare(thumbnail_image)
+                print("thumbnail_image from update method of TourSerializer:", thumbnail_image)
+                print("cloudflare_thumbnail_image_url from update method of TourSerializer:", instance.cloudflare_thumbnail_image_url)
+                instance.save(update_fields=["thumbnail_image", "cloudflare_thumbnail_image_url"])
+            except Exception as e:
+                print("Error updating thumbnail_image:", str(e))
+        print('\n')
+
+        # handle meta_image
+        meta_image = files.get('meta_image', None)
+        if meta_image:
+            try:
+                instance.meta_image = meta_image
+                instance.cloudflare_meta_image_url = upload_to_cloudflare(meta_image)
+                print("meta_image from update method of TourSerializer:", meta_image)
+                print("cloudflare_meta_image_url from update method of TourSerializer:", instance.cloudflare_meta_image_url)
+                instance.save(update_fields=["meta_image", "cloudflare_meta_image_url"])
+            except Exception as e:
+                print("Error updating meta_image:", str(e))
+        print('\n')
 
         # handle updated_by field
         user = get_current_authenticated_user()

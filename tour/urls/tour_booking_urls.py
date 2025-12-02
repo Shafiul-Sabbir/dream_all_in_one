@@ -14,13 +14,13 @@ urlpatterns = [
 
 	path('api/v1/tour_booking/<int:pk>/', views.getATourBooking),
     
-	path('api/v1/tour_booking/<str:booking_uuid>/', views.getATourBookingByBookingUUID),
+	path('api/v1/tour_booking/get_a_booking_by_booking_uuid/<str:booking_uuid>/', views.getATourBookingByBookingUUID),
     
 	path('api/v1/tour_booking/get_a_booking_by_booking_id/<str:booking_id>/', views.getATourBookingByBookingID),
     
 	path('api/v1/tour_booking/get_all_tour_booking_by_traveller_id/<int:pk>/', views.getAllTourBookingByTravellerID),
     
-	path('api/v1/tour_booking/get_all_tour_booking_by_given_keyword/<str:keyword>/', views.getAllTourBookingByGivenKeyword),
+	path('api/v1/tour_booking/get_all_tour_booking_by_given_keyword/', views.getAllTourBookingByGivenKeyword),
 
 	path('api/v1/tour_booking/update/<int:pk>/', views.updateTourBooking),
 	
