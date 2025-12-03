@@ -26,11 +26,19 @@ IS_LOCAL = os.environ.get("IS_LOCAL", "False").strip().lower() == "true"
 # print("IS_LOCAL after parse:", IS_LOCAL)            # Debug line
 
 if IS_LOCAL:
-    TRAVELLER_DASHBOARD_URL = "http://192.168.68.111:3000/dashboard"
+    TRAVELLER_DASHBOARD_URL = {
+        "IT": "http://192.168.68.111:3000/dashboard",
+        "UK": "http://192.168.68.111:3000/dashboard",
+        "ZIARAH": "http://192.168.68.111:3000/dashboard",
+    }
     API_SITE_URL = "http://0.0.0.0:8010"
     ADMIN_ALL_BOOKING_PAGE = "http://192.168.68.111:3010/apps/booking-management/bookings"
 else:
-    TRAVELLER_DASHBOARD_URL = "https://dreamziarah.com/dashboard"
+    TRAVELLER_DASHBOARD_URL = {
+        "IT" : "https://dreamtourism.it/dashboard",
+        "UK" : "https://dreamtourism.co.uk/dashboard",
+        "ZIARAH" : "https://dreamziarah.com/dashboard"
+    }
     API_SITE_URL = "https://api.allinone.dreamziarah.com"
     ADMIN_ALL_BOOKING_PAGE = "https://admin.dreamziarah.com/apps/booking-management/bookings"
 
@@ -165,23 +173,6 @@ CORS_ALLOWED_ORIGINS = [
     # "https://dreamziarah.com",
 
 ]
-# # Optional but useful
-# CORS_ALLOW_HEADERS = [
-#     "accept",
-#     "accept-encoding",
-#     "authorization",
-#     "content-type",
-#     "dnt",
-#     "origin",
-#     "user-agent",
-#     "x-csrftoken",
-#     "x-requested-with",
-# ]
-
-# SESSION_COOKIE_SAMESITE = 'Lax'
-# SESSION_COOKIE_SECURE = not DEBUG
-# CSRF_COOKIE_SAMESITE = 'Lax'
-# CSRF_COOKIE_SECURE = not DEBUG
 
 AUTHENTICATION_BACKENDS = [
     'authentication.backends.EmailOrUsernameBackend',  # your app name may differ
@@ -301,51 +292,6 @@ else:
             "EMAIL_USE_TLS": True,
         }
     }
-
-# if IS_LOCAL:
-#     # Default (local@dreamziarah.com)
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#     EMAIL_HOST = 'smtp.titan.email'
-#     EMAIL_PORT = 587
-#     EMAIL_HOST_USER = "local@dreamziarah.com"
-#     EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD_FOR_LOCAL_DREAMZIARAH")
-#     EMAIL_USE_TLS = True
-
-#     DEFAULT_FROM_EMAIL = "local@dreamziarah.com"   # 👈 add this
-
-#     # Sales email config (local@dreamziarah.com)
-#     SALES_EMAIL_CONFIG = {
-#         "EMAIL_BACKEND" : 'django.core.mail.backends.smtp.EmailBackend',
-#         "EMAIL_HOST": "smtp.titan.email",
-#         "EMAIL_PORT": 587,
-#         "EMAIL_HOST_USER": "local@dreamziarah.com",
-#         "EMAIL_HOST_PASSWORD": os.getenv("EMAIL_HOST_PASSWORD_FOR_LOCAL_DREAMZIARAH"),
-#         "EMAIL_USE_TLS": True,
-#     }
-
-#     SALES_FROM_EMAIL = "local@dreamziarah.com"   # 👈 add this
-# else:
-#     # Default (noreply)
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#     EMAIL_HOST = 'smtp.titan.email'
-#     EMAIL_PORT = 587
-#     EMAIL_HOST_USER = "noreply@dreamziarah.com"
-#     EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD_FOR_NO_REPLY")
-#     EMAIL_USE_TLS = True
-
-#     DEFAULT_FROM_EMAIL = "noreply@dreamziarah.com"   # 👈 add this
-
-#     # Sales email config (sales@dreamziarah.com)
-#     SALES_EMAIL_CONFIG = {
-#         "EMAIL_BACKEND" : 'django.core.mail.backends.smtp.EmailBackend',
-#         "EMAIL_HOST": "smtp.titan.email",
-#         "EMAIL_PORT": 587,
-#         "EMAIL_HOST_USER": "sales@dreamziarah.com",
-#         "EMAIL_HOST_PASSWORD": os.getenv("EMAIL_HOST_PASSWORD_FOR_ZIARAH"),
-#         "EMAIL_USE_TLS": True,
-#     }
-
-#     SALES_FROM_EMAIL = "sales@dreamziarah.com"   # 👈 add this
 
 
 REST_FRAMEWORK = {

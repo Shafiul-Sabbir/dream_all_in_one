@@ -292,7 +292,7 @@ def get_or_create_traveller_data(traveller_info, errors):
 
             # Step 3.1: Send welcome email asynchronously via Celery
             dashboard_url = settings.TRAVELLER_DASHBOARD_URL
-            traveller_data['dashboard_url'] = dashboard_url
+            traveller_data['dashboard_url'] = dashboard_url.get(company.name)
             send_welcome_email_to_traveller_task.delay(traveller_data)
             print("✅ Welcome email sent to traveller.\n")
 
@@ -538,7 +538,14 @@ def complete_payment_by_stripe(tour_details, booking_response ):
         if settings.IS_LOCAL:
             success_url = f"http://192.168.68.111:3000/success?booking_id={booking_uuid}"
         else:
-            success_url = f"https://dreamziarah.com/success?booking_id={booking_uuid}"
+            company_name = Company.objects.get(id=booking_response['company']).name
+            print("company name from complete_payment_by_stripe : ", company_name)
+            if company_name == "IT":
+                success_url = f"https://dreamtourism.it/success?booking_id={booking_uuid}"
+            if company_name == "UK":
+                success_url = f"https://dreamtourism.co.uk/success?booking_id={booking_uuid}"
+            if company_name == "ZIARAH":
+                success_url = f"https://dreamziarah.com/success?booking_id={booking_uuid}"
 
         
         if tour_details['cancel_url'] is None:

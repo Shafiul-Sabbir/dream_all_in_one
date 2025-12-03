@@ -292,6 +292,8 @@ class TourBooking(models.Model):
     # booking_ticket & payment_invoice
     booking_ticket = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/tour_booking_ticket/"), null=True, blank=True)
     payment_invoice = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/payment_invoice/"), null=True, blank=True)
+    payment_invoice_without_price = models.FileField(upload_to=partial(get_image_upload_folder, subfolder="tour/payment_invoice_without_price/"), null=True, blank=True)
+
 
     # booking uuid 
     booking_uuid = models.CharField(max_length=100, unique=True, null=True, blank=True)

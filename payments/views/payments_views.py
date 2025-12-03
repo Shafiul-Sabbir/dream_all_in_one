@@ -256,6 +256,7 @@ def resendEmail(request):
     print("username : ", username)
 
     dashboard_url = settings.TRAVELLER_DASHBOARD_URL
+    dashboard_url = dashboard_url.get(company.name)
 
 
     # # generate new password as the previous one has not been received

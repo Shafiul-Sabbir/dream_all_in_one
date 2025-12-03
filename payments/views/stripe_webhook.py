@@ -53,8 +53,6 @@ def stripe_webhook(request):
     event_type = event.get("type")
     print(f"Stripe event type: {event_type}")
 
-    dashboard_url = settings.TRAVELLER_DASHBOARD_URL
-
     # ========== Handle Important Events ==========
     if event_type == 'checkout.session.completed':
         session = event['data']['object']
@@ -69,6 +67,10 @@ def stripe_webhook(request):
         if not tour_booking:
             print("❌ No booking found for this tour_booking_id")
         else:
+            company = tour_booking.company
+            dashboard_url = settings.TRAVELLER_DASHBOARD_URL
+            dashboard_url = dashboard_url.get(company.name)
+            
             booking_id = tour_booking.booking_id
             tour_name = tour_booking.tour.name 
             traveller_email = tour_booking.user.email

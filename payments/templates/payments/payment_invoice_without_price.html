@@ -80,8 +80,6 @@
                     <tr>
                         <th style="text-align: left; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Product</th>
                         <th style="text-align: center; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Participants</th>
-                        <th style="text-align: right; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Unit price</th>
-                        <th style="text-align: right; padding-bottom: 8px; border-bottom: 2px solid #000; font-weight: bold; font-size: 14px;">Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,35 +94,6 @@
 
                         </td>
                         <td style="padding: 15px 0; border-bottom: 1px solid #000; text-align: center; vertical-align: top;">{{ tour_booking.total_participants }}</td>
-                        <td style="padding: 15px 0; border-bottom: 1px solid #000; text-align: right; vertical-align: top;">
-                            {% if tour_booking.price_by_passenger %}
-                                ${{ tour_booking.price_per_person }}
-                            {% elif tour_booking.price_by_vehicle %}
-                                ${{ tour_booking.group_price }}
-                            {% else %}
-                                N/A
-                            {% endif %}
-                        </td>
-
-                        <td style="padding: 15px 0; border-bottom: 1px solid #000; text-align: right; vertical-align: top; font-weight: bold;">
-                            ${{ tour_booking.total_price }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Totals Section -->
-        <div style="margin-top: 20px; float: right; width: 250px;">
-            <table style="width: 100%; border-collapse: collapse;">
-                <tbody>
-                    <tr>
-                        <td style="text-align: right; padding: 8px; font-size: 18px;">Total:</td>
-                        <td style="text-align: right; padding: 8px; font-size: 22px; font-weight: bold;">${{ tour_booking.total_price }}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right; padding: 8px; font-size: 18px;">Paid:</td>
-                        <td style="text-align: right; padding: 8px; font-size: 22px; font-weight: bold;">${{ tour_booking.total_price }}</td>
                     </tr>
                 </tbody>
             </table>
