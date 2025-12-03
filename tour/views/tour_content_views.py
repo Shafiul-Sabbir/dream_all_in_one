@@ -203,8 +203,10 @@ def getATourBySlug(request, slug):
     Retrieve a specific tour by its slug.
     """
     print(f"Fetching tour with slug: {slug}")
+    company_id = request.query_params.get("company_id")
+    print("company_id : ",company_id)
     try:
-        tour = Tour.objects.get(slug=slug)
+        tour = Tour.objects.get(slug=slug, company=company_id)
     except Tour.DoesNotExist:
         print("Tour not found.")
         return Response({"error": "Tour not found"}, status=status.HTTP_404_NOT_FOUND)
