@@ -8,7 +8,11 @@ urlpatterns = [
 
     path('api/v1/load_tour/<int:company_id>/', views.load_Tour), 
 
+    path('api/v1/load_tour_from_cmsMenuContent_of_it_and_uk_/<int:company_id>/', views.load_Tour_from_cmsMenuContent_of_it_and_uk), 
+
     path('api/v1/load_tour_content_image/<int:company_id>/', views.load_TourContentImage), 
+
+    path('api/v1/load_tour_content_image_from_cmsMenucontentImage_of_it_and_uk/<int:company_id>/', views.load_TourContentImage_from_cmsMenucontentImage_of_it_and_uk), 
 
     path('api/v1/load_day_tour_price/<int:company_id>/', views.load_DayTourPrice), 
 

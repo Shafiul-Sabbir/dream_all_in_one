@@ -31,6 +31,7 @@ class Tour(models.Model):
     location_type = models.CharField(max_length=255, null=True, blank=True)
     inclution = models.TextField(null=True, blank=True)
     exclusion = models.TextField(null=True, blank=True)
+    url = models.CharField(max_length=10000, null=True, blank=True)
     cancellation = models.CharField(max_length=500, null=True, blank=True)
     meeting_point = models.CharField(max_length=500, null=True, blank=True)
     map_url = models.CharField(max_length=10000, null=True, blank=True)
@@ -55,11 +56,11 @@ class Tour(models.Model):
 
     tour_faq = models.TextField(null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    # created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    # created_at = models.DateTimeField(null=True, blank=True)
-    # updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
@@ -89,11 +90,11 @@ class TourContentImage(models.Model):
     update_image = models.BooleanField(default=False, null=True, blank=True)
     cloudflare_image_url = models.URLField(max_length=500, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    # created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    # created_at = models.DateTimeField(null=True, blank=True)
-    # updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)

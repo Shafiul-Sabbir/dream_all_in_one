@@ -186,6 +186,182 @@ def load_Tour(request, company_id):
 
     return Response({'message': 'Loading all Tour successfully.'}, status=200)
 
+from cms.models import CMSMenu, CMSMenuContent, CMSMenuContentImage
+@api_view(['POST'])
+def load_Tour_from_cmsMenuContent_of_it_and_uk(request, company_id):
+    company = Company.objects.get(id=company_id)
+    target_menu = CMSMenu.objects.get(name="Home", company=company_id)
+    if target_menu:
+        all_datas = CMSMenuContent.objects.filter(company=company_id, cms_menu=target_menu).all()  
+    count = 0
+    tour_obj = {}
+    for data in all_datas:
+        if data.duration is not None:
+            print("name : ", data.name)
+            tour_obj['old_id'] = data.id
+            tour_obj['company'] = company
+            tour_obj['name'] = data.name
+            tour_obj['description'] = data.description
+            tour_obj['order'] = data.position
+            tour_obj['slug'] = data.slug
+            tour_obj['published'] = data.published
+            tour_obj['duration'] = data.duration
+            tour_obj['group_size'] = data.group_size
+            tour_obj['location'] = data.location
+            tour_obj['tag'] = data.tag
+            tour_obj['reviews'] = data.reviews
+            tour_obj['inclution'] = data.inclution
+            tour_obj['exclusion'] = data.exclusion
+            tour_obj['url'] = data.url
+            tour_obj['cancellation'] = data.value
+            tour_obj['meeting_point'] = data.meetup_point
+            tour_obj['map_url'] = data.help_center
+            tour_obj['languages'] = data.languages
+            tour_obj['additional_info'] = data.additional_info
+            tour_obj['know_before_you_go'] = data.knw_before_go
+            tour_obj['is_bokun_url'] = data.is_bokun_url
+            tour_obj['tour_faq'] = data.faq
+            tour_obj['created_at'] = data.created_at
+            tour_obj['updated_at'] = data.updated_at
+            tour_obj['created_by'] = data.created_by
+            tour_obj['updated_by'] = data.updated_by
+            count += 1
+
+            # Dont touch this part until you are oversure to add data in the tour model of tour app.
+            # tour = Tour.objects.create(**tour_obj)
+            # tour.save()
+            # print("tour saved successfully...")
+            # print("tour id is : ", tour.id)
+
+            # print("tour object : ", tour_obj)
+    print("count : ", count)
+    # print("total data : ", all_datas.count())
+    return Response({'message': 'Loading all Tour successfully from it & uk.'}, status=200)
+
+# @api_view(['POST'])
+# def load_TourContentImage_from_cmsMenucontentImage_of_it_and_uk(request, company_id):
+#     company = Company.objects.get(id=company_id)
+#     target_menu = CMSMenu.objects.get(name="Tours", company=company_id)
+#     if not target_menu:
+#         return Response({'error': 'Tours menu not found'}, status=404)
+    
+#     all_content_images = CMSMenuContentImage.objects.filter(company=company_id, cms_menu=target_menu).all()
+#     print("total images : ", all_content_images.count())
+
+#     all_tours = Tour.objects.filter(company=company).all()
+#     all_tours_dict = {}
+#     for tour in all_tours:
+#         tour_id = tour.id
+#         tour_name = tour.name
+#         all_tours_dict[f'{tour_id}'] = tour_name
+
+#     image_data = {}
+#     for image in all_content_images:
+#         print(f"image id ->{image.id}, head -> {image.head} " )
+#         for key, values in all_tours_dict.items():
+#             if image.head == values:
+#                 tour_id = key
+#                 tour = Tour.objects.get(id=tour_id)
+#                 image_data['company'] = company
+#                 image_data['tour'] = tour
+#                 image_data['head'] = image.head
+#                 image_data['cloudflare_image_url'] = image.cloudflare_image_url
+#                 image_data['created_by'] = image.created_by
+#                 image_data['updated_by'] = image.updated_by
+#                 image_data['created_at'] = image.created_at
+#                 image_data['updated_at'] = image.updated_at
+
+#                 print("image data is : ", image_data)
+
+#                 # tour_content_image = TourContentImage.objects.create(**image_data)
+#                 # tour_content_image.save()
+        
+#                 # print("tour content image created successfully !!")
+#                 # print("tour content image id is : ", tour_content_image.id)
+
+
+#     return Response({'message': 'Loading all TourContentImages successfully from it & uk.'}, status=200)
+
+@api_view(['POST'])
+def load_TourContentImage_from_cmsMenucontentImage_of_it_and_uk(request, company_id):
+    try:
+        company = Company.objects.get(id=company_id)
+        target_menu = CMSMenu.objects.get(name="Tours", company=company_id)
+        
+        if not target_menu:
+            return Response({'error': 'Tours menu not found'}, status=404)
+        
+        all_content_images = CMSMenuContentImage.objects.filter(
+            company=company_id, 
+            cms_menu=target_menu
+        )
+        print(f"Total images: {all_content_images.count()}")
+        
+        # Tour name to Tour object mapping (direct lookup er jonno)
+        tours_by_name = {
+            tour.name: tour 
+            for tour in Tour.objects.filter(company=company)
+        }
+        
+        created_count = 0
+        skipped_count = 0
+        
+        for image in all_content_images:
+            print(f"Processing image id -> {image.id}, head -> {image.head}")
+            
+            # Direct lookup - O(1) complexity
+            tour = tours_by_name.get(image.head)
+            
+            if tour:
+                # Check if already exists (duplicate avoid korar jonno)
+                exists = TourContentImage.objects.filter(
+                    tour=tour,
+                    head=image.head,
+                ).exists()
+                
+                if exists:
+                    print(f"Image already exists for tour: {tour.name}")
+                    skipped_count += 1
+                    continue
+                
+                # Notun dictionary prottek match er jonno
+                image_data = {
+                    'company': company,
+                    'tour': tour,
+                    'head': image.head,
+                    'cloudflare_image_url': image.cloudflare_image,
+                    'created_by': image.created_by,
+                    'updated_by': image.updated_by,
+                    'created_at': image.created_at,
+                    'updated_at': image.updated_at
+                }
+                
+                print(f"Creating TourContentImage for tour: {tour.name}")
+                print(f"tour content image data is : {image_data}")
+                print('\n')
+                
+                tour_content_image = TourContentImage.objects.create(**image_data)
+                print(f"Successfully created with id: {tour_content_image.id}")
+                created_count += 1
+            else:
+                print(f"No matching tour found for head: {image.head}")
+                skipped_count += 1
+        
+        return Response({
+            'message': 'Loading completed successfully',
+            'created': created_count,
+            'skipped': skipped_count,
+            'total_processed': all_content_images.count()
+        }, status=200)
+        
+    except Company.DoesNotExist:
+        return Response({'error': 'Company not found'}, status=404)
+    except CMSMenu.DoesNotExist:
+        return Response({'error': 'Tours menu not found'}, status=404)
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return Response({'error': str(e)}, status=500)
+
 @api_view(['POST'])
 def load_TourContentImage(request, company_id):
     if company_id == 3:

@@ -18,7 +18,7 @@ class CMSMenu(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
     company = models.ForeignKey(Company, on_delete= models.CASCADE)
 
-    parent = models.ForeignKey('self', on_delete=models.PROTECT, related_name='children', null=True, blank=True)
+    parent = models.ForeignKey('self',on_delete=models.PROTECT,  related_name='children', null=True, blank=True)
     name = models.CharField(max_length=255)
     position = models.IntegerField(null=True, blank=True)
 
