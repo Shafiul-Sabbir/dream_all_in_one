@@ -298,31 +298,30 @@ def load_TourContentImage_from_cmsMenucontentImage_of_it_and_uk(request, company
         print(f"Total images: {all_content_images.count()}")
         
         # Tour name to Tour object mapping (direct lookup er jonno)
-        tours_by_name = {
-            tour.name: tour 
-            for tour in Tour.objects.filter(company=company)
-        }
+        tours_by_name = {}
+        for tour in Tour.objects.filter(company=company):
+            tours_by_name[tour.name] = tour
+
+        # tours_by_name = {
+        #     tour.name: tour 
+        #     for tour in Tour.objects.filter(company=company)
+        # }
+        # for key, value in tours_by_name.items():
+            # print(f"tour name : {key} and value is : {value}")
+            # print('\n')
         
+        print('\n')
         created_count = 0
         skipped_count = 0
         
         for image in all_content_images:
-            print(f"Processing image id -> {image.id}, head -> {image.head}")
+            # print(f"Processing image id -> {image.id}, head -> {image.head}")
             
             # Direct lookup - O(1) complexity
             tour = tours_by_name.get(image.head)
             
             if tour:
                 # Check if already exists (duplicate avoid korar jonno)
-                exists = TourContentImage.objects.filter(
-                    tour=tour,
-                    head=image.head,
-                ).exists()
-                
-                if exists:
-                    print(f"Image already exists for tour: {tour.name}")
-                    skipped_count += 1
-                    continue
                 
                 # Notun dictionary prottek match er jonno
                 image_data = {
@@ -336,12 +335,12 @@ def load_TourContentImage_from_cmsMenucontentImage_of_it_and_uk(request, company
                     'updated_at': image.updated_at
                 }
                 
-                print(f"Creating TourContentImage for tour: {tour.name}")
-                print(f"tour content image data is : {image_data}")
-                print('\n')
+                # print(f"Creating TourContentImage for tour: {tour.name}")
+                # print(f"tour content image data is : {image_data}")
+                # print('\n')
                 
-                tour_content_image = TourContentImage.objects.create(**image_data)
-                print(f"Successfully created with id: {tour_content_image.id}")
+                # tour_content_image = TourContentImage.objects.create(**image_data)
+                # print(f"Successfully created with id: {tour_content_image.id}")
                 created_count += 1
             else:
                 print(f"No matching tour found for head: {image.head}")
@@ -579,6 +578,61 @@ def load_TourItinerary(request, company_id):
                 print(f"Itinerary with old_id = {fields['old_id']} already exists. Skipping.")
 
     return Response({'message': 'Loading all Itinerary successfully.'}, status=200)
+from cms.models import Itinerary
+@api_view(['POST'])
+def load_TourItinerary_for_it_and_uk(request, company_id):
+    print("loading")
+    company = Company.objects.get(id=company_id)
+    all_itineraries = Itinerary.objects.filter(company=company_id).all()
+    print("number of itineraries : ", all_itineraries.count())
+
+    all_tours = Tour.objects.filter(company=company_id).all()
+    print("total tours : ", all_tours.count())
+    all_tour_by_name = {
+        tour.name : tour
+        for tour in all_tours
+    }
+
+    print("all_tour_by_name : ", all_tour_by_name)
+    print('\n')
+    matched = 0
+    skipped = 0
+        
+    for itinerary in all_itineraries:
+        cms_content_name = itinerary.cms_content.name
+        print("cms content name : ", cms_content_name)
+        tour = all_tour_by_name.get(cms_content_name)
+        itinerary_data = {}
+        if tour:
+            print(f"for tour id {tour.id} itinerary found for id {itinerary.id}")
+            itinerary_data['company'] = company
+            itinerary_data['tour'] = tour
+            itinerary_data['title'] = itinerary.title
+            itinerary_data['description'] = itinerary.description
+            itinerary_data['location'] = itinerary.location
+            itinerary_data['lat'] = itinerary.lat
+            itinerary_data['long'] = itinerary.lng
+            itinerary_data['created_at'] = itinerary.created_at
+            itinerary_data['updated_at'] = itinerary.updated_at
+            itinerary_data['created_by'] = itinerary.created_by
+            itinerary_data['updated_by'] = itinerary.updated_by
+
+            matched += 1
+            # print("itinerary data : ", itinerary_data)
+            # instance = TourItinerary.objects.create(**itinerary_data)
+            # instance.save()
+            # print(f"tour itinerary created successfully for itinerary id : {instance.id}")
+            print('\n')
+        else:
+            print(f"tour not found for this itinerary, itinerary id {itinerary.id}.")
+            skipped += 1
+        print('\n')
+
+    return Response({
+        'message': 'Loading all Itinerary successfully.',
+        'matched' : matched,
+        'skipped': skipped
+        }, status=200)
 
 @api_view(['POST'])
 def load_CancellationPolicy(request, company_id):
@@ -773,11 +827,142 @@ def handle_payment_field_for_TourBooking(request, company_id):
 
 
 
+@api_view(['POST'])
+def load_thumbnail_image(request, company_id):
+    print("loading thumbnail images.")
+    if company_id == 1:
+        file_path = 'all_json/tour/it/thumbnail_images.json'
+    elif company_id == 2:
+        file_path = 'all_json/tour/uk/thumbnail_images.json'
+    
+    company_instance = Company.objects.get(id=company_id)  
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_images = json.load(file)
+        print("all images : ", all_images)
+
+        all_tours = Tour.objects.filter(company=company_id).all()
+        print("total tours : ", all_tours.count())
+        all_tour_by_name = {
+            tour.name : tour
+            for tour in all_tours
+        }
+
+        for key, value in all_images.items():
+            tour = all_tour_by_name.get(key)
+            if tour:
+                print(f"for tour {tour.id} image is {value[0]}")
+                tour.thumbnail_image = None
+                tour.cloudflare_thumbnail_image_url = value[0]
+                tour.save()
+                print(f"tour id {tour.id} updated successfully.")
+                print('\n')
+
+    return Response({'message': 'Loading all Thumbnail images for Tours successfully.'}, status=200)
 
 
+@api_view(['POST'])
+def load_TourContentImage_for_exceptional_case(request, company_id):
+    print("loading thumbnail images.")
+    if company_id == 2:
+        file_path = 'all_json/cms/uk/cms_CMSMenuContentImage_uk.json'
+    
+    company_instance = Company.objects.get(id=company_id) 
+
+    image_list = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        all_images = json.load(file)
+        for image in all_images:
+            if image['pk'] >=256 and image['pk'] <= 264:
+                image_list.append(image)
+        # print("all images : ", all_images)
+        print("image list : ", image_list)
+
+        target_tour = Tour.objects.get(company=company_id, name="Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia")
+        print("target tour : ", target_tour)
+
+        image_data = {}
+        for image in image_list:
+            fields = image.get('fields')
+            image_data['company'] = company_instance
+            image_data['tour'] = target_tour
+            image_data['head'] = fields.get('head')
+            image_data['cloudflare_image_url'] = fields.get('cloudflare_image')
+
+            image_data['created_at'] = fields.get('created_at')
+            image_data['updated_at'] = fields.get('updated_at')
+
+            # handle created_by and updated_by fields
+            created_by_old_id = fields.get('created_by')
+            updated_by_old_id = fields.get('updated_by')
+            if created_by_old_id:
+                try:
+                    created_by_user = User.objects.get(old_id=created_by_old_id, company=company_instance)
+                    fields['created_by'] = created_by_user
+                except User.DoesNotExist:
+                    fields['created_by'] = None
+            else:
+                fields['created_by'] = None
+
+            if updated_by_old_id:
+                try:
+                    updated_by_user = User.objects.get(old_id=updated_by_old_id, company=company_instance)
+                    fields['updated_by'] = updated_by_user
+                except User.DoesNotExist:
+                    fields['updated_by'] = None
+            else:
+                fields['updated_by'] = None
+
+            # instance = TourContentImage.objects.create(**image_data)
+            # instance.save()
+            # print(f"image data saved successfully. id is -> {instance.id} ")
+
+            # print("image data is : ", image_data)
 
 
+    return Response({'message': 'Loading all Thumbnail images for Tours successfully.'}, status=200)
+
+from cms.models import MetaData
+@api_view(['POST'])
+def load_meta_data(request, company_id):
+    company = Company.objects.get(id=company_id)
+    all_meta_data = MetaData.objects.filter(company=company).all()
+    print("total meta data : ", all_meta_data.count())
+
+    all_tours = Tour.objects.filter(company=company).all()
+    print("all tours : ", all_tours.count())
+
+    get_tour_by_name = {
+        tour.name : tour
+        for tour in all_tours
+    }
+    processed = 0
+    skipped = 0
+    for meta_data in all_meta_data:
+        meta_data_obj = {}
+        tour = get_tour_by_name.get(meta_data.cms_content.name)
+        if tour:
+            print(f"for tour id {tour.id} meta image url is {meta_data.cloudflare_image}")
+            tour.meta_title = meta_data.meta_title
+            tour.meta_description = meta_data.meta_description
+            tour.cloudflare_meta_image_url = meta_data.cloudflare_image
+            tour.meta_slug = meta_data.slug
+            tour.save()
+            print(f"tour instance updated successfull {tour.id}")
+
+            # print("meta title :", meta_data.meta_title)
+            # print("meta description :", meta_data.meta_description)
+            # print("meta image url :", meta_data.cloudflare_image)
+            # print("meta slug :", meta_data.slug)
+
+            processed += 1
+        else:
+            print(f"No tour found for this meta data. meta content is {meta_data.cms_content.name}")
+            skipped += 1
 
 
-
-
+    return Response({'message': 'Loading all meta data for Tours successfully.',
+                     "all_meta_data" : all_meta_data.count(),
+                     "processed" : processed,
+                     "skipped" : skipped
+                     }, status=200)

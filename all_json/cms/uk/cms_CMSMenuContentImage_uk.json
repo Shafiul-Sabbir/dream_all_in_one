@@ -2042,5 +2042,145 @@
       "created_by": 3,
       "updated_by": 3
     }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 255,
+    "fields": {
+      "cms_menu": 1,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/New-Year-Tour-25-26.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/ed678e50-72ff-4d7e-a57c-a07a0c507400/public",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 256,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Alhambra_Palace.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/fd3f79e4-40f7-40c6-b174-580825ea3400/public",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 257,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Camp_Nou.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/50469f84-ef4c-4e1e-db61-342ddb456900/public",
+      "created_at": "2025-11-12T06:5:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 258,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Giralda_Tower.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/b5f91b6a-01f7-40dc-cb6f-6b5c4bdd4300/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 259,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Great_Mosque_of_Cordoba.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/9a931de1-bec8-453c-915a-ceb86f115c00/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 260,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Park_Guell_.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/56dbf6c3-2370-4419-2f49-09c6abe78000/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 261,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Real_Alcazar_.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/fe5329ec-465f-4d20-a93e-728f7f6c0000/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 262,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Sagrada_Familia.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/861fe09e-9576-41a8-b1b7-ad602ac77400/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 263,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Seville_Cathedral.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/cb6df852-97c9-40ed-6c93-87309872fa00/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
+  },
+  {
+    "model": "cms.cmsmenucontentimage",
+    "pk": 264,
+    "fields": {
+      "cms_menu": 12,
+      "head": "Celebrate New Year in Barcelona & Explore the Timeless Muslim Heritage of Andalusia",
+      "image": "cms/ContentImage/Magic_Fountain_of_Montjuic.jpg",
+      "cloudflare_image": "https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/d0ef6f73-9d7f-4ba6-4108-f983d0b8ed00/v1",
+      "created_at": "2025-11-12T06:55:00.382Z",
+      "updated_at": "2025-11-12T06:55:00.382Z",
+      "created_by": 3,
+      "updated_by": 3
+    }
   }
 ]

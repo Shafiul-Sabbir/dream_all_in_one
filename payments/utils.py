@@ -535,10 +535,16 @@ def complete_payment_by_stripe(tour_details, booking_response ):
         print("is local : ", settings.IS_LOCAL)
         booking_uuid = str(booking_response['booking_uuid'])
         print("booking_uuid : ", booking_uuid)
+        company_name = Company.objects.get(id=booking_response['company']).name
         if settings.IS_LOCAL:
-            success_url = f"http://192.168.68.111:3000/success?booking_id={booking_uuid}"
+            print("company name from complete_payment_by_stripe : ", company_name)
+            if company_name == "IT":
+                success_url = f"http://192.168.0.143:3001/success?booking_id={booking_uuid}"
+            if company_name == "UK":
+                success_url = f"http://192.168.0.143:3000/success?booking_id={booking_uuid}"
+            if company_name == "ZIARAH":
+                success_url = f"http://192.168.0.143:3002/success?booking_id={booking_uuid}"
         else:
-            company_name = Company.objects.get(id=booking_response['company']).name
             print("company name from complete_payment_by_stripe : ", company_name)
             if company_name == "IT":
                 success_url = f"https://dreamtourism.it/success?booking_id={booking_uuid}"

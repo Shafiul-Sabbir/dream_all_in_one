@@ -53,6 +53,7 @@ class Tour(models.Model):
     cloudflare_meta_image_url = models.URLField(max_length=500, null=True, blank=True)
     meta_title = models.CharField(max_length=500, null=True, blank=True)
     meta_description = models.TextField(null=True, blank=True)
+    meta_slug = models.SlugField(max_length=255, null=True, blank=True)
 
     tour_faq = models.TextField(null=True, blank=True)
 
@@ -330,11 +331,11 @@ class TourItinerary(models.Model):
     lat = models.FloatField(max_length=1000, null=True, blank=True)
     long = models.FloatField(max_length=1000, null=True, blank=True)   
 
-    created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
-    updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
+    # created_at = models.DateTimeField(auto_now_add=True,null=True, blank=True)
+    # updated_at = models.DateTimeField(auto_now=True,null=True, blank=True)
 
-    # created_at = models.DateTimeField(null=True, blank=True)
-    # updated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
