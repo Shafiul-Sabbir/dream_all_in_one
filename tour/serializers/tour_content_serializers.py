@@ -3,7 +3,7 @@ from rest_framework import serializers
 from tour.models import CancellationPolicy, PenaltyRules, TourItinerary, Tour, DayTourPrice, AvailableDate, AvailableTime, TourContentImage
 from datetime import datetime
 from django_currentuser.middleware import get_current_authenticated_user
-from utils.utils import upload_to_cloudflare
+from utils.utils import upload_to_cloudflare, generate_slug
 from tour.serializers.tour_itinerary_serializers import TourItineraryListSerializer, TourItinerarySerializer
 
 class AvailableDateSerializer(serializers.ModelSerializer):
@@ -398,7 +398,25 @@ class TourSerializer(serializers.ModelSerializer):
             print("cloudflare_meta_image_url from create method of TourSerializer:", validated_data['cloudflare_meta_image_url'])
         print('\n')
 
+        # handle slug, creating from tour name.
+        slug = validated_data.get('slug', None)
+        name = validated_data.get('name', None)
+        if slug:
+            pass
+        else:
+            if name is not None:
+                count = 1
+                clean_name = generate_slug(name)
+                slug = clean_name
+                while Tour.objects.filter(company=company, slug=slug).exists():
+                    slug = f"{clean_name}-{count}"
+                    count += 1
+                validated_data['slug'] = slug
+
+            print("slug generated from given tour name.")
+
         print("validated data from create method of TourSerializer:", validated_data)
+
         tour = Tour.objects.create(
             **validated_data)
         print("Tour created:", tour)

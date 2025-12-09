@@ -75,8 +75,6 @@ class Tour(models.Model):
 
     def __str__(self):
         return self.name
-    
-    # we will uncomment after running the script
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
