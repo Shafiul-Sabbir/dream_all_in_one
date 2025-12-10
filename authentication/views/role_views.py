@@ -145,6 +145,7 @@ def createRole(request):
 	if name is not None:
 		try:
 			name = str(name).upper()
+			filtered_data['name'] = name
 			role = Role.objects.get(name=name)
 			return Response({'detail': f"Role with name '{name}' already exists."})
 		except Role.DoesNotExist:

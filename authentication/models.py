@@ -61,17 +61,17 @@ class Permission(models.Model):
 
 
 class Role(models.Model):
-    old_id = models.IntegerField(null=True, blank=True) # Removed to avoid confusion with global roles
-    company = models.ForeignKey(Company, on_delete= models.CASCADE) # Removed to make roles global across companies    
+    # old_id = models.IntegerField(null=True, blank=True) # Removed to avoid confusion with global roles
+    # company = models.ForeignKey(Company, on_delete= models.CASCADE) # Removed to make roles global across companies    
 
     name = models.CharField(max_length=255)
-    permissions = models.ManyToManyField(Permission, blank=True)
+    # permissions = models.ManyToManyField(Permission,null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)

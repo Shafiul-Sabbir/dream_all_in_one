@@ -26,6 +26,48 @@ class Traveller(models.Model):
         verbose_name_plural = 'Travellers'
         ordering = ('-created_at', )
 
+class Agent(models.Model):
+    class Types(models.TextChoices):
+        PERCENTAGE = ('percentage', 'Percentage')
+        VALUE = ('value', 'Value')
+
+    old_id = models.IntegerField(null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete= models.CASCADE)
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='agent_profile')
+    phone = models.CharField(max_length=50, blank=True, null=True)
+
+    # coupon part for agent table.
+    coupon_text = models.CharField(max_length=255, null=True, blank=True,unique=True)
+    discount_type = models.CharField(max_length=20, choices=Types.choices, default=Types.PERCENTAGE, null=True, blank=True)
+    discount_percentage = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    discount_value = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    coupon_start_date = models.DateField(null=True, blank=True)
+    coupon_end_date = models.DateField(null=True, blank=True)
+
+    # reference number part for agent table.  
+    reference_no =  models.CharField(max_length=255, null=True, blank=True)
+    commission_type = models.CharField(max_length=20, choices=Types.choices, default=Types.PERCENTAGE, null=True, blank=True)
+    commission_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True,default=5.00)
+    commission_value = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+
+
+    created_by = models.CharField(max_length=255, blank=True, null=True)
+    updated_by = models.CharField(max_length=255, blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name} "
+
+    class Meta:
+        verbose_name_plural = 'Travellers'
+        ordering = ('-created_at', )
+
 
 class Payment(models.Model):
     old_id = models.IntegerField(null=True, blank=True)
