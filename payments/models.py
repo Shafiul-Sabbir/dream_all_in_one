@@ -65,7 +65,7 @@ class Agent(models.Model):
         return f"{self.user.first_name} {self.user.last_name} "
 
     class Meta:
-        verbose_name_plural = 'Travellers'
+        verbose_name_plural = 'Agents'
         ordering = ('-created_at', )
 
 

@@ -368,11 +368,11 @@ class User(AbstractBaseUser):
 
     cloudflare_image_url = models.URLField(max_length=1000, null=True, blank=True)
 
-    # created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    # updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
-    created_at = models.DateTimeField(null=True, blank=True)
-    updated_at = models.DateTimeField(null=True, blank=True)
+    # created_at = models.DateTimeField(null=True, blank=True)
+    # updated_at = models.DateTimeField(null=True, blank=True)
     
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.SET_NULL, related_name="+", null=True, blank=True)

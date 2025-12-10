@@ -42,10 +42,10 @@ urlpatterns = [
     path('city/', include('authentication.urls.city_urls')),
 
 
-	# CMS menu
-	path('cms_menu/', include('cms.urls.cms_menu_urls')),
-	path('cms_menu_content/', include('cms.urls.cms_menu_content_urls')),
-	path('cms_menu_content_image/', include('cms.urls.cms_menu_content_image_urls')),
+    # CMS menu
+    path('cms_menu/', include('cms.urls.cms_menu_urls')),
+    path('cms_menu_content/', include('cms.urls.cms_menu_content_urls')),
+    path('cms_menu_content_image/', include('cms.urls.cms_menu_content_image_urls')),
 
     # cms blog
     path('cms_blog/', include('cms.urls.cms_blog_urls')),
@@ -75,31 +75,32 @@ urlpatterns = [
     # payments
     path('payments/', include('payments.urls.payments_urls')),
     path('stripe_payments/', include('payments.urls.stripe_urls')),
+    path('agents/', include('payments.urls.agent_urls')),
 
 
     # adding email
     path('email/', include('cms.urls.email_urls')),
     path('send-email/', include('cms.urls.send_email_urls')),
 
-	# Site Settings module
-	path('general_setting/', include('site_settings.urls.general_setting_urls')),
-	path('homepage_slider/', include('site_settings.urls.homepage_slider_urls')),
+    # Site Settings module
+    path('general_setting/', include('site_settings.urls.general_setting_urls')),
+    path('homepage_slider/', include('site_settings.urls.homepage_slider_urls')),
 
 
-	# Support module
-	path('ticket_department/', include('support.urls.ticket_department_urls')),
-	path('ticket_priority/', include('support.urls.ticket_priority_urls')),
-	path('ticket_status/', include('support.urls.ticket_status_urls')),
-	path('ticket/', include('support.urls.ticket_urls')),
-	path('ticket_detail/', include('support.urls.ticket_detail_urls')),
+    # Support module
+    path('ticket_department/', include('support.urls.ticket_department_urls')),
+    path('ticket_priority/', include('support.urls.ticket_priority_urls')),
+    path('ticket_status/', include('support.urls.ticket_status_urls')),
+    path('ticket/', include('support.urls.ticket_urls')),
+    path('ticket_detail/', include('support.urls.ticket_detail_urls')),
 
-	path('message/', include('support.urls.message_urls')),
+    path('message/', include('support.urls.message_urls')),
 
-	path('task_type/', include('support.urls.task_type_urls')),
-	path('todo_task/', include('support.urls.todo_task_urls')),
+    path('task_type/', include('support.urls.task_type_urls')),
+    path('todo_task/', include('support.urls.todo_task_urls')),
 
 
-	# YOUR PATTERNS
+    # YOUR PATTERNS
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
     path('schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
@@ -108,6 +109,6 @@ urlpatterns = [
     path('djoser/auth/', include('djoser.urls')),
     path('djoser/auth/', include('djoser.urls.jwt')),
 
-	re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 ]
