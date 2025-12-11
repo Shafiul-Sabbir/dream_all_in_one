@@ -24,11 +24,21 @@ def createAgent(request):
 
     if user:
         print("user is : ", user)
+        if user.role.name == "TRAVELLER" or user.role.name == "ADMIN":
+            user_id = user.id
+            return Response({
+                "message" : "User with this email already exists but not as an Agent.",
+                "user_id": user_id
+            }, status=400)
+        
         agent = Agent.objects.filter(company=company_id, user=user).first()
         if agent:
+            agent_id = agent.id
             return Response({
-                "message" : "Both User & Agent with this email is already exists. "
-            })
+                "message" : "Both User & Agent with this email is already exists.",
+                "agent_id": agent_id
+            }, status=200)
+        
         else:
             agent_data = {}
             agent_data['company'] = company.id
@@ -139,11 +149,21 @@ def simpleAgentCreation(request):
 
     if user:
         print("user is : ", user)
+        if user.role.name == "TRAVELLER" or user.role.name == "ADMIN":
+            user_id = user.id
+            return Response({
+                "message" : "User with this email already exists but not as an Agent from simple agent creation.",
+                "user_id": user_id
+            }, status=400)
+        
         agent = Agent.objects.filter(company=company_id, user=user).first()
         if agent:
+            agent_id = agent.id
             return Response({
-                "message" : "Both User & Agent with this email is already exists . "
-            })
+                "message" : "Both User & Agent with this email is already exists.",
+                "agent_id": agent_id
+            }, status=200)
+        
         else:
             agent_data = {}
             agent_data['company'] = company.id
@@ -219,17 +239,13 @@ def simpleAgentCreation(request):
 def updateAgent(request, pk):
     data = request.data
     print("data : ", data)
-    company = Company.objects.get(id=data.get('company_id', None))
-    print("company is : ", company)
     user_data = {
-        'company': company,
         'first_name': data.get('first_name', None),
         'last_name': data.get('last_name', None),
         'primary_phone': data.get('phone', None),
         'username': data.get('username', None),
     }
     agent_data = {
-        'company': company,
         'phone': data.get('phone', None),
         'coupon_text': data.get('coupon_text', None), 
         'discount_type': data.get('discount_type', None), 

@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 import requests
-from payments.models import Traveller
+from payments.models import Agent, Traveller
 from authentication.models import User, Company
 from django.contrib.auth import get_user_model
 import re
@@ -224,6 +224,7 @@ class TourBooking(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="tour_bookings", null=True, blank=True)
     guide = models.CharField(max_length=20, null=True, blank=True)
 
+    agent = models.ForeignKey(Agent, on_delete=models.CASCADE, related_name="tour_bookings", null=True, blank=True)
     traveller = models.ForeignKey(Traveller, on_delete=models.CASCADE, related_name="tour_bookings", null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tour_bookings", null=True, blank=True)
 
@@ -252,7 +253,9 @@ class TourBooking(models.Model):
     group_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
     total_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-
+    booked_by = models.CharField(max_length=50, null=True, blank=True)  # 'agent_itself', 'traveller_itself', 'using_coupon_text' or 'using_reference_no'.
+    commissioned_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)  # Commissioned amount for agent
+    
     # Payment tracking
     status = models.CharField(
         max_length=50,

@@ -26,6 +26,7 @@ def createCheckout(request):
     checkout_data = request.data
     traveller_info = checkout_data.get('traveller_info')
     tour_details = checkout_data.get('tour_details')
+    discount_or_commission_details = checkout_data.get('discount_or_commission_details', {})
 
     required = ['company','first_name', 'last_name', 'email', 'phone', 'acceptOffers']
     if not all(field in traveller_info for field in required):
@@ -47,7 +48,7 @@ def createCheckout(request):
     # 3 : get the tour from the checkout_data
     # 4 : Validate total participants and calculate total price
     # 5 : Create a booking for the tour
-    booking_response = checking_tour_and_creating_booking(tour_details, traveller_data)
+    booking_response = checking_tour_and_creating_booking(discount_or_commission_details, tour_details, traveller_data)
     if booking_response.get("errors"):
         return Response({
             "status": "error",

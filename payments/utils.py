@@ -3,6 +3,7 @@ from decimal import Decimal
 import secrets
 import string
 import re
+from urllib import response
 import uuid
 from django.http import JsonResponse
 from django.utils import timezone
@@ -12,7 +13,7 @@ from django.conf import settings
 from rest_framework.response import Response
 import stripe
 from authentication.models import Role, User, Company
-from payments.models import Traveller
+from payments.models import Traveller, Agent
 from payments.tasks import send_welcome_email_to_traveller_task
 from tour.models import AvailableDate, AvailableTime, Tour, TourBooking
 from tour.serializers.tour_booking_serializers import TourBookingSerializer
@@ -152,6 +153,90 @@ def generate_invoice_id(selected_date, booking_id):
 
     return f"DZ-I{day}{month}{year}{booking_id}"
 
+def calculate_discount_or_commission(user_id, total_price, discount_or_commission_details):
+    """
+    Calculate the final price after applying discount or commission.
+    discount_or_commission_details: {
+        "type": "DISCOUNT" or "COMMISSION",
+        "method": "FIXED" or "PERCENTAGE",
+        "value": Decimal value
+    }
+    """
+    coupon_or_reference_no = discount_or_commission_details.get("coupon_or_reference_no", False)
+    is_coupon = discount_or_commission_details.get("is_coupon", False)
+    coupon_text = discount_or_commission_details.get("coupon_text", None)
+    reference_no = discount_or_commission_details.get("reference_no", None)
+
+    booked_by = None
+
+    user = User.objects.get(id=user_id)
+    company = user.company
+    role = user.role.name
+
+    print(f"user is : {user.email}, role is : {role}")
+
+    agent = Agent.objects.filter(user=user, company=company).first()
+    traveller = Traveller.objects.filter(user=user, company=company).first()
+
+    if role == "AGENT": # that means user is an agent. and commission will be applied.
+        commission_type = agent.commission_type
+        if commission_type == "percentage":
+            commission_percentage = agent.commission_percentage
+            commissioned_amount = ((commission_percentage / Decimal(100)) * total_price).quantize(Decimal('0.01'))
+        else:
+            commission_value = agent.commission_value
+            commissioned_amount = commission_value
+
+        booked_by = "agent_itself"
+
+    if role == "TRAVELLER":
+        if coupon_or_reference_no == True: #that means traveller sends a coupon or reference no.
+            if is_coupon == True: #that means traveller sends a coupon code.
+                print("coupon_text is : ", coupon_text)
+                agent = Agent.objects.filter(company=company, coupon_text=coupon_text).first()
+                if agent:
+                    print("agent found using coupon_text.")
+                    discount_type = agent.discount_type
+                    if discount_type == "percentage":
+                        discount_percentage = agent.discount_percentage
+                        discounted_amount = ((discount_percentage / Decimal(100)) * total_price).quantize(Decimal('0.01'))
+                        commissioned_amount = discounted_amount / 2
+                        total_price -= commissioned_amount
+                    else:
+                        discount_value = agent.discount_value
+                        discounted_amount = discount_value
+                        commissioned_amount = discounted_amount / 2
+                        total_price -= commissioned_amount
+                    
+                    booked_by = "using_coupon_text"
+
+            else: #that means traveller sends a reference no.
+                agent = Agent.objects.filter(company=company, reference_no=reference_no).first()
+                if agent:
+                    commission_type = agent.commission_type
+                    if commission_type == "percentage":
+                        commission_percentage = agent.commission_percentage
+                        commissioned_amount = ((commission_percentage / Decimal(100)) * total_price).quantize(Decimal('0.01'))
+                    else:
+                        commission_value = agent.commission_value
+                        commissioned_amount = commission_value
+                    booked_by = "using_reference_no"
+        else: #that means traveller does not send any coupon or reference no. So normal price will be applied.
+            commissioned_amount = Decimal(0.00)
+            booked_by = "traveller_itself"
+
+    print("booked_by : ", booked_by)
+    print("final commissioned_amount is : ", commissioned_amount)
+    print("final total_price is : ", total_price)
+
+    response = {
+        "final_price": total_price,
+        "commissioned_amount": commissioned_amount,
+        "booked_by": booked_by
+    }
+    return response
+
+
     
 
 def get_or_create_traveller_data(traveller_info, errors):
@@ -183,10 +268,35 @@ def get_or_create_traveller_data(traveller_info, errors):
         user = User.objects.filter(email=email, company=company).first()
 
         if user:
-            # Step 2: If user exists, check for Traveller
-            traveller = Traveller.objects.filter(user=user, company=company).first()
+            # Step 2: If user exists, check for Traveller or agent.
+            role = user.role.name
+            agent = None
+            traveller = None
 
-            if traveller:
+            if role == "AGENT":
+                agent = Agent.objects.filter(user=user, company=company).first()
+            else: # role == "TRAVELLER" or "ADMIN" cause role Agent baad e onno j kono kisu hoilei she akjon normal traveller hishebe kaj korbe.
+                traveller = Traveller.objects.filter(user=user, company=company).first()
+
+            if agent: # jodi user ta Agent hoy tahole she traveller na but tar info guloke traveller_data hishebe return korbo.
+                # Agent already exists
+                traveller_data = {
+                    "company": company.name,
+                    "agent_id": agent.id,
+                    "user_id": user.id,
+                    "first_name": user.first_name,
+                    "last_name": user.last_name,
+                    "username": user.username,
+                    "password": "********",  # Hide real password
+                    "email": user.email,
+                    "phone": agent.phone,
+                    "created_by": agent.created_by,
+                    "updated_by": agent.updated_by,
+                    "created_at": agent.created_at,
+                    "updated_at": agent.updated_at,
+                }
+
+            elif traveller:
                 # Traveller already exists
                 traveller_data = {
                     "company": company.name,
@@ -206,7 +316,7 @@ def get_or_create_traveller_data(traveller_info, errors):
                 }
 
             else:
-                # Step 2.1: Traveller doesn’t exist → create traveller for this user
+                # Step 2.1: if Agent or Traveller doesn’t exist for this user → create traveller for this user
                 username = user.username or get_unique_username(user.first_name, user.last_name)
                 role = user.role or Role.objects.get_or_create(name="TRAVELLER")
 
@@ -308,7 +418,7 @@ def get_or_create_traveller_data(traveller_info, errors):
         "traveller_data": traveller_data if not errors else None,
     }
 
-def checking_tour_and_creating_booking(tour_details, traveller_data):
+def checking_tour_and_creating_booking(discount_or_commission_details, tour_details, traveller_data):
     errors = []
     booking_response = {}
 
@@ -318,6 +428,7 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
     guide = tour_details.get('guide')
     company = traveller_data.get('company')
     company = Company.objects.get(name=company)
+    user_id = traveller_data.get('user_id')
 
 
     print("selected date is :", selected_date)
@@ -414,6 +525,13 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
         errors.append("Tour pricing method is not defined.")
         return {"errors": errors}
     
+    # handle discount or commission, and final price calculation
+    discount_or_commission_response = calculate_discount_or_commission(user_id, total_price, discount_or_commission_details)
+    total_price = discount_or_commission_response.get("final_price")
+    commissioned_amount = discount_or_commission_response.get("commissioned_amount")
+    booked_by = discount_or_commission_response.get("booked_by")
+
+    # validate total price
     if given_total_price != total_price:
         errors.append(f"You have to pay {total_price} USD only.")
         return {"errors": errors}
@@ -433,7 +551,8 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
             "company": company.id,
             "tour": tour.id,        
             "guide": guide,
-            "traveller": traveller_data['traveller_id'],
+            "agent": traveller_data.get('agent_id', None),
+            "traveller": traveller_data.get('traveller_id', None),
             "user": traveller_data['user_id'],
             "total_participants": total_participants,
             "selected_date": selected_date,
@@ -443,6 +562,8 @@ def checking_tour_and_creating_booking(tour_details, traveller_data):
             "price_by_vehicle": tour.price_by_vehicle,
             "group_price": group_price if tour.price_by_vehicle else Decimal(0.00),
             "total_price": total_price,
+            "booked_by": booked_by,
+            "commissioned_amount": commissioned_amount,
             "created_by": traveller_data['username'],
             "updated_by": traveller_data['username'],
         }
