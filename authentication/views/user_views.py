@@ -114,7 +114,7 @@ class LoginView(APIView):
             ).first()
         print("user:", user)
         if not user:
-            return Response({"detail": "No user found ith this credentials for this company id for login "}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"detail": "No user found with this credentials for this company id for login."}, status=status.HTTP_401_UNAUTHORIZED)
         
         user = authenticate(request, login_input=login_input, password=password, company_id=company_id)
         if user is None:

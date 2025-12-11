@@ -383,7 +383,7 @@ class User(AbstractBaseUser):
     REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'primary_phone', 'company']
 
     class Meta:
-        ordering = ('first_name', '-created_at',)
+        ordering = ('-id', '-created_at',)
         constraints = [
             models.UniqueConstraint(fields=['email', 'company'], name='unique_email_per_company')
         ]

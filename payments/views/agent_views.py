@@ -213,3 +213,88 @@ def simpleAgentCreation(request):
                 "message": "agent creation failed...",
                 "errors" : serializer.errors
             }, status=400)
+        
+
+@api_view(['PUT'])
+def updateAgent(request, pk):
+    data = request.data
+    print("data : ", data)
+    company = Company.objects.get(id=data.get('company_id', None))
+    print("company is : ", company)
+    user_data = {
+        'company': company,
+        'first_name': data.get('first_name', None),
+        'last_name': data.get('last_name', None),
+        'primary_phone': data.get('phone', None),
+        'username': data.get('username', None),
+    }
+    agent_data = {
+        'company': company,
+        'phone': data.get('phone', None),
+        'coupon_text': data.get('coupon_text', None), 
+        'discount_type': data.get('discount_type', None), 
+        'discount_percentage': data.get('discount_percentage', None), 
+        'discount_value': data.get('discount_value', None), 
+        'coupon_start_date': data.get('coupon_start_date', None), 
+        'coupon_end_date': data.get('coupon_end_date', None), 
+        'reference_no': data.get('reference_no', None), 
+        'commission_type': data.get('commission_type', None), 
+        'commission_percentage': data.get('commission_percentage', None), 
+        'commission_value': data.get('commission_value', None), 
+    }
+    try:
+        agent = Agent.objects.get(id=pk)
+        print("agent to be updated : ", agent)
+    except Agent.DoesNotExist:
+        return Response({"message": "Agent not found."}, status=404)
+    
+    user = agent.user
+    print("associated user to be updated : ", user)
+
+    for attr, value in user_data.items():
+        setattr(user, attr, value)
+    user.save()
+    print("user updated successfully...")
+
+    for attr, value in agent_data.items():
+        setattr(agent, attr, value)
+    agent.save()
+    print("agent updated successfully...")
+
+    return Response({"message": "agent and its associated user updated successfully..."}, status=200)
+
+@api_view(['GET'])
+def getAnAgent(request, pk):
+    try:
+        agent = Agent.objects.get(id=pk)
+        print("agent found : ", agent)
+    except Agent.DoesNotExist:
+        return Response({"message": "Agent not found."}, status=404)
+    
+    serializer = AgentListSerializer(agent)
+    return Response({"agent_data": serializer.data}, status=200)
+
+@api_view(['GET'])
+def getAllAgent(request):
+    company_id = request.query_params.get('company_id', None)
+    print("company id is : ", company_id)
+    if company_id:
+        agents = Agent.objects.filter(company=company_id).order_by('-id')
+        print(f"total agents found: {agents.count()}")
+        serializer = AgentListSerializer(agents, many=True)
+        return Response({"agents_data": serializer.data}, status=200)
+    else:
+        return Response({"message": "company_id query parameter is required."}, status=400)
+
+
+@api_view(['DELETE'])
+def deleteAgent(request, pk):
+    try:
+        agent = Agent.objects.get(id=pk)
+        print("agent to be deleted : ", agent)
+    except Agent.DoesNotExist:
+        return Response({"message": "Agent not found."}, status=404)
+    
+    agent.delete()
+    print("agent deleted successfully...")
+    return Response({"message": "agent deleted successfully..."}, status=200)
